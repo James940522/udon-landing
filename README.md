@@ -7,7 +7,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8)](https://tailwindcss.com/)
 
-🔗 **프로덕션**: [https://todayomurice.com](https://todayomurice.com)
+🔗 **프로덕션**: [https://todayudonrice.com](https://todayudonrice.com)
 
 ---
 
@@ -236,7 +236,7 @@ pnpm format:check
 
 ```bash
 # 사이트 URL (프로덕션 도메인)
-NEXT_PUBLIC_SITE_URL=https://todayomurice.com
+NEXT_PUBLIC_SITE_URL=https://todayudonrice.com
 
 # Google Search Console 검증
 GOOGLE_SITE_VERIFICATION=xxxxxxxxxxxxxx
@@ -336,16 +336,16 @@ Vercel 대시보드 → Settings → Environment Variables
 
 ### SEO
 
-- [ ] `https://todayomurice.com/favicon.ico` 접근
-- [ ] `https://todayomurice.com/robots.txt` 생성 확인
-- [ ] `https://todayomurice.com/sitemap.xml` 생성 확인
-- [ ] `view-source:https://todayomurice.com` 메타 태그 확인
+- [ ] `https://todayudonrice.com/favicon.ico` 접근
+- [ ] `https://todayudonrice.com/robots.txt` 생성 확인
+- [ ] `https://todayudonrice.com/sitemap.xml` 생성 확인
+- [ ] `view-source:https://todayudonrice.com` 메타 태그 확인
 - [ ] Google Search Console URL 검사
 - [ ] Naver Search Advisor 소유확인
 
 ### 리다이렉트
 
-- [ ] `www.todayomurice.com` → `todayomurice.com` (301)
+- [ ] `www.todayudonrice.com` → `todayudonrice.com` (301)
 - [ ] HTTP → HTTPS 자동 리다이렉트
 
 ### 브라우저 호환성
@@ -398,7 +398,7 @@ import Header from '@/widgets/header/ui/Header';
 
 ## 🔗 관련 링크
 
-- **프로덕션**: [https://todayomurice.com](https://todayomurice.com)
+- **프로덕션**: [https://todayudonrice.com](https://todayudonrice.com)
 - **GitHub**: [https://github.com/James940522/omurice-landing](https://github.com/James940522/omurice-landing)
 - **Vercel 대시보드**: [배포 관리](https://vercel.com/dashboard)
 

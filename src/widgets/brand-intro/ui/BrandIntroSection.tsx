@@ -19,7 +19,7 @@ export default function BrandIntroSection() {
       title: '진심을 담은 한 그릇',
       subtitle: 'Sincerity',
       description:
-        '맛있는 오므라이스 한 그릇으로 고객님께 행복을 전합니다. 품질과 정성을 절대 타협하지 않습니다.',
+        '맛있는 볶음우동 한 그릇으로 고객님께 행복을 전합니다. 품질과 정성을 절대 타협하지 않습니다.',
     },
     {
       title: '지속 가능한 성장',
@@ -30,13 +30,17 @@ export default function BrandIntroSection() {
   ];
 
   return (
-    <section id="brand" className="relative overflow-hidden py-16 md:py-24 lg:py-32" ref={ref}>
+    <section
+      id="brand"
+      className="relative overflow-hidden py-16 md:py-24 lg:py-32 bg-amber-900"
+      ref={ref}
+    >
       {/* 배경 이미지 */}
-      <div className="absolute inset-0 z-0 bg-amber-400">
+      <div className="absolute inset-0 z-0 bg-amber-900">
         {/* 이미지 컨테이너 - 원본 크기까지만 확대 */}
         <div className="relative w-full h-full max-w-[1920px] mx-auto">
           <Image
-            src="/asset/menu/오늘은_오므라이스/메뉴모음컷/메뉴모음컷 6.jpg"
+            src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 9.jpg"
             alt="배경"
             fill
             className="object-cover"
@@ -77,7 +81,7 @@ export default function BrandIntroSection() {
             >
               안녕하세요,
               <br />
-              <span className="text-yellow-400">오늘은 오므라이스입니다.</span>
+              <span className="text-yellow-400">오늘은 볶음우동입니다.</span>
             </motion.h2>
             <motion.p
               className="typo-body text-gray-200 max-w-2xl md:mx-auto"

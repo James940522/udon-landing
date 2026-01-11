@@ -13,14 +13,12 @@ import { StartupProcessSection } from '@/widgets/startup-process';
 import { MenuSection } from '@/widgets/menu';
 import { StorePresetSection } from '@/widgets/store-preset';
 import { ReviewsSection } from '@/widgets/reviews';
-import { StoreMapSection } from '@/widgets/store-map';
 import { ContactFormSection } from '@/widgets/contact-form';
 import { Footer } from '@/widgets/footer';
 
 // Features
 import { FloatingInquiry } from '@/features/inquiry';
 import { OwnerRecruitmentModal } from '@/features/owner-recruitment-modal';
-import { StoreStatusModal } from '@/features/store-status-modal';
 import { IntroAnimation } from '@/features/intro-animation';
 
 // Shared Config
@@ -29,7 +27,6 @@ import { SITE_ORIGIN, absoluteUrl } from '@/shared/config/site';
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
   const [showRecruitmentModal, setShowRecruitmentModal] = useState(false);
-  const [showStoreModal, setShowStoreModal] = useState(false);
 
   useEffect(() => {
     // 인트로 애니메이션이 끝난 후 모달 표시
@@ -37,15 +34,10 @@ export default function Home() {
       if (!showIntro) {
         const timer = setTimeout(() => {
           const hideRecruitment = localStorage.getItem('hideModal_owner-recruitment');
-          const hideStore = localStorage.getItem('hideModal_store-status');
           const now = new Date().getTime();
 
           if (!hideRecruitment || parseInt(hideRecruitment) < now) {
             setShowRecruitmentModal(true);
-          }
-
-          if (!hideStore || parseInt(hideStore) < now) {
-            setShowStoreModal(true);
           }
         }, 500);
 
@@ -59,7 +51,6 @@ export default function Home() {
   // 창업 문의 섹션으로 스크롤 이동 + 모든 모달 닫기
   const handleNavigateToContact = () => {
     setShowRecruitmentModal(false);
-    setShowStoreModal(false);
 
     // 약간의 딜레이 후 스크롤
     setTimeout(() => {
@@ -82,12 +73,12 @@ export default function Home() {
     // SEO: 공식 채널 (브랜드 엔티티 신호 강화)
     sameAs: [
       // TODO: 실제 공식 채널 URL로 교체 필요
-      // 'https://www.instagram.com/todayomurice',
-      // 'https://www.youtube.com/@todayomurice',
+      // 'https://www.instagram.com/todayudonrice',
+      // 'https://www.youtube.com/@todayudonrice',
       // 'https://place.map.kakao.com/xxxxx', // 카카오 대표 매장
       // 'https://map.naver.com/v5/search/오늘은오므라이스', // 네이버 플레이스
       // 'https://pf.kakao.com/_xxxxx', // 카카오톡 채널
-      // 'https://blog.naver.com/todayomurice', // 공식 블로그
+      // 'https://blog.naver.com/todayudonrice', // 공식 블로그
     ],
     brand: [
       {
@@ -163,8 +154,7 @@ export default function Home() {
 
       <main className="min-h-screen font-sans">
         {/* 인트로 애니메이션 */}
-        <IntroAnimation isVisible={showIntro} onComplete={() => setShowIntro(false)} />
-
+        {/* <IntroAnimation isVisible={showIntro} onComplete={() => setShowIntro(false)} /> */}
         <Header />
         <HeroSection />
         <BrandIntroSection />
@@ -174,7 +164,6 @@ export default function Home() {
         <MenuSection />
         <StorePresetSection />
         <ReviewsSection />
-        <StoreMapSection />
         <ContactFormSection />
         <Footer />
         <FloatingInquiry />
@@ -185,7 +174,6 @@ export default function Home() {
           onClose={() => setShowRecruitmentModal(false)}
           onNavigateToContact={handleNavigateToContact}
         />
-        <StoreStatusModal isOpen={showStoreModal} onClose={() => setShowStoreModal(false)} />
       </main>
     </>
   );

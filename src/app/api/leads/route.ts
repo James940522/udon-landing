@@ -41,17 +41,17 @@ const RATE_LIMIT_MAX = 3;
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
   const requests = rateLimitMap.get(ip) || [];
-  
+
   // 1분 이전 요청은 제거
   const recentRequests = requests.filter((timestamp) => now - timestamp < RATE_LIMIT_WINDOW);
-  
+
   if (recentRequests.length >= RATE_LIMIT_MAX) {
     return false; // 제한 초과
   }
-  
+
   recentRequests.push(now);
   rateLimitMap.set(ip, recentRequests);
-  
+
   // 메모리 누수 방지: 오래된 항목 정리
   if (rateLimitMap.size > 1000) {
     const entriesToDelete: string[] = [];
@@ -62,7 +62,7 @@ function checkRateLimit(ip: string): boolean {
     });
     entriesToDelete.forEach((key) => rateLimitMap.delete(key));
   }
-  
+
   return true;
 }
 
@@ -72,12 +72,12 @@ function getClientIp(req: Request): string {
   if (forwarded) {
     return forwarded.split(',')[0].trim();
   }
-  
+
   const realIp = req.headers.get('x-real-ip');
   if (realIp) {
     return realIp;
   }
-  
+
   return 'unknown';
 }
 
@@ -86,7 +86,11 @@ export async function POST(req: Request) {
   const clientIp = getClientIp(req);
   if (!checkRateLimit(clientIp)) {
     return NextResponse.json(
-      { ok: false, error: 'TOO_MANY_REQUESTS', message: '너무 많은 요청입니다. 잠시 후 다시 시도해주세요.' },
+      {
+        ok: false,
+        error: 'TOO_MANY_REQUESTS',
+        message: '너무 많은 요청입니다. 잠시 후 다시 시도해주세요.',
+      },
       { status: 429 }
     );
   }
@@ -113,8 +117,8 @@ export async function POST(req: Request) {
   const message = (parsed.data.message ?? '').trim();
   const domain = parsed.data.domain || '';
 
-  // apply.todayomurice.com 또는 localhost인 경우 [네모] 태그 추가
-  const isNemoTag = domain === 'apply.todayomurice.com' || domain === 'localhost';
+  // apply.todayudonrice.com 또는 localhost인 경우 [네모] 태그 추가
+  const isNemoTag = domain === 'apply.todayudonrice.com' || domain === 'localhost';
   const tagPrefix = isNemoTag ? '[네모] ' : '';
 
   const text = `${tagPrefix}[오늘은 오므라이스 창업문의]
@@ -150,4 +154,3 @@ ${message || '-'}`.slice(0, 1000);
 
   return NextResponse.json({ ok: true });
 }
-

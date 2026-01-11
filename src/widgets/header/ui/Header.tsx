@@ -46,7 +46,7 @@ export default function Header() {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-[110] transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-strong' : 'bg-white/95 backdrop-blur-sm shadow-md'
+        isScrolled ? 'bg-stone-900 shadow-strong' : 'bg-stone-900/95 backdrop-blur-sm shadow-md'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -58,34 +58,15 @@ export default function Header() {
           <motion.div className="shrink-0" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <a
               href="#"
-              className="flex items-center gap-1.5 md:gap-2"
-              aria-label="오늘은 오므라이스 & 에그이츠 홈으로 이동"
+              className="flex items-center"
+              aria-label="오늘은 볶음우동 홈으로 이동"
             >
               <Image
-                src="/asset/logo/오므라이스_문구.png"
-                alt="오늘은 오므라이스"
+                src="/asset/logo/볶음우동_문구.png"
+                alt="오늘은 볶음우동"
                 width={200}
                 height={100}
                 className="h-8 md:h-10 lg:h-12 w-auto"
-                priority
-                quality={75}
-              />
-              <span
-                className="relative text-sm md:text-base lg:text-lg font-black mr-2 "
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  color: '#FFA500',
-                  textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-                }}
-              >
-                ✕
-              </span>
-              <Image
-                src="/asset/logo/에그이츠_문구2.png"
-                alt="에그이츠"
-                width={200}
-                height={100}
-                className="h-8 md:h-10 lg:h-11 w-auto"
                 priority
                 quality={75}
               />
@@ -100,8 +81,8 @@ export default function Header() {
                 onClick={() => scrollToSection(item.href)}
                 className={`font-medium text-base transition-colors duration-300 ${
                   isScrolled
-                    ? 'text-foreground hover:text-primary'
-                    : 'text-foreground/90 hover:text-foreground'
+                    ? 'text-stone-100 hover:text-amber-400'
+                    : 'text-stone-100/90 hover:text-amber-300'
                 }`}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -111,7 +92,7 @@ export default function Header() {
             ))}
             <motion.button
               onClick={() => scrollToSection('#contact')}
-              className="bg-foreground text-white px-4 py-2 rounded-full hover:bg-primary hover:text-white transition-all duration-300 shadow-strong-hover font-bold border-2 border-foreground hover:border-primary"
+              className="bg-amber-600 text-white px-4 py-2 rounded-full hover:bg-amber-500 transition-all duration-300 shadow-strong-hover font-bold border-2 border-amber-600 hover:border-amber-500"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -124,16 +105,16 @@ export default function Header() {
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <button
-                  className="text-foreground text-3xl hover:text-primary transition-colors"
+                  className="text-stone-100 text-3xl hover:text-amber-400 transition-colors"
                   type="button"
                   aria-label="메뉴 열기"
                 >
                   <HiMenu />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80 bg-white">
-                <SheetHeader className="border-b-2 border-primary pb-4">
-                  <SheetTitle className="text-2xl font-bold text-primary">메뉴</SheetTitle>
+              <SheetContent side="right" className="w-80 bg-stone-50">
+                <SheetHeader className="border-b-2 border-amber-600 pb-4">
+                  <SheetTitle className="text-2xl font-bold text-amber-600">메뉴</SheetTitle>
                   <SheetDescription className="sr-only">네비게이션 메뉴</SheetDescription>
                 </SheetHeader>
 
@@ -144,7 +125,7 @@ export default function Header() {
                       <button
                         key={item.name}
                         onClick={() => scrollToSection(item.href)}
-                        className="block w-full text-left text-foreground hover:text-primary font-bold text-xl py-4 px-4 rounded-xl hover:bg-primary/10 transition-all duration-300"
+                        className="block w-full text-left text-stone-800 hover:text-amber-600 font-bold text-xl py-4 px-4 rounded-xl hover:bg-amber-50 transition-all duration-300"
                       >
                         {item.name}
                       </button>
@@ -153,10 +134,10 @@ export default function Header() {
                 </nav>
 
                 {/* Sidebar Footer */}
-                <div className="absolute bottom-6 left-6 right-6 border-t-2 border-primary/20 pt-6">
+                <div className="absolute bottom-6 left-6 right-6 border-t-2 border-amber-200 pt-6">
                   <button
                     onClick={() => scrollToSection('#contact')}
-                    className="w-full bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full hover:shadow-strong transition-all duration-300 font-bold text-xl"
+                    className="w-full bg-gradient-to-r from-amber-600 to-amber-500 text-white px-8 py-4 rounded-full hover:shadow-strong transition-all duration-300 font-bold text-xl"
                   >
                     창업문의 하기 →
                   </button>

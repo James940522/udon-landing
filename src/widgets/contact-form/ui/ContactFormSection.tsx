@@ -12,8 +12,8 @@ function getSmsMessageByDomain(): string {
   const hostname = window.location.hostname;
   console.log('🔍 현재 hostname:', hostname);
 
-  // apply.todayomurice.com 또는 localhost인 경우 [네모] 문구 추가
-  if (hostname === 'apply.todayomurice.com' || hostname === 'localhost') {
+  // apply.todayudonrice.com 또는 localhost인 경우 [네모] 문구 추가
+  if (hostname === 'apply.todayudonrice.com' || hostname === 'localhost') {
     console.log('✅ [네모] 메시지 적용');
     return '[네모] 홈페이지를 통해 창업 문의 드립니다.';
   }

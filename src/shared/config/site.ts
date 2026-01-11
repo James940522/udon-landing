@@ -6,12 +6,12 @@
  */
 
 // 프로덕션 도메인 (절대 변경 금지)
-export const SITE_ORIGIN = 'https://todayomurice.com';
+export const SITE_ORIGIN = 'https://todayudon.com';
 
 /**
  * 상대 경로를 절대 URL로 변환
  * @param path - 상대 경로 (예: "/sitemap.xml", "/og.png")
- * @returns 절대 URL (예: "https://todayomurice.com/sitemap.xml")
+ * @returns 절대 URL (예: "https://todayudon.com/sitemap.xml")
  */
 export const absoluteUrl = (path: string): string => {
   return new URL(path, SITE_ORIGIN).toString();

@@ -13,7 +13,7 @@ export default function HeroSection() {
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/asset/bg/sec1-bg.jpg"
+          src="/asset/bg/sec8-bg.jpg"
           alt="배경"
           fill
           className="object-cover"
@@ -30,10 +30,10 @@ export default function HeroSection() {
         aria-hidden="true"
       >
         <div className="text-[3rem] md:text-[5rem] lg:text-[6rem] font-black text-white/20 whitespace-nowrap">
-          맛있는 · 프리미엄 · 신선한 · 오므라이스 · 맛있는 · 프리미엄 · 신선한 · 오므라이스 · 맛있는
-          · 프리미엄 · 신선한 · 오므라이스 · 맛있는 · 프리미엄 · 신선한 · 오므라이스 · 맛있는 ·
-          프리미엄 · 신선한 · 오므라이스 · 맛있는 · 프리미엄 · 신선한 · 오므라이스 · 맛있는 ·
-          프리미엄 · 신선한 · 오므라이스 · 맛있는 · 프리미엄 · 신선한 · 오므라이스
+          맛있는 · 프리미엄 · 신선한 · 볶음우동 · 맛있는 · 프리미엄 · 신선한 · 볶음우동 · 맛있는 ·
+          프리미엄 · 신선한 · 볶음우동 · 맛있는 · 프리미엄 · 신선한 · 볶음우동 · 맛있는 · 프리미엄 ·
+          신선한 · 볶음우동 · 맛있는 · 프리미엄 · 신선한 · 볶음우동 · 맛있는 · 프리미엄 · 신선한 ·
+          볶음우동 · 맛있는 · 프리미엄 · 신선한 · 볶음우동
         </div>
       </motion.div>
 
@@ -59,10 +59,9 @@ export default function HeroSection() {
         aria-hidden="true"
       >
         <div className="text-[3rem] md:text-[5rem] lg:text-[6rem] font-black text-white/20 whitespace-nowrap">
-          100호점 · 1위 · 프랜차이즈 · OMURICE · 100호점 · 1위 · 프랜차이즈 · OMURICE · 100호점 ·
-          1위 · 프랜차이즈 · OMURICE · 100호점 · 1위 · 프랜차이즈 · OMURICE · 100호점 · 1위 ·
-          프랜차이즈 · OMURICE · 100호점 · 1위 · 프랜차이즈 · OMURICE · 100호점 · 1위 · 프랜차이즈 ·
-          OMURICE
+          1위 · 프랜차이즈 · UDON · 볶음우동 · 1위 · 프랜차이즈 · UDON · 볶음우동 · 1위 · 프랜차이즈
+          · UDON · 볶음우동 · 1위 · 프랜차이즈 · UDON · 볶음우동 · 1위 · 프랜차이즈 · UDON ·
+          볶음우동 · 1위 · 프랜차이즈 · UDON · 볶음우동 · 1위 · 프랜차이즈 · UDON · 볶음우동
         </div>
       </motion.div>
 
@@ -87,8 +86,8 @@ export default function HeroSection() {
         >
           <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/40">
             <Image
-              src="/asset/menu/오늘은_오므라이스/메뉴모음컷/화이트 메뉴모음1.jpg"
-              alt="화이트 오므라이스"
+              src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 1.jpg"
+              alt="볶음우동 메뉴"
               fill
               className="object-cover"
               quality={75}
@@ -115,8 +114,8 @@ export default function HeroSection() {
         >
           <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/40">
             <Image
-              src="/asset/menu/오늘은_오므라이스/메뉴모음컷/메뉴모음컷 1.jpg"
-              alt="오므라이스 메뉴"
+              src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 3.jpg"
+              alt="볶음우동 메뉴"
               fill
               className="object-cover"
               quality={75}
@@ -143,8 +142,8 @@ export default function HeroSection() {
         >
           <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/40">
             <Image
-              src="/asset/menu/오늘은_오므라이스/메뉴모음컷/블랙 앤 투움바 오므라이스.jpg"
-              alt="블랙 앤 투움바 오므라이스"
+              src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 5.jpg"
+              alt="볶음우동 메뉴"
               fill
               className="object-cover"
               quality={75}
@@ -171,8 +170,8 @@ export default function HeroSection() {
         >
           <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/40">
             <Image
-              src="/asset/menu/오늘은_오므라이스/메뉴모음컷/화이트 메뉴모음 2.jpg"
-              alt="화이트 메뉴모음"
+              src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 7.jpg"
+              alt="볶음우동 메뉴"
               fill
               className="object-cover"
               quality={75}
@@ -182,8 +181,7 @@ export default function HeroSection() {
 
         {/* SEO: H1 타이틀 (검색엔진용, 시각적으로는 숨김) */}
         <h1 className="sr-only">
-          오므라이스 프랜차이즈 창업 | 재영에프앤비(Jaeyoung F&B) 오늘은 오므라이스 · 에그이츠(EGG
-          EATS)
+          볶음우동 프랜차이즈 창업 | 재영에프앤비(Jaeyoung F&B) 오늘은 볶음우동
         </h1>
 
         {/* 1. 브랜드 로고 문구 - 최상단 */}
@@ -206,7 +204,7 @@ export default function HeroSection() {
             }}
           >
             <Image
-              src="/asset/logo/오므라이스_문구.png"
+              src="/asset/logo/볶음우동_문구.png"
               alt=""
               width={512}
               height={256}
@@ -260,8 +258,8 @@ export default function HeroSection() {
             <SwiperSlide>
               <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/40">
                 <Image
-                  src="/asset/menu/오늘은_오므라이스/메뉴모음컷/화이트 메뉴모음1.jpg"
-                  alt="화이트 오므라이스"
+                  src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 2.jpg"
+                  alt="볶음우동 메뉴"
                   fill
                   className="object-cover"
                   quality={75}
@@ -271,8 +269,8 @@ export default function HeroSection() {
             <SwiperSlide>
               <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/40">
                 <Image
-                  src="/asset/menu/오늘은_오므라이스/메뉴모음컷/블랙 앤 투움바 오므라이스.jpg"
-                  alt="블랙 앤 투움바 오므라이스"
+                  src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 4.jpg"
+                  alt="볶음우동 메뉴"
                   fill
                   className="object-cover"
                   quality={75}
@@ -282,8 +280,8 @@ export default function HeroSection() {
             <SwiperSlide>
               <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/40">
                 <Image
-                  src="/asset/menu/오늘은_오므라이스/메뉴모음컷/메뉴모음컷 1.jpg"
-                  alt="오므라이스 메뉴"
+                  src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 6.jpg"
+                  alt="볶음우동 메뉴"
                   fill
                   className="object-cover"
                   quality={75}
@@ -293,8 +291,8 @@ export default function HeroSection() {
             <SwiperSlide>
               <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/40">
                 <Image
-                  src="/asset/menu/오늘은_오므라이스/메뉴모음컷/화이트 메뉴모음 2.jpg"
-                  alt="화이트 메뉴모음"
+                  src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 8.jpg"
+                  alt="볶음우동 메뉴"
                   fill
                   className="object-cover"
                   quality={75}
@@ -324,8 +322,8 @@ export default function HeroSection() {
           >
             <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/asset/menu/오늘은_오므라이스/메뉴모음컷/메뉴모음컷 3 작은사이즈.jpg"
-                alt="오늘은 오므라이스 메뉴"
+                src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 10.jpg"
+                alt="오늘은 볶음우동 메뉴"
                 fill
                 className="object-cover"
                 priority

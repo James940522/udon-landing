@@ -15,16 +15,16 @@ const nextConfig: NextConfig = {
   // SEO: HTTP → HTTPS 및 WWW → non-WWW 301 리다이렉트
   async redirects() {
     return [
-      // www.todayomurice.com → todayomurice.com
+      // www.todayudonrice.com → todayudonrice.com
       {
         source: '/:path*',
         has: [
           {
             type: 'host',
-            value: 'www.todayomurice.com',
+            value: 'www.todayudonrice.com',
           },
         ],
-        destination: 'https://todayomurice.com/:path*',
+        destination: 'https://todayudonrice.com/:path*',
         permanent: true, // 301 리다이렉트
       },
     ];

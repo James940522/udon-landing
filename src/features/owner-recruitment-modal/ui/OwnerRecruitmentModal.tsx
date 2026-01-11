@@ -38,7 +38,7 @@ export default function OwnerRecruitmentModal({
             className="text-lg sm:text-xl font-bold text-gray-900 mb-3 leading-tight"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            오늘은 오므라이스
+            오늘은 볶음우동
             <br />
             오너 모집 시작!
           </h2>
@@ -54,7 +54,7 @@ export default function OwnerRecruitmentModal({
           <div className="relative w-48 h-16 mx-auto mb-2">
             <Image
               src="/asset/logo/오므라이스_문구.png"
-              alt="오늘은 오므라이스"
+              alt="오늘은 볶음우동"
               fill
               className="object-contain"
             />
@@ -73,7 +73,7 @@ export default function OwnerRecruitmentModal({
               className="text-sm sm:text-base font-bold text-gray-900 leading-tight"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              대한민국 1등 오므라이스
+              대한민국 1등 볶음우동
               <br />
               선착순 창업혜택 이벤트
             </p>
