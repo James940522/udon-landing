@@ -56,13 +56,9 @@ export default function Header() {
         <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
           <motion.div className="shrink-0" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <a
-              href="#"
-              className="flex items-center"
-              aria-label="오늘은 볶음우동 홈으로 이동"
-            >
+            <a href="#" className="flex items-center" aria-label="오늘은 볶음우동 홈으로 이동">
               <Image
-                src="/asset/logo/볶음우동_문구.png"
+                src="/asset/logo/오늘은_볶음우동_문구.png"
                 alt="오늘은 볶음우동"
                 width={200}
                 height={100}

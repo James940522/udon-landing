@@ -274,23 +274,23 @@ button *,
     pointer !important;
 }
 
-/* 스크롤바 커스터마이징 */
+/* 스크롤바 커스터마이징 - 볶음우동 톤앤매너 */
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fffbf0;
+  background: #2c2416;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #fec601 0%, #ff6b4a 100%);
+  background: linear-gradient(180deg, #c9a24d 0%, #a68739 100%);
   border-radius: 6px;
-  border: 2px solid #fffbf0;
+  border: 2px solid #2c2416;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #ffd700 0%, #ff8a5c 100%);
+  background: linear-gradient(180deg, #d4b45f 0%, #b89644 100%);
 }
 
 /* 스크롤바 숨기기 유틸리티 */

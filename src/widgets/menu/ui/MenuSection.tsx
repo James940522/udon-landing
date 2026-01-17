@@ -30,9 +30,9 @@ const brands: Brand[] = [
   {
     id: 'udon',
     name: '오늘은 볶음우동',
-    logo: '/asset/logo/오늘은_볶음우동_풀로고.jpg',
-    bgColor: 'bg-yellow-400',
-    accentColor: 'yellow',
+    logo: '/asset/logo/오늘은_볶음우동_풀로고.jpeg',
+    bgColor: 'bg-amber-600',
+    accentColor: 'amber',
     categories: [
       {
         id: 'bokkeumuldon',
@@ -290,24 +290,24 @@ export default function MenuSection() {
               onClick={() => handleBrandChange(index)}
               className={cn(
                 'relative transition-all duration-300 overflow-hidden',
-                // 에그이츠만 rounded 배경 적용
-                brand.id === 'eggeats' && 'rounded-2xl',
+                // rounded 배경 적용
+                (brand.id === 'udon' || brand.id === 'eggeats') && 'rounded-2xl',
                 activeBrand === index ? 'scale-110' : 'opacity-50 hover:opacity-80 hover:scale-105'
               )}
               whileHover={{ scale: activeBrand === index ? 1.1 : 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
               {/* 로고 */}
-              <div className="relative flex items-center justify-center h-20 sm:h-28">
+              <div className="relative flex items-center justify-center h-28 sm:h-36 lg:h-40">
                 <Image
                   src={brand.logo}
                   alt={brand.name}
-                  width={220}
-                  height={100}
+                  width={280}
+                  height={140}
                   className={cn(
                     'h-full w-auto object-contain',
-                    // 에그이츠만 rounded
-                    brand.id === 'eggeats' && 'rounded-2xl'
+                    // rounded 적용
+                    (brand.id === 'udon' || brand.id === 'eggeats') && 'rounded-2xl'
                   )}
                   quality={90}
                 />
@@ -318,7 +318,11 @@ export default function MenuSection() {
                 <motion.div
                   className={cn(
                     'absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full',
-                    brand.accentColor === 'yellow' ? 'bg-yellow-500' : 'bg-orange-500'
+                    brand.accentColor === 'amber'
+                      ? 'bg-amber-600'
+                      : brand.accentColor === 'yellow'
+                        ? 'bg-yellow-500'
+                        : 'bg-orange-500'
                   )}
                   layoutId="brandIndicator"
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
@@ -346,16 +350,20 @@ export default function MenuSection() {
                   'relative px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-sm md:text-base transition-all duration-300 border-2',
                   activeCategory === index
                     ? cn(
-                        currentBrand.accentColor === 'yellow'
-                          ? 'bg-yellow-500 border-yellow-600'
-                          : 'bg-orange-500 border-orange-600',
+                        currentBrand.accentColor === 'amber'
+                          ? 'bg-amber-600 border-amber-700'
+                          : currentBrand.accentColor === 'yellow'
+                            ? 'bg-yellow-500 border-yellow-600'
+                            : 'bg-orange-500 border-orange-600',
                         'text-white scale-105 shadow-xl'
                       )
                     : cn(
-                        'bg-white shadow-lg',
-                        currentBrand.accentColor === 'yellow'
-                          ? 'text-yellow-700 border-yellow-400 hover:bg-yellow-50'
-                          : 'text-orange-700 border-orange-400 hover:bg-orange-50'
+                        'bg-stone-800/90 backdrop-blur-sm shadow-lg',
+                        currentBrand.accentColor === 'amber'
+                          ? 'text-amber-200 border-amber-600 hover:bg-amber-700/50'
+                          : currentBrand.accentColor === 'yellow'
+                            ? 'text-yellow-700 border-yellow-400 hover:bg-yellow-50'
+                            : 'text-orange-700 border-orange-400 hover:bg-orange-50'
                       )
                 )}
                 style={{ fontFamily: 'var(--font-heading)' }}
@@ -387,10 +395,12 @@ export default function MenuSection() {
               <motion.div
                 key={item.name}
                 className={cn(
-                  'bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border-3 transition-all duration-300',
-                  currentBrand.accentColor === 'yellow'
-                    ? 'border-yellow-400 hover:border-yellow-500'
-                    : 'border-orange-400 hover:border-orange-500'
+                  'bg-stone-50 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border-3 transition-all duration-300',
+                  currentBrand.accentColor === 'amber'
+                    ? 'border-amber-500 hover:border-amber-600'
+                    : currentBrand.accentColor === 'yellow'
+                      ? 'border-yellow-400 hover:border-yellow-500'
+                      : 'border-orange-400 hover:border-orange-500'
                 )}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
