@@ -66,18 +66,18 @@ export default function HeroSection() {
       {/* 메인 컨테이너 */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10 ">
         {/* 2열 그리드: 좌측(텍스트) + 우측(이미지) */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center ">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* ========================================
               좌측: 타이포 / 카피 / CTA
           ======================================== */}
           <motion.div
-            className="space-y-4 md:space-y-5 order-2 lg:order-1 flex flex-col items-center text-center "
+            className="space-y-4 md:space-y-5 order-1 lg:order-1 flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* 하이라이트 뱃지 */}
-            <div className="flex flex-wrap gap-2 md:gap-3 justify-center ">
+            {/* 하이라이트 뱃지 - 모바일 order-1 */}
+            <div className="flex flex-wrap gap-2 md:gap-3 justify-center order-1">
               <span
                 className="inline-block px-3 py-1.5 text-xs md:text-sm font-semibold rounded-full border backdrop-blur-sm"
                 style={{
@@ -110,8 +110,8 @@ export default function HeroSection() {
               </span>
             </div>
 
-            {/* 메인 로고 이미지 */}
-            <div className="space-y-2 md:space-y-3 w-full flex flex-col items-center">
+            {/* 메인 로고 이미지 - 모바일 order-2 */}
+            <div className="space-y-2 md:space-y-3 w-full flex flex-col items-center order-2">
               <motion.div
                 className="relative w-full max-w-sm"
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -146,8 +146,8 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* CTA 버튼 */}
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 w-full justify-center">
+            {/* CTA 버튼 - 모바일 order-4 (이미지 아래로) */}
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 w-full justify-center order-4 lg:order-3">
               <motion.a
                 href="#contact"
                 className="px-8 py-4 rounded-lg text-base md:text-lg font-bold text-center transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm"
@@ -182,7 +182,7 @@ export default function HeroSection() {
               우측: 메인 이미지 + 썸네일 스트립
           ======================================== */}
           <motion.div
-            className="space-y-4 order-1 lg:order-2"
+            className="space-y-4 order-3 lg:order-2"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}

@@ -7,10 +7,10 @@ import Script from 'next/script';
 import { Header } from '@/widgets/header';
 import { HeroSection } from '@/widgets/hero';
 import { BrandIntroSection } from '@/widgets/brand-intro';
-import { DualBrandSection } from '@/widgets/dual-brand';
+import { TrustedFranchiseSection } from '@/widgets/trusted-franchise';
 import { RevenueProofSection } from '@/widgets/revenue-proof';
 import { StartupProcessSection } from '@/widgets/startup-process';
-import { MenuSection } from '@/widgets/menu';
+import { MenuSection, MenuSection2 } from '@/widgets/menu';
 import { StorePresetSection } from '@/widgets/store-preset';
 import { ReviewsSection } from '@/widgets/reviews';
 import { ContactFormSection } from '@/widgets/contact-form';
@@ -159,9 +159,10 @@ export default function Home() {
         <HeroSection />
         <BrandIntroSection />
         <RevenueProofSection />
-        <DualBrandSection />
+        <TrustedFranchiseSection />
         <StartupProcessSection />
         <MenuSection />
+        <MenuSection2 />
         <StorePresetSection />
         <ReviewsSection />
         <ContactFormSection />
