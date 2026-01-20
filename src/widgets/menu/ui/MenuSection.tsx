@@ -250,15 +250,13 @@ export default function MenuSection() {
 
   const handleCategoryChange = (index: number) => {
     setActiveCategory(index);
-    // 카테고리 변경 시 섹션 상단으로 스크롤
-    setTimeout(scrollToTop, 50);
   };
 
   return (
     <section id="menu" className="py-20 md:py-32 relative overflow-hidden" ref={ref}>
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
-        <Image src="/asset/bg/sec5-bg.jpg" alt="배경" fill className="object-cover" quality={90} />
+        <Image src="/asset/bg/sec5-bg.jpg" alt="배경" fill className="object-cover" quality={90} unoptimized />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -310,6 +308,7 @@ export default function MenuSection() {
                     (brand.id === 'udon' || brand.id === 'eggeats') && 'rounded-2xl'
                   )}
                   quality={90}
+                  unoptimized
                 />
               </div>
 
@@ -332,105 +331,132 @@ export default function MenuSection() {
           ))}
         </motion.div>
 
-        {/* 카테고리 탭 */}
+        {/* 카테고리 탭 + 메뉴 그리드 레이아웃 */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeBrand}
-            className="flex flex-wrap justify-center gap-2 md:gap-3 mb-12"
+            className="flex flex-col lg:flex-row gap-6 lg:gap-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            {currentBrand.categories.map((category, index) => (
-              <motion.button
-                key={category.id}
-                onClick={() => handleCategoryChange(index)}
-                className={cn(
-                  'relative px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-sm md:text-base transition-all duration-300 border-2',
-                  activeCategory === index
-                    ? cn(
-                        currentBrand.accentColor === 'amber'
-                          ? 'bg-amber-600 border-amber-700'
-                          : currentBrand.accentColor === 'yellow'
-                            ? 'bg-yellow-500 border-yellow-600'
-                            : 'bg-orange-500 border-orange-600',
-                        'text-white scale-105 shadow-xl'
-                      )
-                    : cn(
-                        'bg-stone-800/90 backdrop-blur-sm shadow-lg',
-                        currentBrand.accentColor === 'amber'
-                          ? 'text-amber-200 border-amber-600 hover:bg-amber-700/50'
-                          : currentBrand.accentColor === 'yellow'
-                            ? 'text-yellow-700 border-yellow-400 hover:bg-yellow-50'
-                            : 'text-orange-700 border-orange-400 hover:bg-orange-50'
-                      )
-                )}
-                style={{ fontFamily: 'var(--font-heading)' }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {category.name}
-                {category.isNew && (
-                  <span className="absolute -top-1 -right-1 inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] md:text-[10px] font-extrabold bg-red-500 text-white shadow-lg">
-                    NEW
-                  </span>
-                )}
-              </motion.button>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-
-        {/* 메뉴 그리드 */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`${activeBrand}-${activeCategory}`}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 min-h-[700px] md:min-h-[800px] lg:min-h-[900px] auto-rows-max"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.3 }}
-          >
-            {currentCategory.items.map((item, index) => (
-              <motion.div
-                key={item.name}
-                className={cn(
-                  'bg-stone-50  rounded-2xl md:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border-3 transition-all duration-300',
-                  currentBrand.accentColor === 'amber'
-                    ? 'border-amber-500 hover:border-amber-600'
-                    : currentBrand.accentColor === 'yellow'
-                      ? 'border-yellow-400 hover:border-yellow-500'
-                      : 'border-orange-400 hover:border-orange-500'
-                )}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.03 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                {/* 메뉴 이미지 */}
-                <div className="aspect-square relative overflow-hidden bg-gray-100">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                    loading={index < 5 ? 'eager' : 'lazy'}
-                    quality={90}
-                  />
-                </div>
-
-                {/* 메뉴 이름 */}
-                <div className="p-3 md:p-4 lg:p-5">
-                  <h3
-                    className="text-sm md:text-base lg:text-lg font-medium text-foreground text-center break-keep"
-                    style={{ fontFamily: 'var(--font-heading)', wordBreak: 'keep-all' }}
+            {/* 왼쪽 세로 카테고리 탭 (데스크톱) / 상단 가로 스크롤 (모바일) */}
+            <div className="lg:w-48 xl:w-56 flex-shrink-0">
+              {/* 모바일: 가로 스크롤 */}
+              <div className="lg:hidden flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
+                {currentBrand.categories.map((category, index) => (
+                  <motion.button
+                    key={category.id}
+                    onClick={() => handleCategoryChange(index)}
+                    className={cn(
+                      'relative px-6 py-3.5 font-semibold text-sm transition-all duration-300 whitespace-nowrap flex-shrink-0 border-2',
+                      activeCategory === index
+                        ? cn(
+                            currentBrand.accentColor === 'amber'
+                              ? 'bg-amber-600 border-amber-700 text-white'
+                              : currentBrand.accentColor === 'yellow'
+                                ? 'bg-yellow-600 border-yellow-700 text-white'
+                                : 'bg-orange-600 border-orange-700 text-white',
+                            'shadow-lg'
+                          )
+                        : 'bg-stone-800 border-stone-700 text-stone-300 hover:border-stone-600 hover:bg-stone-700 shadow-md'
+                    )}
+                    style={{ fontFamily: 'var(--font-heading)' }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    {item.name}
-                  </h3>
-                </div>
-              </motion.div>
-            ))}
+                    {category.name}
+                    {category.isNew && (
+                      <span className="absolute -top-1 -right-1 inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-red-600 text-white shadow-lg">
+                        NEW
+                      </span>
+                    )}
+                  </motion.button>
+                ))}
+              </div>
+
+              {/* 데스크톱: 세로 탭 */}
+              <div className="hidden lg:flex flex-col gap-2.5">
+                {currentBrand.categories.map((category, index) => (
+                  <motion.button
+                    key={category.id}
+                    onClick={() => handleCategoryChange(index)}
+                    className={cn(
+                      'relative px-6 py-4 font-semibold text-base transition-all duration-200 text-left border-l-4',
+                      activeCategory === index
+                        ? cn(
+                            currentBrand.accentColor === 'amber'
+                              ? 'bg-amber-600 border-amber-700 text-white'
+                              : currentBrand.accentColor === 'yellow'
+                                ? 'bg-yellow-600 border-yellow-700 text-white'
+                                : 'bg-orange-600 border-orange-700 text-white',
+                            'shadow-lg'
+                          )
+                        : 'bg-stone-800 border-stone-700 text-stone-300 hover:border-stone-500 hover:bg-stone-700 shadow-md hover:shadow-lg'
+                    )}
+                    style={{ fontFamily: 'var(--font-heading)' }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span className="relative z-10 block tracking-wide">
+                      {category.name}
+                    </span>
+                    {category.isNew && (
+                      <span className="absolute top-2 right-2 inline-flex items-center px-2 py-0.5 rounded text-[10px] font-extrabold bg-red-600 text-white shadow-lg">
+                        NEW
+                      </span>
+                    )}
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+
+            {/* 오른쪽 메뉴 그리드 */}
+            <div className="flex-1 min-w-0">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`${activeBrand}-${activeCategory}`}
+                  className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 min-h-[700px] md:min-h-[800px] lg:min-h-[900px] auto-rows-max"
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -30 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {currentCategory.items.map((item, index) => (
+                    <motion.div
+                      key={item.name}
+                      className="bg-stone-50 overflow-hidden shadow-xl hover:shadow-2xl border-3 border-stone-600 hover:border-stone-700 transition-all duration-300"
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.03 }}
+                      whileHover={{ scale: 1.05, y: -5 }}
+                    >
+                      {/* 메뉴 이미지 */}
+                      <div className="aspect-square relative overflow-hidden bg-stone-200">
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                          priority={index < 3}
+                          quality={90}
+                        />
+                      </div>
+
+                      {/* 메뉴 이름 */}
+                      <div className="p-3 md:p-4 lg:p-5">
+                        <h3
+                          className="text-sm md:text-base lg:text-lg font-medium text-foreground text-center break-keep"
+                          style={{ fontFamily: 'var(--font-heading)', wordBreak: 'keep-all' }}
+                        >
+                          {item.name}
+                        </h3>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, Fragment } from 'react';
 
 export default function FranchiseCostSection() {
   const ref = useRef(null);
@@ -102,7 +102,7 @@ export default function FranchiseCostSection() {
               {/* 테이블 바디 */}
               <tbody>
                 {costItems.map((category, categoryIndex) => (
-                  <>
+                  <Fragment key={categoryIndex}>
                     {category.items.map((item, itemIndex) => (
                       <motion.tr
                         key={`${categoryIndex}-${itemIndex}`}
@@ -154,7 +154,7 @@ export default function FranchiseCostSection() {
                         <td className="py-6 px-6 text-gray-600 text-sm md:text-base">{item.note || '-'}</td>
                       </motion.tr>
                     ))}
-                  </>
+                  </Fragment>
                 ))}
               </tbody>
 

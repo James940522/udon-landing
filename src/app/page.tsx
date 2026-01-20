@@ -11,7 +11,7 @@ import { TrustedFranchiseSection } from '@/widgets/trusted-franchise';
 import { RevenueProofSection } from '@/widgets/revenue-proof';
 import { StartupProcessSection } from '@/widgets/startup-process';
 import { FranchiseCostSection } from '@/widgets/franchise-cost';
-import { MenuSection, MenuSection2 } from '@/widgets/menu';
+import { MenuSection } from '@/widgets/menu';
 import { StorePresetSection } from '@/widgets/store-preset';
 import { ReviewsSection } from '@/widgets/reviews';
 import { ContactFormSection } from '@/widgets/contact-form';
@@ -164,7 +164,6 @@ export default function Home() {
         <StartupProcessSection />
         <FranchiseCostSection />
         <MenuSection />
-        <MenuSection2 />
         {/* <StorePresetSection /> */}
         <ReviewsSection />
         <ContactFormSection />
