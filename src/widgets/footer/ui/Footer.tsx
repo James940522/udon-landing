@@ -11,10 +11,10 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <Image
-                src="/asset/logo/Jaeyoung_F&B.png"
-                alt="오늘은 볶음우동"
+                src="/asset/logo/오늘은_F&B_로고.png"
+                alt="오늘은 에프앤비"
                 width={200}
-                height={200}
+                height={80}
                 loading="lazy"
                 quality={75}
               />
@@ -24,19 +24,17 @@ export default function Footer() {
                 className="text-sm text-stone-700 font-medium"
                 style={{ fontFamily: 'var(--font-body)' }}
               >
-                <span itemProp="legalName">(주)재영에프앤비</span> (Jaeyoung F&B) | 대표자:{' '}
-                <span itemProp="founder">최재영, 이호남</span>
+                <span itemProp="legalName">오늘은 에프앤비</span> | 대표자:{' '}
+                <span itemProp="founder">이다은</span>
               </p>
               <p className="text-sm text-stone-600" style={{ fontFamily: 'var(--font-body)' }}>
-                사업자등록번호: 576-88-03176
+                사업자등록번호: 751-58-00695
               </p>
               <p
                 className="text-sm text-stone-600 leading-relaxed"
                 style={{ fontFamily: 'var(--font-body)' }}
               >
-                주소: 서울특별시 동대문구 왕산로 200
-                <br />
-                롯데캐슬 SKY-L65 섹션오피스 1204호
+                주소: 경기도 파주시 금빛로 44-1 604호 s17
               </p>
             </div>
           </div>
