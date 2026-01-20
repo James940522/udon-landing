@@ -12,22 +12,16 @@ import Image from 'next/image';
 
 // 실제 리뷰 이미지들
 const reviewImages = [
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-51 001.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-51 002.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-51 003.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-51 004.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-52 005.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-52 006.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-52 007.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-52 008.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-52 009.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-52 010.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-53 011.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-53 012.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-53 013.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-53 014.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-53 015.jpeg',
-  '/asset/review/KakaoTalk_Photo_2025-11-29-19-50-53 016.jpeg',
+  '/asset/review/KakaoTalk_Photo_2026-01-20-23-06-06 001.jpeg',
+  '/asset/review/KakaoTalk_Photo_2026-01-20-23-06-06 002.jpeg',
+  '/asset/review/KakaoTalk_Photo_2026-01-20-23-06-06 003.jpeg',
+  '/asset/review/KakaoTalk_Photo_2026-01-20-23-06-06 004.jpeg',
+  '/asset/review/KakaoTalk_Photo_2026-01-20-23-06-06 005.jpeg',
+  '/asset/review/KakaoTalk_Photo_2026-01-20-23-06-06 006.jpeg',
+  '/asset/review/KakaoTalk_Photo_2026-01-20-23-06-06 007.jpeg',
+  '/asset/review/KakaoTalk_Photo_2026-01-20-23-06-06 008.jpeg',
+  '/asset/review/KakaoTalk_Photo_2026-01-20-23-06-06 009.jpeg',
+  '/asset/review/KakaoTalk_Photo_2026-01-20-23-06-06 010.jpeg',
 ];
 
 export default function ReviewsSection() {

@@ -256,7 +256,7 @@ export default function MenuSection() {
     <section id="menu" className="py-20 md:py-32 relative overflow-hidden" ref={ref}>
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
-        <Image src="/asset/bg/sec5-bg.jpg" alt="배경" fill className="object-cover" quality={90} unoptimized />
+        <Image src="/asset/bg-1/sec6-bg.jpg" alt="배경" fill className="object-cover" quality={90} unoptimized />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

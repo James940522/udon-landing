@@ -27,7 +27,7 @@ export default function TrustedFranchiseSection() {
     <section id="trusted-franchise" className="relative overflow-hidden py-20 md:py-32" ref={ref}>
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
-        <Image src="/asset/bg/main-section1-bg.jpg" alt="배경" fill className="object-cover" quality={90} />
+        <Image src="/asset/bg-1/sec4-bg.jpg" alt="배경" fill className="object-cover" quality={90} />
         {/* 다크 오버레이 */}
         <div className="absolute inset-0 bg-black/60" />
       </div>

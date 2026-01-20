@@ -8,11 +8,9 @@ import { Header } from '@/widgets/header';
 import { HeroSection } from '@/widgets/hero';
 import { BrandIntroSection } from '@/widgets/brand-intro';
 import { TrustedFranchiseSection } from '@/widgets/trusted-franchise';
-import { RevenueProofSection } from '@/widgets/revenue-proof';
+import { SuccessionPlanningSection } from '@/widgets/succession-planning';
 import { StartupProcessSection } from '@/widgets/startup-process';
-import { FranchiseCostSection } from '@/widgets/franchise-cost';
 import { MenuSection } from '@/widgets/menu';
-import { StorePresetSection } from '@/widgets/store-preset';
 import { ReviewsSection } from '@/widgets/reviews';
 import { ContactFormSection } from '@/widgets/contact-form';
 import { Footer } from '@/widgets/footer';
@@ -20,38 +18,49 @@ import { Footer } from '@/widgets/footer';
 // Features
 import { FloatingInquiry } from '@/features/inquiry';
 import { OwnerRecruitmentModal } from '@/features/owner-recruitment-modal';
-import { IntroAnimation } from '@/features/intro-animation';
+import { FranchiseCostModal } from '@/features/franchise-cost-modal';
+import { AchievementModal } from '@/features/achievement-modal';
 
 // Shared Config
 import { SITE_ORIGIN, absoluteUrl } from '@/shared/config/site';
 
 export default function Home() {
-  const [showIntro, setShowIntro] = useState(true);
   const [showRecruitmentModal, setShowRecruitmentModal] = useState(false);
+  const [showFranchiseCostModal, setShowFranchiseCostModal] = useState(false);
+  const [showAchievementModal, setShowAchievementModal] = useState(false);
 
   useEffect(() => {
-    // 인트로 애니메이션이 끝난 후 모달 표시
-    const checkIntro = () => {
-      if (!showIntro) {
-        const timer = setTimeout(() => {
-          const hideRecruitment = localStorage.getItem('hideModal_owner-recruitment');
-          const now = new Date().getTime();
+    // 페이지 로드 1초 후 가맹비용 모달 표시
+    const costModalTimer = setTimeout(() => {
+      const hideCostModal = localStorage.getItem('hideModal_franchise-cost');
+      const now = new Date().getTime();
 
-          if (!hideRecruitment || parseInt(hideRecruitment) < now) {
-            setShowRecruitmentModal(true);
-          }
-        }, 500);
-
-        return () => clearTimeout(timer);
+      if (!hideCostModal || parseInt(hideCostModal) < now) {
+        setShowFranchiseCostModal(true);
       }
-    };
+    }, 1000);
 
-    checkIntro();
-  }, [showIntro]);
+    // 페이지 로드 1.5초 후 성과 모달 표시
+    const achievementModalTimer = setTimeout(() => {
+      const hideAchievementModal = localStorage.getItem('hideModal_achievement');
+      const now = new Date().getTime();
+
+      if (!hideAchievementModal || parseInt(hideAchievementModal) < now) {
+        setShowAchievementModal(true);
+      }
+    }, 1500);
+
+    return () => {
+      clearTimeout(costModalTimer);
+      clearTimeout(achievementModalTimer);
+    };
+  }, []);
 
   // 창업 문의 섹션으로 스크롤 이동 + 모든 모달 닫기
   const handleNavigateToContact = () => {
     setShowRecruitmentModal(false);
+    setShowFranchiseCostModal(false);
+    setShowAchievementModal(false);
 
     // 약간의 딜레이 후 스크롤
     setTimeout(() => {
@@ -154,15 +163,12 @@ export default function Home() {
       />
 
       <main className="min-h-screen font-sans">
-        {/* 인트로 애니메이션 */}
-        {/* <IntroAnimation isVisible={showIntro} onComplete={() => setShowIntro(false)} /> */}
         <Header />
         <HeroSection />
         <BrandIntroSection />
-        <RevenueProofSection />
+        <SuccessionPlanningSection />
         <TrustedFranchiseSection />
         <StartupProcessSection />
-        <FranchiseCostSection />
         <MenuSection />
         {/* <StorePresetSection /> */}
         <ReviewsSection />
@@ -170,7 +176,17 @@ export default function Home() {
         <Footer />
         <FloatingInquiry />
 
-        {/* 모달들 - 가로로 나란히 배치 */}
+        {/* 모달들 */}
+        <FranchiseCostModal
+          isOpen={showFranchiseCostModal}
+          onClose={() => setShowFranchiseCostModal(false)}
+          onNavigateToContact={handleNavigateToContact}
+        />
+        <AchievementModal
+          isOpen={showAchievementModal}
+          onClose={() => setShowAchievementModal(false)}
+          onNavigateToContact={handleNavigateToContact}
+        />
         <OwnerRecruitmentModal
           isOpen={showRecruitmentModal}
           onClose={() => setShowRecruitmentModal(false)}

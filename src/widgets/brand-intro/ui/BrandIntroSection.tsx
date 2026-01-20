@@ -10,22 +10,22 @@ export default function BrandIntroSection() {
 
   const values = [
     {
-      title: '점주님과의 상생',
-      subtitle: 'Partnership',
+      title: '신뢰',
+      subtitle: 'CONFIDENCE',
       description:
-        '점주님의 성공이 곧 저희의 성공입니다. 모든 매장이 함께 성장할 수 있도록 끊임없이 고민하고 지원합니다.',
+        '[오늘은 볶음우동]은 점주님들의 신뢰를 바탕으로 성장해 나가는 브랜드입니다. 점주님의 성공이 저희의 신뢰가 된다는 마음으로 모든 매장의 성장을 목표로 함께합니다.',
     },
     {
-      title: '진심을 담은 한 그릇',
-      subtitle: 'Sincerity',
+      title: '맛과 문화',
+      subtitle: 'FLAVOR & CULTURE',
       description:
-        '맛있는 볶음우동 한 그릇으로 고객님께 행복을 전합니다. 품질과 정성을 절대 타협하지 않습니다.',
+        '이제 음식은 배를 채우는 용도가 아닌 하나의 문화입니다. 한번 맛 보고 지나가는 음식이 아닌 "볶음우동" 이라는 음식을 생각할 때 [오늘은 볶음우동] 이라는 브랜드가 가장 먼저 생각 날 수 있도록 최고의 품질과 맛을 추구합니다.',
     },
     {
-      title: '지속 가능한 성장',
-      subtitle: 'Sustainability',
+      title: '특별함',
+      subtitle: 'SPECIAL',
       description:
-        '단기 수익이 아닌 장기적 관점에서 안정적이고 지속 가능한 프랜차이즈 시스템을 만들어갑니다.',
+        '저희 [오늘은 볶음우동]의 가장 큰 메리트는 "특별함"입니다. 이제는 음식 또한 더 많은 주문을 위해 광고 와 할인이 의무가 되버린 과열경쟁입니다. 과열된 음식 시장에서 특별한 메뉴인 "볶음우동"으로 점주님들에게 조금이나마 나은 환경을 만들어갑니다.',
     },
   ];
 
@@ -79,32 +79,8 @@ export default function BrandIntroSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              안녕하세요,
-              <br />
-              <span className="text-yellow-400">오늘은 볶음우동입니다.</span>
+              <span className="text-yellow-400">오늘은 볶음우동</span>
             </motion.h2>
-            <motion.p
-              className="typo-body text-gray-200 max-w-2xl md:mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              수많은 운영 데이터를 기반으로
-              <br />
-              <span className="md:inline"> </span>누구나 안정적으로 운영할 수 있는
-              <br /> 표준화된 시스템을 구축했습니다.
-              <br />
-              <br />
-              단기 유행이 아닌,
-              <br className="hidden md:block" />
-              <span className="md:inline"> </span>
-              <span className="text-yellow-400 font-bold">
-                &lsquo;꾸준히 매출이 나는 브랜드&rsquo;
-              </span>
-              <br className="hidden md:block" />
-              <br className="md:hidden" />
-              외식업의 본질입니다.
-            </motion.p>
           </div>
 
           {/* 밸류 리스트 - 가로 배치 */}
