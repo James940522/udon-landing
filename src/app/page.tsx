@@ -9,6 +9,7 @@ import { HeroSection } from '@/widgets/hero';
 import { BrandIntroSection } from '@/widgets/brand-intro';
 import { TrustedFranchiseSection } from '@/widgets/trusted-franchise';
 import { SuccessionPlanningSection } from '@/widgets/succession-planning';
+import { SuccessionPlanningSectionV2 } from '@/widgets/succession-planning-v2';
 import { StartupProcessSection } from '@/widgets/startup-process';
 import { MenuSection } from '@/widgets/menu';
 import { ReviewsSection } from '@/widgets/reviews';
@@ -166,7 +167,10 @@ export default function Home() {
         <Header />
         <HeroSection />
         <BrandIntroSection />
-        <SuccessionPlanningSection />
+        {/* 기존 지그재그 레이아웃 */}
+        {/* <SuccessionPlanningSection /> */}
+        {/* 새로운 로드맵 레이아웃 (V2) */}
+        <SuccessionPlanningSectionV2 />
         <TrustedFranchiseSection />
         <StartupProcessSection />
         <MenuSection />

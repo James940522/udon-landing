@@ -46,9 +46,16 @@ export default function ReviewsSection() {
       `}</style>
       <section
         id="reviews"
-        className="py-20 md:py-32 relative overflow-hidden bg-[#D4C4A8]"
+        className="py-20 md:py-32 relative overflow-hidden"
         ref={ref}
+        style={{
+          backgroundImage: 'url(/asset/bg-1/sec7-bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
       >
+        {/* 오버레이 */}
+        <div className="absolute inset-0 bg-black/40" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             className="text-center mb-16"
@@ -74,7 +81,7 @@ export default function ReviewsSection() {
               </motion.div>
 
               <motion.div
-                className="text-blue-900 text-4xl md:text-5xl font-bold"
+                className="text-amber-400 text-4xl md:text-5xl font-bold drop-shadow-lg"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.3 }}
@@ -99,7 +106,7 @@ export default function ReviewsSection() {
             </div>
 
             <motion.h2
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-relaxed"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-relaxed drop-shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -107,7 +114,7 @@ export default function ReviewsSection() {
               <span>고객 리뷰</span>가 증명합니다
             </motion.h2>
             <motion.p
-              className="text-xl md:text-2xl text-gray-800 mb-6 font-bold leading-relaxed"
+              className="text-xl md:text-2xl text-amber-100 mb-6 font-bold leading-relaxed drop-shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.7 }}
@@ -115,7 +122,7 @@ export default function ReviewsSection() {
               매일같이 쏟아지는 <span>리얼 후기</span>
             </motion.p>
             <motion.div
-              className="w-24 h-2 bg-stone-700 mx-auto rounded-full shadow-lg"
+              className="w-24 h-2 bg-amber-600 mx-auto rounded-full shadow-lg"
               initial={{ opacity: 0, scaleX: 0 }}
               animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -179,14 +186,14 @@ export default function ReviewsSection() {
                   },
                 },
               }}
-              className="reviews-swiper !pb-16"
+              className="reviews-swiper pb-16!"
             >
               {reviewImages.map((image, index) => (
                 <SwiperSlide key={index}>
                   <div className="px-4 py-8">
                     <div className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl border border-stone-300/50 max-w-md mx-auto p-4">
                       {/* 리뷰 이미지 */}
-                      <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-white">
+                      <div className="relative aspect-3/4 overflow-hidden rounded-2xl bg-white">
                         <Image
                           src={image}
                           alt={`고객 리뷰 ${index + 1}`}
