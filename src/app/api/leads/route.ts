@@ -121,7 +121,7 @@ export async function POST(req: Request) {
   const isNemoTag = domain === 'apply.todayudonrice.com' || domain === 'localhost';
   const tagPrefix = isNemoTag ? '[네모] ' : '';
 
-  const text = `${tagPrefix}[오늘은 오므라이스 창업문의]
+  const text = `${tagPrefix}[오늘은 볶음우동 창업문의]
 📞 문의자 연락처: ${phone}
 
 이름: ${name}

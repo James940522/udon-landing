@@ -28,11 +28,10 @@ export default function Header() {
 
   const navItems = [
     { name: '브랜드 소개', href: '#brand' },
-    { name: '수익 구조', href: '#revenue' },
+    { name: '성공 전략', href: '#succession-planning-v2' },
     { name: '창업 과정', href: '#startup-process' },
     { name: '메뉴', href: '#menu' },
     { name: '고객 리뷰', href: '#reviews' },
-    { name: '매장 안내', href: '#store' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -108,9 +107,9 @@ export default function Header() {
                   <HiMenu />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80 bg-stone-50">
-                <SheetHeader className="border-b-2 border-amber-600 pb-4">
-                  <SheetTitle className="text-2xl font-bold text-amber-600">메뉴</SheetTitle>
+              <SheetContent side="right" className="w-80 bg-stone-900">
+                <SheetHeader className="border-b-2 border-amber-600/50 pb-4">
+                  <SheetTitle className="text-2xl font-bold text-amber-400">메뉴</SheetTitle>
                   <SheetDescription className="sr-only">네비게이션 메뉴</SheetDescription>
                 </SheetHeader>
 
@@ -121,7 +120,7 @@ export default function Header() {
                       <button
                         key={item.name}
                         onClick={() => scrollToSection(item.href)}
-                        className="block w-full text-left text-stone-800 hover:text-amber-600 font-bold text-xl py-4 px-4 rounded-xl hover:bg-amber-50 transition-all duration-300"
+                        className="block w-full text-left text-stone-200 hover:text-amber-400 font-bold text-xl py-4 px-4 rounded-xl hover:bg-stone-800 transition-all duration-300"
                       >
                         {item.name}
                       </button>
@@ -130,10 +129,10 @@ export default function Header() {
                 </nav>
 
                 {/* Sidebar Footer */}
-                <div className="absolute bottom-6 left-6 right-6 border-t-2 border-amber-200 pt-6">
+                <div className="absolute bottom-6 left-6 right-6 border-t-2 border-stone-700 pt-6">
                   <button
                     onClick={() => scrollToSection('#contact')}
-                    className="w-full bg-gradient-to-r from-amber-600 to-amber-500 text-white px-8 py-4 rounded-full hover:shadow-strong transition-all duration-300 font-bold text-xl"
+                    className="w-full bg-linear-to-r from-amber-600 to-amber-500 text-white px-8 py-4 rounded-full hover:shadow-strong transition-all duration-300 font-bold text-xl"
                   >
                     창업문의 하기 →
                   </button>

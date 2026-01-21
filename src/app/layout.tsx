@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   // SEO: metadataBase - 모든 상대 경로의 기준 URL
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: '오늘은 오므라이스 · 에그이츠 | 오므라이스 창업 프랜차이즈',
-    template: '%s | 오늘은 오므라이스 · 에그이츠',
+    default: '오늘은 볶음우동 | 볶음우동 창업 프랜차이즈',
+    template: '%s | 오늘은 볶음우동',
   },
   description:
-    '재영에프앤비(Jaeyoung F&B) 운영 오므라이스 프랜차이즈. 오늘은 오므라이스·에그이츠(EGG EATS) 배달 중심 1~2인 운영, 소형 매장 최적화, 수익 구조 공개. 창업 상담 진행 중.',
+    '오늘은에프앤비(Today F&B) 운영 볶음우동 프랜차이즈. 오늘은 볶음우동 배달 중심 1~2인 운영, 소형 매장 최적화, 수익 구조 공개. 창업 상담 진행 중.',
   keywords:
-    '오므라이스 창업, 오늘은 오므라이스, 에그이츠, egg eats, EGG EATS, 재영에프앤비, 재영 F&B, Jaeyoung F&B, 오므라이스 프랜차이즈, 배달 전문점 창업, 소자본 외식 창업, 1인 운영 음식점 창업, 오므라이스 창업 비용, 오므라이스 가맹 문의, 배달 오므라이스 창업, 소형 매장 창업',
+    '볶음우동 창업, 오늘은 볶음우동, 오늘은에프앤비, 오늘은 F&B, Today F&B, 볶음우동 프랜차이즈, 배달 전문점 창업, 소자본 외식 창업, 1인 운영 음식점 창업, 볶음우동 창업 비용, 볶음우동 가맹 문의, 배달 볶음우동 창업, 소형 매장 창업',
   // Favicon 설정 (모든 브라우저, 모바일, PWA 환경 지원)
   icons: {
     icon: [
@@ -72,24 +72,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     url: SITE_ORIGIN, // 절대 URL
-    siteName: '오늘은 오므라이스 · 에그이츠',
-    title: '오늘은 오므라이스 · 에그이츠 | 오므라이스 창업 프랜차이즈',
+    siteName: '오늘은 볶음우동',
+    title: '오늘은 볶음우동 | 볶음우동 창업 프랜차이즈',
     description:
-      '대한민국 1등 오므라이스 프랜차이즈. 오늘은 오므라이스·에그이츠(EGG EATS) 배달 중심 1~2인 운영, 소형 매장 최적화, 수익 구조 공개.',
+      '대한민국 1등 볶음우동 프랜차이즈. 오늘은 볶음우동 배달 중심 1~2인 운영, 소형 매장 최적화, 수익 구조 공개.',
     images: [
       {
         url: OG_IMAGE_URL, // 절대 URL (site.ts에서 관리)
         width: OG_IMAGE_WIDTH,
         height: OG_IMAGE_HEIGHT,
-        alt: '오늘은 오므라이스 · 에그이츠 프랜차이즈 - 배달 전문 오므라이스 창업',
+        alt: '오늘은 볶음우동 프랜차이즈 - 배달 전문 볶음우동 창업',
       },
     ],
   },
   // SEO: Twitter Card (X 공유용)
   twitter: {
     card: 'summary_large_image',
-    title: '오늘은 오므라이스 · 에그이츠 | 오므라이스 창업 프랜차이즈',
-    description: '대한민국 1등 오므라이스 프랜차이즈. 배달 중심 1~2인 운영, 소형 매장 최적화.',
+    title: '오늘은 볶음우동 | 볶음우동 창업 프랜차이즈',
+    description: '대한민국 1등 볶음우동 프랜차이즈. 배달 중심 1~2인 운영, 소형 매장 최적화.',
     images: [OG_IMAGE_URL], // 절대 URL (site.ts에서 관리)
   },
   // SEO: Google Site Verification (built-in 지원)

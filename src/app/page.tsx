@@ -76,35 +76,28 @@ export default function Home() {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: '오늘은 오므라이스',
-    legalName: '주식회사 재영에프앤비',
-    alternateName: ['재영에프앤비', '재영 F&B', 'Jaeyoung F&B', 'Jaeyoung F and B'],
+    name: '오늘은 볶음우동',
+    legalName: '주식회사 오늘은에프앤비',
+    alternateName: ['오늘은에프앤비', '오늘은 F&B', 'Today F&B', 'Today F and B'],
     url: SITE_ORIGIN, // 절대 도메인 (GSC 필수)
-    logo: absoluteUrl('/asset/logo/오므라이스_문구.png'),
+    logo: absoluteUrl('/asset/logo/오늘은_볶음우동_문구.png'),
     // SEO: 공식 채널 (브랜드 엔티티 신호 강화)
     sameAs: [
       // TODO: 실제 공식 채널 URL로 교체 필요
       // 'https://www.instagram.com/todayudonrice',
       // 'https://www.youtube.com/@todayudonrice',
       // 'https://place.map.kakao.com/xxxxx', // 카카오 대표 매장
-      // 'https://map.naver.com/v5/search/오늘은오므라이스', // 네이버 플레이스
+      // 'https://map.naver.com/v5/search/오늘은볶음우동', // 네이버 플레이스
       // 'https://pf.kakao.com/_xxxxx', // 카카오톡 채널
       // 'https://blog.naver.com/todayudonrice', // 공식 블로그
     ],
-    brand: [
-      {
-        '@type': 'Brand',
-        name: '오늘은 오므라이스',
-        alternateName: 'Today Omurice',
-      },
-      {
-        '@type': 'Brand',
-        name: '에그이츠',
-        alternateName: ['EGG EATS', 'egg eats', 'Egg Eats'],
-      },
-    ],
+    brand: {
+      '@type': 'Brand',
+      name: '오늘은 볶음우동',
+      alternateName: 'Today Udon Rice',
+    },
     description:
-      '재영에프앤비(Jaeyoung F&B) 운영. 배달 중심 오므라이스 프랜차이즈. 오늘은 오므라이스·에그이츠(EGG EATS) 1~2인 운영, 소형 매장 최적화, 수익 구조 공개.',
+      '오늘은에프앤비(Today F&B) 운영. 배달 중심 볶음우동 프랜차이즈. 오늘은 볶음우동 1~2인 운영, 소형 매장 최적화, 수익 구조 공개.',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+82-10-9923-9502',
@@ -128,7 +121,7 @@ export default function Home() {
       },
       {
         '@type': 'Question',
-        name: '오므라이스 창업 비용은 어떻게 산정되나요?',
+        name: '볶음우동 창업 비용은 어떻게 산정되나요?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: '창업 비용은 매장 규모, 입지, 인테리어 선택에 따라 달라집니다. 정확한 비용 산정과 수익 구조는 가맹 상담 시 개별적으로 안내해드립니다.',

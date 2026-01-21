@@ -60,7 +60,7 @@ export default function HeroSection() {
 
       {/* SEO: H1 타이틀 (검색엔진용, 시각적으로는 숨김) */}
       <h1 className="sr-only">
-        볶음우동 프랜차이즈 창업 | 재영에프앤비(Jaeyoung F&B) 오늘은 볶음우동
+        볶음우동 프랜차이즈 창업 | 오늘은에프앤비(Today F&B) 오늘은 볶음우동
       </h1>
 
       {/* 메인 컨테이너 */}

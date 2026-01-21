@@ -22,7 +22,7 @@ interface BrandPreset {
 const brandPresets: BrandPreset[] = [
   {
     id: 'omurice',
-    name: '오늘은 오므라이스',
+    name: '오늘은 볶음우동',
     logo: '/asset/logo/오늘은_오므라이스_풀로고.jpeg',
     options: [
       {
@@ -36,25 +36,6 @@ const brandPresets: BrandPreset[] = [
         title: 'B',
         description: '따뜻하고\n아늑한 분위기',
         image: '/asset/store/omu_b.jpeg',
-      },
-    ],
-  },
-  {
-    id: 'egg',
-    name: '에그이츠',
-    logo: '/asset/logo/에그이츠_로고.jpeg',
-    options: [
-      {
-        id: 'egg_a',
-        title: 'A',
-        description: '세련된\n모던 인테리어',
-        image: '/asset/store/egg_a.jpeg',
-      },
-      {
-        id: 'egg_b',
-        title: 'B',
-        description: '포근한\n클래식 인테리어',
-        image: '/asset/store/egg_b.jpeg',
       },
     ],
   },
@@ -125,7 +106,7 @@ export function StorePresetSection() {
                       '-1.5px -1.5px 0 #8B4513, 1.5px -1.5px 0 #8B4513, -1.5px 1.5px 0 #8B4513, 1.5px 1.5px 0 #8B4513, 3px 3px 0 #6B3410, 4px 4px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 193, 7, 0.5)',
                   }}
                 >
-                  {brand.id === 'omurice' ? '오늘은 오므라이스' : 'EGG EATS'}
+                  오늘은 볶음우동
                 </h3>
               </div>
 
@@ -194,7 +175,7 @@ export function StorePresetSection() {
                       '-2px -2px 0 #8B4513, 2px -2px 0 #8B4513, -2px 2px 0 #8B4513, 2px 2px 0 #8B4513, 4px 4px 0 #6B3410, 6px 6px 0 #8B4513, 8px 8px 12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 193, 7, 0.6)',
                   }}
                 >
-                  {brand.id === 'omurice' ? '오늘은 오므라이스' : 'EGG EATS'}
+                  오늘은 볶음우동
                 </h3>
               </div>
 

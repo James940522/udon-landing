@@ -64,8 +64,8 @@ export default function IntroAnimation({ isVisible, onComplete }: IntroAnimation
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
             >
               <div className="text-[2rem] sm:text-[3rem] md:text-[4rem] font-black text-white/15 whitespace-nowrap">
-                맛있는 · 프리미엄 · 신선한 · 오므라이스 · 맛있는 · 프리미엄 · 신선한 · 오므라이스 ·
-                맛있는 · 프리미엄 · 신선한 · 오므라이스 · 맛있는 · 프리미엄 · 신선한 · 오므라이스
+                맛있는 · 프리미엄 · 신선한 · 볶음우동 · 맛있는 · 프리미엄 · 신선한 · 볶음우동 ·
+                맛있는 · 프리미엄 · 신선한 · 볶음우동 · 맛있는 · 프리미엄 · 신선한 · 볶음우동
               </div>
             </motion.div>
 
@@ -89,7 +89,7 @@ export default function IntroAnimation({ isVisible, onComplete }: IntroAnimation
             >
               <div className="text-[2rem] sm:text-[3rem] md:text-[4rem] font-black text-white/15 whitespace-nowrap">
                 100호점 · 1위 · 프랜차이즈 · OMURICE · 100호점 · 1위 · 프랜차이즈 · OMURICE · 오늘은
-                오므라이스 · 100호점 · 1위 · 프랜차이즈 · OMURICE · 오므라이스 · 100호점 · 1위 ·
+                볶음우동 · 100호점 · 1위 · 프랜차이즈 · UDON · 볶음우동 · 100호점 · 1위 ·
               </div>
             </motion.div>
 
@@ -104,7 +104,7 @@ export default function IntroAnimation({ isVisible, onComplete }: IntroAnimation
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
               >
-                {/* 오므라이스 이미지 - 데코레이션 */}
+                {/* 볶음우동 이미지 - 데코레이션 */}
                 <motion.div
                   className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px]"
                   initial={{ rotate: 0 }}
@@ -148,11 +148,11 @@ export default function IntroAnimation({ isVisible, onComplete }: IntroAnimation
                     }}
                   />
 
-                  {/* 오므라이스 이미지 */}
+                  {/* 볶음우동 이미지 */}
                   <div className="absolute inset-[10px] rounded-full overflow-hidden">
                     <Image
                       src="/asset/etc/큐브스테이크 오므라이스 누끼.png"
-                      alt="오늘은 오므라이스"
+                      alt="오늘은 볶음우동"
                       fill
                       className="object-cover"
                       priority
@@ -169,7 +169,7 @@ export default function IntroAnimation({ isVisible, onComplete }: IntroAnimation
                 >
                   <Image
                     src="/asset/logo/오므라이스_문구.png"
-                    alt="오늘은 오므라이스"
+                    alt="오늘은 볶음우동"
                     fill
                     className="object-contain drop-shadow-[0_6px_12px_rgba(0,0,0,0.5)]"
                     priority
@@ -209,8 +209,8 @@ export default function IntroAnimation({ isVisible, onComplete }: IntroAnimation
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
             >
               <div className="text-[2rem] sm:text-[3rem] md:text-[4rem] font-black text-white/15 whitespace-nowrap">
-                맛있는 · 프리미엄 · 신선한 · 오므라이스 · 맛있는 · 프리미엄 · 신선한 · 오므라이스 ·
-                맛있는 · 프리미엄 · 신선한 · 오므라이스 · 맛있는 · 프리미엄 · 신선한 · 오므라이스
+                맛있는 · 프리미엄 · 신선한 · 볶음우동 · 맛있는 · 프리미엄 · 신선한 · 볶음우동 ·
+                맛있는 · 프리미엄 · 신선한 · 볶음우동 · 맛있는 · 프리미엄 · 신선한 · 볶음우동
               </div>
             </motion.div>
 
@@ -249,7 +249,7 @@ export default function IntroAnimation({ isVisible, onComplete }: IntroAnimation
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
               >
-                {/* 오므라이스 이미지 - 데코레이션 */}
+                {/* 볶음우동 이미지 - 데코레이션 */}
                 <motion.div
                   className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px]"
                   initial={{ rotate: 0 }}
@@ -293,11 +293,11 @@ export default function IntroAnimation({ isVisible, onComplete }: IntroAnimation
                     }}
                   />
 
-                  {/* 오므라이스 이미지 */}
+                  {/* 볶음우동 이미지 */}
                   <div className="absolute inset-[10px] rounded-full overflow-hidden">
                     <Image
                       src="/asset/etc/큐브스테이크 오므라이스 누끼.png"
-                      alt="오늘은 오므라이스"
+                      alt="오늘은 볶음우동"
                       fill
                       className="object-cover"
                       priority
@@ -314,7 +314,7 @@ export default function IntroAnimation({ isVisible, onComplete }: IntroAnimation
                 >
                   <Image
                     src="/asset/logo/오므라이스_문구.png"
-                    alt="오늘은 오므라이스"
+                    alt="오늘은 볶음우동"
                     fill
                     className="object-contain drop-shadow-[0_6px_12px_rgba(0,0,0,0.5)]"
                     priority

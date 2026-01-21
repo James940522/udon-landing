@@ -45,11 +45,10 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { name: '브랜드 소개', href: '#brand' },
-                { name: '수익 구조', href: '#revenue' },
+                { name: '성공 전략', href: '#succession-planning-v2' },
                 { name: '창업 과정', href: '#startup-process' },
                 { name: '메뉴', href: '#menu' },
                 { name: '고객 리뷰', href: '#reviews' },
-                { name: '매장 안내', href: '#store' },
               ].map((item) => (
                 <li key={item.name}>
                   <a
