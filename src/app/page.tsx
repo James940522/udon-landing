@@ -79,18 +79,8 @@ export default function Home() {
     name: '오늘은 볶음우동',
     legalName: '주식회사 오늘은에프앤비',
     alternateName: ['오늘은에프앤비', '오늘은 F&B', 'Today F&B', 'Today F and B'],
-    url: SITE_ORIGIN, // 절대 도메인 (GSC 필수)
+    url: SITE_ORIGIN,
     logo: absoluteUrl('/asset/logo/오늘은_볶음우동_문구.png'),
-    // SEO: 공식 채널 (브랜드 엔티티 신호 강화)
-    sameAs: [
-      // TODO: 실제 공식 채널 URL로 교체 필요
-      // 'https://www.instagram.com/todayudonrice',
-      // 'https://www.youtube.com/@todayudonrice',
-      // 'https://place.map.kakao.com/xxxxx', // 카카오 대표 매장
-      // 'https://map.naver.com/v5/search/오늘은볶음우동', // 네이버 플레이스
-      // 'https://pf.kakao.com/_xxxxx', // 카카오톡 채널
-      // 'https://blog.naver.com/todayudonrice', // 공식 블로그
-    ],
     brand: {
       '@type': 'Brand',
       name: '오늘은 볶음우동',

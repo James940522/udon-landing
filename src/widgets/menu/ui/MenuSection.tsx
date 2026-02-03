@@ -145,32 +145,32 @@ const brands: Brand[] = [
         name: '크림우동',
         items: [
           {
-            name: '베이컨 명란 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/베이컨 명란 크림우동.jpg',
+            name: '베이컨 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/크림우동/베이컨 크림우동.jpg',
           },
           {
-            name: '쉬림프 명란 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/쉬림프 명란 크림우동.jpg',
+            name: '베이컨 매콤 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/크림우동/베이컨 매콤 크림우동.jpg',
           },
           {
-            name: '쉬림프 베이컨 명란 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/쉬림프 베이컨 명란 크림우동.jpg',
+            name: '쉬림프 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/크림우동/쉬림프 크림 우동.jpg',
           },
           {
-            name: '매콤 베이컨 명란크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/매콤 베이컨 명란크림우동.jpg',
+            name: '쉬림프 매콤 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/크림우동/쉬림프 매콤 크림우동.png',
           },
           {
-            name: '매콤 쉬림프 명란 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/매콤 쉬림프 명란 크림우동.jpg',
+            name: '새우 베이컨 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/크림우동/새우 베이컨 크림우동.jpg',
           },
           {
-            name: '매콤 쉬림프 베이컨 명란 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/매콤 쉬림프 베이컨 명란 크림우동.jpg',
+            name: '새우 베이컨 매콤 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/크림우동/새우 베이컨 매콤 크림우동.jpg',
           },
           {
-            name: '매콤 해물 명란 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/매콤 해물 명란 크림우동.jpg',
+            name: '해물 매콤크림우동',
+            image: '/asset/menu/오늘은_볶음우동/크림우동/해물 매콤크림우동.jpg',
           },
         ],
       },

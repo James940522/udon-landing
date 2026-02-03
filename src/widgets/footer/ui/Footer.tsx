@@ -77,7 +77,7 @@ export default function Footer() {
         <div className="border-t border-stone-700 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-stone-400">
             <p>
-              © 2024{' '}
+              © 2025{' '}
               <Link href="/" className="font-medium text-stone-200 hover:text-amber-400">
                 오늘은 볶음우동
               </Link>

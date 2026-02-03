@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     siteName: '오늘은 볶음우동',
     title: '오늘은 볶음우동 | 볶음우동 창업 프랜차이즈',
     description:
-      '대한민국 1등 볶음우동 프랜차이즈. 오늘은 볶음우동 배달 중심 1~2인 운영, 소형 매장 최적화, 수익 구조 공개.',
+      '오늘은 볶음우동 배달 중심 1~2인 운영, 소형 매장 최적화, 수익 구조 공개. 볶음우동 프랜차이즈 창업 상담 진행 중.',
     images: [
       {
         url: OG_IMAGE_URL, // 절대 URL (site.ts에서 관리)
@@ -89,7 +89,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '오늘은 볶음우동 | 볶음우동 창업 프랜차이즈',
-    description: '대한민국 1등 볶음우동 프랜차이즈. 배달 중심 1~2인 운영, 소형 매장 최적화.',
+    description:
+      '오늘은 볶음우동 배달 중심 1~2인 운영, 소형 매장 최적화. 볶음우동 프랜차이즈 창업 상담.',
     images: [OG_IMAGE_URL], // 절대 URL (site.ts에서 관리)
   },
   // SEO: Google Site Verification (built-in 지원)
