@@ -175,6 +175,40 @@ const brands: Brand[] = [
         ],
       },
       {
+        id: 'spicy-cream-udon',
+        name: '매콤크림우동',
+        items: [
+          {
+            name: '베이컨 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/베이컨 크림우동.jpg',
+          },
+          {
+            name: '베이컨 매콤 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/베이컨 매콤 크림우동.jpg',
+          },
+          {
+            name: '쉬림프 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/쉬림프 크림 우동.jpg',
+          },
+          {
+            name: '쉬림프 매콤 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/쉬림프 매콤 크림우동.png',
+          },
+          {
+            name: '새우 베이컨 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/새우 베이컨 크림우동.jpg',
+          },
+          {
+            name: '새우 베이컨 매콤 크림우동',
+            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/새우 베이컨 매콤 크림우동.jpg',
+          },
+          {
+            name: '해물 매콤크림우동',
+            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/해물 매콤크림우동.jpg',
+          },
+        ],
+      },
+      {
         id: 'teppan-bokkeumbap',
         name: '철판 볶음밥',
         items: [
@@ -199,12 +233,12 @@ const brands: Brand[] = [
             image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/우삼겹 철판 볶음밥.jpeg',
           },
           {
-            name: '치킨치즈까스 철판 볶음밥',
-            image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/치킨치즈까스 철판 볶음밥.jpeg',
+            name: '치킨치즈 철판 볶음밥',
+            image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/치킨치즈 철판 볶음밥.jpeg',
           },
           {
-            name: '항정 철판 볶음밥',
-            image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/항정 철판 볶음밥.jpeg',
+            name: '항정살 철판 볶음밥',
+            image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/항정살 철판 볶음밥.jpeg',
           },
         ],
       },
@@ -260,7 +294,14 @@ export default function MenuSection() {
     <section id="menu" className="py-20 md:py-32 relative overflow-hidden" ref={ref}>
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
-        <Image src="/asset/bg-1/sec6-bg.jpg" alt="배경" fill className="object-cover" quality={90} unoptimized />
+        <Image
+          src="/asset/bg-1/sec6-bg.jpg"
+          alt="배경"
+          fill
+          className="object-cover"
+          quality={90}
+          unoptimized
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -401,9 +442,7 @@ export default function MenuSection() {
                     style={{ fontFamily: 'var(--font-heading)' }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span className="relative z-10 block tracking-wide">
-                      {category.name}
-                    </span>
+                    <span className="relative z-10 block tracking-wide">{category.name}</span>
                     {category.isNew && (
                       <span className="absolute top-2 right-2 inline-flex items-center px-2 py-0.5 rounded text-[10px] font-extrabold bg-red-600 text-white shadow-lg">
                         NEW
