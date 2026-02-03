@@ -87,7 +87,7 @@ export default function Header() {
             ))}
             <motion.button
               onClick={() => scrollToSection('#contact')}
-              className="bg-amber-600 text-white px-4 py-2 rounded-full hover:bg-amber-500 transition-all duration-300 shadow-strong-hover font-bold border-2 border-amber-600 hover:border-amber-500"
+              className="bg-stone-800 text-amber-100 px-5 py-2.5 rounded-full hover:bg-stone-700 transition-all duration-300 shadow-lg hover:shadow-xl font-bold border-2 border-amber-600/40 hover:border-amber-500/60"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -132,7 +132,7 @@ export default function Header() {
                 <div className="absolute bottom-6 left-6 right-6 border-t-2 border-stone-700 pt-6">
                   <button
                     onClick={() => scrollToSection('#contact')}
-                    className="w-full bg-linear-to-r from-amber-600 to-amber-500 text-white px-8 py-4 rounded-full hover:shadow-strong transition-all duration-300 font-bold text-xl"
+                    className="w-full bg-stone-800 text-amber-100 px-8 py-4 rounded-full hover:bg-stone-700 hover:shadow-xl transition-all duration-300 font-bold text-xl border-2 border-amber-600/40"
                   >
                     창업문의 하기 →
                   </button>
