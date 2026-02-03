@@ -79,7 +79,7 @@ export default function StartupProcessSection() {
 
         {/* 프로세스 리스트 - 2열 그리드 레이아웃 */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+          <div className="grid grid-cols-2 gap-5 md:gap-8 lg:gap-10">
             {processes.map((process, index) => (
               <motion.div
                 key={index}
@@ -91,7 +91,7 @@ export default function StartupProcessSection() {
                 {/* 카드 */}
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl md:rounded-3xl overflow-hidden border border-stone-300/50 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group h-full">
                   {/* 이미지 영역 */}
-                  <div className="relative aspect-[3/2] md:aspect-[16/10] lg:aspect-[5/3] bg-stone-200">
+                  <div className="relative aspect-[6/5] md:aspect-[5/4] bg-stone-200">
                     <Image
                       src={process.image}
                       alt={process.title}
@@ -100,24 +100,22 @@ export default function StartupProcessSection() {
                       quality={90}
                     />
                     {/* 번호 배지 */}
-                    <div className="absolute top-2 left-2 md:top-4 md:left-4">
-                      <div className="bg-linear-to-r from-amber-500 to-yellow-500 text-stone-900 w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-xl md:rounded-2xl flex items-center justify-center font-bold text-base md:text-xl lg:text-2xl shadow-xl">
+                    <div className="absolute top-2 left-2 md:top-3 md:left-3">
+                      <div className="bg-linear-to-r from-amber-500 to-yellow-500 text-stone-900 w-9 h-9 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl flex items-center justify-center font-bold text-sm md:text-lg lg:text-xl shadow-xl">
                         {process.number}
                       </div>
                     </div>
                   </div>
 
                   {/* 컨텐츠 영역 */}
-                  <div className="p-3 md:p-5 lg:p-6">
+                  <div className="p-2.5 md:p-3.5 lg:p-4">
                     {/* 제목 */}
-                    <h3 className="text-base md:text-xl lg:text-2xl font-bold mb-2 text-gray-900">
+                    <h3 className="text-sm md:text-base lg:text-lg font-bold mb-1.5 text-gray-900">
                       {process.title}
                     </h3>
 
                     {/* 설명 */}
-                    <p className="text-xs md:text-sm lg:text-base text-gray-700 leading-relaxed">
-                      {process.description}
-                    </p>
+                    <p className="text-xs text-gray-700 leading-relaxed">{process.description}</p>
                   </div>
                 </div>
               </motion.div>

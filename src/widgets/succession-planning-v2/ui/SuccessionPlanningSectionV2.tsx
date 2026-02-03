@@ -115,7 +115,7 @@ const TimelineItem = ({ strength, index, totalItems }: TimelineItemProps) => {
 
         <div className="flex flex-col">
           {/* 이미지 영역 */}
-          <div className="relative w-full aspect-[4/3] md:aspect-[16/10]">
+          <div className="relative w-full aspect-[6/5] md:aspect-[5/4]">
             <Image
               src={strength.image}
               alt={strength.title}
@@ -128,14 +128,12 @@ const TimelineItem = ({ strength, index, totalItems }: TimelineItemProps) => {
           </div>
 
           {/* 텍스트 영역 */}
-          <div className="p-4 md:p-6 lg:p-7">
-            <h4 className="text-base md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-3">
+          <div className="p-3 md:p-4 lg:p-5">
+            <h4 className="text-sm md:text-lg lg:text-xl font-bold text-gray-900 mb-1.5 md:mb-2">
               {strength.title}
             </h4>
-            <div className="w-10 h-0.5 bg-linear-to-r from-yellow-500 to-amber-600 mb-2 md:mb-3" />
-            <p className="text-xs md:text-sm lg:text-base text-gray-700 leading-relaxed">
-              {strength.desc}
-            </p>
+            <div className="w-8 h-0.5 bg-linear-to-r from-yellow-500 to-amber-600 mb-1.5 md:mb-2" />
+            <p className="text-xs md:text-sm text-gray-700 leading-relaxed">{strength.desc}</p>
           </div>
         </div>
       </motion.div>
@@ -207,7 +205,7 @@ export default function SuccessionPlanningSectionV2() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           {/* 2열 그리드 레이아웃 - 모바일에서도 2열 */}
-          <div className="grid grid-cols-2 gap-3 md:gap-6 lg:gap-8">
+          <div className="grid grid-cols-2 gap-4 md:gap-8 lg:gap-10">
             {STRENGTHS.map((strength, index) => (
               <TimelineItem
                 key={strength.number}
