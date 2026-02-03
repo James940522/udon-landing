@@ -175,40 +175,6 @@ const brands: Brand[] = [
         ],
       },
       {
-        id: 'spicy-cream-udon',
-        name: '매콤크림우동',
-        items: [
-          {
-            name: '베이컨 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/베이컨 크림우동.jpg',
-          },
-          {
-            name: '베이컨 매콤 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/베이컨 매콤 크림우동.jpg',
-          },
-          {
-            name: '쉬림프 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/쉬림프 크림 우동.jpg',
-          },
-          {
-            name: '쉬림프 매콤 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/쉬림프 매콤 크림우동.png',
-          },
-          {
-            name: '새우 베이컨 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/새우 베이컨 크림우동.jpg',
-          },
-          {
-            name: '새우 베이컨 매콤 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/새우 베이컨 매콤 크림우동.jpg',
-          },
-          {
-            name: '해물 매콤크림우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤크림우동/해물 매콤크림우동.jpg',
-          },
-        ],
-      },
-      {
         id: 'teppan-bokkeumbap',
         name: '철판 볶음밥',
         items: [

@@ -52,21 +52,6 @@ const STRENGTHS: Strength[] = [
   },
 ];
 
-// 수직 진행 바 컴포넌트
-const ProgressLine = ({ progress }: { progress: any }) => {
-  return (
-    <div className="absolute left-8 md:left-12 top-0 bottom-0 w-0.5 md:w-1">
-      {/* 배경 라인 */}
-      <div className="absolute inset-0 bg-stone-400/30" />
-      {/* 진행 라인 */}
-      <motion.div
-        className="absolute top-0 left-0 right-0 bg-linear-to-b from-stone-700 via-stone-600 to-amber-700 origin-top"
-        style={{ scaleY: progress }}
-      />
-    </div>
-  );
-};
-
 // 타임라인 아이템 컴포넌트
 interface TimelineItemProps {
   strength: Strength;
@@ -91,75 +76,64 @@ const TimelineItem = ({ strength, index, totalItems }: TimelineItemProps) => {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1.05, 1]);
   const numberScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.15, 1]);
 
-  const isLast = index === totalItems - 1;
-
   return (
     <motion.div
       ref={itemRef}
-      className="relative pl-20 md:pl-28 pr-4 md:pr-0"
+      className="relative"
       initial={{ opacity: 0, y: 50 }}
       animate={isItemInView ? { opacity: 1, y: 0 } : {}}
       transition={{
         duration: 0.6,
-        delay: index * 0.1,
+        delay: (index % 2) * 0.1,
         ease: 'easeOut',
       }}
     >
-      {/* 숫자 배지 */}
-      <motion.div
-        className="absolute left-0 top-8 md:top-12 flex items-center justify-center"
-        style={{ scale: numberScale }}
-      >
-        <div className="relative">
-          {/* 배경 원 - 고급스러운 스타일 */}
-          <motion.div
-            className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-stone-800 border-2 border-amber-600/30 shadow-xl flex items-center justify-center backdrop-blur-sm"
-            whileHover={{ 
-              scale: 1.05, 
-              borderColor: 'rgba(217, 119, 6, 0.6)',
-              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)'
-            }}
-            transition={{ duration: 0.3 }}
-          >
-            <span className="text-xl md:text-2xl font-light tracking-wider text-amber-100">
-              {strength.number}
-            </span>
-          </motion.div>
-          {/* 연결 도트 (마지막 제외) */}
-          {!isLast && (
-            <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-1.5 h-1.5 rounded-full bg-stone-600" />
-          )}
-        </div>
-      </motion.div>
-
       {/* 콘텐츠 카드 */}
       <motion.div
-        className="bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl shadow-lg overflow-hidden"
+        className="bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl shadow-lg overflow-hidden h-full"
         style={{ scale }}
         whileHover={{ scale: 1.02, boxShadow: '0 20px 40px rgba(0,0,0,0.15)' }}
         transition={{ duration: 0.3 }}
       >
-        <div className="flex flex-col md:flex-row">
+        {/* 숫자 배지 - 카드 상단에 배치 */}
+        <div className="absolute top-2 left-2 md:top-4 md:left-4 z-10">
+          <motion.div
+            className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-stone-800 border-2 border-amber-600/30 shadow-xl flex items-center justify-center backdrop-blur-sm"
+            style={{ scale: numberScale }}
+            whileHover={{
+              scale: 1.1,
+              borderColor: 'rgba(217, 119, 6, 0.6)',
+              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            <span className="text-sm md:text-lg lg:text-xl font-light tracking-wider text-amber-100">
+              {strength.number}
+            </span>
+          </motion.div>
+        </div>
+
+        <div className="flex flex-col">
           {/* 이미지 영역 */}
-          <div className="relative w-full md:w-2/5 aspect-video md:aspect-auto md:min-h-[280px]">
+          <div className="relative w-full aspect-[4/3] md:aspect-[16/10]">
             <Image
               src={strength.image}
               alt={strength.title}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 40vw"
+              sizes="(max-width: 768px) 50vw, 50vw"
             />
             {/* 그라데이션 오버레이 */}
-            <div className="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-b from-black/10 to-black/30" />
           </div>
 
           {/* 텍스트 영역 */}
-          <div className="flex-1 p-6 md:p-8 lg:p-10">
-            <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
+          <div className="p-4 md:p-6 lg:p-7">
+            <h4 className="text-base md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-3">
               {strength.title}
             </h4>
-            <div className="w-12 h-1 bg-linear-to-r from-yellow-500 to-amber-600 mb-4 md:mb-6" />
-            <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+            <div className="w-10 h-0.5 bg-linear-to-r from-yellow-500 to-amber-600 mb-2 md:mb-3" />
+            <p className="text-xs md:text-sm lg:text-base text-gray-700 leading-relaxed">
               {strength.desc}
             </p>
           </div>
@@ -173,14 +147,8 @@ const TimelineItem = ({ strength, index, totalItems }: TimelineItemProps) => {
 export default function SuccessionPlanningSectionV2() {
   const sectionRef = useRef(null);
   const timelineRef = useRef(null);
-  
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
-  // 타임라인 전체 스크롤 진행도
-  const { scrollYProgress } = useScroll({
-    target: timelineRef,
-    offset: ['start center', 'end center'],
-  });
+  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   return (
     <section
@@ -233,16 +201,13 @@ export default function SuccessionPlanningSectionV2() {
         {/* 타임라인 */}
         <motion.div
           ref={timelineRef}
-          className="relative max-w-5xl mx-auto"
+          className="relative max-w-7xl mx-auto"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          {/* 진행 바 */}
-          <ProgressLine progress={scrollYProgress} />
-
-          {/* 타임라인 아이템들 */}
-          <div className="space-y-12 md:space-y-16 lg:space-y-20">
+          {/* 2열 그리드 레이아웃 - 모바일에서도 2열 */}
+          <div className="grid grid-cols-2 gap-3 md:gap-6 lg:gap-8">
             {STRENGTHS.map((strength, index) => (
               <TimelineItem
                 key={strength.number}
@@ -263,9 +228,7 @@ export default function SuccessionPlanningSectionV2() {
           transition={{ duration: 0.8 }}
         >
           <div className="inline-block bg-stone-800/90 backdrop-blur-sm px-10 py-5 rounded-2xl shadow-xl border border-amber-600/20">
-            <p className="text-lg md:text-xl font-semibold text-amber-100">
-              지금 바로 시작하세요
-            </p>
+            <p className="text-lg md:text-xl font-semibold text-amber-100">지금 바로 시작하세요</p>
             <p className="text-sm md:text-base text-stone-300 mt-2">
               점주님의 성공을 위한 모든 준비가 되어있습니다
             </p>
