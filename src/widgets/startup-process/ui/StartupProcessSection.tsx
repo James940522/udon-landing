@@ -21,13 +21,13 @@ export default function StartupProcessSection() {
       number: '02',
       title: '가게계약',
       description: '점포 선정 및 조건 협의 후 가맹계약 및 임대차계약 진행',
-      image: '/asset/etc/process-2.jpg',
+      image: '/asset/etc/process-2.png',
     },
     {
       number: '03',
       title: '본사 계약체결',
       description: '개설의사 확정 후 본사와 가맹계약체결',
-      image: '/asset/etc/process-2.jpg',
+      image: '/asset/etc/process-3.jpg',
     },
     {
       number: '04',
@@ -91,7 +91,7 @@ export default function StartupProcessSection() {
                 {/* 카드 */}
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl md:rounded-3xl overflow-hidden border border-stone-300/50 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group h-full">
                   {/* 이미지 영역 */}
-                  <div className="relative aspect-[4/3] bg-stone-200">
+                  <div className="relative aspect-[3/2] md:aspect-[16/10] lg:aspect-[5/3] bg-stone-200">
                     <Image
                       src={process.image}
                       alt={process.title}
