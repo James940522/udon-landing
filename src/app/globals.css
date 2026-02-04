@@ -246,7 +246,7 @@ body {
     system-ui,
     sans-serif;
   cursor:
-    url('/asset/logo/cursor.png') 16 16,
+    url('/asset/logo/cursor.png') 0 0,
     auto;
   overflow-x: hidden;
 }
@@ -256,7 +256,7 @@ body {
 *::after {
   box-sizing: border-box;
   cursor:
-    url('/asset/logo/cursor.png') 16 16,
+    url('/asset/logo/cursor.png') 0 0,
     auto;
 }
 
@@ -270,7 +270,7 @@ a *,
 button *,
 [role='button'] * {
   cursor:
-    url('/asset/logo/cursor.png') 16 16,
+    url('/asset/logo/cursor.png') 0 0,
     pointer !important;
 }
 

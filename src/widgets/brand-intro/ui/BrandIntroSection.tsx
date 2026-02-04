@@ -41,16 +41,20 @@ export default function BrandIntroSection() {
         <div className="relative w-full h-full max-w-[1920px] mx-auto">
           <Image
             src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 9.jpg"
-            alt="배경"
+            alt=""
             fill
             className="object-cover"
             quality={90}
+            aria-hidden="true"
           />
         </div>
         {/* 어두운 오버레이 */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
         {/* 그라데이션 오버레이 - 진중한 느낌 강화 */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50"
+          aria-hidden="true"
+        />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

@@ -27,9 +27,16 @@ export default function TrustedFranchiseSection() {
     <section id="trusted-franchise" className="relative overflow-hidden py-20 md:py-32" ref={ref}>
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
-        <Image src="/asset/bg-1/sec4-bg.jpg" alt="배경" fill className="object-cover" quality={90} />
+        <Image
+          src="/asset/bg-1/sec4-bg.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          quality={90}
+          aria-hidden="true"
+        />
         {/* 다크 오버레이 */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -55,7 +62,7 @@ export default function TrustedFranchiseSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            선택하시겠습니까?
+            신뢰할 수 있는 프랜차이즈 선택하시겠습니까?
           </motion.h2>
           <motion.p
             className="text-white/90 text-base md:text-lg max-w-3xl mx-auto leading-relaxed"
@@ -99,7 +106,7 @@ export default function TrustedFranchiseSection() {
               >
                 <Image
                   src="/asset/etc/James_A_small_Korean_delivery-only_restaurant_kitchen_interio_7cfcd300-163b-4281-a8a5-939a92a729fa_1.png"
-                  alt="일반 프랜차이즈"
+                  alt="일반 프랜차이즈 주방 이미지"
                   fill
                   className="object-cover brightness-90"
                   quality={90}
@@ -134,7 +141,10 @@ export default function TrustedFranchiseSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <motion.div whileHover={{ scale: 1.05, rotate: [0, -2, 2, 0] }} transition={{ duration: 0.3 }}>
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: [0, -2, 2, 0] }}
+                transition={{ duration: 0.3 }}
+              >
                 <Image
                   src="/asset/logo/오늘은_볶음우동_문구.png"
                   alt="오늘은 볶음우동"
@@ -159,7 +169,7 @@ export default function TrustedFranchiseSection() {
               >
                 <Image
                   src="/asset/etc/James_Inside_the_same_small_Korean_delivery-only_restaurant_k_dedc14fb-e27b-47a6-b722-f09ae535adfe_3.png"
-                  alt="오늘은 볶음우동"
+                  alt="오늘은 볶음우동 체계적인 주방 시스템"
                   fill
                   className="object-cover brightness-90"
                   quality={90}
@@ -189,7 +199,10 @@ export default function TrustedFranchiseSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <p className="text-white text-lg md:text-xl font-semibold mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
+          <p
+            className="text-white text-lg md:text-xl font-semibold mb-8"
+            style={{ fontFamily: 'var(--font-heading)' }}
+          >
             정말 실력 있는 프랜차이즈인지
             <br className="sm:hidden" />
             <span className="text-amber-400"> 이 세 가지를 꼭 확인</span>해 보시기 바랍니다
@@ -245,7 +258,9 @@ export default function TrustedFranchiseSection() {
                   >
                     {point.title}
                   </h4>
-                  <p className="text-gray-300 text-sm md:text-base leading-relaxed">{point.description}</p>
+                  <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                    {point.description}
+                  </p>
                 </div>
 
                 {/* 체크 아이콘 - 불꽃 스타일 */}
@@ -255,8 +270,18 @@ export default function TrustedFranchiseSection() {
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={3}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </motion.div>
                 </div>

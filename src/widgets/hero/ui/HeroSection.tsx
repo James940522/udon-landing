@@ -48,14 +48,15 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/asset/bg-1/sec1-bg.jpg"
-          alt="배경"
+          alt=""
           fill
           className="object-cover"
           priority
           quality={90}
+          aria-hidden="true"
         />
         {/* 오버레이 (가독성 향상) */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
       </div>
 
       {/* SEO: H1 타이틀 (검색엔진용, 시각적으로는 숨김) */}
@@ -77,7 +78,10 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* 하이라이트 뱃지 - 모바일 order-1 */}
-            <div className="flex flex-wrap gap-2 md:gap-3 justify-center order-1">
+            <div
+              className="flex flex-wrap gap-2 md:gap-3 justify-center order-1"
+              aria-hidden="true"
+            >
               <span
                 className="inline-block px-3 py-1.5 text-xs md:text-sm font-semibold rounded-full border backdrop-blur-sm"
                 style={{

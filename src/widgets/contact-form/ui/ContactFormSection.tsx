@@ -1,26 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
-
-// 도메인에 따른 SMS 메시지 생성 함수
-function getSmsMessageByDomain(): string {
-  if (typeof window === 'undefined') {
-    return '홈페이지를 통해 창업 문의 드립니다.';
-  }
-
-  const hostname = window.location.hostname;
-  console.log('🔍 현재 hostname:', hostname);
-
-  // apply.todayomurice.com 또는 localhost인 경우 [네모] 문구 추가
-  if (hostname === 'apply.todayomurice.com' || hostname === 'localhost') {
-    console.log('✅ [네모] 메시지 적용');
-    return '[네모] 홈페이지를 통해 창업 문의 드립니다.';
-  }
-
-  console.log('✅ 기본 메시지 적용');
-  return '홈페이지를 통해 창업 문의 드립니다.';
-}
+import { useRef, useState } from 'react';
 
 export default function ContactFormSection() {
   const ref = useRef(null);
@@ -36,27 +17,10 @@ export default function ContactFormSection() {
     source: '', // 방문 유입 경로
   });
 
-  // 클라이언트 마운트 상태 추적
-  const [isMounted, setIsMounted] = useState(false);
-
-  // SMS 메시지 - 항상 기본값으로 초기화 (SSR과 일치)
-  const [smsMessage, setSmsMessage] = useState('홈페이지를 통해 창업 문의 드립니다.');
-
   // 폼 제출 관련 state
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [privacyAgree, setPrivacyAgree] = useState(false);
   const [hp, setHp] = useState(''); // honeypot
-
-  // 클라이언트 마운트 후 도메인 체크
-  // SSR Hydration 에러 방지를 위해 클라이언트에서만 메시지 설정
-  useEffect(() => {
-    setIsMounted(true);
-    const message = getSmsMessageByDomain();
-    if (message !== smsMessage) {
-      setSmsMessage(message);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -72,9 +36,6 @@ export default function ContactFormSection() {
 
     setIsSubmitting(true);
     try {
-      // 현재 도메인 정보 가져오기
-      const domain = typeof window !== 'undefined' ? window.location.hostname : '';
-
       const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -87,7 +48,6 @@ export default function ContactFormSection() {
           source: formData.source, // 방문 유입 경로
           privacyAgree: true,
           hp,
-          domain, // 도메인 정보 전송 ([네모] 태그용)
         }),
       });
 
@@ -101,7 +61,15 @@ export default function ContactFormSection() {
       }
 
       alert('접수 완료! 담당자가 영업일 기준 24시간 이내 연락드립니다.');
-      setFormData({ name: '', phone: '', email: '', region: '', budget: '', message: '', source: '' });
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        region: '',
+        budget: '',
+        message: '',
+        source: '',
+      });
       setPrivacyAgree(false);
       setHp('');
     } catch (error) {
@@ -294,12 +262,12 @@ export default function ContactFormSection() {
               {/* 제출 버튼 */}
               <motion.button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !privacyAgree}
                 className={`w-full bg-linear-to-r from-amber-500 to-orange-600 text-white py-4 px-8 rounded-xl text-lg md:text-xl font-bold shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 ${
-                  isSubmitting ? 'opacity-60 cursor-not-allowed' : ''
+                  isSubmitting || !privacyAgree ? 'opacity-60 cursor-not-allowed' : ''
                 }`}
-                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                whileHover={{ scale: isSubmitting || !privacyAgree ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting || !privacyAgree ? 1 : 0.98 }}
               >
                 {isSubmitting ? '전송 중...' : '창업 문의 신청하기'}
               </motion.button>
@@ -320,16 +288,10 @@ export default function ContactFormSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <div className="bg-black/70 backdrop-blur-md rounded-2xl p-8 inline-block shadow-2xl border border-white/20">
-            <p className="text-white text-lg md:text-xl font-bold mb-4">
-              빠른 상담을 원하시나요?
-            </p>
+            <p className="text-white text-lg md:text-xl font-bold mb-4">빠른 상담을 원하시나요?</p>
             <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
               <a
-                href={
-                  isMounted
-                    ? `sms:010-9923-9502?body=${encodeURIComponent(smsMessage)}`
-                    : 'tel:010-9923-9502'
-                }
+                href="sms:010-9923-9502?body=홈페이지를%20통해%20창업%20문의%20드립니다."
                 className="flex items-center gap-2 text-white text-xl md:text-2xl font-bold hover:scale-105 transition-transform hover:text-amber-400"
               >
                 010-9923-9502

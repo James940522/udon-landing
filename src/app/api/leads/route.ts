@@ -9,10 +9,10 @@ const Schema = z.object({
   phone: z.string().min(8),
   email: z.string().email(),
   region: z.string().min(1),
+  source: z.string().min(1), // 방문 유입 경로
   message: z.string().optional().default(''),
   privacyAgree: z.literal(true),
   hp: z.string().optional(), // honeypot
-  domain: z.string().optional(), // 도메인 정보 (네모 태그용)
 });
 
 function normalizePhone(input: string) {
@@ -114,19 +114,16 @@ export async function POST(req: Request) {
   const phone = normalizePhone(parsed.data.phone);
   const email = parsed.data.email.trim();
   const region = parsed.data.region.trim();
+  const source = parsed.data.source.trim();
   const message = (parsed.data.message ?? '').trim();
-  const domain = parsed.data.domain || '';
 
-  // apply.todayudonrice.com 또는 localhost인 경우 [네모] 태그 추가
-  const isNemoTag = domain === 'apply.todayudonrice.com' || domain === 'localhost';
-  const tagPrefix = isNemoTag ? '[네모] ' : '';
-
-  const text = `${tagPrefix}[오늘은 볶음우동 창업문의]
+  const text = `[오늘은 볶음우동 창업문의]
 📞 문의자 연락처: ${phone}
 
 이름: ${name}
 이메일: ${email}
 희망지역: ${region}
+방문 유입 경로: ${source}
 
 문의내용:
 ${message || '-'}`.slice(0, 1000);

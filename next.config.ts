@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    qualities: [75, 85, 90],
+    qualities: [60, 75, 85, 90],
   },
 
   // SEO: HTTP → HTTPS 및 WWW → non-WWW 301 리다이렉트
