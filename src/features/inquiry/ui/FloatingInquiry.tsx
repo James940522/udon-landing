@@ -30,13 +30,13 @@ export default function FloatingInquiry() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.button
+        <motion.div
+          className="fixed bottom-8 right-8 z-50 flex flex-col items-center cursor-pointer"
           onClick={scrollToContact}
-          className="fixed bottom-8 right-8 z-50 w-16 h-16 md:w-20 md:h-20 bg-linear-to-br from-amber-500 via-amber-600 to-yellow-600 rounded-full shadow-2xl flex items-center justify-center font-black text-sm md:text-base border-2 border-amber-400/50"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
           exit={{ opacity: 0, scale: 0.5 }}
-          whileHover={{ scale: 1.1, boxShadow: '0 25px 50px -12px rgba(251, 191, 36, 0.5)' }}
+          whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           transition={{
             y: {
@@ -45,12 +45,24 @@ export default function FloatingInquiry() {
             },
           }}
         >
-          <span className="text-center leading-tight text-stone-900 drop-shadow-sm">
-            창업
-            <br />
-            문의
-          </span>
-        </motion.button>
+          {/* 우동그릇 본체 (뒤집어진 사다리꼴) */}
+          <div
+            className="relative bg-gradient-to-b from-stone-800 to-stone-900 shadow-2xl flex items-center justify-center"
+            style={{
+              width: '90px',
+              height: '65px',
+              clipPath: 'polygon(0% 0%, 100% 0%, 75% 100%, 25% 100%)',
+            }}
+          >
+            <span className="text-center leading-tight text-amber-400 font-black text-sm drop-shadow-lg">
+              창업
+              <br />
+              문의
+            </span>
+          </div>
+          {/* 그릇 받침 */}
+          <div className="w-10 h-2 bg-stone-900 rounded-b-sm shadow-lg"></div>
+        </motion.div>
       )}
     </AnimatePresence>
   );
