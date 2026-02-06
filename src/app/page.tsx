@@ -7,6 +7,7 @@ import Script from 'next/script';
 import { Header } from '@/widgets/header';
 import { HeroSection } from '@/widgets/hero';
 import { BrandIntroSection } from '@/widgets/brand-intro';
+import { BlueOceanAdvantageSection } from '@/widgets/blue-ocean-advantage';
 import { TrustedFranchiseSection } from '@/widgets/trusted-franchise';
 import { SuccessionPlanningSection } from '@/widgets/succession-planning';
 import { SuccessionPlanningSectionV2 } from '@/widgets/succession-planning-v2';
@@ -150,6 +151,7 @@ export default function Home() {
         <Header />
         <HeroSection />
         <BrandIntroSection />
+        <BlueOceanAdvantageSection />
         {/* 기존 지그재그 레이아웃 */}
         {/* <SuccessionPlanningSection /> */}
         {/* 새로운 로드맵 레이아웃 (V2) */}
