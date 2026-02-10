@@ -2,7 +2,6 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { cn } from '@/shared/lib/utils';
 import Image from 'next/image';
 
 export default function StartupProcessSection() {
@@ -91,7 +90,7 @@ export default function StartupProcessSection() {
                 {/* 카드 */}
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl md:rounded-3xl overflow-hidden border border-stone-300/50 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group h-full">
                   {/* 이미지 영역 */}
-                  <div className="relative aspect-[6/5] md:aspect-[5/4] bg-stone-200">
+                  <div className="relative aspect-5/3 md:aspect-4/3 bg-stone-200">
                     <Image
                       src={process.image}
                       alt={process.title}
@@ -108,14 +107,14 @@ export default function StartupProcessSection() {
                   </div>
 
                   {/* 컨텐츠 영역 */}
-                  <div className="p-2.5 md:p-3.5 lg:p-4">
+                  <div className="p-4 md:p-5 lg:p-6">
                     {/* 제목 */}
-                    <h3 className="text-sm md:text-base lg:text-lg font-bold mb-1.5 text-gray-900">
+                    <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 text-gray-900">
                       {process.title}
                     </h3>
 
                     {/* 설명 */}
-                    <p className="text-xs text-gray-700 leading-relaxed">{process.description}</p>
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">{process.description}</p>
                   </div>
                 </div>
               </motion.div>

@@ -115,7 +115,7 @@ const TimelineItem = ({ strength, index, totalItems }: TimelineItemProps) => {
 
         <div className="flex flex-col">
           {/* 이미지 영역 */}
-          <div className="relative w-full aspect-[6/5] md:aspect-[5/4]">
+          <div className="relative w-full aspect-5/3 md:aspect-4/3">
             <Image
               src={strength.image}
               alt={strength.title}
@@ -128,12 +128,12 @@ const TimelineItem = ({ strength, index, totalItems }: TimelineItemProps) => {
           </div>
 
           {/* 텍스트 영역 */}
-          <div className="p-3 md:p-4 lg:p-5">
-            <h4 className="text-sm md:text-lg lg:text-xl font-bold text-gray-900 mb-1.5 md:mb-2">
+          <div className="p-4 md:p-5 lg:p-6">
+            <h4 className="text-base md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-2.5">
               {strength.title}
             </h4>
-            <div className="w-8 h-0.5 bg-linear-to-r from-yellow-500 to-amber-600 mb-1.5 md:mb-2" />
-            <p className="text-xs md:text-sm text-gray-700 leading-relaxed">{strength.desc}</p>
+            <div className="w-8 h-0.5 bg-linear-to-r from-yellow-500 to-amber-600 mb-2 md:mb-2.5" />
+            <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">{strength.desc}</p>
           </div>
         </div>
       </motion.div>
