@@ -14,7 +14,6 @@ export default function ContactFormSection() {
     region: '',
     budget: '',
     message: '',
-    source: '', // 방문 유입 경로
   });
 
   // 폼 제출 관련 state
@@ -45,7 +44,6 @@ export default function ContactFormSection() {
           email: formData.email,
           region: formData.region,
           message: formData.message,
-          source: formData.source, // 방문 유입 경로
           privacyAgree: true,
           hp,
         }),
@@ -68,7 +66,6 @@ export default function ContactFormSection() {
         region: '',
         budget: '',
         message: '',
-        source: '',
       });
       setPrivacyAgree(false);
       setHp('');
@@ -190,28 +187,6 @@ export default function ContactFormSection() {
                     placeholder="서울 강남구"
                   />
                 </div>
-              </div>
-
-              {/* 방문 유입 경로 */}
-              <div>
-                <label htmlFor="source" className="block text-sm font-bold text-white mb-2">
-                  방문 유입 경로 <span className="text-red-500">*</span>
-                </label>
-                <select
-                  id="source"
-                  name="source"
-                  required
-                  value={formData.source}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all bg-white/80"
-                >
-                  <option value="">선택해주세요</option>
-                  <option value="검색">검색</option>
-                  <option value="배달앱">배달앱</option>
-                  <option value="아프니까 사장이다">아프니까 사장이다</option>
-                  <option value="네모 배너 광고">네모 배너 광고</option>
-                  <option value="지인추천">지인추천</option>
-                </select>
               </div>
 
               {/* 문의 내용 */}

@@ -96,9 +96,9 @@ const TimelineItem = ({ strength, index, totalItems }: TimelineItemProps) => {
         transition={{ duration: 0.3 }}
       >
         {/* 숫자 배지 - 카드 상단에 배치 */}
-        <div className="absolute top-2 left-2 md:top-4 md:left-4 z-10">
+        <div className="absolute top-3 left-3 md:top-4 md:left-4 z-10">
           <motion.div
-            className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-stone-800 border-2 border-amber-600/30 shadow-xl flex items-center justify-center backdrop-blur-sm"
+            className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-stone-800 border-2 border-amber-600/30 shadow-xl flex items-center justify-center backdrop-blur-sm"
             style={{ scale: numberScale }}
             whileHover={{
               scale: 1.1,
@@ -107,7 +107,7 @@ const TimelineItem = ({ strength, index, totalItems }: TimelineItemProps) => {
             }}
             transition={{ duration: 0.3 }}
           >
-            <span className="text-sm md:text-lg lg:text-xl font-light tracking-wider text-amber-100">
+            <span className="text-base md:text-lg lg:text-xl font-light tracking-wider text-amber-100">
               {strength.number}
             </span>
           </motion.div>
@@ -115,24 +115,24 @@ const TimelineItem = ({ strength, index, totalItems }: TimelineItemProps) => {
 
         <div className="flex flex-col">
           {/* 이미지 영역 */}
-          <div className="relative w-full aspect-5/3 md:aspect-4/3">
+          <div className="relative w-full aspect-4/3">
             <Image
               src={strength.image}
               alt={strength.title}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 50vw, 50vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             {/* 그라데이션 오버레이 */}
             <div className="absolute inset-0 bg-linear-to-b from-black/10 to-black/30" />
           </div>
 
           {/* 텍스트 영역 */}
-          <div className="p-4 md:p-5 lg:p-6">
-            <h4 className="text-base md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-2.5">
+          <div className="p-5 md:p-5 lg:p-6">
+            <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2.5 md:mb-2.5">
               {strength.title}
             </h4>
-            <div className="w-8 h-0.5 bg-linear-to-r from-yellow-500 to-amber-600 mb-2 md:mb-2.5" />
+            <div className="w-10 h-0.5 bg-linear-to-r from-yellow-500 to-amber-600 mb-3 md:mb-2.5" />
             <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">{strength.desc}</p>
           </div>
         </div>
@@ -204,8 +204,8 @@ export default function SuccessionPlanningSectionV2() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          {/* 2열 그리드 레이아웃 - 모바일에서도 2열 */}
-          <div className="grid grid-cols-2 gap-4 md:gap-8 lg:gap-10">
+          {/* 그리드 레이아웃 - 모바일 1열, 태블릿 이상 2열 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
             {STRENGTHS.map((strength, index) => (
               <TimelineItem
                 key={strength.number}
