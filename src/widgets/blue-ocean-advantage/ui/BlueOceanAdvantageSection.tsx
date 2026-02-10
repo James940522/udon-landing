@@ -56,7 +56,7 @@ export default function BlueOceanAdvantageSection() {
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/asset/bg-1/sec4-bg.jpg"
+          src="/asset/bg-1/sec3-bg.png"
           alt=""
           fill
           className="object-cover"
@@ -64,10 +64,10 @@ export default function BlueOceanAdvantageSection() {
           aria-hidden="true"
         />
         {/* 다크 오버레이 */}
-        <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
+        <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
         {/* 그라데이션 오버레이 */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40"
+          className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60"
           aria-hidden="true"
         />
       </div>

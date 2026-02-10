@@ -151,9 +151,24 @@ export default function SuccessionPlanningSectionV2() {
   return (
     <section
       id="succession-planning-v2"
-      className="relative overflow-hidden py-20 md:py-24 lg:py-32 bg-[#D4C4A8]"
+      className="relative overflow-hidden py-20 md:py-24 lg:py-32"
       ref={sectionRef}
     >
+      {/* 배경 - 나무 텍스처 이미지 */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            'url(/asset/bg-1/James_dark_toned_wooden_texture_background_charcoal_black_woo_ca9d72aa-2ccf-4785-8df7-a589aec81d40_2.png)',
+          backgroundSize: 'auto',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'repeat',
+        }}
+      >
+        {/* 어두운 오버레이 */}
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 상단 타이틀 */}
         <motion.div
@@ -176,7 +191,7 @@ export default function SuccessionPlanningSectionV2() {
           </motion.div>
 
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -185,7 +200,7 @@ export default function SuccessionPlanningSectionV2() {
           </motion.h2>
 
           <motion.p
-            className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}

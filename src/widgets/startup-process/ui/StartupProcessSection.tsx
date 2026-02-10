@@ -50,8 +50,19 @@ export default function StartupProcessSection() {
 
   return (
     <section id="startup-process" className="py-20 md:py-32 relative overflow-hidden" ref={ref}>
-      {/* 배경 - 톤앤매너에 맞는 그라데이션 */}
-      <div className="absolute inset-0 bg-linear-to-br from-stone-800 via-stone-900 to-black" />
+      {/* 배경 - 나무 텍스처 이미지 */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(/asset/bg-1/sec5-bg.png)',
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'repeat',
+        }}
+      >
+        {/* 살짝 어두운 오버레이 */}
+        <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 헤더 */}
         <motion.div
