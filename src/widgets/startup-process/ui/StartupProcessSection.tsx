@@ -133,7 +133,7 @@ export default function StartupProcessSection() {
             체계적인 창업 시스템으로 성공적인 오픈을 약속드립니다
           </p>
           <a
-            href="tel:010-0000-0000"
+            href="tel:01099239502"
             className="inline-block bg-linear-to-r from-amber-500 to-yellow-500 text-stone-900 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
           >
             창업 상담 신청하기
