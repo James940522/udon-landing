@@ -73,7 +73,7 @@ const backgroundColumns = [
 function StampMark({ index, active }: { index: number; active: boolean }) {
   return (
     <motion.span
-      className="relative inline-flex h-11 w-[74px] rotate-[-5deg] items-center justify-center rounded-[5px] border-2 border-[#dd2636] text-2xl font-black leading-none text-[#dd2636] shadow-[0_0_18px_rgba(221,38,54,0.28)] md:h-12 md:w-20 md:text-3xl"
+      className="relative inline-flex h-8 w-14 rotate-[-5deg] items-center justify-center rounded-[5px] border-2 border-[#dd2636] text-lg font-black leading-none text-[#dd2636] shadow-[0_0_18px_rgba(221,38,54,0.28)] sm:h-10 sm:w-16 sm:text-2xl md:h-12 md:w-20 md:text-3xl"
       initial={{ opacity: 0, y: -28, scale: 1.7, rotate: -18 }}
       animate={
         active
@@ -174,32 +174,36 @@ export default function StartupBenefitSection() {
           animate={sectionInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.75, delay: 0.25 }}
         >
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[760px] border-collapse">
+          <div className="overflow-hidden">
+            <table className="w-full table-fixed border-collapse">
               <thead>
                 <tr className="bg-black text-[#fff0c8]">
-                  <th className="w-[23%] border-r border-[#d4a34a]/28 px-5 py-4 text-center text-xl font-black">
+                  <th className="w-[22%] border-r border-[#d4a34a]/28 px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
                     구분
                   </th>
-                  <th className="w-[49%] border-r border-[#d4a34a]/28 px-5 py-4 text-center text-xl font-black">
+                  <th className="w-[50%] border-r border-[#d4a34a]/28 px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
                     내용
                   </th>
-                  <th className="w-[28%] px-5 py-4 text-center text-xl font-black">금액</th>
+                  <th className="w-[28%] px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
+                    금액
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {benefitRows.map((row, index) => (
                   <tr key={row.category} className="border-t border-[#d4a34a]/24">
-                    <th className="bg-[#130c08] px-5 py-5 text-center text-lg font-black text-white md:text-2xl">
+                    <th className="break-keep bg-[#130c08] px-2 py-3 text-center text-[0.78rem] font-black leading-snug text-white sm:px-3 sm:text-base md:px-5 md:py-5 md:text-2xl">
                       {row.category}
                     </th>
-                    <td className="bg-[#eadfbc] px-5 py-5 text-center text-base font-black text-[#140905] md:text-lg">
+                    <td className="break-keep bg-[#eadfbc] px-2 py-3 text-center text-[0.72rem] font-black leading-snug text-[#140905] sm:px-3 sm:text-sm md:px-5 md:py-5 md:text-lg">
                       <p>{row.description}</p>
                       {row.note && (
-                        <p className="mt-2 text-xs font-bold text-[#7b6140] md:text-sm">{row.note}</p>
+                        <p className="mt-1 text-[0.62rem] font-bold leading-snug text-[#7b6140] sm:text-xs md:mt-2 md:text-sm">
+                          {row.note}
+                        </p>
                       )}
                     </td>
-                    <td className="bg-[#130c08] px-5 py-5 text-center text-base font-black text-[#fff0c8] md:text-lg">
+                    <td className="break-keep bg-[#130c08] px-2 py-3 text-center text-[0.72rem] font-black leading-snug text-[#fff0c8] sm:px-3 sm:text-sm md:px-5 md:py-5 md:text-lg">
                       {row.amount === 'stamp' ? (
                         <StampMark index={index} active={tableInView} />
                       ) : (
@@ -213,11 +217,11 @@ export default function StartupBenefitSection() {
                 <tr className="border-t border-[#d4a34a]/32">
                   <td
                     colSpan={2}
-                    className="bg-black px-5 py-5 text-center text-xl font-black text-[#fff0c8] md:text-2xl"
+                    className="bg-black px-2 py-4 text-center text-base font-black text-[#fff0c8] sm:px-3 sm:text-lg md:px-5 md:py-5 md:text-2xl"
                   >
                     최종 창업비용
                   </td>
-                  <td className="bg-[#f1e5bd] px-5 py-5 text-center text-xl font-black text-[#170a04] md:text-2xl">
+                  <td className="break-keep bg-[#f1e5bd] px-2 py-4 text-center text-sm font-black leading-snug text-[#170a04] sm:px-3 sm:text-base md:px-5 md:py-5 md:text-2xl">
                     상담시 안내
                   </td>
                 </tr>

@@ -167,7 +167,17 @@ export default function Home() {
         <SuccessionPlanningSectionV2 />
         <TrustedFranchiseSection />
         <StartupProcessSection />
+        <TextMarquee
+          items={['TODAY UDON', 'SIGNATURE NOODLE', 'DELIVERY FIRST', 'WARM DINING']}
+          variant="flame"
+          speed={22}
+        />
         <StartupBenefitSection />
+        <TextMarquee
+          items={['TODAY UDON', 'SIGNATURE NOODLE', 'DELIVERY FIRST', 'WARM DINING']}
+          variant="charcoal"
+          speed={22}
+        />
         <MenuSection />
         {/* <StorePresetSection /> */}
         <ReviewsSection />
