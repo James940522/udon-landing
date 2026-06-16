@@ -6,6 +6,7 @@ import Script from 'next/script';
 // Widgets
 import { Header } from '@/widgets/header';
 import { HeroSection } from '@/widgets/hero';
+import { TextMarquee } from '@/widgets/text-marquee';
 import { BrandIntroSection } from '@/widgets/brand-intro';
 import { BlueOceanAdvantageSection } from '@/widgets/blue-ocean-advantage';
 import { TrustedFranchiseSection } from '@/widgets/trusted-franchise';
@@ -152,6 +153,11 @@ export default function Home() {
         <CustomCursorState />
         <Header />
         <HeroSection />
+        <TextMarquee
+          items={['TODAY UDON', 'SIGNATURE NOODLE', 'DELIVERY FIRST', 'WARM DINING']}
+          variant="flame"
+          speed={22}
+        />
         <BrandIntroSection />
         <BlueOceanAdvantageSection />
         {/* 기존 지그재그 레이아웃 */}

@@ -376,6 +376,33 @@ html.is-clicking *::after {
   animation: wiggle 1s ease-in-out infinite;
 }
 
+@keyframes text-marquee-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes text-marquee-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes reviews-marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* Swiper 커스터마이징 */
 .baemin-swiper .swiper-button-next,
 .baemin-swiper .swiper-button-prev {
@@ -429,22 +456,6 @@ html.is-clicking *::after {
   opacity: 1;
   width: 24px;
   border-radius: 5px;
-}
-
-/* 리뷰 섹션 Swiper 커스터마이징 - 어두운 배경용 */
-.reviews-swiper .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: #ffffff;
-  opacity: 0.4;
-  transition: all 0.3s ease;
-}
-
-.reviews-swiper .swiper-pagination-bullet-active {
-  background: #fb923c;
-  opacity: 1;
-  width: 32px;
-  border-radius: 6px;
 }
 
 .dark {
