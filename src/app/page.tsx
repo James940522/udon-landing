@@ -22,6 +22,7 @@ import { FloatingInquiry } from '@/features/inquiry';
 import { OwnerRecruitmentModal } from '@/features/owner-recruitment-modal';
 import { FranchiseCostModal } from '@/features/franchise-cost-modal';
 import { AchievementModal } from '@/features/achievement-modal';
+import { CustomCursorState } from '@/features/custom-cursor';
 
 // Shared Config
 import { SITE_ORIGIN, absoluteUrl } from '@/shared/config/site';
@@ -148,6 +149,7 @@ export default function Home() {
       />
 
       <main className="min-h-screen font-sans">
+        <CustomCursorState />
         <Header />
         <HeroSection />
         <BrandIntroSection />

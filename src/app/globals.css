@@ -246,7 +246,7 @@ body {
     system-ui,
     sans-serif;
   cursor:
-    url('/asset/logo/cursor.png') 0 0,
+    url('/new-asset/cursor/cursor.png') 3 2,
     auto;
   overflow-x: hidden;
 }
@@ -256,7 +256,7 @@ body {
 *::after {
   box-sizing: border-box;
   cursor:
-    url('/asset/logo/cursor.png') 0 0,
+    url('/new-asset/cursor/cursor.png') 3 2,
     auto;
 }
 
@@ -266,11 +266,38 @@ button,
 [role='button'],
 input[type='submit'],
 input[type='button'],
+.cursor-pointer,
 a *,
 button *,
-[role='button'] * {
+[role='button'] *,
+.cursor-pointer * {
   cursor:
-    url('/asset/logo/cursor.png') 0 0,
+    url('/new-asset/cursor/cursor.png') 3 2,
+    pointer !important;
+}
+
+input:not([type]),
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+textarea,
+[contenteditable='true'],
+[contenteditable=''] {
+  cursor:
+    url('/new-asset/cursor/text.png') 11 23,
+    text !important;
+}
+
+html.is-clicking,
+html.is-clicking *,
+html.is-clicking *::before,
+html.is-clicking *::after {
+  cursor:
+    url('/new-asset/cursor/click.png') 8 3,
     pointer !important;
 }
 
