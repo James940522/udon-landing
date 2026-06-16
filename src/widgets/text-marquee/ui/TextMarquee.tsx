@@ -39,7 +39,7 @@ export default function TextMarquee({
   variant = 'flame',
   direction = 'left',
   speed = 24,
-  repeat = 3,
+  repeat = 5,
   className,
   ariaLabel = 'Brand highlights',
 }: TextMarqueeProps) {
@@ -52,9 +52,9 @@ export default function TextMarquee({
   return (
     <section
       className={cn(
-        'relative isolate overflow-hidden py-3 md:py-4',
-        'before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-16 before:bg-linear-to-r before:from-[#180904]/60 before:to-transparent',
-        'after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-16 after:bg-linear-to-l after:from-[#180904]/60 after:to-transparent',
+        'relative isolate overflow-hidden py-2 md:py-2.5',
+        'before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-12 before:bg-linear-to-r before:from-[#180904]/60 before:to-transparent',
+        'after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-12 after:bg-linear-to-l after:from-[#180904]/60 after:to-transparent',
         variantClassName.root,
         className
       )}
@@ -63,22 +63,22 @@ export default function TextMarquee({
       <p className="sr-only">{marqueeItems.join(', ')}</p>
       <div
         aria-hidden="true"
-        className="flex w-max min-w-full items-center gap-8 whitespace-nowrap will-change-transform md:gap-12"
+        className="flex w-max min-w-full items-center gap-5 whitespace-nowrap will-change-transform md:gap-7"
         style={{
           animation: `${animationName} ${speed}s linear infinite`,
         }}
       >
         {[0, 1].map((trackIndex) => (
-          <div key={trackIndex} className="flex shrink-0 items-center gap-8 md:gap-12">
+          <div key={trackIndex} className="flex shrink-0 items-center gap-5 md:gap-7">
             {repeatedItems.map((item, index) => (
               <span
                 key={`${trackIndex}-${item}-${index}`}
-                className="flex items-center gap-8 md:gap-12"
+                className="flex items-center gap-5 md:gap-7"
               >
-                <span className="font-heading text-base font-bold uppercase tracking-normal md:text-xl">
+                <span className="font-heading text-sm font-bold uppercase tracking-normal md:text-base">
                   {item}
                 </span>
-                <span className={cn('size-2 rounded-full md:size-2.5', variantClassName.dot)} />
+                <span className={cn('size-1.5 rounded-full md:size-2', variantClassName.dot)} />
               </span>
             ))}
           </div>

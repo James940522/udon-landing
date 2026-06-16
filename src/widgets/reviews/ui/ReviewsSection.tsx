@@ -117,71 +117,74 @@ export default function ReviewsSection() {
   return (
     <section
       id="reviews"
-      className="relative overflow-hidden bg-[#fff0cf] pb-16 text-[#4c270d] md:pb-24"
+      className="relative overflow-hidden bg-[#1a0d06] text-[#f6e4bf]"
       aria-label="고객 리뷰"
     >
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 12% 18%, rgba(179, 37, 20, 0.22), transparent 32%), radial-gradient(circle at 86% 12%, rgba(246, 190, 71, 0.32), transparent 34%), radial-gradient(circle at 88% 80%, rgba(80, 32, 7, 0.2), transparent 30%), linear-gradient(rgba(134, 76, 23, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(134, 76, 23, 0.12) 1px, transparent 1px)',
-          backgroundSize: 'auto, auto, auto, 42px 42px, 42px 42px',
+            'radial-gradient(circle at 50% 0%, rgba(161, 63, 20, 0.36), transparent 42%), radial-gradient(circle at 14% 28%, rgba(213, 151, 58, 0.16), transparent 28%), linear-gradient(90deg, rgba(255, 231, 177, 0.05), transparent 12%, transparent 88%, rgba(255, 231, 177, 0.05)), repeating-linear-gradient(90deg, rgba(255, 218, 140, 0.06) 0 1px, transparent 1px 112px), repeating-linear-gradient(0deg, rgba(255, 222, 151, 0.035) 0 1px, transparent 1px 9px), linear-gradient(135deg, #120803 0%, #281207 46%, #4a2110 100%)',
+          backgroundSize: 'auto, auto, auto, auto, auto, auto',
         }}
         aria-hidden="true"
       />
       <div
-        className="absolute -left-20 top-24 h-24 w-[48vw] -rotate-6 bg-[#f0b53f]/26"
+        className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#d4a34a]/70 to-transparent"
         aria-hidden="true"
       />
       <div
-        className="absolute right-[-10vw] top-32 h-28 w-[50vw] rotate-8 bg-[#b32614]/14"
+        className="absolute inset-x-10 top-10 h-px bg-linear-to-r from-transparent via-[#f2d28a]/30 to-transparent"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 left-0 h-36 w-full bg-linear-to-t from-[#5a2408]/18 to-transparent"
+        className="absolute left-[6vw] top-24 bottom-64 w-px bg-linear-to-b from-transparent via-[#d4a34a]/34 to-transparent"
         aria-hidden="true"
       />
       <div
-        className="absolute right-8 top-24 h-16 w-80 opacity-35 md:right-12 md:top-28"
+        className="absolute right-[6vw] top-24 bottom-64 w-px bg-linear-to-b from-transparent via-[#d4a34a]/34 to-transparent"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute right-8 top-24 h-40 w-80 opacity-[0.13] md:right-16 md:top-28"
         style={{
           backgroundImage:
-            'linear-gradient(45deg, #c8451d 25%, transparent 25%), linear-gradient(-45deg, #c8451d 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #c8451d 75%), linear-gradient(-45deg, transparent 75%, #c8451d 75%)',
-          backgroundPosition: '0 0, 0 9px, 9px -9px, -9px 0',
-          backgroundSize: '18px 18px',
+            'radial-gradient(ellipse at center bottom, transparent 58%, #f0c66e 60%, transparent 64%)',
+          backgroundSize: '72px 34px',
         }}
         aria-hidden="true"
       />
       <div
-        className="absolute left-12 top-56 h-28 w-72 rounded-[50%] border-[10px] border-[#e8a932]/18"
+        className="absolute -left-16 top-36 h-48 w-48 rounded-full border border-[#d4a34a]/12"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-24 right-14 h-36 w-80 rounded-[50%] border-[12px] border-[#8b3a14]/12"
+        className="absolute bottom-80 right-12 h-20 w-20 rotate-45 border border-[#b43a1c]/24 bg-[#7d2513]/12"
         aria-hidden="true"
       />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 pt-16 sm:px-6 md:pt-20 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="relative">
-            <span className="absolute -left-2 -top-12 hidden text-8xl font-black uppercase tracking-[0.08em] text-[#5f2d0d]/5 md:block">
+            <span className="absolute -left-2 -top-12 hidden text-8xl font-black uppercase tracking-[0.08em] text-[#f5d99b]/10 md:block">
               Review
             </span>
-            <p className="mb-4 text-sm font-black uppercase tracking-[0.18em] text-[#d8471d]">
-              Real delivery review
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.18em] text-[#d8a84c]">
+              Real customer review
             </p>
-            <h2 className="text-4xl font-black leading-[0.98] tracking-[-0.04em] text-[#5a310f] md:text-6xl">
+            <h2 className="text-4xl font-black leading-[0.98] tracking-[-0.04em] text-[#fff0c8] drop-shadow-[0_8px_24px_rgba(0,0,0,0.28)] md:text-6xl">
               고객들이
               <br />
-              선택한 볶음우동
+              다시 찾는 볶음우동
             </h2>
           </div>
           <div className="max-w-md lg:ml-auto lg:pt-8">
-            <p className="mb-3 text-sm font-black text-[#e2481d]">
-              한 번 주문한 고객이 다시 찾는 맛
+            <p className="mb-3 text-sm font-black text-[#f06a2a]">
+              한 그릇의 만족이 쌓인 후기
             </p>
-            <p className="text-base font-bold leading-7 text-[#6b421d]">
-              배달앱 평점과 실제 고객 리뷰로 증명된 오늘은 볶음우동. 따뜻한 우동 한 그릇의 만족감을
-              화면 안에서도 또렷하게 보여줍니다.
+            <p className="text-base font-bold leading-7 text-[#dfc79d]">
+              묵직한 철판 향과 정갈한 우동 한 그릇. 실제 고객 리뷰로 오늘은 볶음우동의 만족감을
+              확인해보세요.
             </p>
           </div>
         </div>
@@ -201,17 +204,17 @@ export default function ReviewsSection() {
         </div>
       </div>
 
-      <div className="relative z-20 -mt-36 overflow-hidden pb-12 pt-20 sm:-mt-48 sm:pt-24 md:-mt-64 md:pt-28 lg:-mt-[23.5rem] lg:pt-32">
+      <div className="relative z-20 -mt-36 overflow-hidden pt-20 sm:-mt-48 sm:pt-24 md:-mt-64 md:pt-28 lg:-mt-[23.5rem] lg:pt-32">
         <div
-          className="pointer-events-none absolute inset-x-0 top-24 bottom-0 bg-white/96"
+          className="pointer-events-none absolute inset-x-0 top-24 bottom-0 bg-[#fffaf1]"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute inset-x-0 -top-2 z-10 h-36 bg-linear-to-b from-[#fff0cf]/0 via-[#fff8eb]/72 to-white/96"
+          className="pointer-events-none absolute inset-x-0 -top-2 z-10 h-36 bg-linear-to-b from-[#1a0d06]/0 via-[#2d1609]/34 to-[#fffaf1]"
           aria-hidden="true"
         />
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-linear-to-r from-white/95 to-transparent md:w-24" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-linear-to-l from-white/95 to-transparent md:w-24" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-linear-to-r from-[#fffaf1] to-transparent md:w-24" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-linear-to-l from-[#fffaf1] to-transparent md:w-24" />
         <div
           className="relative z-20 flex w-max gap-4 px-4 will-change-transform sm:gap-5"
           style={{ animation: 'reviews-marquee-left 34s linear infinite' }}

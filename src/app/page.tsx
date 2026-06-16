@@ -13,6 +13,7 @@ import { TrustedFranchiseSection } from '@/widgets/trusted-franchise';
 import { SuccessionPlanningSection } from '@/widgets/succession-planning';
 import { SuccessionPlanningSectionV2 } from '@/widgets/succession-planning-v2';
 import { StartupProcessSection } from '@/widgets/startup-process';
+import { StartupBenefitSection } from '@/widgets/startup-benefit';
 import { MenuSection } from '@/widgets/menu';
 import { ReviewsSection } from '@/widgets/reviews';
 import { ContactFormSection } from '@/widgets/contact-form';
@@ -166,6 +167,7 @@ export default function Home() {
         <SuccessionPlanningSectionV2 />
         <TrustedFranchiseSection />
         <StartupProcessSection />
+        <StartupBenefitSection />
         <MenuSection />
         {/* <StorePresetSection /> */}
         <ReviewsSection />
