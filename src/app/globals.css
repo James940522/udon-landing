@@ -403,6 +403,24 @@ html.is-clicking *::after {
   }
 }
 
+@keyframes startup-benefit-marquee-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes startup-benefit-marquee-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 /* Swiper 커스터마이징 */
 .baemin-swiper .swiper-button-next,
 .baemin-swiper .swiper-button-prev {

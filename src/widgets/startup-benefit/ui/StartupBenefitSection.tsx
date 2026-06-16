@@ -47,6 +47,29 @@ const benefitRows = [
   },
 ];
 
+const backgroundColumns = [
+  {
+    text: 'LOW INITIAL COST',
+    className: 'left-[4%] text-[#8f361e]/42',
+    animation: 'startup-benefit-marquee-up 24s linear infinite',
+  },
+  {
+    text: 'STARTUP BENEFIT',
+    className: 'left-[16%] text-[#d4a34a]/24',
+    animation: 'startup-benefit-marquee-down 30s linear infinite',
+  },
+  {
+    text: 'ONLY WHAT YOU NEED',
+    className: 'right-[12%] text-[#8f361e]/38',
+    animation: 'startup-benefit-marquee-up 28s linear infinite',
+  },
+  {
+    text: 'PROTECTED AREA',
+    className: 'right-[3%] text-[#d4a34a]/20',
+    animation: 'startup-benefit-marquee-down 34s linear infinite',
+  },
+];
+
 function StampMark({ index, active }: { index: number; active: boolean }) {
   return (
     <motion.span
@@ -97,6 +120,24 @@ export default function StartupBenefitSection() {
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#d4a34a]/70 to-transparent" />
       <div className="absolute left-[6vw] top-20 bottom-20 w-px bg-linear-to-b from-transparent via-[#d4a34a]/28 to-transparent" />
       <div className="absolute right-[6vw] top-20 bottom-20 w-px bg-linear-to-b from-transparent via-[#d4a34a]/28 to-transparent" />
+
+      <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden" aria-hidden="true">
+        {backgroundColumns.map((column) => (
+          <div
+            key={column.text}
+            className={`absolute top-[-18%] bottom-[-18%] hidden w-9 justify-center md:flex ${column.className}`}
+          >
+            <div
+              className="flex h-[200%] flex-col items-center gap-8 whitespace-nowrap text-[1.15rem] font-black uppercase leading-none tracking-[0.08em] [writing-mode:vertical-rl]"
+              style={{ animation: column.animation }}
+            >
+              {[0, 1, 2, 3].map((item) => (
+                <span key={item}>{column.text}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 grid gap-8 md:mb-14 md:grid-cols-[1fr_0.9fr] md:items-end">
