@@ -4,11 +4,11 @@ import Image from 'next/image';
 
 const phoneScreens = [
   {
-    src: '/new-asset/review/baemin.webp',
+    src: '/new-asset/review/baemin-updated.webp',
     alt: '오늘은 볶음우동 배달앱 매장 화면',
     label: '배달앱 평점 5점 만점!',
     width: 698,
-    height: 1405,
+    height: 1438,
   },
   {
     src: '/new-asset/review/coupang.webp',
