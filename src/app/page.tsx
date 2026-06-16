@@ -14,6 +14,7 @@ import { SuccessionPlanningSection } from '@/widgets/succession-planning';
 import { SuccessionPlanningSectionV2 } from '@/widgets/succession-planning-v2';
 import { StartupProcessSection } from '@/widgets/startup-process';
 import { StartupBenefitSection } from '@/widgets/startup-benefit';
+import { TerritoryProtectionSection } from '@/widgets/territory-protection';
 import { MenuSection } from '@/widgets/menu';
 import { ReviewsSection } from '@/widgets/reviews';
 import { ContactFormSection } from '@/widgets/contact-form';
@@ -167,12 +168,13 @@ export default function Home() {
         <SuccessionPlanningSectionV2 />
         <TrustedFranchiseSection />
         <StartupProcessSection />
+        <StartupBenefitSection />
         <TextMarquee
           items={['TODAY UDON', 'SIGNATURE NOODLE', 'DELIVERY FIRST', 'WARM DINING']}
           variant="flame"
           speed={22}
         />
-        <StartupBenefitSection />
+        <TerritoryProtectionSection />
         <TextMarquee
           items={['TODAY UDON', 'SIGNATURE NOODLE', 'DELIVERY FIRST', 'WARM DINING']}
           variant="charcoal"
