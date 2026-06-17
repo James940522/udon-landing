@@ -104,7 +104,7 @@ function PhonePreview({
         width={width}
         height={height}
         priority={priority}
-        className="h-auto w-full select-none object-contain drop-shadow-[0_26px_42px_rgba(59,24,7,0.35)]"
+        className="h-auto w-full translate-y-5 select-none object-contain drop-shadow-[0_26px_42px_rgba(59,24,7,0.35)] sm:translate-y-10 md:translate-y-16 lg:translate-y-20"
         sizes="(max-width: 640px) calc((100vw - 38px) / 2), (max-width: 1024px) 38vw, 430px"
       />
     </div>
@@ -204,13 +204,13 @@ export default function ReviewsSection() {
         </div>
       </div>
 
-      <div className="relative z-20 -mt-36 overflow-hidden pt-20 sm:-mt-48 sm:pt-24 md:-mt-64 md:pt-28 lg:-mt-[23.5rem] lg:pt-32">
+      <div className="relative z-20 -mt-40 overflow-hidden pt-24 sm:-mt-56 sm:pt-32 md:-mt-72 md:pt-40 lg:-mt-[26rem] lg:pt-44">
         <div
-          className="pointer-events-none absolute inset-x-0 top-24 bottom-0 bg-[#fffaf1]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute inset-x-0 -top-2 z-10 h-36 bg-linear-to-b from-[#1a0d06]/0 via-[#2d1609]/34 to-[#fffaf1]"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              'linear-gradient(to bottom, rgba(255, 250, 241, 0) 0%, rgba(255, 250, 241, 0.88) 18%, #fffaf1 32%, #fffaf1 100%)',
+          }}
           aria-hidden="true"
         />
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-linear-to-r from-[#fffaf1] to-transparent md:w-24" />
@@ -222,7 +222,7 @@ export default function ReviewsSection() {
           {marqueeImages.map((review, index) => (
             <div
               key={`${review.src}-${index}`}
-              className="relative flex h-[214px] w-auto shrink-0 overflow-hidden rounded-lg border border-[#e6b35b]/80 bg-linear-to-b from-white/92 via-white/70 to-white/42 shadow-[0_18px_42px_rgba(89,42,10,0.14)] backdrop-blur-[2px] sm:h-[246px] md:h-[282px]"
+              className="relative flex h-[214px] w-auto shrink-0 overflow-hidden rounded-lg border border-[#e6b35b]/80 bg-white shadow-[0_18px_42px_rgba(89,42,10,0.14)] sm:h-[246px] md:h-[282px]"
             >
               <Image
                 src={review.src}

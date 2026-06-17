@@ -7,9 +7,11 @@ export const runtime = 'nodejs';
 const Schema = z.object({
   name: z.string().min(1),
   phone: z.string().min(8),
-  email: z.string().email(),
+  email: z.string().email().optional().or(z.literal('')),
   region: z.string().min(1),
-  source: z.string().min(1), // 방문 유입 경로
+  storeType: z.string().min(1),
+  hasStore: z.string().min(1),
+  source: z.string().optional().default('홈페이지 창업 문의'),
   message: z.string().optional().default(''),
   privacyAgree: z.literal(true),
   hp: z.string().optional(), // honeypot
@@ -112,18 +114,22 @@ export async function POST(req: Request) {
 
   const name = parsed.data.name.trim();
   const phone = normalizePhone(parsed.data.phone);
-  const email = parsed.data.email.trim();
+  const email = (parsed.data.email ?? '').trim();
   const region = parsed.data.region.trim();
   const source = parsed.data.source.trim();
+  const storeType = parsed.data.storeType.trim();
+  const hasStore = parsed.data.hasStore.trim();
   const message = (parsed.data.message ?? '').trim();
 
   const text = `[오늘은 볶음우동 창업문의]
 📞 문의자 연락처: ${phone}
 
 이름: ${name}
-이메일: ${email}
+이메일: ${email || '-'}
 희망지역: ${region}
-방문 유입 경로: ${source}
+매장형태: ${storeType}
+점포 보유 유무: ${hasStore}
+유입경로: ${source}
 
 문의내용:
 ${message || '-'}`.slice(0, 1000);

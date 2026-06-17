@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 
@@ -17,38 +17,61 @@ const STRENGTHS: Strength[] = [
   {
     number: '01',
     title: '안정적인 원재료',
-    desc: '매출액 대비 식자재 비용 28~33%로 신선한 식자재를 합리적인 가격에 공급받을 수 있으며, 안정적인 주 6회의 전국배송 시스템을 삼성 웰스토리 대기업과 함께 합니다.',
+    desc: '식자재 비용 28~33%, 주 6회 전국 배송으로 원재료 수급을 안정화합니다.',
     image: '/asset/etc/1.jpg',
   },
   {
     number: '02',
     title: '간단하고 편리한 조리',
-    desc: '조리과정을 최적화 하여 평균조리시간 3분 내외로 1~2인 운영에 특화되도록 간단한 조리입니다. 초보자도 빠른 습득이 가능하며, 그로인해 직원 의존도가 최소화됩니다.',
+    desc: '평균 3분 내외 조리로 1~2인 운영과 초보자 교육에 최적화했습니다.',
     image: '/asset/etc/2.png',
   },
   {
     number: '03',
     title: '높은 만족도',
-    desc: '높은 퀄리티의 음식으로 소비자들의 만족을 추구합니다. 소비자들의 만족은 재주문으로 점주님께 돌아오며, 다양한 토핑옵션과 소스로 소비자들이 자신만의 취향을 찾도록 돕고 있습니다.',
+    desc: '높은 음식 퀄리티와 다양한 선택지로 만족도와 재주문을 높입니다.',
     image: '/asset/etc/3.png',
   },
   {
     number: '04',
     title: '비용의 최소화',
-    desc: '대형 평수가 아닌 7~10평 소형매장에서도 높은매출을 충분히 실현합니다. 넓은 면적에 따라 높아지는 고정비의 부담을 최소화 하며 조리 및 포장에 최적화된 동선으로 점주님들의 비용부담을 최소화합니다.',
+    desc: '7~10평 소형 매장과 최적 동선으로 고정비 부담을 줄입니다.',
     image: '/asset/etc/4.png',
   },
   {
     number: '05',
     title: '더불어 나아가는 본사',
-    desc: '점주님들의 오픈 이후 방치하는 본사가 아닌 점주님들과 함께 나아가는 본사가 되도록 매출액 감소, 비용부담 등 고민중이신 내용들을 본사와 소통하며, 안정적인 운영과 성공을 위해 함께 나아갑니다.',
+    desc: '오픈 이후에도 매출과 운영 고민을 함께 점검하며 성장을 돕습니다.',
     image: '/asset/etc/5.png',
   },
   {
     number: '06',
     title: '배달 편의성',
-    desc: '배달 포장에 최적화된 메뉴 구성과 레시피로 광고비 대비 매출효율과 만족도를 극대화합니다. 항상 고객들의 만족과 행복한 식사경험 제공을 최우선으로 생각합니다.',
+    desc: '배달 포장에 맞춘 메뉴와 레시피로 효율과 고객 만족을 끌어올립니다.',
     image: '/asset/etc/6.png',
+  },
+];
+
+const backgroundColumns = [
+  {
+    text: 'SUCCESS ROADMAP',
+    className: 'left-[5%] text-[#d4a34a]/18',
+    animation: 'startup-benefit-marquee-up 34s linear infinite',
+  },
+  {
+    text: 'TODAY UDON',
+    className: 'left-[17%] text-[#8f2f19]/28',
+    animation: 'startup-benefit-marquee-down 40s linear infinite',
+  },
+  {
+    text: 'FAST OPERATION',
+    className: 'right-[15%] text-[#d4a34a]/16',
+    animation: 'startup-benefit-marquee-up 38s linear infinite',
+  },
+  {
+    text: 'DELIVERY SYSTEM',
+    className: 'right-[4%] text-[#8f2f19]/24',
+    animation: 'startup-benefit-marquee-down 44s linear infinite',
   },
 ];
 
@@ -56,58 +79,39 @@ const STRENGTHS: Strength[] = [
 interface TimelineItemProps {
   strength: Strength;
   index: number;
-  totalItems: number;
+  active: boolean;
 }
 
-const TimelineItem = ({ strength, index, totalItems }: TimelineItemProps) => {
-  const itemRef = useRef(null);
-  const isItemInView = useInView(itemRef, {
-    once: true,
-    margin: '-80px',
-    amount: 0.3,
-  });
-
-  // 개별 아이템 스크롤 진행도
-  const { scrollYProgress } = useScroll({
-    target: itemRef,
-    offset: ['start end', 'center center'],
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1.05, 1]);
-  const numberScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.15, 1]);
-
+const TimelineItem = ({ strength, index, active }: TimelineItemProps) => {
   return (
     <motion.div
-      ref={itemRef}
       className="relative"
-      initial={{ opacity: 0, y: 50 }}
-      animate={isItemInView ? { opacity: 1, y: 0 } : {}}
+      initial={{ opacity: 0, y: 34, scale: 0.96, filter: 'blur(10px)' }}
+      animate={active ? { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' } : {}}
       transition={{
-        duration: 0.6,
-        delay: (index % 2) * 0.1,
-        ease: 'easeOut',
+        duration: 0.68,
+        delay: index * 0.11,
+        ease: [0.22, 1, 0.36, 1],
       }}
     >
       {/* 콘텐츠 카드 */}
       <motion.div
-        className="bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl shadow-lg overflow-hidden h-full"
-        style={{ scale }}
-        whileHover={{ scale: 1.02, boxShadow: '0 20px 40px rgba(0,0,0,0.15)' }}
+        className="h-full overflow-hidden rounded-lg border border-[#d4a34a]/38 bg-[#fff8e8]/95 shadow-[0_22px_64px_rgba(0,0,0,0.28)] backdrop-blur-sm"
+        whileHover={{ scale: 1.02, boxShadow: '0 26px 70px rgba(0,0,0,0.34)' }}
         transition={{ duration: 0.3 }}
       >
         {/* 숫자 배지 - 카드 상단에 배치 */}
-        <div className="absolute top-3 left-3 md:top-4 md:left-4 z-10">
+        <div className="absolute left-2 top-2 z-10 md:left-3 md:top-3">
           <motion.div
-            className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-stone-800 border-2 border-amber-600/30 shadow-xl flex items-center justify-center backdrop-blur-sm"
-            style={{ scale: numberScale }}
+            className="flex h-9 w-9 items-center justify-center rounded-md border-2 border-[#d4a34a]/45 bg-[#2b1208] shadow-xl backdrop-blur-sm md:h-12 md:w-12"
             whileHover={{
               scale: 1.1,
-              borderColor: 'rgba(217, 119, 6, 0.6)',
+              borderColor: 'rgba(212, 163, 74, 0.72)',
               boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
             }}
             transition={{ duration: 0.3 }}
           >
-            <span className="text-base md:text-lg lg:text-xl font-light tracking-wider text-amber-100">
+            <span className="text-sm font-black tracking-wider text-[#f3d38b] md:text-lg">
               {strength.number}
             </span>
           </motion.div>
@@ -121,19 +125,21 @@ const TimelineItem = ({ strength, index, totalItems }: TimelineItemProps) => {
               alt={strength.title}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 50vw, 33vw"
             />
             {/* 그라데이션 오버레이 */}
-            <div className="absolute inset-0 bg-linear-to-b from-black/10 to-black/30" />
+            <div className="absolute inset-0 bg-linear-to-b from-black/8 via-transparent to-[#2b1208]/36" />
           </div>
 
           {/* 텍스트 영역 */}
-          <div className="p-5 md:p-5 lg:p-6">
-            <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2.5 md:mb-2.5">
+          <div className="p-3.5 md:p-5">
+            <h4 className="mb-2 break-keep text-base font-black leading-snug text-[#2b1208] md:text-xl">
               {strength.title}
             </h4>
-            <div className="w-10 h-0.5 bg-linear-to-r from-yellow-500 to-amber-600 mb-3 md:mb-2.5" />
-            <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">{strength.desc}</p>
+            <div className="mb-3 h-0.5 w-10 bg-linear-to-r from-[#8f2f19] to-[#b9822a] md:mb-2.5" />
+            <p className="text-xs font-bold leading-5 text-[#5b351f] md:text-sm md:leading-6 lg:text-base">
+              {strength.desc}
+            </p>
           </div>
         </div>
       </motion.div>
@@ -146,27 +152,69 @@ export default function SuccessionPlanningSectionV2() {
   const sectionRef = useRef(null);
   const timelineRef = useRef(null);
 
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const isInView = useInView(sectionRef, { once: true, margin: '0px 0px -22% 0px' });
+  const isTimelineInView = useInView(timelineRef, { once: true, amount: 0.58 });
 
   return (
     <section
       id="succession-planning-v2"
-      className="relative overflow-hidden py-20 md:py-24 lg:py-32"
+      className="relative overflow-hidden bg-[#160904] py-20 text-[#fff0c8] md:py-24 lg:py-32"
       ref={sectionRef}
     >
-      {/* 배경 - 나무 텍스처 이미지 */}
+      {/* 배경 디자인 요소 */}
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            'url(/asset/bg-1/James_dark_toned_wooden_texture_background_charcoal_black_woo_ca9d72aa-2ccf-4785-8df7-a589aec81d40_2.png)',
-          backgroundSize: 'auto',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'repeat',
+            'linear-gradient(135deg, rgba(212, 163, 74, 0.08) 0 16%, transparent 16% 100%), linear-gradient(45deg, transparent 0 58%, rgba(143, 47, 25, 0.2) 58% 72%, transparent 72% 100%), repeating-linear-gradient(90deg, rgba(255, 222, 151, 0.045) 0 1px, transparent 1px 112px), repeating-linear-gradient(0deg, rgba(255, 222, 151, 0.026) 0 1px, transparent 1px 10px), linear-gradient(135deg, #120602 0%, #261006 48%, #4a1f0f 100%)',
         }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 h-[24%] bg-[#7b2a14]/72"
+        style={{
+          clipPath: 'polygon(56% 0, 100% 0, 100% 100%, 38% 100%)',
+        }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#d4a34a]/68 to-transparent" />
+      <div className="absolute inset-x-10 top-10 h-px bg-linear-to-r from-transparent via-[#b9822a]/24 to-transparent" />
+      <div className="absolute left-[6vw] top-14 bottom-14 w-px bg-linear-to-b from-transparent via-[#d4a34a]/20 to-transparent" />
+      <div className="absolute right-[6vw] top-14 bottom-14 w-px bg-linear-to-b from-transparent via-[#d4a34a]/20 to-transparent" />
+      <div
+        className="pointer-events-none absolute -left-14 top-16 h-36 w-36 rotate-45 border border-[#d4a34a]/20 bg-[#d4a34a]/6"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute -right-16 top-24 h-48 w-48 rotate-45 border border-[#8f2f19]/24 bg-[#8f2f19]/14"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute bottom-16 left-[10vw] h-28 w-28 rotate-45 border border-[#d4a34a]/16"
+        aria-hidden="true"
+      />
+      <div className="pointer-events-none absolute inset-0 z-[1] hidden overflow-hidden md:block" aria-hidden="true">
+        {backgroundColumns.map((column) => (
+          <div
+            key={column.text}
+            className={`absolute top-[-16%] bottom-[-16%] flex w-10 justify-center ${column.className}`}
+          >
+            <div
+              className="flex h-[200%] flex-col items-center gap-8 whitespace-nowrap text-[1.05rem] font-black uppercase leading-none tracking-[0.12em] [writing-mode:vertical-rl]"
+              style={{ animation: column.animation }}
+            >
+              {[0, 1, 2, 3].map((item) => (
+                <span key={item}>{column.text}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div
+        className="pointer-events-none absolute bottom-[-2.8rem] left-1/2 z-[1] hidden -translate-x-1/2 text-[10rem] font-black uppercase leading-none text-[#d4a34a]/8 md:block lg:text-[15rem]"
+        aria-hidden="true"
       >
-        {/* 어두운 오버레이 */}
-        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+        ROADMAP
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -183,15 +231,15 @@ export default function SuccessionPlanningSectionV2() {
             animate={isInView ? { scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-stone-700 text-amber-100 px-6 py-2 md:px-8 md:py-3 rounded-full shadow-lg">
-              <span className="text-sm md:text-base lg:text-lg font-bold tracking-wider">
+            <div className="rounded-full border border-[#d4a34a]/42 bg-[#2b1208]/88 px-6 py-2 text-[#e0b95d] shadow-[0_16px_42px_rgba(0,0,0,0.26)] md:px-8 md:py-3">
+              <span className="text-sm font-black tracking-[0.18em] md:text-base lg:text-lg">
                 SUCCESS ROADMAP
               </span>
             </div>
           </motion.div>
 
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+            className="mb-4 text-3xl font-black leading-tight text-[#fff8e8] drop-shadow-[0_12px_30px_rgba(0,0,0,0.32)] md:text-4xl lg:text-5xl"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -200,7 +248,7 @@ export default function SuccessionPlanningSectionV2() {
           </motion.h2>
 
           <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed"
+            className="mx-auto max-w-2xl text-lg font-bold leading-relaxed text-[#ead5a5] md:text-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -214,19 +262,19 @@ export default function SuccessionPlanningSectionV2() {
         {/* 타임라인 */}
         <motion.div
           ref={timelineRef}
-          className="relative max-w-7xl mx-auto"
+          className="relative mx-auto max-w-6xl"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          {/* 그리드 레이아웃 - 모바일 1열, 태블릿 이상 2열 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
+          {/* 그리드 레이아웃 */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:gap-6">
             {STRENGTHS.map((strength, index) => (
               <TimelineItem
                 key={strength.number}
                 strength={strength}
                 index={index}
-                totalItems={STRENGTHS.length}
+                active={isTimelineInView}
               />
             ))}
           </div>
@@ -240,9 +288,9 @@ export default function SuccessionPlanningSectionV2() {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-block bg-stone-800/90 backdrop-blur-sm px-10 py-5 rounded-2xl shadow-xl border border-amber-600/20">
-            <p className="text-lg md:text-xl font-semibold text-amber-100">지금 바로 시작하세요</p>
-            <p className="text-sm md:text-base text-stone-300 mt-2">
+          <div className="inline-block rounded-lg border border-[#d4a34a]/36 bg-[#211006]/88 px-8 py-5 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-sm md:px-10">
+            <p className="text-lg font-black text-[#f3d38b] md:text-xl">지금 바로 시작하세요</p>
+            <p className="mt-2 text-sm font-bold text-[#d6c19a] md:text-base">
               점주님의 성공을 위한 모든 준비가 되어있습니다
             </p>
           </div>

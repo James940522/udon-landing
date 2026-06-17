@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MessageCircle } from 'lucide-react';
 
 export default function FloatingInquiry() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,39 +31,39 @@ export default function FloatingInquiry() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
-          className="fixed bottom-8 right-8 z-50 flex flex-col items-center cursor-pointer"
+        <motion.button
+          type="button"
+          aria-label="창업 문의 섹션으로 이동"
+          className="group fixed bottom-6 right-5 z-50 flex h-20 w-20 cursor-pointer items-center justify-center rounded-full border border-[#d4a34a]/70 bg-[#1a0d06]/96 text-[#fff0c8] shadow-[0_18px_44px_rgba(0,0,0,0.32)] backdrop-blur-md transition-colors hover:border-[#f1c767] hover:bg-[#241006] sm:bottom-8 sm:right-8 sm:h-24 sm:w-24"
           onClick={scrollToContact}
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
-          exit={{ opacity: 0, scale: 0.5 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          initial={{ opacity: 0, y: 18, scale: 0.82 }}
+          animate={{ opacity: 1, y: [0, -8, 0], scale: 1 }}
+          exit={{ opacity: 0, y: 12, scale: 0.82 }}
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.94 }}
           transition={{
+            opacity: { duration: 0.28 },
+            scale: { duration: 0.28 },
             y: {
-              duration: 2,
+              duration: 2.4,
               repeat: Infinity,
+              ease: 'easeInOut',
             },
           }}
         >
-          {/* 우동그릇 본체 (뒤집어진 사다리꼴) */}
-          <div
-            className="relative bg-gradient-to-b from-stone-800 to-stone-900 shadow-2xl flex items-center justify-center"
-            style={{
-              width: '90px',
-              height: '65px',
-              clipPath: 'polygon(0% 0%, 100% 0%, 75% 100%, 25% 100%)',
-            }}
-          >
-            <span className="text-center leading-tight text-amber-400 font-black text-sm drop-shadow-lg">
+          <span className="absolute inset-0 rounded-full bg-linear-to-br from-[#d4a34a]/24 via-transparent to-[#8f2f19]/18" />
+          <span className="absolute inset-1.5 rounded-full border border-[#f3d487]/24" />
+          <span className="absolute inset-0 rounded-full shadow-[inset_0_0_0_1px_rgba(212,163,74,0)] transition-shadow duration-300 group-hover:shadow-[inset_0_0_0_2px_rgba(212,163,74,0.35)]" />
+
+          <span className="relative flex flex-col items-center justify-center gap-1">
+            <MessageCircle className="h-5 w-5 text-[#d4a34a] sm:h-6 sm:w-6" aria-hidden="true" />
+            <span className="text-center text-[0.72rem] font-black leading-tight text-[#fff0c8] sm:text-sm">
               창업
               <br />
               문의
             </span>
-          </div>
-          {/* 그릇 받침 */}
-          <div className="w-10 h-2 bg-stone-900 rounded-b-sm shadow-lg"></div>
-        </motion.div>
+          </span>
+        </motion.button>
       )}
     </AnimatePresence>
   );

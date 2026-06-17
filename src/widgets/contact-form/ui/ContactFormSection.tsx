@@ -1,37 +1,53 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
+import { Phone, Send, ShieldCheck } from 'lucide-react';
 import { useRef, useState } from 'react';
+
+const storeTypes = ['샵인샵', '단독매장', '홀매장', '기타매장'];
+const storeOwnership = ['있음', '없음'];
+
+const initialFormData = {
+  name: '',
+  phone: '',
+  email: '',
+  storeType: '',
+  region: '',
+  hasStore: '',
+  message: '',
+};
 
 export default function ContactFormSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    region: '',
-    budget: '',
-    message: '',
-  });
-
-  // 폼 제출 관련 state
+  const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [privacyAgree, setPrivacyAgree] = useState(false);
-  const [hp, setHp] = useState(''); // honeypot
+  const [hp, setHp] = useState('');
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleOptionChange = (name: 'storeType' | 'hasStore', value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
-    if (!privacyAgree) return;
+
+    if (!formData.storeType || !formData.hasStore) {
+      alert('매장형태와 점포 보유 유무를 선택해주세요.');
+      return;
+    }
+
+    if (!privacyAgree) {
+      alert('개인정보 수집 및 이용에 동의해주세요.');
+      return;
+    }
 
     setIsSubmitting(true);
     try {
@@ -39,11 +55,7 @@ export default function ContactFormSection() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          region: formData.region,
-          message: formData.message,
+          ...formData,
           privacyAgree: true,
           hp,
         }),
@@ -58,15 +70,8 @@ export default function ContactFormSection() {
         return;
       }
 
-      alert('접수 완료! 담당자가 영업일 기준 24시간 이내 연락드립니다.');
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        region: '',
-        budget: '',
-        message: '',
-      });
+      alert('접수 완료! 영업일 기준 24시간 이내 담당자가 연락드립니다.');
+      setFormData(initialFormData);
       setPrivacyAgree(false);
       setHp('');
     } catch (error) {
@@ -78,208 +83,247 @@ export default function ContactFormSection() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 relative overflow-hidden" ref={ref}>
-      {/* 배경 이미지 컨테이너 */}
+    <section
+      id="contact"
+      ref={ref}
+      className="relative overflow-hidden bg-[#1a0d06] py-16 text-[#fff0c8] md:py-24"
+      aria-label="오늘은 볶음우동 창업 문의"
+    >
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: 'url(/asset/bg-1/sec8-bg.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          backgroundImage:
+            'linear-gradient(135deg, rgba(255, 229, 172, 0.08) 0 16%, transparent 16% 100%), linear-gradient(45deg, transparent 0 58%, rgba(143, 47, 25, 0.22) 58% 72%, transparent 72% 100%), repeating-linear-gradient(90deg, rgba(255, 222, 151, 0.045) 0 1px, transparent 1px 112px), repeating-linear-gradient(0deg, rgba(255, 222, 151, 0.03) 0 1px, transparent 1px 11px), linear-gradient(135deg, #120803 0%, #261006 48%, #5b2312 100%)',
         }}
+        aria-hidden="true"
       />
-      {/* 오버레이 - 어둡게 */}
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute -left-24 top-0 h-80 w-80 rotate-45 rounded-lg bg-[#f2d28a]/10" />
+      <div className="absolute right-[-5rem] top-[-4rem] h-60 w-60 rotate-45 rounded-lg bg-[#8f2f19]/20 shadow-[0_24px_60px_rgba(0,0,0,0.24)]" />
+      <div className="absolute bottom-[-5rem] right-[7vw] h-64 w-64 rotate-45 rounded-lg border border-[#d4a34a]/24" />
+      <div
+        className="absolute inset-0 opacity-[0.2]"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(135deg, rgba(255, 222, 151, 0.16) 0 2px, transparent 2px 10px)',
+          backgroundSize: '140px 140px',
+        }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-linear-to-b from-[#fff0c8]/6 via-transparent to-black/18" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* 헤더 */}
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
+          className="mx-auto w-full max-w-lg rounded-lg border border-[#d4a34a]/45 bg-linear-to-br from-[#fff7df]/94 via-[#f4dfb4]/92 to-[#e3bf78]/88 p-6 shadow-[0_30px_90px_rgba(0,0,0,0.34)] backdrop-blur-sm md:p-8"
+          initial={{ opacity: 0, y: 34 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
         >
-          <div className="inline-block mb-6"></div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-            창업 문의
-          </h2>
-          <p className="text-lg md:text-xl font-semibold text-white drop-shadow-lg">
-            문의 주시면 담당자 확인 후
+          <span className="mb-4 inline-flex rounded-full bg-[#2b1208] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#c8952e]">
+            Today Udon
+          </span>
+          <h2 className="text-4xl font-black leading-[1.12] text-[#2a1208] md:text-6xl">
+            성공 창업,
             <br />
-            빠른 시일 내에 회신 드리겠습니다
+            <span className="text-[#8f2f19]">오늘은</span>
+            <br />
+            <span className="text-[#8f2f19]">볶음우동</span>입니다.
+          </h2>
+          <p className="mt-6 text-base font-black leading-8 text-[#4a2412] md:text-lg">
+            작은 공간에서도 안정적으로 시작할 수 있도록 상담부터 오픈까지 함께합니다.
+            배달 중심 운영, 소형 매장, 전환 창업까지 편하게 문의해주세요.
           </p>
+
+          <a
+            href="sms:010-9923-9502?body=홈페이지를%20통해%20오늘은%20볶음우동%20창업%20문의를%20드립니다."
+            className="mt-6 inline-flex items-center gap-3 rounded-md bg-[#2b1208] px-5 py-3 text-3xl font-black text-[#c8952e] shadow-[0_18px_44px_rgba(43,18,8,0.32)] transition-transform hover:scale-[1.02] hover:text-[#e2b957]"
+          >
+            <Phone className="h-7 w-7" aria-hidden="true" />
+            010-9923-9502
+          </a>
         </motion.div>
 
-        {/* 폼 컨테이너 */}
         <motion.div
-          className="max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 50 }}
+          className="mx-auto w-full max-w-xl rounded-lg border border-[#d4a34a]/42 bg-[#fffaf1]/96 p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] md:p-6"
+          initial={{ opacity: 0, y: 34 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.12 }}
         >
-          <div className="bg-black/70 backdrop-blur-md rounded-3xl shadow-2xl p-8 md:p-12 border border-white/10">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* 이름 & 연락처 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-bold text-white mb-2">
-                    이름 <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all bg-white/80"
-                    placeholder="홍길동"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-bold text-white mb-2">
-                    연락처 <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all bg-white/80"
-                    placeholder="010-1234-5678"
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* 이메일 */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-bold text-white mb-2">
-                    이메일 <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all bg-white/80"
-                    placeholder="example@email.com"
-                  />
-                </div>
-
-                {/* 희망 지역 */}
-                <div>
-                  <label htmlFor="region" className="block text-sm font-bold text-white mb-2">
-                    희망 창업 지역 <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="region"
-                    name="region"
-                    required
-                    value={formData.region}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all bg-white/80"
-                    placeholder="서울 강남구"
-                  />
-                </div>
-              </div>
-
-              {/* 문의 내용 */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid gap-3 md:grid-cols-2">
               <div>
-                <label htmlFor="message" className="block text-sm font-bold text-white mb-2">
-                  문의 내용
+                <label htmlFor="name" className="mb-2 block text-sm font-black text-[#2b1208]">
+                  이름 <span className="text-[#8f2f19]">*</span>
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  value={formData.message}
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all resize-none bg-white/80"
-                  placeholder="창업에 대해 궁금하신 점을 자유롭게 작성해주세요."
+                  className="h-11 w-full rounded-md border border-[#b9822a] bg-white px-3 text-sm font-bold text-[#2b1208] outline-none transition focus:border-[#8f2f19] focus:ring-2 focus:ring-[#c8952e]/25"
+                  placeholder="홍길동"
                 />
               </div>
 
-              {/* Honeypot (봇 차단용) */}
-              <input
-                type="text"
-                name="hp"
-                value={hp}
-                onChange={(e) => setHp(e.target.value)}
-                className="hidden"
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-              />
-
-              {/* 개인정보 동의 */}
-              <div className="bg-white/10 rounded-xl p-4 border border-white/20">
-                <label className="flex items-start gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={privacyAgree}
-                    onChange={(e) => setPrivacyAgree(e.target.checked)}
-                    required
-                    className="mt-1 w-5 h-5 text-amber-500 border-gray-300 rounded focus:ring-amber-500"
-                  />
-                  <span className="text-sm text-white leading-relaxed">
-                    개인정보 수집 및 이용에 동의합니다. 수집된 정보는 창업 상담 목적으로만 사용되며,
-                    관련 법령에 따라 안전하게 관리됩니다.
-                  </span>
+              <div>
+                <label htmlFor="phone" className="mb-2 block text-sm font-black text-[#2b1208]">
+                  연락처 <span className="text-[#8f2f19]">*</span>
                 </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="h-11 w-full rounded-md border border-[#b9822a] bg-white px-3 text-sm font-bold text-[#2b1208] outline-none transition focus:border-[#8f2f19] focus:ring-2 focus:ring-[#c8952e]/25"
+                  placeholder="010-1234-5678"
+                />
+              </div>
+            </div>
+
+            <div className="grid gap-3 md:grid-cols-2">
+              <div>
+                <label htmlFor="email" className="mb-2 block text-sm font-black text-[#2b1208]">
+                  이메일 <span className="text-[#7a5438]">(선택)</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="h-11 w-full rounded-md border border-[#b9822a] bg-white px-3 text-sm font-bold text-[#2b1208] outline-none transition focus:border-[#8f2f19] focus:ring-2 focus:ring-[#c8952e]/25"
+                  placeholder="example@email.com"
+                />
               </div>
 
-              {/* 제출 버튼 */}
-              <motion.button
-                type="submit"
-                disabled={isSubmitting || !privacyAgree}
-                className={`w-full bg-linear-to-r from-amber-500 to-orange-600 text-white py-4 px-8 rounded-xl text-lg md:text-xl font-bold shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 ${
-                  isSubmitting || !privacyAgree ? 'opacity-60 cursor-not-allowed' : ''
-                }`}
-                whileHover={{ scale: isSubmitting || !privacyAgree ? 1 : 1.02 }}
-                whileTap={{ scale: isSubmitting || !privacyAgree ? 1 : 0.98 }}
-              >
-                {isSubmitting ? '전송 중...' : '창업 문의 신청하기'}
-              </motion.button>
-
-              {/* 안내 문구 */}
-              <p className="text-center text-sm text-gray-300 mt-4">
-                영업일 기준 24시간 이내에 담당자가 연락드립니다.
-              </p>
-            </form>
-          </div>
-        </motion.div>
-
-        {/* 하단 연락처 */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <div className="bg-black/70 backdrop-blur-md rounded-2xl p-8 inline-block shadow-2xl border border-white/20">
-            <p className="text-white text-lg md:text-xl font-bold mb-4">빠른 상담을 원하시나요?</p>
-            <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
-              <a
-                href="sms:010-9923-9502?body=홈페이지를%20통해%20창업%20문의%20드립니다."
-                className="flex items-center gap-2 text-white text-xl md:text-2xl font-bold hover:scale-105 transition-transform hover:text-amber-400"
-              >
-                010-9923-9502
-              </a>
-              <span className="hidden md:inline text-gray-400">|</span>
-              <a
-                href="mailto:wochl123@naver.com"
-                className="flex items-center gap-2 text-white text-xl md:text-2xl font-bold hover:scale-105 transition-transform hover:text-amber-400"
-              >
-                wochl123@naver.com
-              </a>
+              <fieldset>
+                <legend className="mb-2 block text-sm font-black text-[#2b1208]">
+                  매장형태 <span className="text-[#8f2f19]">*</span>
+                </legend>
+                <div className="grid grid-cols-2 gap-2">
+                  {storeTypes.map((type) => (
+                    <button
+                      key={type}
+                      type="button"
+                      onClick={() => handleOptionChange('storeType', type)}
+                      className={`h-11 rounded-md border px-3 text-sm font-black transition ${
+                        formData.storeType === type
+                          ? 'border-[#8f2f19] bg-[#8f2f19] text-white shadow-[0_10px_22px_rgba(143,47,25,0.22)]'
+                          : 'border-[#b9822a] bg-white text-[#4a2412] hover:border-[#8f2f19]'
+                      }`}
+                      aria-pressed={formData.storeType === type}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
             </div>
-          </div>
+
+            <div className="grid gap-3 md:grid-cols-[1.15fr_0.85fr]">
+              <div>
+                <label htmlFor="region" className="mb-2 block text-sm font-black text-[#2b1208]">
+                  창업지역 <span className="text-[#8f2f19]">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="region"
+                  name="region"
+                  required
+                  value={formData.region}
+                  onChange={handleChange}
+                  className="h-11 w-full rounded-md border border-[#b9822a] bg-white px-3 text-sm font-bold text-[#2b1208] outline-none transition focus:border-[#8f2f19] focus:ring-2 focus:ring-[#c8952e]/25"
+                  placeholder="서울 강남구"
+                />
+              </div>
+
+              <fieldset>
+                <legend className="mb-2 block text-sm font-black text-[#2b1208]">
+                  점포 보유 유무 <span className="text-[#8f2f19]">*</span>
+                </legend>
+                <div className="grid grid-cols-2 gap-2">
+                  {storeOwnership.map((item) => (
+                    <button
+                      key={item}
+                      type="button"
+                      onClick={() => handleOptionChange('hasStore', item)}
+                      className={`h-11 rounded-md border px-3 text-sm font-black transition ${
+                        formData.hasStore === item
+                          ? 'border-[#8f2f19] bg-[#8f2f19] text-white shadow-[0_10px_22px_rgba(143,47,25,0.22)]'
+                          : 'border-[#b9822a] bg-white text-[#4a2412] hover:border-[#8f2f19]'
+                      }`}
+                      aria-pressed={formData.hasStore === item}
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+            </div>
+
+            <div>
+              <label htmlFor="message" className="mb-2 block text-sm font-black text-[#2b1208]">
+                문의내역 <span className="text-[#7a5438]">(선택)</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full resize-none rounded-md border border-[#b9822a] bg-white px-3 py-3 text-sm font-bold leading-6 text-[#2b1208] outline-none transition focus:border-[#8f2f19] focus:ring-2 focus:ring-[#c8952e]/25"
+                placeholder="창업에 대해 궁금하신 점을 자유롭게 작성해주세요."
+              />
+            </div>
+
+            <input
+              type="text"
+              name="hp"
+              value={hp}
+              onChange={(e) => setHp(e.target.value)}
+              className="hidden"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
+
+            <div className="rounded-md border border-[#b9822a]/70 bg-[#f6e6bc] p-4">
+              <label className="flex cursor-pointer items-start gap-3">
+                <input
+                  type="checkbox"
+                  checked={privacyAgree}
+                  onChange={(e) => setPrivacyAgree(e.target.checked)}
+                  required
+                  className="mt-1 h-4 w-4 rounded border-[#b9822a] text-[#8f2f19] focus:ring-[#8f2f19]"
+                />
+                <span className="text-sm font-bold leading-6 text-[#4a2412]">
+                  개인정보 수집 및 이용에 동의합니다. 수집된 정보는 창업 상담 목적으로만
+                  사용되며, 관련 법령에 따라 안전하게 관리됩니다.
+                </span>
+              </label>
+            </div>
+
+            <motion.button
+              type="submit"
+              disabled={isSubmitting || !privacyAgree}
+              className={`flex h-14 w-full items-center justify-center gap-2 rounded-md bg-[#8f2f19] px-6 text-base font-black text-white shadow-[0_16px_32px_rgba(143,47,25,0.26)] transition-all duration-300 ${
+                isSubmitting || !privacyAgree ? 'cursor-not-allowed opacity-60' : 'hover:bg-[#6f2414]'
+              }`}
+              whileHover={{ scale: isSubmitting || !privacyAgree ? 1 : 1.01 }}
+              whileTap={{ scale: isSubmitting || !privacyAgree ? 1 : 0.99 }}
+            >
+              <Send className="h-5 w-5" aria-hidden="true" />
+              {isSubmitting ? '전송 중...' : '창업 문의 신청하기'}
+            </motion.button>
+
+            <p className="flex items-center justify-center gap-2 text-center text-xs font-black text-[#6b4325]">
+              <ShieldCheck className="h-4 w-4 text-[#8f2f19]" aria-hidden="true" />
+              영업일 기준 24시간 이내에 담당자가 연락드립니다.
+            </p>
+          </form>
         </motion.div>
       </div>
     </section>

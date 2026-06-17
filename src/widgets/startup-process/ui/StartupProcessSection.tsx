@@ -6,7 +6,9 @@ import Image from 'next/image';
 
 export default function StartupProcessSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const processGridRef = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '0px 0px -22% 0px' });
+  const isProcessInView = useInView(processGridRef, { once: true, amount: 0.58 });
 
   const processes = [
     {
@@ -87,21 +89,29 @@ export default function StartupProcessSection() {
           <div className="w-24 h-2 bg-amber-600 mx-auto rounded-full mt-8 shadow-lg" />
         </motion.div>
 
-        {/* 프로세스 리스트 - 2열 그리드 레이아웃 */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 gap-5 md:gap-8 lg:gap-10">
+        {/* 프로세스 리스트 */}
+        <div ref={processGridRef} className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:gap-6">
             {processes.map((process, index) => (
               <motion.div
                 key={index}
                 className="relative"
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * (index % 2) }}
+                initial={{ opacity: 0, y: 34, scale: 0.96, filter: 'blur(10px)' }}
+                animate={
+                  isProcessInView
+                    ? { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }
+                    : {}
+                }
+                transition={{
+                  duration: 0.68,
+                  delay: index * 0.11,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
               >
                 {/* 카드 */}
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl md:rounded-3xl overflow-hidden border border-stone-300/50 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group h-full">
+                <div className="group h-full overflow-hidden rounded-lg border border-stone-300/50 bg-white/86 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
                   {/* 이미지 영역 */}
-                  <div className="relative aspect-5/3 md:aspect-4/3 bg-stone-200">
+                  <div className="relative aspect-[4/3] bg-stone-200">
                     <Image
                       src={process.image}
                       alt={process.title}
@@ -110,22 +120,24 @@ export default function StartupProcessSection() {
                       quality={90}
                     />
                     {/* 번호 배지 */}
-                    <div className="absolute top-2 left-2 md:top-3 md:left-3">
-                      <div className="bg-linear-to-r from-amber-500 to-yellow-500 text-stone-900 w-9 h-9 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl flex items-center justify-center font-bold text-sm md:text-lg lg:text-xl shadow-xl">
+                    <div className="absolute left-2 top-2 md:left-3 md:top-3">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-md bg-linear-to-r from-amber-500 to-yellow-500 text-sm font-black text-stone-900 shadow-xl md:h-12 md:w-12 md:text-lg">
                         {process.number}
                       </div>
                     </div>
                   </div>
 
                   {/* 컨텐츠 영역 */}
-                  <div className="p-4 md:p-5 lg:p-6">
+                  <div className="p-3.5 md:p-5">
                     {/* 제목 */}
-                    <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 text-gray-900">
+                    <h3 className="mb-2 break-keep text-base font-black leading-snug text-gray-950 md:text-xl">
                       {process.title}
                     </h3>
 
                     {/* 설명 */}
-                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">{process.description}</p>
+                    <p className="text-xs font-bold leading-5 text-gray-700 md:text-sm md:leading-6">
+                      {process.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>

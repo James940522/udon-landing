@@ -10,6 +10,7 @@ import { TextMarquee } from '@/widgets/text-marquee';
 import { BrandIntroSection } from '@/widgets/brand-intro';
 import { BlueOceanAdvantageSection } from '@/widgets/blue-ocean-advantage';
 import { TrustedFranchiseSection } from '@/widgets/trusted-franchise';
+import { RepeatOrderProofSection } from '@/widgets/repeat-order-proof';
 import { SuccessionPlanningSection } from '@/widgets/succession-planning';
 import { SuccessionPlanningSectionV2 } from '@/widgets/succession-planning-v2';
 import { StartupProcessSection } from '@/widgets/startup-process';
@@ -29,6 +30,13 @@ import { CustomCursorState } from '@/features/custom-cursor';
 
 // Shared Config
 import { SITE_ORIGIN, absoluteUrl } from '@/shared/config/site';
+
+const marqueeSets = {
+  brand: ['TODAY UDON', 'YAKI UDON BRAND', 'DELIVERY FIRST', 'WARM JAPANESE DINING'],
+  operation: ['SMALL STORE', 'FAST COOKING', '1-2 PERSON OPERATION', 'LOW FIXED COST'],
+  reorder: ['REAL ORDER DATA', 'REORDER FLOW', 'STABLE SALES', 'OWNER SUCCESS'],
+  menu: ['SIGNATURE NOODLE', 'FRESH TOPPING', 'TAKEOUT READY', 'DELIVERY RECIPE'],
+};
 
 export default function Home() {
   const [showRecruitmentModal, setShowRecruitmentModal] = useState(false);
@@ -156,32 +164,45 @@ export default function Home() {
         <Header />
         <HeroSection />
         <TextMarquee
-          items={['TODAY UDON', 'SIGNATURE NOODLE', 'DELIVERY FIRST', 'WARM DINING']}
+          items={marqueeSets.brand}
           variant="flame"
-          speed={22}
+          speed={24}
+          ariaLabel="오늘은 볶음우동 브랜드 키워드"
         />
         <BrandIntroSection />
         <BlueOceanAdvantageSection />
+        <TrustedFranchiseSection />
+        <TextMarquee
+          items={marqueeSets.operation}
+          variant="cream"
+          direction="right"
+          speed={30}
+          ariaLabel="오늘은 볶음우동 운영 강점"
+        />
         {/* 기존 지그재그 레이아웃 */}
         {/* <SuccessionPlanningSection /> */}
         {/* 새로운 로드맵 레이아웃 (V2) */}
         <SuccessionPlanningSectionV2 />
-        <TrustedFranchiseSection />
-        <StartupProcessSection />
-        <StartupBenefitSection />
+
+        <RepeatOrderProofSection />
         <TextMarquee
-          items={['TODAY UDON', 'SIGNATURE NOODLE', 'DELIVERY FIRST', 'WARM DINING']}
-          variant="flame"
-          speed={22}
+          items={marqueeSets.reorder}
+          variant="charcoal"
+          speed={26}
+          ariaLabel="오늘은 볶음우동 재주문 데이터 키워드"
         />
+        <StartupBenefitSection />
         <TerritoryProtectionSection />
         <TextMarquee
-          items={['TODAY UDON', 'SIGNATURE NOODLE', 'DELIVERY FIRST', 'WARM DINING']}
-          variant="charcoal"
-          speed={22}
+          items={marqueeSets.menu}
+          variant="flame"
+          direction="right"
+          speed={28}
+          ariaLabel="오늘은 볶음우동 메뉴 운영 키워드"
         />
         <MenuSection />
         {/* <StorePresetSection /> */}
+        <StartupProcessSection />
         <ReviewsSection />
         <ContactFormSection />
         <Footer />
