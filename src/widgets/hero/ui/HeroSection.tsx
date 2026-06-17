@@ -43,7 +43,10 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 md:pt-24 pb-12 md:pb-16">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center overflow-hidden pt-20 md:pt-24 pb-12 md:pb-16"
+    >
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
         <Image
