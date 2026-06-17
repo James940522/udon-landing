@@ -186,7 +186,6 @@ export default function Home() {
         <TextMarquee
           items={marqueeSets.operation}
           variant="flame"
-          direction="right"
           speed={30}
           ariaLabel="오늘은 볶음우동 운영 강점"
         />
@@ -194,6 +193,7 @@ export default function Home() {
         <TextMarquee
           items={marqueeSets.reorder}
           variant="charcoal"
+          direction="right"
           speed={26}
           ariaLabel="오늘은 볶음우동 재주문 데이터 키워드"
         />
@@ -202,7 +202,6 @@ export default function Home() {
         <TextMarquee
           items={marqueeSets.menu}
           variant="flame"
-          direction="right"
           speed={28}
           ariaLabel="오늘은 볶음우동 메뉴 운영 키워드"
         />
@@ -210,6 +209,13 @@ export default function Home() {
         {/* <StorePresetSection /> */}
         <StartupProcessSection />
         <ReviewsSection />
+        <TextMarquee
+          items={marqueeSets.menu}
+          variant="flame"
+          direction="right"
+          speed={28}
+          ariaLabel="오늘은 볶음우동 메뉴 운영 키워드"
+        />
         <ContactFormSection />
         <Footer />
         <FloatingInquiry />
