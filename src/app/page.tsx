@@ -183,7 +183,13 @@ export default function Home() {
         {/* <SuccessionPlanningSection /> */}
         {/* 새로운 로드맵 레이아웃 (V2) */}
         <SuccessionPlanningSectionV2 />
-
+        <TextMarquee
+          items={marqueeSets.operation}
+          variant="flame"
+          direction="right"
+          speed={30}
+          ariaLabel="오늘은 볶음우동 운영 강점"
+        />
         <RepeatOrderProofSection />
         <TextMarquee
           items={marqueeSets.reorder}
