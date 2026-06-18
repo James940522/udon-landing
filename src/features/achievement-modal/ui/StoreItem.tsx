@@ -2,6 +2,7 @@ import type { Store } from '@/lib/stores';
 
 interface StoreItemProps {
   store: Store;
+  index: number;
   currentDate: {
     year: number;
     month: number;
@@ -30,31 +31,35 @@ function getOpenStatus(openDate: string, currentDate: StoreItemProps['currentDat
   return { label: '오픈완료', upcoming: false, isCurrentMonthOpen: false };
 }
 
-export default function StoreItem({ store, currentDate }: StoreItemProps) {
+export default function StoreItem({ store, currentDate, index }: StoreItemProps) {
   const openDate = store.open_date?.trim() ?? '';
   const { label, upcoming, isCurrentMonthOpen } = getOpenStatus(openDate, currentDate);
   const statusClass = isCurrentMonthOpen
-    ? 'store-current-month-status bg-linear-to-r from-[#b7783d] via-[#c9a24d] to-[#ead9aa] text-[#26140e]'
+    ? 'bg-[#8f3528] text-[#fff8eb]'
     : upcoming
-      ? 'bg-[#c9a24d] text-[#412312]'
-      : 'bg-[#8f3528] text-white';
+      ? 'bg-[#ead9aa] text-[#5c3a22]'
+      : 'border border-[#cdbb9f] bg-transparent text-[#80624c]';
   const anonymizedBranchName = `${store.region || '전국'} OO점`;
+  const storeNumber = store.store_code.padStart(2, '0');
 
   return (
-    <div className="flex h-[58px] w-full flex-col overflow-hidden rounded-[5px] border border-[#d9c49f]/70 bg-[#fff8eb] shadow-[0_3px_0_rgba(27,15,9,0.3)] sm:h-[76px] sm:rounded-[7px] sm:shadow-[0_4px_0_rgba(27,15,9,0.32)]">
-      <div className="flex min-h-0 flex-1 items-center justify-center px-0.5 text-center sm:px-1.5">
-        <p className="max-w-full whitespace-normal font-heading text-[9px] font-black leading-[1.05] text-[#2b160d] [overflow-wrap:anywhere] [word-break:normal] sm:text-[13px] sm:leading-tight">
+    <li className="grid min-h-14 grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 border-b border-[#ddcfbb] py-3">
+      <span className="font-heading text-[10px] font-black tracking-[0.08em] text-[#a28670]">
+        {storeNumber}
+      </span>
+      <div className="min-w-0">
+        <p className="truncate font-heading text-sm font-black text-[#26140e] sm:text-[15px]">
           {anonymizedBranchName}
         </p>
+        <p className="mt-0.5 text-[9px] font-bold tracking-[0.1em] text-[#9a7d67]">
+          STORE {String(index + 1).padStart(2, '0')}
+        </p>
       </div>
-      <div
-        className={`relative flex h-[18px] items-center justify-center overflow-hidden whitespace-nowrap font-heading text-[9px] font-black leading-none sm:h-7 sm:text-[13px] ${statusClass}`}
+      <span
+        className={`inline-flex min-w-[62px] items-center justify-center rounded-full px-2.5 py-1.5 text-[9px] font-black whitespace-nowrap sm:text-[10px] ${statusClass}`}
       >
-        {isCurrentMonthOpen ? (
-          <span className="store-current-month-status__shine" aria-hidden="true" />
-        ) : null}
-        <span className="relative z-10">{label}</span>
-      </div>
-    </div>
+        {label}
+      </span>
+    </li>
   );
 }

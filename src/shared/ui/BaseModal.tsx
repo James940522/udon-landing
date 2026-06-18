@@ -16,6 +16,7 @@ interface BaseModalProps {
   children: ReactNode;
   modalId?: string;
   customFooter?: ReactNode;
+  footerVariant?: 'default' | 'report';
 }
 
 export default function BaseModal({
@@ -29,6 +30,7 @@ export default function BaseModal({
   children,
   modalId,
   customFooter,
+  footerVariant = 'default',
 }: BaseModalProps) {
   const [dontShowToday, setDontShowToday] = useState(false);
 
@@ -55,7 +57,7 @@ export default function BaseModal({
 
   return (
     <div
-      className={`absolute ${mobileLeft} ${mobileTop} ${mobileTransform} ${desktopLeft} ${desktopTop} ${desktopTransform} z-50 ${width} ${maxHeight || ''} flex flex-col shadow-2xl ${className}`}
+      className={`fixed ${mobileLeft} ${mobileTop} ${mobileTransform} ${desktopLeft} ${desktopTop} ${desktopTransform} z-50 ${width} ${maxHeight || ''} flex flex-col shadow-2xl ${className}`}
     >
       {/* Header */}
       {header && <div className="flex-shrink-0">{header}</div>}
@@ -67,6 +69,30 @@ export default function BaseModal({
       <div className="flex-shrink-0">
         {customFooter ? (
           customFooter
+        ) : footerVariant === 'report' ? (
+          <div className="flex items-center justify-between gap-3 border-t border-[#ddcfbb] bg-[#f6efe3] px-5 py-3 sm:px-9">
+            <div className="flex min-w-0 items-center gap-2">
+              <input
+                type="checkbox"
+                id={`dontShowToday_${modalId}`}
+                checked={dontShowToday}
+                onChange={(e) => setDontShowToday(e.target.checked)}
+                className="h-4 w-4 shrink-0 rounded border-[#a98d75] text-[#8f3528] focus:ring-[#c9a24d]"
+              />
+              <label
+                htmlFor={`dontShowToday_${modalId}`}
+                className="cursor-pointer truncate text-[10px] font-bold text-[#725744] sm:text-xs"
+              >
+                오늘 하루 창 열지 않기
+              </label>
+            </div>
+            <button
+              onClick={handleClose}
+              className="shrink-0 rounded-full border border-[#8f3528] px-5 py-2 text-[10px] font-black tracking-[0.08em] text-[#8f3528] transition-colors hover:bg-[#8f3528] hover:text-[#fff8eb] sm:text-xs"
+            >
+              CLOSE
+            </button>
+          </div>
         ) : (
           <div className="mt-4 space-y-3 rounded-2xl border border-[#c9a24d]/30 bg-[#f7eddb]/92 p-4 backdrop-blur-sm">
             <div className="flex items-center justify-center gap-2">
