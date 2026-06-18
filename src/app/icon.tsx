@@ -22,7 +22,7 @@ export default function Icon() {
       <div
         style={{
           fontSize: 320,
-          background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+          background: 'linear-gradient(135deg, #c9a24d 0%, #a66732 100%)',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -42,4 +42,3 @@ export default function Icon() {
     }
   );
 }
-

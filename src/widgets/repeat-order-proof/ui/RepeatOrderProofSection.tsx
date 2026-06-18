@@ -60,34 +60,34 @@ export default function RepeatOrderProofSection() {
     <section
       id="repeat-order-proof"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#170902] py-20 text-[#fff2cf] md:py-28"
+      className="relative overflow-hidden bg-[#170c08] py-20 text-[#fff2d8] md:py-28"
       aria-label="오늘은 볶음우동 재주문 데이터"
     >
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 12% 10%, rgba(184, 121, 24, 0.2), transparent 30%), radial-gradient(circle at 86% 18%, rgba(166, 59, 36, 0.18), transparent 28%), linear-gradient(90deg, rgba(209, 157, 76, 0.05), transparent 12%, transparent 88%, rgba(209, 157, 76, 0.05)), repeating-linear-gradient(90deg, rgba(184, 121, 24, 0.07) 0 1px, transparent 1px 96px), repeating-linear-gradient(0deg, rgba(184, 121, 24, 0.04) 0 1px, transparent 1px 9px), linear-gradient(135deg, #120602 0%, #2a1005 48%, #5b260d 100%)',
+            'radial-gradient(circle at 12% 10%, rgba(184, 121, 24, 0.2), transparent 30%), radial-gradient(circle at 86% 18%, rgba(166, 59, 36, 0.18), transparent 28%), linear-gradient(90deg, rgba(209, 157, 76, 0.05), transparent 12%, transparent 88%, rgba(209, 157, 76, 0.05)), repeating-linear-gradient(90deg, rgba(184, 121, 24, 0.07) 0 1px, transparent 1px 96px), repeating-linear-gradient(0deg, rgba(184, 121, 24, 0.04) 0 1px, transparent 1px 9px), linear-gradient(135deg, #100806 0%, #2a1005 48%, #6a3c22 100%)',
         }}
         aria-hidden="true"
       />
       <div
-        className="absolute inset-x-0 bottom-0 h-[22%] bg-[#a96512]"
+        className="absolute inset-x-0 bottom-0 h-[22%] bg-[#8f3528]"
         style={{
           clipPath: 'polygon(58% 0, 100% 0, 100% 100%, 44% 100%)',
         }}
         aria-hidden="true"
       />
-      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#9b6824]/70 to-transparent" />
-      <div className="absolute inset-x-10 top-10 h-px bg-linear-to-r from-transparent via-[#b87918]/24 to-transparent" />
-      <div className="absolute left-[5vw] top-14 bottom-14 w-px bg-linear-to-b from-transparent via-[#9b6824]/22 to-transparent" />
-      <div className="absolute right-[5vw] top-14 bottom-14 w-px bg-linear-to-b from-transparent via-[#9b6824]/22 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#97712c]/70 to-transparent" />
+      <div className="absolute inset-x-10 top-10 h-px bg-linear-to-r from-transparent via-[#a66732]/24 to-transparent" />
+      <div className="absolute left-[5vw] top-14 bottom-14 w-px bg-linear-to-b from-transparent via-[#97712c]/22 to-transparent" />
+      <div className="absolute right-[5vw] top-14 bottom-14 w-px bg-linear-to-b from-transparent via-[#97712c]/22 to-transparent" />
 
       <div className="pointer-events-none absolute inset-0 z-[1] hidden overflow-hidden lg:block">
         {backgroundWords.map((word, index) => (
           <span
             key={word}
-            className="absolute text-[8rem] font-black uppercase leading-none text-[#b87918]/10 xl:text-[11rem]"
+            className="absolute text-[8rem] font-black uppercase leading-none text-[#a66732]/10 xl:text-[11rem]"
             style={{
               left: `${4 + index * 25}%`,
               top: index % 2 === 0 ? '2rem' : 'auto',
@@ -107,13 +107,13 @@ export default function RepeatOrderProofSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.72 }}
           >
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.34em] text-[#b44728] md:text-sm">
+            <p className="mb-4 text-xs font-black uppercase tracking-[0.34em] text-[#a24a34] md:text-sm">
               Real reorder data
             </p>
             <h2 className="text-4xl font-black leading-[0.98] text-white drop-shadow-[0_12px_30px_rgba(0,0,0,0.34)] sm:text-5xl md:text-6xl lg:text-7xl">
               압도적인
               <br />
-              <span className="text-[#c88724]">재주문 흐름</span>
+              <span className="text-[#c9a24d]">재주문 흐름</span>
             </h2>
             <p className="mt-7 max-w-2xl text-base font-bold leading-8 text-[#ead2a1] md:text-lg">
               최근 7일 실제 주문 데이터에서 총 주문 951건 중 재주문이 488건을 차지했습니다.
@@ -124,7 +124,7 @@ export default function RepeatOrderProofSection() {
               {['최근 7일 기준', '신규·재주문 비교', '실제 주문 데이터'].map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-[#9b6824]/46 bg-[#2b1308]/78 px-4 py-2 text-xs font-black text-[#e8c783] shadow-[0_14px_34px_rgba(0,0,0,0.18)]"
+                  className="rounded-full border border-[#97712c]/46 bg-[#2b1308]/78 px-4 py-2 text-xs font-black text-[#e8c783] shadow-[0_14px_34px_rgba(0,0,0,0.18)]"
                 >
                   {item}
                 </span>
@@ -133,7 +133,7 @@ export default function RepeatOrderProofSection() {
           </motion.div>
 
           <motion.div
-            className="relative overflow-hidden rounded-lg border border-[#9b6824]/46 bg-[#b87918] text-[#281207] shadow-[0_30px_90px_rgba(0,0,0,0.32)]"
+            className="relative overflow-hidden rounded-lg border border-[#97712c]/46 bg-[#a66732] text-[#26140e] shadow-[0_30px_90px_rgba(0,0,0,0.32)]"
             initial={{ opacity: 0, y: 28 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.72, delay: 0.14 }}
@@ -143,7 +143,7 @@ export default function RepeatOrderProofSection() {
               aria-hidden="true"
             />
             <div className="px-5 pt-5 sm:px-7 sm:pt-7">
-              <span className="inline-flex rounded-full bg-[#6b3a14] px-4 py-2 text-xs font-black text-[#fff9e6]">
+              <span className="inline-flex rounded-full bg-[#3b2115] px-4 py-2 text-xs font-black text-[#f7eddb]">
                 실제 주문 데이터 기반
               </span>
             </div>
@@ -151,18 +151,18 @@ export default function RepeatOrderProofSection() {
               {summaryStats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className={`rounded-lg bg-[#fff8d6]/58 px-4 py-4 ${index > 0 ? 'sm:border-l sm:border-[#8b4513]/20' : ''}`}
+                  className={`rounded-lg bg-[#f7eddb]/58 px-4 py-4 ${index > 0 ? 'sm:border-l sm:border-[#5c351f]/20' : ''}`}
                 >
-                  <p className="mb-2 text-xs font-black text-[#8b4513]">{stat.label}</p>
-                  <p className="flex min-w-0 flex-wrap items-end gap-1 text-5xl font-black leading-none text-[#3b1a08] md:text-6xl">
+                  <p className="mb-2 text-xs font-black text-[#5c351f]">{stat.label}</p>
+                  <p className="flex min-w-0 flex-wrap items-end gap-1 text-5xl font-black leading-none text-[#3b2115] md:text-6xl">
                     {stat.value}
                     <span className="pb-1 text-2xl md:text-3xl">{stat.unit}</span>
                   </p>
                 </div>
               ))}
             </div>
-            <div className="flex items-start gap-4 bg-[#fff0bf] px-5 py-5 sm:px-7">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#a63b24] text-lg font-black text-white">
+            <div className="flex items-start gap-4 bg-[#f2dfb8] px-5 py-5 sm:px-7">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#8f3528] text-lg font-black text-white">
                 재
               </div>
               <p className="text-sm font-black leading-7 text-[#3a1a08] md:text-base">
@@ -177,12 +177,12 @@ export default function RepeatOrderProofSection() {
           {graphCards.map((card, index) => (
             <motion.article
               key={card.badge}
-              className="relative overflow-hidden rounded-lg border border-[#f1d08b]/28 bg-[#fffaf1] p-3 text-[#351808] shadow-[0_24px_70px_rgba(0,0,0,0.22)]"
+              className="relative overflow-hidden rounded-lg border border-[#f1d08b]/28 bg-[#fff8eb] p-3 text-[#3b2115] shadow-[0_24px_70px_rgba(0,0,0,0.22)]"
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.62, delay: 0.24 + index * 0.1 }}
             >
-              <div className="absolute left-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-[#a63b24] text-sm font-black text-white shadow-[0_10px_24px_rgba(166,59,36,0.32)]">
+              <div className="absolute left-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-[#8f3528] text-sm font-black text-white shadow-[0_10px_24px_rgba(166,59,36,0.32)]">
                 {card.badge}
               </div>
               <Image
@@ -195,13 +195,13 @@ export default function RepeatOrderProofSection() {
                 quality={96}
               />
               <div className="grid grid-cols-3 gap-2 px-1 pt-3 text-center text-xs font-black">
-                <div className="rounded-md bg-[#f6ead2] px-2 py-2 text-[#6b3a14]">
+                <div className="rounded-md bg-[#f0e3cf] px-2 py-2 text-[#3b2115]">
                   총 {card.total}
                 </div>
-                <div className="rounded-md bg-[#fff9e6] px-2 py-2 text-[#008f83]">
+                <div className="rounded-md bg-[#f7eddb] px-2 py-2 text-[#4f6d67]">
                   신규 {card.newOrders}
                 </div>
-                <div className="rounded-md bg-[#fff9e6] px-2 py-2 text-[#1f6fff]">
+                <div className="rounded-md bg-[#f7eddb] px-2 py-2 text-[#8f3528]">
                   재주문 {card.repeatOrders}
                 </div>
               </div>
@@ -210,13 +210,13 @@ export default function RepeatOrderProofSection() {
         </div>
 
         <motion.div
-          className="mx-auto mt-8 flex max-w-4xl flex-col gap-4 rounded-full border border-[#9b6824]/42 bg-[#211006]/88 px-5 py-4 text-sm font-black text-[#fff2cf] shadow-[0_24px_70px_rgba(0,0,0,0.24)] sm:flex-row sm:items-center sm:justify-between sm:px-8"
+          className="mx-auto mt-8 flex max-w-4xl flex-col gap-4 rounded-full border border-[#97712c]/42 bg-[#26140e]/88 px-5 py-4 text-sm font-black text-[#fff2d8] shadow-[0_24px_70px_rgba(0,0,0,0.24)] sm:flex-row sm:items-center sm:justify-between sm:px-8"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.48 }}
         >
           <span>3개 매장의 최근 7일 신규·재주문 데이터를 분석한 결과입니다.</span>
-          <span className="text-[#c88724]">기준: 신규 주문 / 재주문 비교</span>
+          <span className="text-[#c9a24d]">기준: 신규 주문 / 재주문 비교</span>
         </motion.div>
       </div>
     </section>

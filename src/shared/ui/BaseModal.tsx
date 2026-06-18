@@ -68,18 +68,18 @@ export default function BaseModal({
         {customFooter ? (
           customFooter
         ) : (
-          <div className="mt-4 space-y-3 bg-white/50 rounded-2xl p-4">
+          <div className="mt-4 space-y-3 rounded-2xl border border-[#c9a24d]/30 bg-[#f7eddb]/92 p-4 backdrop-blur-sm">
             <div className="flex items-center justify-center gap-2">
               <input
                 type="checkbox"
                 id={`dontShowToday_${modalId}`}
                 checked={dontShowToday}
                 onChange={(e) => setDontShowToday(e.target.checked)}
-                className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 border-2 border-gray-400 rounded focus:ring-2 focus:ring-orange-500"
+                className="h-4 w-4 rounded border-2 border-[#9a826b] text-[#a66732] focus:ring-2 focus:ring-[#c9a24d] sm:h-5 sm:w-5"
               />
               <label
                 htmlFor={`dontShowToday_${modalId}`}
-                className="text-xs sm:text-sm text-gray-700 font-medium cursor-pointer"
+                className="cursor-pointer text-xs font-bold text-[#533a2d] sm:text-sm"
               >
                 오늘 하루 창 열지 않기
               </label>
@@ -87,7 +87,7 @@ export default function BaseModal({
 
             <button
               onClick={handleClose}
-              className="w-full bg-white hover:bg-gray-50 text-gray-900 font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg border-2 border-gray-300 text-sm sm:text-base"
+              className="w-full rounded-lg border-2 border-[#c9a24d]/55 bg-[#fff8eb] px-4 py-2 text-sm font-black text-[#26140e] shadow-md transition-all duration-200 hover:border-[#c9a24d] hover:bg-[#fff2d8] hover:shadow-lg sm:px-6 sm:py-3 sm:text-base"
             >
               닫기
             </button>

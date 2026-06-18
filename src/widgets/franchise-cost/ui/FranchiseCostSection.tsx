@@ -68,7 +68,7 @@ export default function FranchiseCostSection() {
 
         {/* 가맹비용 표 */}
         <motion.div
-          className="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-amber-200"
+          className="bg-[#fff8eb] rounded-3xl shadow-2xl overflow-hidden border-2 border-amber-200"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -107,7 +107,7 @@ export default function FranchiseCostSection() {
                       <motion.tr
                         key={`${categoryIndex}-${itemIndex}`}
                         className={`border-b border-gray-200 hover:bg-amber-50/50 transition-colors ${
-                          itemIndex % 2 === 0 ? 'bg-white' : 'bg-amber-50/20'
+                          itemIndex % 2 === 0 ? 'bg-[#fff8eb]' : 'bg-amber-50/20'
                         }`}
                         initial={{ opacity: 0, x: -20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}

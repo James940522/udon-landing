@@ -50,22 +50,22 @@ const benefitRows = [
 const backgroundColumns = [
   {
     text: 'LOW INITIAL COST',
-    className: 'left-[4%] text-[#8f361e]/42',
+    className: 'left-[4%] text-[#8f3528]/42',
     animation: 'startup-benefit-marquee-up 24s linear infinite',
   },
   {
     text: 'STARTUP BENEFIT',
-    className: 'left-[16%] text-[#d4a34a]/24',
+    className: 'left-[16%] text-[#c9a24d]/24',
     animation: 'startup-benefit-marquee-down 30s linear infinite',
   },
   {
     text: 'ONLY WHAT YOU NEED',
-    className: 'right-[12%] text-[#8f361e]/38',
+    className: 'right-[12%] text-[#8f3528]/38',
     animation: 'startup-benefit-marquee-up 28s linear infinite',
   },
   {
     text: 'PROTECTED AREA',
-    className: 'right-[3%] text-[#d4a34a]/20',
+    className: 'right-[3%] text-[#c9a24d]/20',
     animation: 'startup-benefit-marquee-down 34s linear infinite',
   },
 ];
@@ -73,7 +73,7 @@ const backgroundColumns = [
 function StampMark({ index, active }: { index: number; active: boolean }) {
   return (
     <motion.span
-      className="relative inline-flex h-8 w-14 rotate-[-5deg] items-center justify-center rounded-[5px] border-2 border-[#dd2636] text-lg font-black leading-none text-[#dd2636] shadow-[0_0_18px_rgba(221,38,54,0.28)] sm:h-10 sm:w-16 sm:text-2xl md:h-12 md:w-20 md:text-3xl"
+      className="relative inline-flex h-8 w-14 rotate-[-5deg] items-center justify-center rounded-[5px] border-2 border-[#8f3528] text-lg font-black leading-none text-[#8f3528] shadow-[0_0_18px_rgba(221,38,54,0.28)] sm:h-10 sm:w-16 sm:text-2xl md:h-12 md:w-20 md:text-3xl"
       initial={{ opacity: 0, y: -28, scale: 1.7, rotate: -18 }}
       animate={
         active
@@ -91,7 +91,7 @@ function StampMark({ index, active }: { index: number; active: boolean }) {
         ease: [0.2, 0.95, 0.2, 1],
       }}
     >
-      <span className="absolute inset-[3px] rounded-[3px] border border-[#dd2636]/80" />
+      <span className="absolute inset-[3px] rounded-[3px] border border-[#8f3528]/80" />
       無
     </motion.span>
   );
@@ -107,19 +107,19 @@ export default function StartupBenefitSection() {
     <section
       id="startup-benefit"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#1a0d06] py-20 text-[#f7e8c4] md:py-28"
+      className="relative overflow-hidden bg-[#170c08] py-20 text-[#f7e8c4] md:py-28"
     >
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 78% 18%, rgba(180, 60, 25, 0.22), transparent 28%), radial-gradient(circle at 10% 18%, rgba(212, 163, 74, 0.14), transparent 26%), repeating-linear-gradient(90deg, rgba(255, 222, 151, 0.045) 0 1px, transparent 1px 118px), repeating-linear-gradient(0deg, rgba(255, 222, 151, 0.03) 0 1px, transparent 1px 10px), linear-gradient(135deg, #120803 0%, #281207 48%, #3d1b0c 100%)',
+            'radial-gradient(circle at 78% 18%, rgba(180, 60, 25, 0.22), transparent 28%), radial-gradient(circle at 10% 18%, rgba(212, 163, 74, 0.14), transparent 26%), repeating-linear-gradient(90deg, rgba(255, 222, 151, 0.045) 0 1px, transparent 1px 118px), repeating-linear-gradient(0deg, rgba(255, 222, 151, 0.03) 0 1px, transparent 1px 10px), linear-gradient(135deg, #100806 0%, #26140e 48%, #3b2115 100%)',
         }}
         aria-hidden="true"
       />
-      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#d4a34a]/70 to-transparent" />
-      <div className="absolute left-[6vw] top-20 bottom-20 w-px bg-linear-to-b from-transparent via-[#d4a34a]/28 to-transparent" />
-      <div className="absolute right-[6vw] top-20 bottom-20 w-px bg-linear-to-b from-transparent via-[#d4a34a]/28 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#c9a24d]/70 to-transparent" />
+      <div className="absolute left-[6vw] top-20 bottom-20 w-px bg-linear-to-b from-transparent via-[#c9a24d]/28 to-transparent" />
+      <div className="absolute right-[6vw] top-20 bottom-20 w-px bg-linear-to-b from-transparent via-[#c9a24d]/28 to-transparent" />
 
       <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden" aria-hidden="true">
         {backgroundColumns.map((column) => (
@@ -146,10 +146,10 @@ export default function StartupBenefitSection() {
             animate={sectionInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.42em] text-[#d24a32]">
+            <p className="mb-4 text-xs font-black uppercase tracking-[0.42em] text-[#a24a34]">
               Startup benefit
             </p>
-            <h2 className="text-4xl font-black leading-tight tracking-[-0.04em] text-[#fff0c8] drop-shadow-[0_9px_24px_rgba(0,0,0,0.35)] md:text-6xl">
+            <h2 className="text-4xl font-black leading-tight tracking-[-0.04em] text-[#fff2d8] drop-shadow-[0_9px_24px_rgba(0,0,0,0.35)] md:text-6xl">
               초기 부담은 낮추고
               <br />
               필요한 것만 준비
@@ -157,7 +157,7 @@ export default function StartupBenefitSection() {
           </motion.div>
 
           <motion.p
-            className="text-base font-bold leading-8 text-[#dfc79d] md:text-lg"
+            className="text-base font-bold leading-8 text-[#d9c49f] md:text-lg"
             initial={{ opacity: 0, y: 24 }}
             animate={sectionInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15 }}
@@ -169,7 +169,7 @@ export default function StartupBenefitSection() {
 
         <motion.div
           ref={tableRef}
-          className="overflow-hidden rounded-md border border-[#d4a34a]/42 bg-[#0b0604] shadow-[0_28px_80px_rgba(0,0,0,0.38)]"
+          className="overflow-hidden rounded-md border border-[#c9a24d]/42 bg-[#0b0604] shadow-[0_28px_80px_rgba(0,0,0,0.38)]"
           initial={{ opacity: 0, y: 34 }}
           animate={sectionInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.75, delay: 0.25 }}
@@ -177,11 +177,11 @@ export default function StartupBenefitSection() {
           <div className="overflow-hidden">
             <table className="w-full table-fixed border-collapse">
               <thead>
-                <tr className="bg-black text-[#fff0c8]">
-                  <th className="w-[22%] border-r border-[#d4a34a]/28 px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
+                <tr className="bg-black text-[#fff2d8]">
+                  <th className="w-[22%] border-r border-[#c9a24d]/28 px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
                     구분
                   </th>
-                  <th className="w-[50%] border-r border-[#d4a34a]/28 px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
+                  <th className="w-[50%] border-r border-[#c9a24d]/28 px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
                     내용
                   </th>
                   <th className="w-[28%] px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
@@ -191,7 +191,7 @@ export default function StartupBenefitSection() {
               </thead>
               <tbody>
                 {benefitRows.map((row, index) => (
-                  <tr key={row.category} className="border-t border-[#d4a34a]/24">
+                  <tr key={row.category} className="border-t border-[#c9a24d]/24">
                     <th className="break-keep bg-[#130c08] px-2 py-3 text-center text-[0.78rem] font-black leading-snug text-white sm:px-3 sm:text-base md:px-5 md:py-5 md:text-2xl">
                       {row.category}
                     </th>
@@ -203,7 +203,7 @@ export default function StartupBenefitSection() {
                         </p>
                       )}
                     </td>
-                    <td className="break-keep bg-[#130c08] px-2 py-3 text-center text-[0.72rem] font-black leading-snug text-[#fff0c8] sm:px-3 sm:text-sm md:px-5 md:py-5 md:text-lg">
+                    <td className="break-keep bg-[#130c08] px-2 py-3 text-center text-[0.72rem] font-black leading-snug text-[#fff2d8] sm:px-3 sm:text-sm md:px-5 md:py-5 md:text-lg">
                       {row.amount === 'stamp' ? (
                         <StampMark index={index} active={tableInView} />
                       ) : (
@@ -214,10 +214,10 @@ export default function StartupBenefitSection() {
                 ))}
               </tbody>
               <tfoot>
-                <tr className="border-t border-[#d4a34a]/32">
+                <tr className="border-t border-[#c9a24d]/32">
                   <td
                     colSpan={2}
-                    className="bg-black px-2 py-4 text-center text-base font-black text-[#fff0c8] sm:px-3 sm:text-lg md:px-5 md:py-5 md:text-2xl"
+                    className="bg-black px-2 py-4 text-center text-base font-black text-[#fff2d8] sm:px-3 sm:text-lg md:px-5 md:py-5 md:text-2xl"
                   >
                     최종 창업비용
                   </td>

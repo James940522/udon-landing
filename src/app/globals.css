@@ -117,60 +117,68 @@
   --font-heading: 'GMarketSans', 'Pretendard', system-ui, sans-serif;
   --font-gmarket: 'GMarketSans', sans-serif;
 
-  /* 메인 톤앤매너 색상 - 볶음우동 로고 기반 */
-  --primary: #fec601;
-  --secondary: #ff6b4a;
-  --accent: #66bb6a;
-  --background: #ffffff;
-  --foreground: #6b4423;
+  /* 프리미엄 이자카야 팔레트 */
+  --brand-ink: #170c08;
+  --brand-wood: #3b2115;
+  --brand-caramel: #a66732;
+  --brand-gold: #c9a24d;
+  --brand-cream: #fff2d8;
+  --brand-lacquer: #8f3528;
+  --brand-olive: #596348;
 
-  /* 추가 악센트 색상 */
-  --accent-yellow: #fec601;
-  --accent-red: #ff6b4a;
-  --accent-green: #66bb6a;
-  --accent-brown: #8b4513;
+  --primary: var(--brand-gold);
+  --secondary: var(--brand-caramel);
+  --accent: var(--brand-olive);
+  --background: #f7f0e4;
+  --foreground: #26140e;
 
-  /* 파스텔 배경 색상 - 이미지 톤앤매너 기반 */
-  --pastel-pink: #ffb3ba;
-  --pastel-peach: #ffcc99;
-  --pastel-yellow: #ffe599;
-  --pastel-mint: #b5ead7;
-  --pastel-blue: #c7ceea;
-  --pastel-lavender: #e0bbe4;
-  --pastel-cream: #fff9e6;
-  --pastel-ivory: #fffef0;
+  /* 기존 컴포넌트 호환용 악센트 */
+  --accent-yellow: var(--brand-gold);
+  --accent-red: var(--brand-lacquer);
+  --accent-green: var(--brand-olive);
+  --accent-brown: var(--brand-wood);
+
+  /* 밝은 섹션과 카드용 웜 뉴트럴 */
+  --pastel-pink: #ead6cc;
+  --pastel-peach: #e5c7a7;
+  --pastel-yellow: #ead9aa;
+  --pastel-mint: #d8ddc9;
+  --pastel-blue: #d6d9d5;
+  --pastel-lavender: #ded5d0;
+  --pastel-cream: #f7eddb;
+  --pastel-ivory: #fff8eb;
 
   /* shadcn 호환성을 위한 추가 변수 */
   --radius: 0.625rem;
-  --card: #ffffff;
-  --card-foreground: #6b4423;
-  --popover: #ffffff;
-  --popover-foreground: #6b4423;
-  --primary-foreground: #ffffff;
-  --secondary-foreground: #ffffff;
-  --muted: #fff9e6;
-  --muted-foreground: #a0522d;
-  --accent-foreground: #ffffff;
-  --destructive: #ff4444;
-  --destructive-foreground: #ffffff;
-  --border: #ffe8b3;
-  --input: #fff5dc;
-  --ring: #fec601;
-  --chart-1: #fec601;
-  --chart-2: #ff6b4a;
-  --chart-3: #66bb6a;
-  --chart-4: #8b4513;
-  --chart-5: #ffd700;
+  --card: #fff8eb;
+  --card-foreground: #26140e;
+  --popover: #fff8eb;
+  --popover-foreground: #26140e;
+  --primary-foreground: #170c08;
+  --secondary-foreground: #fff2d8;
+  --muted: #f0e3cf;
+  --muted-foreground: #725744;
+  --accent-foreground: #fff2d8;
+  --destructive: #8f3528;
+  --destructive-foreground: #fff2d8;
+  --border: #d9c49f;
+  --input: #f4e8d5;
+  --ring: var(--brand-gold);
+  --chart-1: var(--brand-gold);
+  --chart-2: var(--brand-caramel);
+  --chart-3: var(--brand-olive);
+  --chart-4: var(--brand-wood);
+  --chart-5: var(--brand-lacquer);
 
   /* sidebar 색상 */
-  --sidebar: #ffffff;
-  --sidebar-foreground: #6b4423;
-  --sidebar-primary: #fec601;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #fff9e6;
-  --sidebar-accent-foreground: #6b4423;
-  --sidebar-border: #ffe8b3;
-  --sidebar-ring: #fec601;
+  --sidebar: #170c08;
+  --sidebar-foreground: #fff2d8;
+  --sidebar-primary: var(--brand-gold);
+  --sidebar-primary-foreground: #170c08;
+  --sidebar-accent: #3b2115;
+  --sidebar-accent-foreground: #fff2d8;
+  --sidebar-border: #5e432e;
+  --sidebar-ring: var(--brand-gold);
 }
 
 @theme inline {
@@ -182,6 +190,64 @@
   /* GMarketSans 폰트 패밀리 설정 (타이틀/헤딩용) */
   --font-heading: 'GMarketSans', 'Pretendard', system-ui, sans-serif;
   --font-gmarket: 'GMarketSans', sans-serif;
+
+  /* Tailwind 기본 색상도 브랜드 팔레트에 맞춰 통일 */
+  --color-stone-50: #fff8eb;
+  --color-stone-100: #f6ead7;
+  --color-stone-200: #e5d4bb;
+  --color-stone-300: #cbb79b;
+  --color-stone-400: #9a826b;
+  --color-stone-500: #6e5745;
+  --color-stone-600: #533a2d;
+  --color-stone-700: #3b261c;
+  --color-stone-800: #26140e;
+  --color-stone-900: #170c08;
+  --color-stone-950: #0d0604;
+
+  --color-gray-50: #fff8eb;
+  --color-gray-100: #f5ead8;
+  --color-gray-200: #e2d3bc;
+  --color-gray-300: #c8b497;
+  --color-gray-400: #9f876a;
+  --color-gray-500: #7b634f;
+  --color-gray-600: #5b4536;
+  --color-gray-700: #443025;
+  --color-gray-800: #2b1b14;
+  --color-gray-900: #1d100b;
+  --color-gray-950: #120806;
+
+  --color-amber-50: #fff8eb;
+  --color-amber-100: #f8edcf;
+  --color-amber-200: #ecd9a8;
+  --color-amber-300: #dbc271;
+  --color-amber-400: #c9a24d;
+  --color-amber-500: #b58d3b;
+  --color-amber-600: #97712c;
+  --color-amber-700: #765421;
+  --color-amber-800: #563a18;
+  --color-amber-900: #36220f;
+
+  --color-yellow-300: #e0c879;
+  --color-yellow-400: #d4b45f;
+  --color-yellow-500: #c29e45;
+  --color-yellow-600: #a98235;
+  --color-yellow-700: #846226;
+
+  --color-orange-300: #d09a72;
+  --color-orange-400: #bd7848;
+  --color-orange-500: #a66732;
+  --color-orange-600: #8d5027;
+  --color-orange-700: #6e3a20;
+
+  --color-red-300: #d89b83;
+  --color-red-400: #c87355;
+  --color-red-500: #aa4f35;
+  --color-red-600: #8f3528;
+  --color-red-700: #71271f;
+
+  --color-green-400: #7d8b58;
+  --color-green-500: #657147;
+  --color-green-600: #4e5938;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -307,17 +373,22 @@ html.is-clicking *::after {
 }
 
 ::-webkit-scrollbar-track {
-  background: #2c2416;
+  background: #170c08;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #c9a24d 0%, #a68739 100%);
+  background: linear-gradient(180deg, #c9a24d 0%, #a66732 100%);
   border-radius: 6px;
-  border: 2px solid #2c2416;
+  border: 2px solid #170c08;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #d4b45f 0%, #b89644 100%);
+  background: linear-gradient(180deg, #d4b45f 0%, #b7783d 100%);
+}
+
+::selection {
+  background: #c9a24d;
+  color: #170c08;
 }
 
 /* 스크롤바 숨기기 유틸리티 */
@@ -376,6 +447,81 @@ html.is-clicking *::after {
   animation: wiggle 1s ease-in-out infinite;
 }
 
+.font-roadmap-display {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
+  font-weight: 800;
+  font-stretch: condensed;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.izakaya-roadmap-bg {
+  background-color: #170c08;
+  background-image:
+    radial-gradient(circle at 50% 15%, rgba(201, 162, 77, 0.13), transparent 28%),
+    linear-gradient(
+      115deg,
+      transparent 0 14%,
+      rgba(166, 103, 50, 0.09) 14% 14.35%,
+      transparent 14.35% 45%,
+      rgba(201, 162, 77, 0.06) 45% 45.2%,
+      transparent 45.2%
+    ),
+    repeating-linear-gradient(90deg, rgba(255, 242, 216, 0.018) 0 1px, transparent 1px 86px),
+    repeating-linear-gradient(0deg, rgba(255, 242, 216, 0.018) 0 1px, transparent 1px 9px),
+    linear-gradient(132deg, #170c08 0%, #26130d 42%, #3b2115 71%, #170c08 100%);
+}
+
+.izakaya-roadmap-bg::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  opacity: 0.32;
+  background-image:
+    repeating-linear-gradient(
+      92deg,
+      transparent 0 44px,
+      rgba(201, 162, 77, 0.08) 44px 45px,
+      transparent 45px 92px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0 8%,
+      rgba(59, 33, 21, 0.68) 8% 8.5%,
+      transparent 8.5% 91.5%,
+      rgba(59, 33, 21, 0.68) 91.5% 92%,
+      transparent 92%
+    );
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+}
+
+.roadmap-ribbon-left {
+  animation: roadmap-ribbon-left 34s linear infinite;
+}
+
+.roadmap-ribbon-right {
+  animation: roadmap-ribbon-right 39s linear infinite;
+}
+
+@keyframes roadmap-ribbon-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes roadmap-ribbon-right {
+  from {
+    transform: translateX(-33.333%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 @keyframes text-marquee-scroll-left {
   from {
     transform: translateX(0);
@@ -421,10 +567,61 @@ html.is-clicking *::after {
   }
 }
 
+.store-current-month-status {
+  background-size: 190% 100%;
+  animation: store-current-month-glow 1.45s ease-in-out infinite;
+}
+
+.store-current-month-status__shine {
+  position: absolute;
+  inset: -35% auto -35% -44%;
+  width: 42%;
+  transform: skewX(-18deg);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.78) 48%,
+    transparent 100%
+  );
+  filter: blur(1px);
+  animation: store-current-month-shine 1.65s ease-in-out infinite;
+}
+
+@keyframes store-current-month-glow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.45),
+      0 0 8px rgba(201, 162, 77, 0.45);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.8),
+      0 0 18px rgba(166, 103, 50, 0.68);
+  }
+}
+
+@keyframes store-current-month-shine {
+  0% {
+    left: -46%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  76%,
+  100% {
+    left: 108%;
+    opacity: 0;
+  }
+}
+
 /* Swiper 커스터마이징 */
 .baemin-swiper .swiper-button-next,
 .baemin-swiper .swiper-button-prev {
-  background: #fec601 !important;
+  background: #c9a24d !important;
   width: 40px !important;
   height: 40px !important;
   border-radius: 50% !important;
@@ -434,27 +631,27 @@ html.is-clicking *::after {
 
 .baemin-swiper .swiper-button-next:hover,
 .baemin-swiper .swiper-button-prev:hover {
-  background: #ffd700 !important;
+  background: #d4b45f !important;
   transform: scale(1.1) !important;
 }
 
 .baemin-swiper .swiper-button-next::after,
 .baemin-swiper .swiper-button-prev::after {
   font-size: 12px !important;
-  color: #6b4423 !important;
+  color: #3b2115 !important;
   font-weight: bold !important;
 }
 
 .baemin-swiper .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background: #a0522d;
+  background: #72513a;
   opacity: 0.3;
   transition: all 0.3s ease;
 }
 
 .baemin-swiper .swiper-pagination-bullet-active {
-  background: #fec601;
+  background: #c9a24d;
   opacity: 1;
   width: 32px;
   border-radius: 6px;
@@ -464,13 +661,13 @@ html.is-clicking *::after {
 .hero-swiper .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background: #6b4423;
+  background: #3b2115;
   opacity: 0.5;
   transition: all 0.3s ease;
 }
 
 .hero-swiper .swiper-pagination-bullet-active {
-  background: #6b4423;
+  background: #3b2115;
   opacity: 1;
   width: 24px;
   border-radius: 5px;

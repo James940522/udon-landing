@@ -51,7 +51,7 @@ export function StorePresetSection() {
       className="py-20 md:py-32 relative overflow-hidden"
       ref={ref}
       style={{
-        background: 'linear-gradient(180deg, #FFFBF0 0%, #FFF9E6 100%)',
+        background: 'linear-gradient(180deg, #FFF8EB 0%, #f7eddb 100%)',
       }}
     >
       {/* 배경 장식 */}
@@ -77,7 +77,7 @@ export function StorePresetSection() {
             매장 인테리어
           </h2>
           <p
-            className="typo-body text-gray-800 bg-white/80 px-6 py-3 rounded-2xl inline-block font-bold shadow-xl"
+            className="typo-body text-gray-800 bg-[#fff8eb]/80 px-6 py-3 rounded-2xl inline-block font-bold shadow-xl"
             style={{
               textShadow: '1px 1px 2px rgba(0,0,0,0.05)',
             }}
@@ -101,9 +101,9 @@ export function StorePresetSection() {
                   className="text-2xl font-black"
                   style={{
                     fontFamily: 'var(--font-heading)',
-                    color: '#FFC107',
+                    color: '#C9A24D',
                     textShadow:
-                      '-1.5px -1.5px 0 #8B4513, 1.5px -1.5px 0 #8B4513, -1.5px 1.5px 0 #8B4513, 1.5px 1.5px 0 #8B4513, 3px 3px 0 #6B3410, 4px 4px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 193, 7, 0.5)',
+                      '-1.5px -1.5px 0 #5c351f, 1.5px -1.5px 0 #5c351f, -1.5px 1.5px 0 #5c351f, 1.5px 1.5px 0 #5c351f, 3px 3px 0 #6B3410, 4px 4px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 193, 7, 0.5)',
                   }}
                 >
                   오늘은 볶음우동
@@ -123,7 +123,7 @@ export function StorePresetSection() {
                       delay: brandIndex * 0.2 + optionIndex * 0.1 + 0.3,
                     }}
                   >
-                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg border-3 border-yellow-200">
+                    <div className="bg-[#fff8eb] rounded-2xl overflow-hidden shadow-lg border-3 border-yellow-200">
                       {/* 이미지 */}
                       <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
                         <Image
@@ -170,9 +170,9 @@ export function StorePresetSection() {
                   className="text-3xl lg:text-4xl font-black"
                   style={{
                     fontFamily: 'var(--font-heading)',
-                    color: '#FFC107',
+                    color: '#C9A24D',
                     textShadow:
-                      '-2px -2px 0 #8B4513, 2px -2px 0 #8B4513, -2px 2px 0 #8B4513, 2px 2px 0 #8B4513, 4px 4px 0 #6B3410, 6px 6px 0 #8B4513, 8px 8px 12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 193, 7, 0.6)',
+                      '-2px -2px 0 #5c351f, 2px -2px 0 #5c351f, -2px 2px 0 #5c351f, 2px 2px 0 #5c351f, 4px 4px 0 #6B3410, 6px 6px 0 #5c351f, 8px 8px 12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 193, 7, 0.6)',
                   }}
                 >
                   오늘은 볶음우동
@@ -193,7 +193,7 @@ export function StorePresetSection() {
                     }}
                     whileHover={{ y: -8 }}
                   >
-                    <div className="bg-white rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-3 border-yellow-200">
+                    <div className="bg-[#fff8eb] rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-3 border-yellow-200">
                       {/* 이미지 */}
                       <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
                         <Image

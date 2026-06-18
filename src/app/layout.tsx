@@ -14,7 +14,7 @@ const isPreview = process.env.VERCEL_ENV === 'preview';
 // SEO: 검색엔진 소유확인 (안전한 처리)
 const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
 const naverVerification = process.env.NAVER_SITE_VERIFICATION;
-const test = '1234';
+
 export const metadata: Metadata = {
   // SEO: metadataBase - 모든 상대 경로의 기준 URL
   metadataBase: new URL(SITE_ORIGIN),
@@ -107,7 +107,7 @@ export const metadata: Metadata = {
 
 // SEO: Viewport 설정 (브랜드 테마 컬러 포함)
 export const viewport: Viewport = {
-  themeColor: '#FFD700',
+  themeColor: '#170c08',
   width: 'device-width',
   initialScale: 1,
 };

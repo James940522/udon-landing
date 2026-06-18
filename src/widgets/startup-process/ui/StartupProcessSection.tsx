@@ -109,7 +109,7 @@ export default function StartupProcessSection() {
                 }}
               >
                 {/* 카드 */}
-                <div className="group h-full overflow-hidden rounded-lg border border-stone-300/50 bg-white/86 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+                <div className="group h-full overflow-hidden rounded-lg border border-[#c9a24d]/32 bg-[#fff8eb]/92 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-[#c9a24d]/58 hover:shadow-xl">
                   {/* 이미지 영역 */}
                   <div className="relative aspect-[4/3] bg-stone-200">
                     <Image

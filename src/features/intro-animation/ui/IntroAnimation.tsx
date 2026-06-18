@@ -116,7 +116,7 @@ export default function IntroAnimation({ isVisible, onComplete }: IntroAnimation
                     className="absolute inset-0 rounded-full"
                     style={{
                       background:
-                        'linear-gradient(45deg, #FFD700, #FFA500, #FF6347, #FFD700, #FFA500)',
+                        'linear-gradient(45deg, #c9a24d, #a66732, #8f3528, #c9a24d, #a66732)',
                       backgroundSize: '400% 400%',
                     }}
                     animate={{
@@ -261,7 +261,7 @@ export default function IntroAnimation({ isVisible, onComplete }: IntroAnimation
                     className="absolute inset-0 rounded-full"
                     style={{
                       background:
-                        'linear-gradient(45deg, #FFD700, #FFA500, #FF6347, #FFD700, #FFA500)',
+                        'linear-gradient(45deg, #c9a24d, #a66732, #8f3528, #c9a24d, #a66732)',
                       backgroundSize: '400% 400%',
                     }}
                     animate={{

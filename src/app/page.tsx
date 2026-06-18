@@ -38,43 +38,41 @@ const marqueeSets = {
   menu: ['SIGNATURE NOODLE', 'FRESH TOPPING', 'TAKEOUT READY', 'DELIVERY RECIPE'],
 };
 
+type PromotionModalId = 'franchise-cost' | 'achievement';
+
 export default function Home() {
   const [showRecruitmentModal, setShowRecruitmentModal] = useState(false);
-  const [showFranchiseCostModal, setShowFranchiseCostModal] = useState(false);
-  const [showAchievementModal, setShowAchievementModal] = useState(false);
+  const [promotionModalQueue, setPromotionModalQueue] = useState<PromotionModalId[]>([]);
+  const activePromotionModal = promotionModalQueue[0] ?? null;
 
   useEffect(() => {
-    // 페이지 로드 1초 후 가맹비용 모달 표시
-    const costModalTimer = setTimeout(() => {
+    const promotionModalTimer = setTimeout(() => {
       const hideCostModal = localStorage.getItem('hideModal_franchise-cost');
-      const now = new Date().getTime();
-
-      if (!hideCostModal || parseInt(hideCostModal) < now) {
-        setShowFranchiseCostModal(true);
-      }
-    }, 1000);
-
-    // 페이지 로드 1.5초 후 성과 모달 표시
-    const achievementModalTimer = setTimeout(() => {
       const hideAchievementModal = localStorage.getItem('hideModal_achievement');
       const now = new Date().getTime();
+      const shouldShowCostModal = !hideCostModal || parseInt(hideCostModal) < now;
+      const shouldShowAchievementModal =
+        !hideAchievementModal || parseInt(hideAchievementModal) < now;
 
-      if (!hideAchievementModal || parseInt(hideAchievementModal) < now) {
-        setShowAchievementModal(true);
-      }
-    }, 1500);
+      setPromotionModalQueue(
+        [
+          shouldShowCostModal ? 'franchise-cost' : null,
+          shouldShowAchievementModal ? 'achievement' : null,
+        ].filter(Boolean) as PromotionModalId[]
+      );
+    }, 1000);
 
-    return () => {
-      clearTimeout(costModalTimer);
-      clearTimeout(achievementModalTimer);
-    };
+    return () => clearTimeout(promotionModalTimer);
   }, []);
+
+  const handlePromotionModalClose = () => {
+    setPromotionModalQueue((queue) => queue.slice(1));
+  };
 
   // 창업 문의 섹션으로 스크롤 이동 + 모든 모달 닫기
   const handleNavigateToContact = () => {
     setShowRecruitmentModal(false);
-    setShowFranchiseCostModal(false);
-    setShowAchievementModal(false);
+    setPromotionModalQueue([]);
 
     // 약간의 딜레이 후 스크롤
     setTimeout(() => {
@@ -163,73 +161,72 @@ export default function Home() {
         <CustomCursorState />
         <Header />
         <HeroSection />
-        <TextMarquee
+        {/* <TextMarquee
           items={marqueeSets.brand}
           variant="flame"
           speed={24}
           ariaLabel="오늘은 볶음우동 브랜드 키워드"
-        />
+        /> */}
         <BrandIntroSection />
         <BlueOceanAdvantageSection />
         <TrustedFranchiseSection />
-        <TextMarquee
+        {/* <TextMarquee
           items={marqueeSets.operation}
           variant="cream"
           direction="right"
           speed={30}
           ariaLabel="오늘은 볶음우동 운영 강점"
-        />
+        /> */}
         {/* 기존 지그재그 레이아웃 */}
         {/* <SuccessionPlanningSection /> */}
         {/* 새로운 로드맵 레이아웃 (V2) */}
         <SuccessionPlanningSectionV2 />
-        <TextMarquee
+        {/* <TextMarquee
           items={marqueeSets.operation}
           variant="flame"
           speed={30}
           ariaLabel="오늘은 볶음우동 운영 강점"
-        />
+        /> */}
         <RepeatOrderProofSection />
-        <TextMarquee
+        {/* <TextMarquee
           items={marqueeSets.reorder}
           variant="charcoal"
           direction="right"
           speed={26}
           ariaLabel="오늘은 볶음우동 재주문 데이터 키워드"
-        />
+        /> */}
         <StartupBenefitSection />
         <TerritoryProtectionSection />
-        <TextMarquee
+        {/* <TextMarquee
           items={marqueeSets.menu}
           variant="flame"
           speed={28}
           ariaLabel="오늘은 볶음우동 메뉴 운영 키워드"
-        />
+        /> */}
         <MenuSection />
         {/* <StorePresetSection /> */}
         <StartupProcessSection />
         <ReviewsSection />
-        <TextMarquee
+        {/* <TextMarquee
           items={marqueeSets.menu}
           variant="flame"
           direction="right"
           speed={28}
           ariaLabel="오늘은 볶음우동 메뉴 운영 키워드"
-        />
+        /> */}
         <ContactFormSection />
         <Footer />
         <FloatingInquiry />
 
         {/* 모달들 */}
         <FranchiseCostModal
-          isOpen={showFranchiseCostModal}
-          onClose={() => setShowFranchiseCostModal(false)}
+          isOpen={activePromotionModal === 'franchise-cost'}
+          onClose={handlePromotionModalClose}
           onNavigateToContact={handleNavigateToContact}
         />
         <AchievementModal
-          isOpen={showAchievementModal}
-          onClose={() => setShowAchievementModal(false)}
-          onNavigateToContact={handleNavigateToContact}
+          isOpen={activePromotionModal === 'achievement'}
+          onClose={handlePromotionModalClose}
         />
         <OwnerRecruitmentModal
           isOpen={showRecruitmentModal}

@@ -97,7 +97,7 @@ export default function BrandIntroSection() {
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                className="p-5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300 text-left md:text-center"
+                className="rounded-2xl border border-[#c9a24d]/24 bg-[#fff8eb]/10 p-5 text-left backdrop-blur-md transition-all duration-300 hover:border-[#c9a24d]/42 hover:bg-[#fff8eb]/15 md:text-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}

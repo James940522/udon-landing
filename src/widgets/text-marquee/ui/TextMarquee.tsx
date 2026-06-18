@@ -21,16 +21,16 @@ const variantClassNames: Record<
   }
 > = {
   flame: {
-    root: 'bg-[#5b160b] text-[#fff4d4] border-y border-[#d59a35] shadow-[0_8px_0_rgba(25,10,3,0.55)]',
-    dot: 'bg-[#e6a52f] shadow-[0_0_0_3px_rgba(230,165,47,0.18)]',
+    root: 'bg-[#3b2115] text-[#fff2d8] border-y border-[#c9a24d] shadow-[0_8px_0_rgba(25,10,3,0.55)]',
+    dot: 'bg-[#c9a24d] shadow-[0_0_0_3px_rgba(230,165,47,0.18)]',
   },
   charcoal: {
-    root: 'bg-[#1b0d05] text-[#f5d89b] border-y border-[#8d571d] shadow-[0_8px_0_rgba(0,0,0,0.45)]',
-    dot: 'bg-[#b66b20] shadow-[0_0_0_3px_rgba(182,107,32,0.2)]',
+    root: 'bg-[#170c08] text-[#e6cf9b] border-y border-[#765421] shadow-[0_8px_0_rgba(0,0,0,0.45)]',
+    dot: 'bg-[#a66732] shadow-[0_0_0_3px_rgba(182,107,32,0.2)]',
   },
   cream: {
-    root: 'bg-[#f4dfb8] text-[#2d1507] border-y border-[#b9822c] shadow-[0_8px_0_rgba(70,33,8,0.18)]',
-    dot: 'bg-[#8e1f10] shadow-[0_0_0_3px_rgba(142,31,16,0.14)]',
+    root: 'bg-[#ead8bb] text-[#26140e] border-y border-[#a66732] shadow-[0_8px_0_rgba(70,33,8,0.18)]',
+    dot: 'bg-[#8f3528] shadow-[0_0_0_3px_rgba(142,31,16,0.14)]',
   },
 };
 
@@ -53,8 +53,8 @@ export default function TextMarquee({
     <section
       className={cn(
         'relative isolate overflow-hidden py-2 md:py-2.5',
-        'before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-12 before:bg-linear-to-r before:from-[#180904]/60 before:to-transparent',
-        'after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-12 after:bg-linear-to-l after:from-[#180904]/60 after:to-transparent',
+        'before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-12 before:bg-linear-to-r before:from-[#170c08]/60 before:to-transparent',
+        'after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-12 after:bg-linear-to-l after:from-[#170c08]/60 after:to-transparent',
         variantClassName.root,
         className
       )}
@@ -75,9 +75,7 @@ export default function TextMarquee({
                 key={`${trackIndex}-${item}-${index}`}
                 className="flex items-center gap-5 md:gap-7"
               >
-                <span className="font-heading text-sm font-bold uppercase tracking-normal md:text-base">
-                  {item}
-                </span>
+                <span className="font-roadmap-display text-sm uppercase md:text-base">{item}</span>
                 <span className={cn('size-1.5 rounded-full md:size-2', variantClassName.dot)} />
               </span>
             ))}

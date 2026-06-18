@@ -268,6 +268,11 @@ export default function MenuSection() {
           quality={90}
           unoptimized
         />
+        <div className="absolute inset-0 bg-[#170c08]/28" aria-hidden="true" />
+        <div
+          className="absolute inset-0 bg-linear-to-b from-[#170c08]/28 via-transparent to-[#170c08]/46"
+          aria-hidden="true"
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -278,10 +283,10 @@ export default function MenuSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="typo-h1 text-gray-900 mb-6 [text-shadow:2px_2px_0_#fff,-2px_-2px_0_#fff,2px_-2px_0_#fff,-2px_2px_0_#fff,4px_4px_8px_rgba(255,255,255,0.8)]">
+          <h2 className="typo-h1 mb-6 text-[#fff2d8] drop-shadow-[0_8px_24px_rgba(0,0,0,0.64)]">
             메뉴 소개
           </h2>
-          <p className="typo-body text-gray-900 bg-white/80 px-6 py-3 rounded-2xl inline-block mb-6 font-bold shadow-xl">
+          <p className="typo-body mb-6 inline-block rounded-2xl border border-[#c9a24d]/35 bg-[#170c08]/76 px-6 py-3 font-bold text-[#fff2d8] shadow-xl backdrop-blur-sm">
             브랜드를 선택하고 다양한 메뉴를 확인하세요
           </p>
         </motion.div>
@@ -433,7 +438,7 @@ export default function MenuSection() {
                   {currentCategory.items.map((item, index) => (
                     <motion.div
                       key={item.name}
-                      className="bg-stone-50 overflow-hidden shadow-xl hover:shadow-2xl border-3 border-stone-600 hover:border-stone-700 transition-all duration-300"
+                      className="overflow-hidden border-2 border-[#c9a24d]/42 bg-[#fff8eb] shadow-xl transition-all duration-300 hover:border-[#c9a24d]/75 hover:shadow-2xl"
                       initial={{ opacity: 0, y: 50 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.03 }}
