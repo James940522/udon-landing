@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 
 const benefitRows = [
@@ -47,29 +47,6 @@ const benefitRows = [
   },
 ];
 
-const backgroundColumns = [
-  {
-    text: 'LOW INITIAL COST',
-    className: 'left-[4%] text-[#8f3528]/42',
-    animation: 'startup-benefit-marquee-up 24s linear infinite',
-  },
-  {
-    text: 'STARTUP BENEFIT',
-    className: 'left-[16%] text-[#c9a24d]/24',
-    animation: 'startup-benefit-marquee-down 30s linear infinite',
-  },
-  {
-    text: 'ONLY WHAT YOU NEED',
-    className: 'right-[12%] text-[#8f3528]/38',
-    animation: 'startup-benefit-marquee-up 28s linear infinite',
-  },
-  {
-    text: 'PROTECTED AREA',
-    className: 'right-[3%] text-[#c9a24d]/20',
-    animation: 'startup-benefit-marquee-down 34s linear infinite',
-  },
-];
-
 function StampMark({ index, active }: { index: number; active: boolean }) {
   return (
     <motion.span
@@ -91,8 +68,7 @@ function StampMark({ index, active }: { index: number; active: boolean }) {
         ease: [0.2, 0.95, 0.2, 1],
       }}
     >
-      <span className="absolute inset-[3px] rounded-[3px] border border-[#8f3528]/80" />
-      無
+      <span className="absolute inset-[3px] rounded-[3px] border border-[#8f3528]/80" />無
     </motion.span>
   );
 }
@@ -100,6 +76,7 @@ function StampMark({ index, active }: { index: number; active: boolean }) {
 export default function StartupBenefitSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const tableRef = useRef<HTMLDivElement | null>(null);
+  const reduceMotion = useReducedMotion();
   const sectionInView = useInView(sectionRef, { once: true, margin: '0px 0px -18% 0px' });
   const tableInView = useInView(tableRef, { once: true, amount: 0.78 });
 
@@ -107,49 +84,25 @@ export default function StartupBenefitSection() {
     <section
       id="startup-benefit"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#170c08] py-20 text-[#f7e8c4] md:py-28"
+      className="relative overflow-hidden bg-[#f7f0e4] bg-cover bg-center bg-no-repeat py-20 text-[#26140e] md:py-28"
+      style={{
+        backgroundImage: "url('/new-asset/background/startup-benefit-hanji.webp')",
+      }}
     >
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 78% 18%, rgba(180, 60, 25, 0.22), transparent 28%), radial-gradient(circle at 10% 18%, rgba(212, 163, 74, 0.14), transparent 26%), repeating-linear-gradient(90deg, rgba(255, 222, 151, 0.045) 0 1px, transparent 1px 118px), repeating-linear-gradient(0deg, rgba(255, 222, 151, 0.03) 0 1px, transparent 1px 10px), linear-gradient(135deg, #100806 0%, #26140e 48%, #3b2115 100%)',
-        }}
-        aria-hidden="true"
-      />
-      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#c9a24d]/70 to-transparent" />
-      <div className="absolute left-[6vw] top-20 bottom-20 w-px bg-linear-to-b from-transparent via-[#c9a24d]/28 to-transparent" />
-      <div className="absolute right-[6vw] top-20 bottom-20 w-px bg-linear-to-b from-transparent via-[#c9a24d]/28 to-transparent" />
-
-      <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden" aria-hidden="true">
-        {backgroundColumns.map((column) => (
-          <div
-            key={column.text}
-            className={`absolute top-[-18%] bottom-[-18%] hidden w-9 justify-center md:flex ${column.className}`}
-          >
-            <div
-              className="flex h-[200%] flex-col items-center gap-8 whitespace-nowrap text-[1.15rem] font-black uppercase leading-none tracking-[0.08em] [writing-mode:vertical-rl]"
-              style={{ animation: column.animation }}
-            >
-              {[0, 1, 2, 3].map((item) => (
-                <span key={item}>{column.text}</span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 grid gap-8 md:mb-14 md:grid-cols-[1fr_0.9fr] md:items-end">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: reduceMotion ? 0 : 24 }}
             animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7 }}
+            transition={{
+              duration: reduceMotion ? 0.01 : 0.7,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.42em] text-[#a24a34]">
+            <p className="mb-4 text-xs font-black uppercase tracking-[0.42em] text-[#8f3528]">
               Startup benefit
             </p>
-            <h2 className="text-4xl font-black leading-tight tracking-[-0.04em] text-[#fff2d8] drop-shadow-[0_9px_24px_rgba(0,0,0,0.35)] md:text-6xl">
+            <h2 className="text-4xl font-black leading-tight tracking-[-0.04em] text-[#26140e] md:text-6xl">
               초기 부담은 낮추고
               <br />
               필요한 것만 준비
@@ -157,31 +110,39 @@ export default function StartupBenefitSection() {
           </motion.div>
 
           <motion.p
-            className="text-base font-bold leading-8 text-[#d9c49f] md:text-lg"
-            initial={{ opacity: 0, y: 24 }}
+            className="text-base font-bold leading-8 text-[#725744] md:text-lg"
+            initial={{ opacity: 0, y: reduceMotion ? 0 : 20 }}
             animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.15 }}
+            transition={{
+              duration: reduceMotion ? 0.01 : 0.7,
+              delay: reduceMotion ? 0 : 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
-            오늘은 볶음우동은 불필요한 초기 비용을 줄이고, 점주님 상황에 맞춰 준비할 수 있도록
-            창업 항목을 투명하게 안내합니다.
+            오늘은 볶음우동은 불필요한 초기 비용을 줄이고, 점주님 상황에 맞춰 준비할 수 있도록 창업
+            항목을 투명하게 안내합니다.
           </motion.p>
         </div>
 
         <motion.div
           ref={tableRef}
-          className="overflow-hidden rounded-md border border-[#c9a24d]/42 bg-[#0b0604] shadow-[0_28px_80px_rgba(0,0,0,0.38)]"
-          initial={{ opacity: 0, y: 34 }}
-          animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.75, delay: 0.25 }}
+          className="overflow-hidden rounded-xl border border-[#c9a24d]/35 bg-[#fff8eb]/85 p-1 shadow-[0_24px_70px_rgba(59,33,21,0.18)] backdrop-blur-[1px] sm:p-2"
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 28, scale: reduceMotion ? 1 : 0.99 }}
+          animate={sectionInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+          transition={{
+            duration: reduceMotion ? 0.01 : 0.75,
+            delay: reduceMotion ? 0 : 0.25,
+            ease: [0.22, 1, 0.36, 1],
+          }}
         >
-          <div className="overflow-hidden">
+          <div className="overflow-hidden rounded-lg border border-[#c9a24d]/25">
             <table className="w-full table-fixed border-collapse">
               <thead>
-                <tr className="bg-black text-[#fff2d8]">
-                  <th className="w-[22%] border-r border-[#c9a24d]/28 px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
+                <tr className="bg-[#3b2115] text-[#fff2d8]">
+                  <th className="w-[22%] border-r border-[#c9a24d]/32 px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
                     구분
                   </th>
-                  <th className="w-[50%] border-r border-[#c9a24d]/28 px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
+                  <th className="w-[50%] border-r border-[#c9a24d]/32 px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
                     내용
                   </th>
                   <th className="w-[28%] px-2 py-3 text-center text-[0.78rem] font-black sm:px-3 sm:text-base md:px-5 md:py-4 md:text-xl">
@@ -191,37 +152,48 @@ export default function StartupBenefitSection() {
               </thead>
               <tbody>
                 {benefitRows.map((row, index) => (
-                  <tr key={row.category} className="border-t border-[#c9a24d]/24">
-                    <th className="break-keep bg-[#130c08] px-2 py-3 text-center text-[0.78rem] font-black leading-snug text-white sm:px-3 sm:text-base md:px-5 md:py-5 md:text-2xl">
+                  <motion.tr
+                    key={row.category}
+                    className="border-t border-[#c9a24d]/28"
+                    initial={{ opacity: 0, y: reduceMotion ? 0 : 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.35 }}
+                    transition={{
+                      duration: reduceMotion ? 0.01 : 0.45,
+                      delay: reduceMotion ? 0 : index * 0.06,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  >
+                    <th className="break-keep bg-[#3b2115] px-2 py-3 text-center text-[0.78rem] font-black leading-snug text-[#fff2d8] sm:px-3 sm:text-base md:px-5 md:py-5 md:text-2xl">
                       {row.category}
                     </th>
-                    <td className="break-keep bg-[#eadfbc] px-2 py-3 text-center text-[0.72rem] font-black leading-snug text-[#140905] sm:px-3 sm:text-sm md:px-5 md:py-5 md:text-lg">
+                    <td className="break-keep bg-[#fff8eb] px-2 py-3 text-center text-[0.72rem] font-black leading-snug text-[#26140e] sm:px-3 sm:text-sm md:px-5 md:py-5 md:text-lg">
                       <p>{row.description}</p>
                       {row.note && (
-                        <p className="mt-1 text-[0.62rem] font-bold leading-snug text-[#7b6140] sm:text-xs md:mt-2 md:text-sm">
+                        <p className="mt-1 text-[0.62rem] font-bold leading-snug text-[#725744] sm:text-xs md:mt-2 md:text-sm">
                           {row.note}
                         </p>
                       )}
                     </td>
-                    <td className="break-keep bg-[#130c08] px-2 py-3 text-center text-[0.72rem] font-black leading-snug text-[#fff2d8] sm:px-3 sm:text-sm md:px-5 md:py-5 md:text-lg">
+                    <td className="break-keep bg-[#3b2115] px-2 py-3 text-center text-[0.72rem] font-black leading-snug text-[#fff2d8] sm:px-3 sm:text-sm md:px-5 md:py-5 md:text-lg">
                       {row.amount === 'stamp' ? (
                         <StampMark index={index} active={tableInView} />
                       ) : (
                         row.amount
                       )}
                     </td>
-                  </tr>
+                  </motion.tr>
                 ))}
               </tbody>
               <tfoot>
-                <tr className="border-t border-[#c9a24d]/32">
+                <tr className="border-t border-[#c9a24d]/35">
                   <td
                     colSpan={2}
-                    className="bg-black px-2 py-4 text-center text-base font-black text-[#fff2d8] sm:px-3 sm:text-lg md:px-5 md:py-5 md:text-2xl"
+                    className="bg-[#3b2115] px-2 py-4 text-center text-base font-black text-[#fff2d8] sm:px-3 sm:text-lg md:px-5 md:py-5 md:text-2xl"
                   >
                     최종 창업비용
                   </td>
-                  <td className="break-keep bg-[#f1e5bd] px-2 py-4 text-center text-sm font-black leading-snug text-[#170a04] sm:px-3 sm:text-base md:px-5 md:py-5 md:text-2xl">
+                  <td className="break-keep bg-[#ead9aa] px-2 py-4 text-center text-sm font-black leading-snug text-[#26140e] sm:px-3 sm:text-base md:px-5 md:py-5 md:text-2xl">
                     상담시 안내
                   </td>
                 </tr>
@@ -230,10 +202,19 @@ export default function StartupBenefitSection() {
           </div>
         </motion.div>
 
-        <p className="mt-5 text-xs font-bold leading-6 text-[#e0cba2]/78">
+        <motion.p
+          className="mt-5 text-xs font-bold leading-6 text-[#725744]"
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 12 }}
+          animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            duration: reduceMotion ? 0.01 : 0.55,
+            delay: reduceMotion ? 0 : 0.5,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
           * 계약 조건 및 시점에 따라 혜택 내용은 달라질 수 있습니다. 계약이행보증금은 별도 안내되며
           계약 해지 시 조건에 따라 반환됩니다.
-        </p>
+        </motion.p>
       </div>
     </section>
   );

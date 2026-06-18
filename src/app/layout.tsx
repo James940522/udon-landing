@@ -108,6 +108,7 @@ export const metadata: Metadata = {
 // SEO: Viewport 설정 (브랜드 테마 컬러 포함)
 export const viewport: Viewport = {
   themeColor: '#170c08',
+  colorScheme: 'light',
   width: 'device-width',
   initialScale: 1,
 };

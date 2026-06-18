@@ -40,30 +40,30 @@ export default function TerritoryProtectionSection() {
     <section
       id="territory-protection"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#170C08] py-20 text-[#FFF2D8] md:py-28 lg:py-32"
+      className="relative overflow-hidden bg-[#FFF2D8] py-20 text-[#170C08] md:py-28 lg:py-32"
     >
       <div
-        className="absolute inset-0 opacity-90"
+        className="absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 78% 18%, rgba(166,103,50,0.24), transparent 31%), radial-gradient(circle at 11% 78%, rgba(201,162,77,0.1), transparent 28%), repeating-linear-gradient(118deg, rgba(255,242,216,0.022) 0 1px, transparent 1px 12px), linear-gradient(145deg, #170C08 0%, #24120D 48%, #170C08 100%)',
+            'radial-gradient(circle at 82% 16%, rgba(201,162,77,0.22), transparent 31%), radial-gradient(circle at 8% 82%, rgba(166,103,50,0.12), transparent 29%), repeating-linear-gradient(118deg, rgba(59,33,21,0.035) 0 1px, transparent 1px 13px), linear-gradient(145deg, #FFF2D8 0%, rgba(255,242,216,0.88) 52%, #FFF2D8 100%)',
         }}
         aria-hidden="true"
       />
 
       <div
-        className="pointer-events-none absolute -right-[0.08em] top-10 whitespace-nowrap text-[clamp(7rem,20vw,20rem)] leading-none tracking-[-0.035em] text-[#FFF2D8]/[0.025]"
+        className="pointer-events-none absolute -right-[0.08em] top-10 whitespace-nowrap text-[clamp(7rem,20vw,20rem)] leading-none tracking-[-0.035em] text-[#170C08]/[0.035]"
         style={angularDisplayFont}
         aria-hidden="true"
       >
         PROTECTED
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#C9A24D]/70 to-transparent" />
-      <div className="pointer-events-none absolute left-[4vw] top-0 h-28 w-px bg-[#C9A24D]/35 md:h-40" />
-      <div className="pointer-events-none absolute right-[4vw] bottom-0 h-32 w-px bg-[#C9A24D]/25 md:h-48" />
-      <div className="pointer-events-none absolute left-[4vw] top-28 h-px w-16 bg-[#C9A24D]/35 md:top-40 md:w-24" />
-      <div className="pointer-events-none absolute bottom-0 right-[4vw] h-px w-16 bg-[#C9A24D]/25 md:w-24" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#A66732]/65 to-transparent" />
+      <div className="pointer-events-none absolute left-[4vw] top-0 h-28 w-px bg-[#A66732]/30 md:h-40" />
+      <div className="pointer-events-none absolute right-[4vw] bottom-0 h-32 w-px bg-[#C9A24D]/45 md:h-48" />
+      <div className="pointer-events-none absolute left-[4vw] top-28 h-px w-16 bg-[#A66732]/30 md:top-40 md:w-24" />
+      <div className="pointer-events-none absolute bottom-0 right-[4vw] h-px w-16 bg-[#C9A24D]/45 md:w-24" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-14 grid gap-10 lg:mb-20 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end lg:gap-20">
@@ -73,28 +73,28 @@ export default function TerritoryProtectionSection() {
             transition={{ duration: 0.72 }}
           >
             <div className="mb-8 flex items-center gap-4">
-              <span className="h-11 w-px bg-[#C9A24D]/55" aria-hidden="true" />
+              <span className="h-11 w-px bg-[#A66732]/45" aria-hidden="true" />
               <div>
                 <p
-                  className="text-sm leading-none tracking-[0.18em] text-[#FFF2D8] md:text-base"
+                  className="text-sm leading-none tracking-[0.18em] text-[#170C08] md:text-base"
                   style={angularDisplayFont}
                 >
                   PROTECTED SALES AREA
                 </p>
-                <p className="mt-2 text-[0.68rem] font-bold tracking-[0.28em] text-[#C9A24D]">
+                <p className="mt-2 text-[0.68rem] font-bold tracking-[0.28em] text-[#A66732]">
                   TERRITORY POLICY
                 </p>
               </div>
             </div>
 
-            <h2 className="font-heading text-[2.65rem] font-bold leading-[1.18] tracking-[-0.055em] text-[#FFF2D8] sm:text-5xl md:text-6xl lg:text-[4.65rem]">
+            <h2 className="font-heading text-[2.65rem] font-bold leading-[1.18] tracking-[-0.055em] text-[#170C08] sm:text-5xl md:text-6xl lg:text-[4.65rem]">
               안정적인 매출은
               <br />
-              <span className="relative mt-2 inline-block text-[#C9A24D]">
+              <span className="relative mt-2 inline-block text-[#A66732]">
                 상권 보장
-                <span className="text-[#FFF2D8]">부터</span>
+                <span className="text-[#170C08]">부터</span>
                 <span
-                  className="absolute -bottom-3 left-0 h-[3px] w-[42%] bg-[#A66732]"
+                  className="absolute -bottom-3 left-0 h-[3px] w-[42%] bg-[#C9A24D]"
                   aria-hidden="true"
                 />
               </span>
@@ -104,32 +104,32 @@ export default function TerritoryProtectionSection() {
           </motion.div>
 
           <motion.div
-            className="border-l border-[#C9A24D]/30 pl-6 md:pl-9 lg:mb-2 lg:pl-12"
+            className="border-l border-[#A66732]/28 pl-6 md:pl-9 lg:mb-2 lg:pl-12"
             initial={{ opacity: 0, x: 28 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.72, delay: 0.12 }}
           >
-            <p className="max-w-2xl text-base font-semibold leading-8 text-[#FFF2D8]/72 md:text-lg md:leading-9">
+            <p className="max-w-2xl text-base font-semibold leading-8 text-[#3B2115]/72 md:text-lg md:leading-9">
               오늘은 볶음우동은 배달 상권 기준으로 신규 출점 제한지역을 설정합니다.
-              <span className="text-[#FFF2D8]">
+              <span className="text-[#170C08]">
                 {' '}
                 매장 수보다 한 점주의 운영 안정성을 먼저 생각합니다.
               </span>
             </p>
 
-            <div className="mt-8 grid max-w-xl grid-cols-2 border-y border-[#C9A24D]/25">
+            <div className="mt-8 grid max-w-xl grid-cols-2 border-y border-[#A66732]/25">
               {policyFacts.map((fact, index) => (
                 <div
                   key={fact.value}
-                  className={`py-5 ${index === 1 ? 'border-l border-[#C9A24D]/25 pl-6' : 'pr-6'}`}
+                  className={`py-5 ${index === 1 ? 'border-l border-[#A66732]/25 pl-6' : 'pr-6'}`}
                 >
                   <p
-                    className="text-3xl leading-none tracking-[0.04em] text-[#C9A24D] md:text-4xl"
+                    className="text-3xl leading-none tracking-[0.04em] text-[#A66732] md:text-4xl"
                     style={angularDisplayFont}
                   >
                     {fact.value}
                   </p>
-                  <p className="mt-2 text-xs font-bold tracking-[-0.01em] text-[#FFF2D8]/60 md:text-sm">
+                  <p className="mt-2 text-xs font-bold tracking-[-0.01em] text-[#3B2115]/60 md:text-sm">
                     {fact.label}
                   </p>
                 </div>

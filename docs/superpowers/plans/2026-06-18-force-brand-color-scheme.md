@@ -19,23 +19,18 @@
 ### Task 1: Add the Color-Scheme Contract Test
 
 **Files:**
+
 - Create: `scripts/verify-color-scheme.mjs`
 - Test: `scripts/verify-color-scheme.mjs`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```js
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
-const layoutSource = await readFile(
-  new URL('../src/app/layout.tsx', import.meta.url),
-  'utf8'
-);
-const globalCss = await readFile(
-  new URL('../src/app/globals.css', import.meta.url),
-  'utf8'
-);
+const layoutSource = await readFile(new URL('../src/app/layout.tsx', import.meta.url), 'utf8');
+const globalCss = await readFile(new URL('../src/app/globals.css', import.meta.url), 'utf8');
 
 assert.match(
   layoutSource,
@@ -64,13 +59,13 @@ assert.match(
 console.log('Fixed brand color-scheme contract passed.');
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `node scripts/verify-color-scheme.mjs`
 
 Expected: FAIL with `Viewport metadata must advertise the light color scheme`.
 
-- [ ] **Step 3: Commit the failing contract test**
+- [x] **Step 3: Commit the failing contract test**
 
 ```bash
 git add scripts/verify-color-scheme.mjs
@@ -80,12 +75,13 @@ git commit -m "test: define fixed color scheme contract"
 ### Task 2: Enforce the Brand Color Scheme
 
 **Files:**
+
 - Modify: `src/app/layout.tsx:108-113`
 - Modify: `src/app/globals.css:110-180`
 - Modify: `src/app/globals.css:302-318`
 - Test: `scripts/verify-color-scheme.mjs`
 
-- [ ] **Step 1: Add light scheme viewport metadata**
+- [x] **Step 1: Add light scheme viewport metadata**
 
 Change the viewport export to:
 
@@ -98,7 +94,7 @@ export const viewport: Viewport = {
 };
 ```
 
-- [ ] **Step 2: Reject automatic dark-mode overrides at the CSS root**
+- [x] **Step 2: Reject automatic dark-mode overrides at the CSS root**
 
 Add this declaration at the beginning of the existing `:root` block:
 
@@ -110,7 +106,7 @@ Add this declaration at the beginning of the existing `:root` block:
 }
 ```
 
-- [ ] **Step 3: Pin the document canvas to the brand background**
+- [x] **Step 3: Pin the document canvas to the brand background**
 
 Update the existing global rules:
 
@@ -126,13 +122,13 @@ body {
 }
 ```
 
-- [ ] **Step 4: Run the focused test to verify it passes**
+- [x] **Step 4: Run the focused test to verify it passes**
 
 Run: `node scripts/verify-color-scheme.mjs`
 
 Expected: PASS with `Fixed brand color-scheme contract passed.`
 
-- [ ] **Step 5: Run static validation**
+- [x] **Step 5: Run static validation**
 
 Run: `pnpm lint`
 
@@ -142,7 +138,10 @@ Run: `pnpm build`
 
 Expected: exit code 0 and a successful Next.js production build.
 
-- [ ] **Step 6: Verify the generated HTML metadata**
+Result: the production build passed. The focused ESLint run had no errors; the full repository
+lint remains blocked by nine pre-existing errors outside this change.
+
+- [x] **Step 6: Verify the generated HTML metadata**
 
 Run the production server and request the home page:
 

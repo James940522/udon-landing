@@ -7,7 +7,7 @@ const source = await readFile(
 );
 
 const requiredTokens = [
-  'bg-[#170C08]',
+  'bg-[#FFF2D8] py-20 text-[#170C08]',
   '#3B2115',
   '#A66732',
   '#C9A24D',
@@ -25,6 +25,11 @@ for (const token of requiredTokens) {
 assert.ok(
   !source.includes('backgroundWords'),
   'Legacy vertical marquee background should be removed'
+);
+
+assert.ok(
+  !source.includes('bg-[#170C08] py-20 text-[#FFF2D8]'),
+  'Smoke black should no longer be the section base color'
 );
 
 console.log('Territory protection visual contract passed.');

@@ -108,6 +108,8 @@
 }
 
 :root {
+  color-scheme: only light;
+
   /* Pretendard 웹폰트 설정 (본문용) */
   --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
@@ -300,10 +302,13 @@
 }
 
 html {
+  background-color: var(--background);
   scroll-behavior: smooth;
 }
 
 body {
+  background-color: var(--background);
+
   /* Pretendard 웹폰트 기본 적용 */
   font-family:
     'Pretendard',

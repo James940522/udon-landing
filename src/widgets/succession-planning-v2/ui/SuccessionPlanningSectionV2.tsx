@@ -102,9 +102,6 @@ const TimelineItem = ({ strength, index, active }: TimelineItemProps) => {
             }}
             transition={{ duration: 0.3 }}
           >
-            <span className="font-roadmap-display text-[0.68rem] text-[#170c08] md:text-xs">
-              STEP
-            </span>
             <span className="ml-2 text-lg font-black leading-none text-[#170c08] md:text-2xl">
               {strength.number}
             </span>
