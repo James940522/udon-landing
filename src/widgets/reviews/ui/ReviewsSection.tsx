@@ -204,7 +204,7 @@ export default function ReviewsSection() {
         </div>
       </div>
 
-      <div className="relative z-20 -mt-40 overflow-hidden pt-24 sm:-mt-56 sm:pt-32 md:-mt-72 md:pt-40 lg:-mt-[26rem] lg:pt-44">
+      <div className="relative z-20 -mt-12 overflow-hidden pt-20 sm:-mt-56 sm:pt-32 md:-mt-72 md:pt-40 lg:-mt-[26rem] lg:pt-44">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
