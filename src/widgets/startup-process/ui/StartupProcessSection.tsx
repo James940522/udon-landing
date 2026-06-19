@@ -52,18 +52,17 @@ export default function StartupProcessSection() {
 
   return (
     <section id="startup-process" className="py-20 md:py-32 relative overflow-hidden" ref={ref}>
-      {/* 배경 - 나무 텍스처 이미지 */}
+      {/* 배경 - 밝은 우드 텍스처 이미지 */}
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: 'url(/asset/bg-1/sec5-bg.png)',
-          backgroundSize: 'contain',
+          backgroundImage: "url('/new-asset/background/startup-process-light-wood.webp')",
+          backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'repeat',
+          backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* 살짝 어두운 오버레이 */}
-        <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[#fff8eb]/28" aria-hidden="true" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 헤더 */}
@@ -74,19 +73,19 @@ export default function StartupProcessSection() {
           transition={{ duration: 0.6 }}
         >
           <div className="inline-block mb-6">
-            <span className="bg-stone-700 text-amber-100 px-6 py-2 rounded-full text-sm font-bold tracking-wider">
+            <span className="rounded-full bg-[#493229] px-6 py-2 text-sm font-bold tracking-wider text-[#c9a24d]">
               FRANCHISE PROCESS
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+          <h2 className="mb-6 text-4xl font-black text-[#2b1b16] md:text-6xl">
             가맹절차
           </h2>
-          <div className="inline-block bg-black/50 backdrop-blur-sm px-8 py-4 rounded-2xl">
-            <p className="text-xl md:text-2xl text-white font-bold leading-relaxed">
+          <div className="inline-block rounded-lg border border-[#a66732]/25 bg-[#fff8eb]/72 px-8 py-4 shadow-[0_14px_34px_rgba(73,50,41,0.12)] backdrop-blur-[1px]">
+            <p className="text-xl font-black leading-relaxed text-[#4a2412] md:text-2xl">
               상담부터 오픈까지, 체계적인 6단계 완벽 시스템
             </p>
           </div>
-          <div className="w-24 h-2 bg-amber-600 mx-auto rounded-full mt-8 shadow-lg" />
+          <div className="mx-auto mt-8 h-2 w-24 rounded-full bg-[#8f3528]" />
         </motion.div>
 
         {/* 프로세스 리스트 */}
@@ -109,7 +108,7 @@ export default function StartupProcessSection() {
                 }}
               >
                 {/* 카드 */}
-                <div className="group h-full overflow-hidden rounded-lg border border-[#c9a24d]/32 bg-[#fff8eb]/92 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-[#c9a24d]/58 hover:shadow-xl">
+                <div className="group h-full overflow-hidden rounded-lg border border-[#a66732]/32 bg-[#fff8eb]/92 shadow-[0_18px_45px_rgba(73,50,41,0.14)] backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-[#8f3528]/45 hover:shadow-[0_24px_55px_rgba(73,50,41,0.2)]">
                   {/* 이미지 영역 */}
                   <div className="relative aspect-[4/3] bg-stone-200">
                     <Image
@@ -121,7 +120,7 @@ export default function StartupProcessSection() {
                     />
                     {/* 번호 배지 */}
                     <div className="absolute left-2 top-2 md:left-3 md:top-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-md bg-linear-to-r from-amber-500 to-yellow-500 text-sm font-black text-stone-900 shadow-xl md:h-12 md:w-12 md:text-lg">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#8f3528] text-sm font-black text-[#fff2d8] shadow-[0_10px_24px_rgba(143,53,40,0.28)] md:h-12 md:w-12 md:text-lg">
                         {process.number}
                       </div>
                     </div>
@@ -130,12 +129,12 @@ export default function StartupProcessSection() {
                   {/* 컨텐츠 영역 */}
                   <div className="p-3.5 md:p-5">
                     {/* 제목 */}
-                    <h3 className="mb-2 break-keep text-base font-black leading-snug text-gray-950 md:text-xl">
+                    <h3 className="mb-2 break-keep text-base font-black leading-snug text-[#2b1b16] md:text-xl">
                       {process.title}
                     </h3>
 
                     {/* 설명 */}
-                    <p className="text-xs font-bold leading-5 text-gray-700 md:text-sm md:leading-6">
+                    <p className="text-xs font-bold leading-5 text-[#6e5745] md:text-sm md:leading-6">
                       {process.description}
                     </p>
                   </div>
@@ -152,12 +151,12 @@ export default function StartupProcessSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <p className="text-lg md:text-xl text-white mb-6 font-semibold drop-shadow-lg">
+          <p className="mb-6 text-lg font-black text-[#4a2412] md:text-xl">
             체계적인 창업 시스템으로 성공적인 오픈을 약속드립니다
           </p>
           <a
             href="tel:01099239502"
-            className="inline-block bg-linear-to-r from-amber-500 to-yellow-500 text-stone-900 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            className="inline-block rounded-full bg-[#26140e] px-8 py-4 text-lg font-black text-[#c9a24d] shadow-[0_16px_38px_rgba(38,20,14,0.24)] transition-all duration-300 hover:scale-105 hover:text-[#e2b957] hover:shadow-[0_22px_48px_rgba(38,20,14,0.3)]"
           >
             창업 상담 신청하기
           </a>
