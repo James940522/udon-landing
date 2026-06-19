@@ -24,7 +24,6 @@ import { Footer } from '@/widgets/footer';
 // Features
 import { FloatingInquiry } from '@/features/inquiry';
 import { OwnerRecruitmentModal } from '@/features/owner-recruitment-modal';
-import { FranchiseCostModal } from '@/features/franchise-cost-modal';
 import { AchievementModal } from '@/features/achievement-modal';
 import { CustomCursorState } from '@/features/custom-cursor';
 
@@ -38,41 +37,25 @@ const marqueeSets = {
   menu: ['SIGNATURE NOODLE', 'FRESH TOPPING', 'TAKEOUT READY', 'DELIVERY RECIPE'],
 };
 
-type PromotionModalId = 'franchise-cost' | 'achievement';
-
 export default function Home() {
   const [showRecruitmentModal, setShowRecruitmentModal] = useState(false);
-  const [promotionModalQueue, setPromotionModalQueue] = useState<PromotionModalId[]>([]);
-  const activePromotionModal = promotionModalQueue[0] ?? null;
+  const [showAchievementModal, setShowAchievementModal] = useState(false);
 
   useEffect(() => {
-    const promotionModalTimer = setTimeout(() => {
-      const hideCostModal = localStorage.getItem('hideModal_franchise-cost');
+    const achievementModalTimer = setTimeout(() => {
       const hideAchievementModal = localStorage.getItem('hideModal_achievement');
       const now = new Date().getTime();
-      const shouldShowCostModal = !hideCostModal || parseInt(hideCostModal) < now;
-      const shouldShowAchievementModal =
-        !hideAchievementModal || parseInt(hideAchievementModal) < now;
 
-      setPromotionModalQueue(
-        [
-          shouldShowCostModal ? 'franchise-cost' : null,
-          shouldShowAchievementModal ? 'achievement' : null,
-        ].filter(Boolean) as PromotionModalId[]
-      );
+      setShowAchievementModal(!hideAchievementModal || parseInt(hideAchievementModal) < now);
     }, 1000);
 
-    return () => clearTimeout(promotionModalTimer);
+    return () => clearTimeout(achievementModalTimer);
   }, []);
-
-  const handlePromotionModalClose = () => {
-    setPromotionModalQueue((queue) => queue.slice(1));
-  };
 
   // 창업 문의 섹션으로 스크롤 이동 + 모든 모달 닫기
   const handleNavigateToContact = () => {
     setShowRecruitmentModal(false);
-    setPromotionModalQueue([]);
+    setShowAchievementModal(false);
 
     // 약간의 딜레이 후 스크롤
     setTimeout(() => {
@@ -219,14 +202,9 @@ export default function Home() {
         <FloatingInquiry />
 
         {/* 모달들 */}
-        <FranchiseCostModal
-          isOpen={activePromotionModal === 'franchise-cost'}
-          onClose={handlePromotionModalClose}
-          onNavigateToContact={handleNavigateToContact}
-        />
         <AchievementModal
-          isOpen={activePromotionModal === 'achievement'}
-          onClose={handlePromotionModalClose}
+          isOpen={showAchievementModal}
+          onClose={() => setShowAchievementModal(false)}
         />
         <OwnerRecruitmentModal
           isOpen={showRecruitmentModal}
