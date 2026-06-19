@@ -15,6 +15,18 @@ assert.ok(
   'Roadmap must use the shared hanji background'
 );
 assert.ok(component.includes('useReducedMotion'), 'Roadmap must respect reduced-motion settings');
+assert.ok(
+  !component.includes('isTimelineInView'),
+  'Roadmap cards must not depend on the full grid intersection ratio'
+);
+assert.ok(
+  !component.includes('amount: 0.35'),
+  'Roadmap reveal must not use an unreachable threshold on the mobile one-column grid'
+);
+assert.ok(
+  component.includes('active={isInView}'),
+  'Roadmap cards must activate from the viewport-safe section reveal signal'
+);
 assert.ok(component.includes('bg-[#fffaf2]/92'), 'Roadmap cards must use the shared ivory color');
 assert.ok(component.includes('text-[#2b1b16]'), 'Roadmap content must use the shared ink color');
 assert.ok(

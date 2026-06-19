@@ -127,11 +127,9 @@ function TimelineItem({ strength, index, active, reduceMotion }: TimelineItemPro
 
 export default function SuccessionPlanningSectionV2() {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const timelineRef = useRef<HTMLDivElement | null>(null);
   const reduceMotion = Boolean(useReducedMotion());
 
   const isInView = useInView(sectionRef, { once: true, margin: '0px 0px -22% 0px' });
-  const isTimelineInView = useInView(timelineRef, { once: true, amount: 0.35 });
 
   return (
     <section
@@ -193,7 +191,6 @@ export default function SuccessionPlanningSectionV2() {
         </motion.div>
 
         <motion.div
-          ref={timelineRef}
           className="relative mx-auto max-w-6xl"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
@@ -208,7 +205,7 @@ export default function SuccessionPlanningSectionV2() {
                 key={strength.number}
                 strength={strength}
                 index={index}
-                active={isTimelineInView}
+                active={isInView}
                 reduceMotion={reduceMotion}
               />
             ))}
