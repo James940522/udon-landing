@@ -190,30 +190,35 @@ export default function BlueOceanAdvantageSection() {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="group relative rounded-2xl border-2 border-[#c9a24d]/38 bg-[#fff8eb]/88 p-8 shadow-[0_22px_55px_rgba(73,50,41,0.14)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#8f3528]/35"
+              className="group relative overflow-hidden rounded-[1.25rem] border border-[#d8c8b5]/90 bg-[#fffaf2]/94 p-8 pt-24 shadow-[0_22px_58px_rgba(73,50,41,0.18)] backdrop-blur-[2px] transition-all duration-300 hover:-translate-y-1"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
               whileHover={{
-                boxShadow: '0 26px 60px rgba(73, 50, 41, 0.18)',
+                boxShadow: '0 28px 64px rgba(155, 91, 70, 0.22)',
               }}
             >
-              {/* 번호 배지 - 미니멀 */}
-              <div className="absolute top-6 left-6 z-10">
-                <span className="text-5xl font-light text-[#c9a24d]/24 transition-colors duration-300 group-hover:text-[#c9a24d]/38 md:text-6xl">
+              <div
+                className="absolute inset-x-0 top-0 h-1 bg-[#9b5b46]"
+                aria-hidden="true"
+              />
+
+              {/* 번호 배지 */}
+              <div className="absolute left-6 top-5 z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#fffaf2] bg-[#9b5b46] shadow-[0_7px_18px_rgba(73,50,41,0.2)]">
+                <span className="text-sm font-black tracking-[-0.04em] text-[#fffaf2]">
                   0{index + 1}
                 </span>
               </div>
 
               {/* 하이라이트 배지 */}
-              <div className="absolute top-6 right-6 z-10">
-                <span className="inline-block rounded-full border border-[#c9a24d]/45 bg-[#ead9aa]/65 px-3 py-1 text-xs font-semibold text-[#8f3528]">
+              <div className="absolute right-6 top-7 z-10">
+                <span className="inline-block rounded-full border border-[#d8c8b5] bg-[#fffaf2]/96 px-3 py-1 text-xs font-bold text-[#8f3528] shadow-[0_6px_16px_rgba(73,50,41,0.1)]">
                   {benefit.highlight}
                 </span>
               </div>
 
               {/* 카드 내용 */}
-              <div className="pt-6 relative">
+              <div className="relative">
                 <h3
                   className="mb-4 text-xl font-bold text-[#2b1b16] transition-colors duration-300 group-hover:text-[#8f3528] md:text-2xl"
                   style={{ fontFamily: 'var(--font-heading)' }}
