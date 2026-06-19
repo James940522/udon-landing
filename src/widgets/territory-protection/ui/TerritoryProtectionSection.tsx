@@ -79,10 +79,6 @@ export default function TerritoryProtectionSection() {
               <span className="relative mt-2 inline-block text-[#9b5b46]">
                 상권 보장
                 <span className="text-[#2b1b16]">부터</span>
-                <span
-                  className="absolute -bottom-3 left-0 h-[3px] w-[42%] bg-[#d8c8b5]"
-                  aria-hidden="true"
-                />
               </span>
               <br />
               시작됩니다.
