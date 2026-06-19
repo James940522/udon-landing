@@ -46,10 +46,12 @@ for (const legacyToken of [
 for (const copy of [
   '경쟁없이 살아남는 법',
   '현시점 배달업계 최대의 블루오션',
-  "'볶음우동'",
+  '&apos;볶음우동&apos;',
   '현재 자영업자 사장님들의 최대 고민',
   '오늘은 볶음우동</span>이 해답입니다',
-  "'겹치지 않는 것'",
+  '&apos;더 잘하는 것&apos;이 아니라',
+  '&apos;겹치지 않는 것&apos;',
+  '&quot;',
   '수익을 지키면서 성장할 수 있는 새로운 기회',
 ]) {
   assert.ok(source.includes(copy), `Existing copy must remain unchanged: ${copy}`);

@@ -102,7 +102,7 @@ export default function BlueOceanAdvantageSection() {
             <br />
             <span className="text-[#a66732]">현시점 배달업계 최대의 블루오션</span>
             <br />
-            <span className="text-[#8f3528]">'볶음우동'</span>
+            <span className="text-[#8f3528]">&apos;볶음우동&apos;</span>
           </motion.h2>
 
           <motion.p
@@ -238,7 +238,7 @@ export default function BlueOceanAdvantageSection() {
           <div className="relative rounded-3xl border-4 border-[#c9a24d]/45 bg-[#2b1b16]/96 p-8 shadow-[0_28px_75px_rgba(43,27,22,0.28)] backdrop-blur-md md:p-12">
             {/* 좌측 인용 부호 */}
             <div className="absolute -top-6 left-8 font-serif text-8xl leading-none text-[#c9a24d]/28">
-              "
+              &quot;
             </div>
 
             <p
@@ -247,14 +247,14 @@ export default function BlueOceanAdvantageSection() {
             >
               경쟁의 해답은
               <br className="sm:hidden" />
-              <span className="sm:inline"> </span>'더 잘하는 것'이 아니라
+              <span className="sm:inline"> </span>&apos;더 잘하는 것&apos;이 아니라
               <br />
-              <span className="text-[#d9ad55]">'겹치지 않는 것'</span>
+              <span className="text-[#d9ad55]">&apos;겹치지 않는 것&apos;</span>
             </p>
 
             {/* 우측 인용 부호 */}
             <div className="absolute -bottom-2 right-8 font-serif text-8xl leading-none text-[#c9a24d]/28">
-              "
+              &quot;
             </div>
 
             {/* 은은한 브랜드색 베일 */}
