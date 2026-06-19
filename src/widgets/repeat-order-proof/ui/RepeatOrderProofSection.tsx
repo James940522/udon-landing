@@ -65,28 +65,31 @@ export default function RepeatOrderProofSection() {
     <section
       id="repeat-order-proof"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#181311] py-20 text-[#f8ead2] md:py-28 lg:py-32"
+      className="relative overflow-hidden bg-[#f0e9df] bg-cover bg-center py-20 text-[#2b1b16] md:py-28 lg:py-32"
+      style={{
+        backgroundImage:
+          "linear-gradient(180deg, rgba(255,250,242,0.82) 0%, rgba(240,233,223,0.94) 100%), url('/new-asset/background/startup-benefit-hanji.webp')",
+      }}
       aria-label="오늘은 볶음우동 재주문 데이터"
     >
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 82% 14%, rgba(168,75,60,0.2), transparent 27%), radial-gradient(circle at 12% 76%, rgba(201,162,77,0.1), transparent 30%), linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(135deg, #181311 0%, #211613 52%, #181311 100%)',
-          backgroundSize: 'auto, auto, 48px 48px, 48px 48px, auto',
+            'radial-gradient(circle at 82% 14%, rgba(155,91,70,0.09), transparent 27%), radial-gradient(circle at 12% 76%, rgba(201,162,77,0.08), transparent 30%)',
         }}
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#c9a24d]/55 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#9b5b46]/35 to-transparent"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-[#a84b3c]/65 to-transparent"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-[#d8c8b5] to-transparent"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -right-20 top-24 hidden rotate-90 text-[10px] font-black tracking-[0.45em] text-[#f8ead2]/20 lg:block"
+        className="pointer-events-none absolute -right-20 top-24 hidden rotate-90 text-[10px] font-black tracking-[0.45em] text-[#9b5b46]/25 lg:block"
         aria-hidden="true"
       >
         VERIFIED ORDER DATA · LAST 7 DAYS
@@ -96,24 +99,24 @@ export default function RepeatOrderProofSection() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,1.1fr)] lg:items-end lg:gap-16">
           <motion.div {...reveal()}>
             <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#a84b3c]" aria-hidden="true" />
-              <p className="text-[10px] font-black uppercase tracking-[0.42em] text-[#d98976] sm:text-xs">
+              <span className="h-px w-10 bg-[#9b5b46]" aria-hidden="true" />
+              <p className="text-[10px] font-black uppercase tracking-[0.42em] text-[#9b5b46] sm:text-xs">
                 Real reorder data
               </p>
             </div>
 
-            <h2 className="break-keep font-heading text-4xl font-black leading-[0.98] tracking-[-0.055em] text-[#fff8eb] sm:text-5xl md:text-6xl lg:text-[4.8rem]">
+            <h2 className="break-keep font-heading text-4xl font-black leading-[0.98] tracking-[-0.055em] text-[#2b1b16] sm:text-5xl md:text-6xl lg:text-[4.8rem]">
               압도적인
               <br />
-              <span className="text-[#d9ad55]">재주문 흐름</span>
+              <span className="text-[#9b5b46]">재주문 흐름</span>
             </h2>
 
-            <p className="mt-7 max-w-xl break-keep text-sm font-semibold leading-7 text-[#cbb8a5] sm:text-base sm:leading-8 md:text-lg">
+            <p className="mt-7 max-w-xl break-keep text-sm font-semibold leading-7 text-[#746054] sm:text-base sm:leading-8 md:text-lg">
               신규 주문으로 끝나는 매출이 아니라, 다시 선택받는 주문이 쌓입니다. 최근 7일 실제 주문
               데이터를 통해 반복 구매의 힘을 확인하세요.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 border-t border-[#f8ead2]/10 pt-5 text-[10px] font-black tracking-[0.14em] text-[#9f8879] sm:text-xs">
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 border-t border-[#d8c8b5] pt-5 text-[10px] font-black tracking-[0.14em] text-[#8a7264] sm:text-xs">
               <span>PERIOD · 7 DAYS</span>
               <span>SAMPLE · 3 STORES</span>
               <span>SOURCE · REAL ORDERS</span>
@@ -121,76 +124,76 @@ export default function RepeatOrderProofSection() {
           </motion.div>
 
           <motion.div
-            className="relative overflow-hidden rounded-[1.5rem] border border-[#f8ead2]/12 bg-[#211917]/86 p-5 shadow-[0_34px_90px_rgba(0,0,0,0.38)] backdrop-blur-sm sm:p-7"
+            className="relative overflow-hidden rounded-[1.5rem] border border-[#d8c8b5] bg-[#fffaf2]/94 p-5 shadow-[0_28px_70px_rgba(73,50,41,0.14)] backdrop-blur-sm sm:p-7"
             aria-label="최근 7일 재주문 488건"
             {...reveal(0.12)}
           >
-            <div className="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-[#a84b3c] via-[#c66d54] to-[#c9a24d]" />
+            <div className="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-[#9b5b46] via-[#b8735b] to-[#c9a24d]" />
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-[10px] font-black tracking-[0.28em] text-[#d98976] sm:text-xs">
+                <p className="text-[10px] font-black tracking-[0.28em] text-[#9b5b46] sm:text-xs">
                   REPEAT ORDERS
                 </p>
-                <p className="mt-2 text-xs font-bold text-[#a99483] sm:text-sm">다시 선택된 주문</p>
+                <p className="mt-2 text-xs font-bold text-[#746054] sm:text-sm">다시 선택된 주문</p>
               </div>
-              <span className="rounded-full border border-[#c9a24d]/35 bg-[#c9a24d]/8 px-3 py-1.5 text-[9px] font-black tracking-[0.12em] text-[#e2c67f]">
+              <span className="rounded-full border border-[#c9a24d]/45 bg-[#c9a24d]/10 px-3 py-1.5 text-[9px] font-black tracking-[0.12em] text-[#8d6b2d]">
                 3 STORE SAMPLE
               </span>
             </div>
 
             <div className="mt-7 flex items-end gap-3">
-              <strong className="font-heading text-[4.7rem] font-black leading-[0.78] tracking-[-0.08em] text-[#fff8eb] sm:text-[6.8rem]">
+              <strong className="font-heading text-[4.7rem] font-black leading-[0.78] tracking-[-0.08em] text-[#2b1b16] sm:text-[6.8rem]">
                 {orderSummary.repeatOrders}
               </strong>
-              <span className="pb-1 font-heading text-xl font-black text-[#d98976] sm:pb-2 sm:text-3xl">
+              <span className="pb-1 font-heading text-xl font-black text-[#9b5b46] sm:pb-2 sm:text-3xl">
                 건
               </span>
             </div>
 
             <div className="mt-7 flex items-center gap-3" aria-hidden="true">
-              <span className="h-1.5 w-16 rounded-full bg-[#a84b3c]" />
-              <span className="h-px flex-1 bg-linear-to-r from-[#c9a24d]/70 to-transparent" />
+              <span className="h-1.5 w-16 rounded-full bg-[#9b5b46]" />
+              <span className="h-px flex-1 bg-linear-to-r from-[#c9a24d]/65 to-transparent" />
             </div>
 
-            <div className="mt-6 grid grid-cols-2 border-t border-[#f8ead2]/10">
-              <div className="border-r border-[#f8ead2]/10 pr-4 pt-5">
-                <p className="text-[10px] font-black tracking-[0.16em] text-[#9f8879]">
+            <div className="mt-6 grid grid-cols-2 border-t border-[#d8c8b5]">
+              <div className="border-r border-[#d8c8b5] pr-4 pt-5">
+                <p className="text-[10px] font-black tracking-[0.16em] text-[#8a7264]">
                   TOTAL ORDERS
                 </p>
-                <p className="mt-2 font-heading text-3xl font-black text-[#f8ead2] sm:text-4xl">
+                <p className="mt-2 font-heading text-3xl font-black text-[#2b1b16] sm:text-4xl">
                   {orderSummary.totalOrders}
-                  <span className="ml-1 text-sm text-[#9f8879]">건</span>
+                  <span className="ml-1 text-sm text-[#8a7264]">건</span>
                 </p>
               </div>
               <div className="pl-4 pt-5">
-                <p className="text-[10px] font-black tracking-[0.16em] text-[#9f8879]">
+                <p className="text-[10px] font-black tracking-[0.16em] text-[#8a7264]">
                   NEW ORDERS
                 </p>
-                <p className="mt-2 font-heading text-3xl font-black text-[#c7ddd7] sm:text-4xl">
+                <p className="mt-2 font-heading text-3xl font-black text-[#596348] sm:text-4xl">
                   {orderSummary.newOrders}
-                  <span className="ml-1 text-sm text-[#9f8879]">건</span>
+                  <span className="ml-1 text-sm text-[#8a7264]">건</span>
                 </p>
               </div>
             </div>
           </motion.div>
         </div>
 
-        <div className="mt-14 border-t border-[#f8ead2]/12 pt-7 lg:mt-20 lg:pt-9">
+        <div className="mt-14 border-t border-[#d8c8b5] pt-7 lg:mt-20 lg:pt-9">
           <div className="mb-7 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-[10px] font-black tracking-[0.34em] text-[#d98976]">DATA REPORT</p>
-              <h3 className="mt-2 font-heading text-xl font-black text-[#fff8eb] sm:text-2xl">
+              <p className="text-[10px] font-black tracking-[0.34em] text-[#9b5b46]">DATA REPORT</p>
+              <h3 className="mt-2 font-heading text-xl font-black text-[#2b1b16] sm:text-2xl">
                 매장별 신규·재주문 비교
               </h3>
             </div>
-            <p className="text-xs font-semibold text-[#8f796c]">최근 일주일 실제 주문 데이터</p>
+            <p className="text-xs font-semibold text-[#746054]">최근 일주일 실제 주문 데이터</p>
           </div>
 
           <div className="grid gap-5 md:grid-cols-3 md:gap-4 lg:gap-6">
             {graphCards.map((card, index) => (
               <motion.article
                 key={card.badge}
-                className={`group relative overflow-hidden rounded-[1.25rem] border border-[#f8ead2]/12 bg-[#211917] shadow-[0_24px_65px_rgba(0,0,0,0.3)] ${
+                className={`group relative overflow-hidden rounded-[1.25rem] border border-[#d8c8b5] bg-[#fffaf2] shadow-[0_20px_50px_rgba(73,50,41,0.12)] ${
                   index === 1 ? 'md:-translate-y-5' : ''
                 }`}
                 initial={{
@@ -204,7 +207,7 @@ export default function RepeatOrderProofSection() {
                     ? undefined
                     : {
                         y: index === 1 ? -25 : -5,
-                        borderColor: 'rgba(217,137,118,0.45)',
+                        borderColor: 'rgba(155,91,70,0.5)',
                       }
                 }
                 transition={{
@@ -213,23 +216,23 @@ export default function RepeatOrderProofSection() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <div className="flex items-center justify-between border-b border-[#f8ead2]/10 px-4 py-4 sm:px-5">
+                <div className="flex items-center justify-between border-b border-[#d8c8b5] px-4 py-4 sm:px-5">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#a84b3c]/60 bg-[#a84b3c]/12 text-[10px] font-black text-[#e49a87]">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#9b5b46]/55 bg-[#9b5b46]/10 text-[10px] font-black text-[#9b5b46]">
                       {card.badge}
                     </span>
                     <div>
-                      <p className="font-heading text-sm font-black text-[#fff8eb]">{card.title}</p>
-                      <p className="mt-0.5 text-[9px] font-bold tracking-[0.12em] text-[#8f796c]">
+                      <p className="font-heading text-sm font-black text-[#2b1b16]">{card.title}</p>
+                      <p className="mt-0.5 text-[9px] font-bold tracking-[0.12em] text-[#8a7264]">
                         {card.period}
                       </p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-[9px] font-black tracking-[0.12em] text-[#8f796c]">
+                    <p className="text-[9px] font-black tracking-[0.12em] text-[#8a7264]">
                       REPEAT ORDERS
                     </p>
-                    <p className="mt-1 font-heading text-base font-black text-[#d9ad55] sm:text-lg">
+                    <p className="mt-1 font-heading text-base font-black text-[#9b5b46] sm:text-lg">
                       재주문 {card.repeatOrders}건
                     </p>
                   </div>
@@ -247,14 +250,14 @@ export default function RepeatOrderProofSection() {
                   />
                 </div>
 
-                <div className="grid grid-cols-2 divide-x divide-[#f8ead2]/10 border-t border-[#f8ead2]/10">
+                <div className="grid grid-cols-2 divide-x divide-[#d8c8b5] border-t border-[#d8c8b5]">
                   <div className="px-2 py-4 text-center">
-                    <p className="text-[9px] font-black tracking-[0.1em] text-[#8f796c]">TOTAL</p>
-                    <p className="mt-1 text-sm font-black text-[#f8ead2]">{card.total}건</p>
+                    <p className="text-[9px] font-black tracking-[0.1em] text-[#8a7264]">TOTAL</p>
+                    <p className="mt-1 text-sm font-black text-[#2b1b16]">{card.total}건</p>
                   </div>
                   <div className="px-2 py-4 text-center">
-                    <p className="text-[9px] font-black tracking-[0.1em] text-[#76b9ad]">NEW</p>
-                    <p className="mt-1 text-sm font-black text-[#d6e4df]">{card.newOrders}건</p>
+                    <p className="text-[9px] font-black tracking-[0.1em] text-[#596348]">NEW</p>
+                    <p className="mt-1 text-sm font-black text-[#596348]">{card.newOrders}건</p>
                   </div>
                 </div>
               </motion.article>
@@ -263,15 +266,15 @@ export default function RepeatOrderProofSection() {
         </div>
 
         <motion.div
-          className="mt-8 grid gap-3 border-y border-[#f8ead2]/10 py-5 text-xs font-bold text-[#a99483] sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-5"
+          className="mt-8 grid gap-3 border-y border-[#d8c8b5] py-5 text-xs font-bold text-[#746054] sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-5"
           {...reveal(0.48)}
         >
-          <span className="font-black tracking-[0.18em] text-[#d98976]">INSIGHT 01</span>
+          <span className="font-black tracking-[0.18em] text-[#9b5b46]">INSIGHT 01</span>
           <span className="break-keep">
             세 매장 모두 신규 주문과 함께 반복 구매가 꾸준히 발생하며, 안정적인 매출 흐름을 만들고
             있습니다.
           </span>
-          <span className="font-black text-[#d9ad55]">신규 주문 / 재주문 비교</span>
+          <span className="font-black text-[#9b5b46]">신규 주문 / 재주문 비교</span>
         </motion.div>
       </div>
     </section>

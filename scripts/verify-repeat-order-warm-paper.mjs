@@ -8,7 +8,13 @@ const source = await readFile(
 
 for (const token of [
   'useReducedMotion',
-  'bg-[#181311]',
+  "/new-asset/background/startup-benefit-hanji.webp",
+  'bg-[#f0e9df]',
+  'bg-[#fffaf2]',
+  'text-[#2b1b16]',
+  'text-[#9b5b46]',
+  'border-[#d8c8b5]',
+  'text-[#596348]',
   'REPEAT ORDERS',
   '다시 선택된 주문',
   '3 STORE SAMPLE',
@@ -29,6 +35,9 @@ for (const asset of [
 }
 
 for (const legacyToken of [
+  'bg-[#181311]',
+  'bg-[#211917]',
+  'text-[#fff8eb]',
   'const backgroundWords',
   'clipPath',
   'bg-[#a66732] text-[#26140e]',
@@ -45,4 +54,4 @@ for (const legacyToken of [
   );
 }
 
-console.log('Repeat-order dark dashboard contract passed.');
+console.log('Repeat-order warm paper contract passed.');
