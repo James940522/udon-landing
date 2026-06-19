@@ -32,3 +32,15 @@ test('uses the light wood WebP and the light brand palette', async () => {
   assert.equal(asset.subarray(0, 4).toString('ascii'), 'RIFF');
   assert.equal(asset.subarray(8, 12).toString('ascii'), 'WEBP');
 });
+
+test('adds restrained editorial process decorations', async () => {
+  const source = await readFile(new URL('./StartupProcessSection.tsx', import.meta.url), 'utf8');
+
+  assert.ok(source.includes('6 STEPS TO OPEN'));
+  assert.ok(source.includes('data-decoration="editorial-frame"'));
+  assert.ok(source.includes('data-decoration="process-path"'));
+  assert.ok(source.includes('hidden md:block'), 'Large decorations must stay hidden on mobile');
+  assert.ok(source.includes('STEP {process.number}'));
+  assert.ok(source.includes('border-dashed'));
+  assert.ok(source.includes('pointer-events-none'));
+});

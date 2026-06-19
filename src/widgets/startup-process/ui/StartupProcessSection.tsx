@@ -64,6 +64,14 @@ export default function StartupProcessSection() {
       >
         <div className="absolute inset-0 bg-[#fff8eb]/28" aria-hidden="true" />
       </div>
+      <div
+        data-decoration="editorial-frame"
+        className="pointer-events-none absolute inset-0 hidden md:block"
+        aria-hidden="true"
+      >
+        <div className="absolute left-8 top-10 h-24 w-24 border-l border-t border-[#c9a24d]/45 lg:left-12 lg:top-14" />
+        <div className="absolute bottom-10 right-8 h-24 w-24 border-b border-r border-[#c9a24d]/45 lg:bottom-14 lg:right-12" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 헤더 */}
         <motion.div
@@ -72,6 +80,11 @@ export default function StartupProcessSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
+          <div className="mx-auto mb-4 flex max-w-md items-center gap-3 text-[0.65rem] font-black uppercase tracking-[0.32em] text-[#8f3528] sm:text-xs">
+            <span className="h-px flex-1 bg-[#c9a24d]/65" aria-hidden="true" />
+            <span>6 STEPS TO OPEN</span>
+            <span className="h-px flex-1 bg-[#c9a24d]/65" aria-hidden="true" />
+          </div>
           <div className="inline-block mb-6">
             <span className="rounded-full bg-[#493229] px-6 py-2 text-sm font-bold tracking-wider text-[#c9a24d]">
               FRANCHISE PROCESS
@@ -89,8 +102,16 @@ export default function StartupProcessSection() {
         </motion.div>
 
         {/* 프로세스 리스트 */}
-        <div ref={processGridRef} className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:gap-6">
+        <div ref={processGridRef} className="relative mx-auto max-w-6xl">
+          <div
+            data-decoration="process-path"
+            className="pointer-events-none absolute -right-3 bottom-[25%] left-[16.666%] top-[25%] hidden rounded-r-2xl border-y border-r border-dashed border-[#a66732]/45 md:block lg:-right-4"
+            aria-hidden="true"
+          >
+            <span className="absolute -left-1 -top-1 h-2 w-2 rounded-full bg-[#8f3528]/70" />
+            <span className="absolute -bottom-1 -left-1 h-2 w-2 rounded-full bg-[#8f3528]/70" />
+          </div>
+          <div className="relative z-10 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:gap-6">
             {processes.map((process, index) => (
               <motion.div
                 key={index}
@@ -123,6 +144,11 @@ export default function StartupProcessSection() {
                       <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#8f3528] text-sm font-black text-[#fff2d8] shadow-[0_10px_24px_rgba(143,53,40,0.28)] md:h-12 md:w-12 md:text-lg">
                         {process.number}
                       </div>
+                    </div>
+                    <div className="absolute right-2 top-2 md:right-3 md:top-3">
+                      <span className="inline-flex rounded-sm border border-[#a66732]/35 bg-[#fff8eb]/88 px-2 py-1 text-[0.58rem] font-black tracking-[0.14em] text-[#493229] shadow-[0_6px_16px_rgba(73,50,41,0.12)] backdrop-blur-sm md:text-[0.65rem]">
+                        STEP {process.number}
+                      </span>
                     </div>
                   </div>
 
