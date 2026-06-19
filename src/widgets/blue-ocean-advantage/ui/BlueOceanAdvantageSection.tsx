@@ -64,10 +64,10 @@ export default function BlueOceanAdvantageSection() {
           aria-hidden="true"
         />
         {/* 따뜻한 종이색 베일 */}
-        <div className="absolute inset-0 bg-[#f7eddb]/68" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[#f7eddb]/48" aria-hidden="true" />
         {/* 앞뒤 섹션을 잇는 웜 그라데이션 */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-[#fff8eb]/82 via-[#e8d4b8]/72 to-[#c99676]/62"
+          className="absolute inset-0 bg-gradient-to-b from-[#fff8eb]/68 via-[#e8d4b8]/56 to-[#c99676]/48"
           aria-hidden="true"
         />
       </div>

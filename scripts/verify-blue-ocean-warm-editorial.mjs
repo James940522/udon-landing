@@ -10,10 +10,10 @@ for (const token of [
   'bg-[#ead9aa]',
   'brightness-[0.92]',
   'saturate-[0.72]',
-  'bg-[#f7eddb]/68',
-  'from-[#fff8eb]/82',
-  'via-[#e8d4b8]/72',
-  'to-[#c99676]/62',
+  'bg-[#f7eddb]/48',
+  'from-[#fff8eb]/68',
+  'via-[#e8d4b8]/56',
+  'to-[#c99676]/48',
   'bg-[#9b5b46]/92',
   'text-[#2b1b16]',
   'text-[#8f3528]',
@@ -39,6 +39,10 @@ for (const legacyToken of [
   'text-gray-300',
   'from-stone-900/95',
   'bg-gradient-to-r from-red-500/20 via-orange-500/20 to-yellow-500/20',
+  'bg-[#f7eddb]/68',
+  'from-[#fff8eb]/82',
+  'via-[#e8d4b8]/72',
+  'to-[#c99676]/62',
 ]) {
   assert.ok(!source.includes(legacyToken), `Legacy campaign token must be removed: ${legacyToken}`);
 }
