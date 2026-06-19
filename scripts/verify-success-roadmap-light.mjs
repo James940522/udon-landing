@@ -15,10 +15,24 @@ assert.ok(
   'Roadmap must use the shared hanji background'
 );
 assert.ok(component.includes('useReducedMotion'), 'Roadmap must respect reduced-motion settings');
-assert.ok(component.includes('<motion.path'), 'Roadmap route must animate into view');
-assert.ok(component.includes('stroke="#A66732"'), 'Roadmap route must use terracotta');
-assert.ok(component.includes('bg-[#fff8eb]/90'), 'Roadmap cards must use the cream paper color');
-assert.ok(component.includes('text-[#26140e]'), 'Roadmap content must use the ink color');
+assert.ok(component.includes('bg-[#fffaf2]/92'), 'Roadmap cards must use the shared ivory color');
+assert.ok(component.includes('text-[#2b1b16]'), 'Roadmap content must use the shared ink color');
+assert.ok(
+  component.includes('data-roadmap-grid'),
+  'Roadmap cards must use the aligned grid container'
+);
+assert.ok(
+  !component.includes('data-roadmap-edge-motif') &&
+    !component.includes('data-roadmap-edge-frame') &&
+    !component.includes('data-roadmap-seal'),
+  'Roadmap background ornaments must be removed'
+);
+assert.ok(component.includes('md:auto-rows-fr'), 'Desktop roadmap rows must share equal height');
+assert.ok(
+  !component.includes('<motion.path'),
+  'The mismatched route through the center of the cards must be removed'
+);
+assert.ok(!component.includes('isRaised'), 'Roadmap cards must not use staggered vertical offsets');
 
 for (const legacyToken of [
   'ROADMAP_KEYWORDS',

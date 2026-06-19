@@ -27,6 +27,19 @@ for (const token of [
 }
 
 for (const token of [
+  'px-4 pb-4 pt-6 sm:px-9 sm:pb-7 sm:pt-9',
+  'text-[1.75rem] font-black',
+  'text-[11px] font-semibold leading-[1.65]',
+  'text-[3.5rem] font-black',
+  'relative mt-4 flex flex-wrap items-center gap-x-4 gap-y-2',
+  'pt-3 text-[9px] font-bold',
+  'sm:text-[3.35rem]',
+  'sm:text-[6.4rem]',
+]) {
+  assert.ok(modal.includes(token), `Missing compact mobile report token: ${token}`);
+}
+
+for (const token of [
   'grid-cols-[2.5rem_minmax(0,1fr)_auto]',
   'store.store_code.padStart(2,',
   'border-b border-[#ddcfbb]',

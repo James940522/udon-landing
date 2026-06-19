@@ -70,7 +70,7 @@ export default function AchievementModal({ isOpen, onClose }: AchievementModalPr
       className="overflow-hidden rounded-[26px] border border-[#cdbb9f] bg-[#f6efe3] p-0 shadow-[0_24px_70px_rgba(38,20,14,0.3)]"
       footerVariant="report"
       header={
-        <div className="relative overflow-hidden border-b border-[#ddcfbb] bg-[#f6efe3] px-5 pb-5 pt-7 sm:px-9 sm:pb-7 sm:pt-9">
+        <div className="relative overflow-hidden border-b border-[#ddcfbb] bg-[#f6efe3] px-4 pb-4 pt-6 sm:px-9 sm:pb-7 sm:pt-9">
           <div className="absolute inset-x-0 top-0 h-2 bg-[#8f3528]" />
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.2]"
@@ -81,26 +81,28 @@ export default function AchievementModal({ isOpen, onClose }: AchievementModalPr
             }}
           />
 
-          <div className="relative grid gap-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-10">
+          <div className="relative grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-10">
             <div>
-              <p className="font-heading text-[10px] font-black tracking-[0.28em] text-[#8f3528] sm:text-xs">
+              <p className="font-heading text-[9px] font-black tracking-[0.28em] text-[#8f3528] sm:text-xs">
                 2026 · OPENING REPORT
               </p>
-              <p className="mt-3 text-sm font-bold text-[#80624c] sm:text-base">오늘은 볶음우동</p>
-              <h2 className="mt-1 break-keep font-heading text-[2rem] font-black leading-[1.05] tracking-[-0.045em] text-[#26140e] sm:text-[3.35rem]">
+              <p className="mt-2.5 text-xs font-bold text-[#80624c] sm:mt-3 sm:text-base">
+                오늘은 볶음우동
+              </p>
+              <h2 className="mt-1 break-keep font-heading text-[1.75rem] font-black leading-[1.05] tracking-[-0.045em] text-[#26140e] sm:text-[3.35rem]">
                 전국 오픈 리포트
               </h2>
-              <p className="mt-3 max-w-xl break-keep text-xs font-semibold leading-relaxed text-[#725744] sm:text-sm">
+              <p className="mt-2.5 max-w-xl break-keep text-[11px] font-semibold leading-[1.65] text-[#725744] sm:mt-3 sm:text-sm sm:leading-relaxed">
                 가맹사업 시작 한 달 만에 20호점 돌파. 숫자보다 선명한 성장의 기록을 지역별 오픈
                 현황으로 확인하세요.
               </p>
             </div>
 
-            <div className="flex items-end gap-3 border-l-0 border-[#cdbb9f] sm:border-l sm:pl-8">
-              <strong className="font-heading text-[4.6rem] font-black leading-[0.78] tracking-[-0.08em] text-[#8f3528] sm:text-[6.4rem]">
+            <div className="flex items-end gap-2.5 border-l-0 border-[#cdbb9f] sm:gap-3 sm:border-l sm:pl-8">
+              <strong className="font-heading text-[3.5rem] font-black leading-[0.78] tracking-[-0.08em] text-[#8f3528] sm:text-[6.4rem]">
                 {displayStoreCount || '-'}
               </strong>
-              <span className="pb-1 text-[10px] font-black leading-tight tracking-[0.16em] text-[#80624c] sm:pb-2 sm:text-xs">
+              <span className="pb-0.5 text-[9px] font-black leading-tight tracking-[0.16em] text-[#80624c] sm:pb-2 sm:text-xs">
                 TOTAL
                 <br />
                 STORES
@@ -108,17 +110,17 @@ export default function AchievementModal({ isOpen, onClose }: AchievementModalPr
             </div>
           </div>
 
-          <div className="relative mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#ddcfbb] pt-4 text-[10px] font-bold text-[#725744] sm:text-xs">
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#8f3528]" />
+          <div className="relative mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[#ddcfbb] pt-3 text-[9px] font-bold text-[#725744] sm:mt-5 sm:gap-x-5 sm:pt-4 sm:text-xs">
+            <span className="flex items-center gap-1.5 sm:gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#8f3528] sm:h-2 sm:w-2" />
               이번 달 오픈
             </span>
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#c9a24d]" />
+            <span className="flex items-center gap-1.5 sm:gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#c9a24d] sm:h-2 sm:w-2" />
               오픈 예정
             </span>
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full border border-[#9b8069] bg-transparent" />
+            <span className="flex items-center gap-1.5 sm:gap-2">
+              <span className="h-1.5 w-1.5 rounded-full border border-[#9b8069] bg-transparent sm:h-2 sm:w-2" />
               오픈 완료
             </span>
           </div>

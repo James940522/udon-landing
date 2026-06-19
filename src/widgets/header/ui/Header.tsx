@@ -46,8 +46,8 @@ export default function Header() {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-[110] border-b border-[#cdbb9f] transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#f6efe3]/98 shadow-[0_12px_34px_rgba(38,20,14,0.14)] backdrop-blur-xl'
-          : 'bg-[#f6efe3]/92 shadow-[0_8px_24px_rgba(38,20,14,0.1)] backdrop-blur-md'
+          ? 'bg-[#efe5d4]/98 shadow-[0_12px_34px_rgba(38,20,14,0.14)] backdrop-blur-xl'
+          : 'bg-[#efe5d4]/92 shadow-[0_8px_24px_rgba(38,20,14,0.1)] backdrop-blur-md'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -64,7 +64,7 @@ export default function Header() {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-4 md:h-[72px]">
+        <div className="flex h-14 items-center justify-between gap-4 md:h-16">
           {/* Logo */}
           <motion.div
             className="flex min-w-0 shrink-0 items-center gap-3"
@@ -77,16 +77,16 @@ export default function Header() {
                 alt="오늘은 볶음우동"
                 width={200}
                 height={100}
-                className="h-10 w-auto object-contain mix-blend-multiply md:h-12"
+                className="h-11 w-auto object-contain mix-blend-multiply md:h-14"
                 priority
                 quality={75}
               />
             </a>
             <div className="hidden border-l border-[#cdbb9f] pl-3 xl:block">
-              <p className="font-heading text-[9px] font-black tracking-[0.22em] text-[#8f3528]">
+              <p className="font-heading text-[10px] font-black tracking-[0.22em] text-[#8f3528]">
                 REPORT NAVIGATION
               </p>
-              <p className="mt-1 text-[10px] font-bold text-[#80624c]">TODAY UDON · 2026</p>
+              <p className="mt-1 text-[11px] font-bold text-[#80624c]">TODAY UDON · 2026</p>
             </div>
           </motion.div>
 
@@ -96,7 +96,7 @@ export default function Header() {
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="group flex items-center gap-1.5 rounded-full px-2.5 py-2 text-sm font-black text-[#3b261c] transition-colors hover:bg-[#ead9aa]/55 hover:text-[#8f3528] lg:px-3"
+                className="group flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-base font-black text-[#3b261c] transition-colors hover:bg-[#ead9aa]/55 hover:text-[#8f3528] lg:px-3"
                 whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -108,7 +108,7 @@ export default function Header() {
             ))}
             <motion.button
               onClick={() => scrollToSection('#contact')}
-              className="ml-2 rounded-full border border-[#8f3528] bg-[#8f3528] px-5 py-2.5 font-heading text-sm font-black text-[#fff8eb] shadow-[0_8px_18px_rgba(143,53,40,0.22)] transition-colors hover:bg-[#71271f]"
+              className="ml-2 rounded-full border border-[#8f3528] bg-[#8f3528] px-5 py-2 font-heading text-base font-black text-[#fff8eb] shadow-[0_8px_18px_rgba(143,53,40,0.22)] transition-colors hover:bg-[#71271f]"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -130,7 +130,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="z-[120] w-[88vw] max-w-sm gap-0 overflow-hidden border-l border-[#cdbb9f] bg-[#f6efe3] p-0 text-[#26140e] [&_[data-slot=sheet-close]]:rounded-full [&_[data-slot=sheet-close]]:border [&_[data-slot=sheet-close]]:border-[#cdbb9f] [&_[data-slot=sheet-close]]:bg-[#fffaf1] [&_[data-slot=sheet-close]]:p-2 [&_[data-slot=sheet-close]]:text-[#8f3528]"
+                className="z-[120] w-[88vw] max-w-sm gap-0 overflow-hidden border-l border-[#cdbb9f] bg-[#efe5d4] p-0 text-[#26140e] [&_[data-slot=sheet-close]]:rounded-full [&_[data-slot=sheet-close]]:border [&_[data-slot=sheet-close]]:border-[#cdbb9f] [&_[data-slot=sheet-close]]:bg-[#fffaf1] [&_[data-slot=sheet-close]]:p-2 [&_[data-slot=sheet-close]]:text-[#8f3528]"
               >
                 <div className="h-2 shrink-0 bg-[#8f3528]" />
                 <div
@@ -172,7 +172,7 @@ export default function Header() {
                 </nav>
 
                 {/* Sidebar Footer */}
-                <div className="relative border-t border-[#ddcfbb] bg-[#f6efe3]/94 p-6">
+                <div className="relative border-t border-[#ddcfbb] bg-[#efe5d4]/94 p-6">
                   <p className="mb-3 text-[10px] font-black tracking-[0.16em] text-[#80624c]">
                     FRANCHISE INQUIRY
                   </p>

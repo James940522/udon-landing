@@ -7,11 +7,11 @@ const source = await readFile(
 );
 
 const requiredTokens = [
-  'bg-[#FFF2D8] py-20 text-[#170C08]',
-  '#3B2115',
-  '#A66732',
-  '#C9A24D',
-  '#FFF2D8',
+  'bg-[#f3ede4] py-20 text-[#2b1b16]',
+  '#493229',
+  '#9b5b46',
+  '#d8c8b5',
+  '#fffaf2',
   'Impact',
   'PROTECTED SALES AREA',
   'lg:grid-cols-[minmax(0,1.55fr)_minmax(300px,0.65fr)]',
@@ -28,8 +28,10 @@ assert.ok(
 );
 
 assert.ok(
-  !source.includes('bg-[#170C08] py-20 text-[#FFF2D8]'),
-  'Smoke black should no longer be the section base color'
+  !source.includes('repeating-linear-gradient'),
+  'Decorative texture lines should be removed from the section background'
 );
+
+assert.ok(!source.includes('PROTECTED\n'), 'Oversized background lettering should be removed');
 
 console.log('Territory protection visual contract passed.');

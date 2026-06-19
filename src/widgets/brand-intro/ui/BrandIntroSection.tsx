@@ -32,35 +32,63 @@ export default function BrandIntroSection() {
   return (
     <section
       id="brand"
-      className="relative overflow-hidden py-16 md:py-24 lg:py-32 bg-amber-900"
+      className="relative flex min-h-[clamp(48rem,92vh,64rem)] items-center overflow-hidden bg-[#ead9aa] py-24 text-[#26140e] md:py-32 lg:py-40"
       ref={ref}
     >
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 z-20 h-1 bg-[#8f3528]"
+        aria-hidden="true"
+      />
+
+      <div className="pointer-events-none absolute inset-x-0 top-7 z-20 px-4 sm:top-9 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 border-b border-[#c9a24d]/55 pb-3 text-[9px] font-black tracking-[0.2em] text-[#8f3528] sm:text-[10px]">
+          <span className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#c9a24d]" aria-hidden="true" />
+            01 / BRAND STORY
+          </span>
+          <span className="flex items-center gap-2 text-[#725744]">
+            TODAY UDON ARCHIVE
+            <span className="h-1.5 w-1.5 rounded-full bg-[#c9a24d]" aria-hidden="true" />
+          </span>
+        </div>
+      </div>
+
       {/* 배경 이미지 */}
-      <div className="absolute inset-0 z-0 bg-amber-900">
+      <div className="absolute inset-0 z-0 bg-[#ead9aa]">
         {/* 이미지 컨테이너 - 원본 크기까지만 확대 */}
         <div className="relative w-full h-full max-w-[1920px] mx-auto">
           <Image
             src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 9.jpg"
             alt=""
             fill
-            className="object-cover"
+            className="object-cover brightness-[0.92] saturate-[0.82]"
             quality={90}
             aria-hidden="true"
           />
         </div>
-        {/* 어두운 오버레이 */}
-        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
-        {/* 그라데이션 오버레이 - 진중한 느낌 강화 */}
+        {/* 밝은 종이색 베일 */}
+        <div className="absolute inset-0 bg-[#f6efe3]/38" aria-hidden="true" />
+        {/* 사진의 온도를 남기는 웜 그라데이션 */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50"
+          className="absolute inset-0 bg-gradient-to-b from-[#fff8eb]/62 via-[#d7c09b]/58 to-[#6f3028]/52"
           aria-hidden="true"
         />
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] opacity-[0.22]"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 1px 1px, rgba(143,53,40,0.16) 1px, transparent 0)',
+          backgroundSize: '22px 22px',
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* 텍스트 콘텐츠 - 모바일 좌측, 데스크톱 중앙 정렬 */}
         <motion.div
-          className="space-y-8 md:space-y-10 text-left md:text-center"
+          className="space-y-10 text-left md:space-y-14 md:text-center"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, ease: 'easeOut' }}
@@ -73,23 +101,23 @@ export default function BrandIntroSection() {
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="text-sm md:text-base lg:text-lg text-white/80 font-bold tracking-widest uppercase">
+              <span className="text-sm font-black uppercase tracking-[0.28em] text-[#8f3528] md:text-base lg:text-lg">
                 About Us
               </span>
             </motion.div>
             <motion.h2
-              className="typo-h2 text-white leading-tight mb-6"
+              className="mb-6 font-heading text-4xl font-black leading-tight tracking-[-0.045em] text-[#26140e] md:text-5xl lg:text-6xl"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="text-yellow-400">오늘은 볶음우동</span>
+              <span>오늘은 볶음우동</span>
             </motion.h2>
           </div>
 
           {/* 밸류 리스트 - 가로 배치 */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4"
+            className="grid grid-cols-1 gap-5 pt-4 md:grid-cols-3 md:gap-6"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -97,26 +125,37 @@ export default function BrandIntroSection() {
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                className="rounded-2xl border border-[#c9a24d]/24 bg-[#fff8eb]/10 p-5 text-left backdrop-blur-md transition-all duration-300 hover:border-[#c9a24d]/42 hover:bg-[#fff8eb]/15 md:text-center"
+                className="rounded-[24px] border border-[#c9a24d]/45 bg-[#e7d6bb]/84 p-6 text-left shadow-[0_20px_50px_rgba(59,33,21,0.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#8f3528]/35 hover:bg-[#ead9aa]/92 md:p-7 md:text-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
               >
-                <div className="text-xs text-yellow-400/90 font-semibold uppercase tracking-wider mb-2">
+                <div className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-[#8f3528]">
                   {value.subtitle}
                 </div>
                 <h3
-                  className="text-lg md:text-xl font-bold text-white mb-2"
+                  className="mb-3 text-xl font-black text-[#26140e] md:text-2xl"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {value.title}
                 </h3>
-                <p className="typo-body-sm text-gray-300">{value.description}</p>
+                <p className="text-sm font-semibold leading-relaxed text-[#725744]">
+                  {value.description}
+                </p>
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
       </div>
+
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-px bg-[#c9a24d]/70"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute bottom-[-4.5rem] left-1/2 z-20 h-24 w-[min(92rem,130vw)] -translate-x-1/2 rounded-[50%] border border-[#c9a24d]/45 bg-[#dfc9a7] shadow-[0_-12px_32px_rgba(59,33,21,0.1)]"
+        aria-hidden="true"
+      />
     </section>
   );
 }
