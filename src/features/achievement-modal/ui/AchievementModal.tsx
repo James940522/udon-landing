@@ -91,7 +91,7 @@ export default function AchievementModal({ isOpen, onClose }: AchievementModalPr
                 전국 오픈 리포트
               </h2>
               <p className="mt-3 max-w-xl break-keep text-xs font-semibold leading-relaxed text-[#725744] sm:text-sm">
-                가맹사업 시작 한 달 만에 16호점 돌파. 숫자보다 선명한 성장의 기록을 지역별 오픈
+                가맹사업 시작 한 달 만에 20호점 돌파. 숫자보다 선명한 성장의 기록을 지역별 오픈
                 현황으로 확인하세요.
               </p>
             </div>
@@ -140,7 +140,7 @@ export default function AchievementModal({ isOpen, onClose }: AchievementModalPr
                 오픈일 순으로 정리된 전국 매장 현황
               </p>
             </div>
-            <ol className="grid grid-cols-1 gap-x-8 border-t border-[#8f3528] sm:grid-cols-2">
+            <ol className="grid max-h-[clamp(12rem,32vh,24rem)] grid-cols-1 gap-x-8 overflow-y-auto overscroll-contain border-t border-[#8f3528] pr-1 sm:grid-cols-2 sm:pr-2">
               {sortedStores.map((store, index) => (
                 <StoreItem
                   key={store.store_code}
