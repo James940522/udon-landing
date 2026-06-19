@@ -8,7 +8,7 @@ const source = await readFile(
 
 for (const token of [
   'useReducedMotion',
-  "/new-asset/background/startup-benefit-hanji.webp",
+  '/new-asset/background/startup-benefit-hanji.webp',
   'bg-[#f0e9df]',
   'bg-[#fffaf2]',
   'text-[#2b1b16]',

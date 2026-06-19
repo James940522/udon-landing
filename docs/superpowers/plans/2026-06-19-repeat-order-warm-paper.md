@@ -13,6 +13,7 @@
 ### Task 1: Define the warm paper palette contract
 
 **Files:**
+
 - Move: `scripts/verify-repeat-order-dark-dashboard.mjs` to `scripts/verify-repeat-order-warm-paper.mjs`
 - Test: `scripts/verify-repeat-order-warm-paper.mjs`
 
@@ -29,6 +30,7 @@ Expected: FAIL with a missing warm paper token because the component still uses 
 ### Task 2: Apply the shared warm paper palette
 
 **Files:**
+
 - Modify: `src/widgets/repeat-order-proof/ui/RepeatOrderProofSection.tsx`
 - Test: `scripts/verify-repeat-order-warm-paper.mjs`
 
@@ -53,6 +55,7 @@ Expected: `Repeat-order warm paper contract passed.`
 ### Task 3: Verify the production result
 
 **Files:**
+
 - Verify: `src/widgets/repeat-order-proof/ui/RepeatOrderProofSection.tsx`
 - Verify: `scripts/verify-repeat-order-warm-paper.mjs`
 
