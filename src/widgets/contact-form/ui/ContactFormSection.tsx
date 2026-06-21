@@ -86,56 +86,54 @@ export default function ContactFormSection() {
     <section
       id="contact"
       ref={ref}
-      className="relative overflow-hidden bg-[#170c08] py-16 text-[#fff2d8] md:py-24"
+      className="relative overflow-hidden bg-[#f0e9df] py-16 text-[#2b1b16] md:py-24"
       aria-label="오늘은 볶음우동 창업 문의"
     >
       <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            'linear-gradient(135deg, rgba(255, 229, 172, 0.08) 0 16%, transparent 16% 100%), linear-gradient(45deg, transparent 0 58%, rgba(143, 47, 25, 0.22) 58% 72%, transparent 72% 100%), repeating-linear-gradient(90deg, rgba(255, 222, 151, 0.045) 0 1px, transparent 1px 112px), repeating-linear-gradient(0deg, rgba(255, 222, 151, 0.03) 0 1px, transparent 1px 11px), linear-gradient(135deg, #100806 0%, #26140e 48%, #6a3c22 100%)',
-        }}
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#fffaf2]/94 via-[#f0e9df]/96 to-[#d8c8b5]/92"
         aria-hidden="true"
       />
-      <div className="absolute -left-24 top-0 h-80 w-80 rotate-45 rounded-lg bg-[#e4cf9f]/10" />
-      <div className="absolute right-[-5rem] top-[-4rem] h-60 w-60 rotate-45 rounded-lg bg-[#8f3528]/20 shadow-[0_24px_60px_rgba(0,0,0,0.24)]" />
-      <div className="absolute bottom-[-5rem] right-[7vw] h-64 w-64 rotate-45 rounded-lg border border-[#c9a24d]/24" />
       <div
-        className="absolute inset-0 opacity-[0.2]"
+        className="pointer-events-none absolute inset-0 opacity-[0.18]"
         style={{
           backgroundImage:
-            'repeating-linear-gradient(135deg, rgba(255, 222, 151, 0.16) 0 2px, transparent 2px 10px)',
-          backgroundSize: '140px 140px',
+            'radial-gradient(circle at 1px 1px, rgba(155,91,70,0.16) 1px, transparent 0)',
+          backgroundSize: '24px 24px',
         }}
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-linear-to-b from-[#fff2d8]/6 via-transparent to-black/18" />
+      <div
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#170c08]/38"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
         <motion.div
-          className="mx-auto w-full max-w-lg rounded-lg border border-[#c9a24d]/45 bg-linear-to-br from-[#fff2d8]/94 via-[#f4dfb4]/92 to-[#e3bf78]/88 p-6 shadow-[0_30px_90px_rgba(0,0,0,0.34)] backdrop-blur-sm md:p-8"
+          data-contact-brand-panel
+          className="relative mx-auto w-full max-w-lg overflow-hidden rounded-[1.5rem] border border-[#9b5b46]/45 bg-[#2b1b16]/96 p-6 shadow-[0_30px_80px_rgba(43,27,22,0.28)] backdrop-blur-sm md:p-8"
           initial={{ opacity: 0, y: 34 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <span className="mb-4 inline-flex rounded-full bg-[#26140e] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#c9a24d]">
+          <div className="absolute inset-x-0 top-0 h-1 bg-[#9b5b46]" aria-hidden="true" />
+          <span className="mb-4 inline-flex rounded-full bg-[#9b5b46] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#fffaf2]">
             Today Udon
           </span>
-          <h2 className="text-4xl font-black leading-[1.12] text-[#2a1208] md:text-6xl">
+          <h2 className="text-4xl font-black leading-[1.12] text-[#fffaf2] md:text-6xl">
             성공 창업,
             <br />
-            <span className="text-[#8f3528]">오늘은</span>
+            <span className="text-[#d9ad55]">오늘은</span>
             <br />
-            <span className="text-[#8f3528]">볶음우동</span>입니다.
+            <span className="text-[#d9ad55]">볶음우동</span>입니다.
           </h2>
-          <p className="mt-6 text-base font-black leading-8 text-[#4a2412] md:text-lg">
+          <p className="mt-6 text-base font-black leading-8 text-[#d8c8b5] md:text-lg">
             작은 공간에서도 안정적으로 시작할 수 있도록 상담부터 오픈까지 함께합니다.
             배달 중심 운영, 소형 매장, 전환 창업까지 편하게 문의해주세요.
           </p>
 
           <a
             href="sms:010-9923-9502?body=홈페이지를%20통해%20오늘은%20볶음우동%20창업%20문의를%20드립니다."
-            className="mt-6 inline-flex items-center gap-3 rounded-md bg-[#26140e] px-5 py-3 text-3xl font-black text-[#c9a24d] shadow-[0_18px_44px_rgba(43,18,8,0.32)] transition-transform hover:scale-[1.02] hover:text-[#e2b957]"
+            className="mt-6 inline-flex items-center gap-3 rounded-md bg-[#fffaf2] px-5 py-3 text-3xl font-black text-[#8f3528] shadow-[0_18px_44px_rgba(0,0,0,0.28)] transition-transform hover:scale-[1.02] hover:bg-[#f0e9df]"
           >
             <Phone className="h-7 w-7" aria-hidden="true" />
             010-9923-9502
@@ -143,11 +141,13 @@ export default function ContactFormSection() {
         </motion.div>
 
         <motion.div
-          className="mx-auto w-full max-w-xl rounded-lg border border-[#c9a24d]/42 bg-[#fff8eb]/96 p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] md:p-6"
+          data-contact-form-card
+          className="relative mx-auto w-full max-w-xl overflow-hidden rounded-[1.5rem] border border-[#d8c8b5]/90 bg-[#fffaf2]/96 p-5 shadow-[0_30px_80px_rgba(73,50,41,0.18)] backdrop-blur-[2px] md:p-6"
           initial={{ opacity: 0, y: 34 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.12 }}
         >
+          <div className="absolute inset-x-0 top-0 h-1 bg-[#9b5b46]" aria-hidden="true" />
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid gap-3 md:grid-cols-2">
               <div>
@@ -161,7 +161,7 @@ export default function ContactFormSection() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="h-11 w-full rounded-md border border-[#a66732] bg-[#fff8eb] px-3 text-sm font-bold text-[#26140e] outline-none transition focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/25"
+                  className="h-11 w-full rounded-md border border-[#d8c8b5] bg-[#fffaf2] px-3 text-sm font-bold text-[#26140e] outline-none transition focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/25"
                   placeholder="홍길동"
                 />
               </div>
@@ -177,7 +177,7 @@ export default function ContactFormSection() {
                   required
                   value={formData.phone}
                   onChange={handleChange}
-                  className="h-11 w-full rounded-md border border-[#a66732] bg-[#fff8eb] px-3 text-sm font-bold text-[#26140e] outline-none transition focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/25"
+                  className="h-11 w-full rounded-md border border-[#d8c8b5] bg-[#fffaf2] px-3 text-sm font-bold text-[#26140e] outline-none transition focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/25"
                   placeholder="010-1234-5678"
                 />
               </div>
@@ -194,7 +194,7 @@ export default function ContactFormSection() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="h-11 w-full rounded-md border border-[#a66732] bg-[#fff8eb] px-3 text-sm font-bold text-[#26140e] outline-none transition focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/25"
+                  className="h-11 w-full rounded-md border border-[#d8c8b5] bg-[#fffaf2] px-3 text-sm font-bold text-[#26140e] outline-none transition focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/25"
                   placeholder="example@email.com"
                 />
               </div>
@@ -212,7 +212,7 @@ export default function ContactFormSection() {
                       className={`h-11 rounded-md border px-3 text-sm font-black transition ${
                         formData.storeType === type
                           ? 'border-[#8f3528] bg-[#8f3528] text-white shadow-[0_10px_22px_rgba(143,47,25,0.22)]'
-                          : 'border-[#a66732] bg-[#fff8eb] text-[#4a2412] hover:border-[#8f3528]'
+                          : 'border-[#d8c8b5] bg-[#fffaf2] text-[#4a2412] hover:border-[#8f3528]'
                       }`}
                       aria-pressed={formData.storeType === type}
                     >
@@ -235,7 +235,7 @@ export default function ContactFormSection() {
                   required
                   value={formData.region}
                   onChange={handleChange}
-                  className="h-11 w-full rounded-md border border-[#a66732] bg-[#fff8eb] px-3 text-sm font-bold text-[#26140e] outline-none transition focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/25"
+                  className="h-11 w-full rounded-md border border-[#d8c8b5] bg-[#fffaf2] px-3 text-sm font-bold text-[#26140e] outline-none transition focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/25"
                   placeholder="서울 강남구"
                 />
               </div>
@@ -253,7 +253,7 @@ export default function ContactFormSection() {
                       className={`h-11 rounded-md border px-3 text-sm font-black transition ${
                         formData.hasStore === item
                           ? 'border-[#8f3528] bg-[#8f3528] text-white shadow-[0_10px_22px_rgba(143,47,25,0.22)]'
-                          : 'border-[#a66732] bg-[#fff8eb] text-[#4a2412] hover:border-[#8f3528]'
+                          : 'border-[#d8c8b5] bg-[#fffaf2] text-[#4a2412] hover:border-[#8f3528]'
                       }`}
                       aria-pressed={formData.hasStore === item}
                     >
@@ -274,7 +274,7 @@ export default function ContactFormSection() {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full resize-none rounded-md border border-[#a66732] bg-[#fff8eb] px-3 py-3 text-sm font-bold leading-6 text-[#26140e] outline-none transition focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/25"
+                className="w-full resize-none rounded-md border border-[#d8c8b5] bg-[#fffaf2] px-3 py-3 text-sm font-bold leading-6 text-[#26140e] outline-none transition focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/25"
                 placeholder="창업에 대해 궁금하신 점을 자유롭게 작성해주세요."
               />
             </div>
@@ -290,7 +290,7 @@ export default function ContactFormSection() {
               aria-hidden="true"
             />
 
-            <div className="rounded-md border border-[#a66732]/70 bg-[#f6e6bc] p-4">
+            <div className="rounded-md border border-[#d8c8b5]/90 bg-[#eadfce]/82 p-4">
               <label className="flex cursor-pointer items-start gap-3">
                 <input
                   type="checkbox"
