@@ -21,6 +21,22 @@ for (const token of [
   'border-[#d8c8b5]/90 bg-[#fffaf2]/96',
   'border-[#d8c8b5] bg-[#fffaf2]',
   'border-[#d8c8b5]/90 bg-[#eadfce]/82',
+  'data-contact-section-index',
+  'FRANCHISE INQUIRY · 01',
+  'data-contact-editorial-frame',
+  'data-contact-vertical-label',
+  'START YOUR STORE',
+  'data-contact-panel-connector',
+  'data-contact-response-stamp',
+  '24H',
+  'RESPONSE',
+  'data-contact-form-label',
+  'APPLICATION FORM',
+  'hidden md:block',
+  'lg:flex',
+  'sm:absolute sm:right-5 sm:top-5',
+  'pointer-events-none',
+  'aria-hidden="true"',
 ]) {
   assert.ok(source.includes(token), `Missing warm contact token: ${token}`);
 }
