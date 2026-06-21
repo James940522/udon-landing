@@ -94,7 +94,7 @@ function PhonePreview({
       className={`relative mx-auto flex w-full min-w-0 max-w-[186px] flex-col items-center sm:max-w-[390px] lg:max-w-[430px] ${className ?? ''}`}
     >
       <div className="mb-2 text-center sm:mb-4">
-        <span className="inline-flex rounded-md bg-[#3b2115] px-2.5 py-1.5 text-[0.68rem] font-extrabold leading-tight tracking-[-0.01em] text-[#C9A24D] shadow-[0_10px_24px_rgba(67,28,7,0.18)] sm:px-4 sm:py-2 sm:text-sm md:text-base">
+        <span className="inline-flex rounded-md border border-[#fffaf2]/25 bg-[#9b5b46] px-2.5 py-1.5 text-[0.68rem] font-extrabold leading-tight tracking-[-0.01em] text-[#fffaf2] shadow-[0_10px_24px_rgba(43,27,22,0.2)] sm:px-4 sm:py-2 sm:text-sm md:text-base">
           {label}
         </span>
       </div>
@@ -117,90 +117,78 @@ export default function ReviewsSection() {
   return (
     <section
       id="reviews"
-      className="relative overflow-hidden bg-[#170c08] text-[#ead8bb]"
+      className="relative overflow-hidden bg-[#f0e9df] text-[#2b1b16]"
       aria-label="고객 리뷰"
     >
       <div
-        className="absolute inset-0"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#fffaf2]/92 via-[#f0e9df]/94 to-[#e5d5c1]/96"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.2]"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 50% 0%, rgba(161, 63, 20, 0.36), transparent 42%), radial-gradient(circle at 14% 28%, rgba(213, 151, 58, 0.16), transparent 28%), linear-gradient(90deg, rgba(255, 231, 177, 0.05), transparent 12%, transparent 88%, rgba(255, 231, 177, 0.05)), repeating-linear-gradient(90deg, rgba(255, 218, 140, 0.06) 0 1px, transparent 1px 112px), repeating-linear-gradient(0deg, rgba(255, 222, 151, 0.035) 0 1px, transparent 1px 9px), linear-gradient(135deg, #100806 0%, #26140e 46%, #52301f 100%)',
-          backgroundSize: 'auto, auto, auto, auto, auto, auto',
+            'radial-gradient(circle at 1px 1px, rgba(155,91,70,0.16) 1px, transparent 0)',
+          backgroundSize: '24px 24px',
         }}
         aria-hidden="true"
       />
       <div
-        className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#c9a24d]/70 to-transparent"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute inset-x-10 top-10 h-px bg-linear-to-r from-transparent via-[#e4cf9f]/30 to-transparent"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute left-[6vw] top-24 bottom-64 w-px bg-linear-to-b from-transparent via-[#c9a24d]/34 to-transparent"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute right-[6vw] top-24 bottom-64 w-px bg-linear-to-b from-transparent via-[#c9a24d]/34 to-transparent"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute right-8 top-24 h-40 w-80 opacity-[0.13] md:right-16 md:top-28"
-        style={{
-          backgroundImage:
-            'radial-gradient(ellipse at center bottom, transparent 58%, #dbc271 60%, transparent 64%)',
-          backgroundSize: '72px 34px',
-        }}
-        aria-hidden="true"
-      />
-      <div
-        className="absolute -left-16 top-36 h-48 w-48 rounded-full border border-[#c9a24d]/12"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-80 right-12 h-20 w-20 rotate-45 border border-[#8f3528]/24 bg-[#71271f]/12"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#9b5b46]/45 to-transparent"
         aria-hidden="true"
       />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 pt-16 sm:px-6 md:pt-20 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="relative">
-            <span className="absolute -left-2 -top-12 hidden text-8xl font-black uppercase tracking-[0.08em] text-[#e6cf9b]/10 md:block">
+            <span className="absolute -left-2 -top-12 hidden text-8xl font-black uppercase tracking-[0.08em] text-[#9b5b46]/8 md:block">
               Review
             </span>
-            <p className="mb-4 text-sm font-black uppercase tracking-[0.18em] text-[#c9a24d]">
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.18em] text-[#9b5b46]">
               Real customer review
             </p>
-            <h2 className="text-4xl font-black leading-[0.98] tracking-[-0.04em] text-[#fff2d8] drop-shadow-[0_8px_24px_rgba(0,0,0,0.28)] md:text-6xl">
+            <h2 className="text-4xl font-black leading-[0.98] tracking-[-0.04em] text-[#2b1b16] md:text-6xl">
               고객들이
               <br />
-              다시 찾는 볶음우동
+              <span className="text-[#8f3528]">다시 찾는 볶음우동</span>
             </h2>
           </div>
           <div className="max-w-md lg:ml-auto lg:pt-8">
-            <p className="mb-3 text-sm font-black text-[#a66732]">
+            <p className="mb-3 text-sm font-black text-[#8f3528]">
               한 그릇의 만족이 쌓인 후기
             </p>
-            <p className="text-base font-bold leading-7 text-[#d9c49f]">
+            <p className="text-base font-bold leading-7 text-[#746054]">
               묵직한 철판 향과 정갈한 우동 한 그릇. 실제 고객 리뷰로 오늘은 볶음우동의 만족감을
               확인해보세요.
             </p>
           </div>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 items-start justify-items-center gap-1.5 sm:gap-8 lg:min-h-[620px] lg:gap-16">
-          {phoneScreens.map((screen, index) => (
-            <PhonePreview
-              key={screen.src}
-              src={screen.src}
-              alt={screen.alt}
-              label={screen.label}
-              width={screen.width}
-              height={screen.height}
-              priority={index === 0}
-            />
-          ))}
+        <div
+          data-review-phone-stage
+          className="relative mt-12 overflow-hidden rounded-[2rem] border border-[#9b5b46]/45 bg-[#2b1b16]/96 px-2 pt-8 shadow-[0_30px_80px_rgba(43,27,22,0.28)] sm:px-8 sm:pt-12 lg:min-h-[620px] lg:px-12"
+        >
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at 24% 18%, rgba(155,91,70,0.3), transparent 30%), radial-gradient(circle at 78% 24%, rgba(201,162,77,0.16), transparent 28%)',
+            }}
+            aria-hidden="true"
+          />
+          <div className="relative z-10 grid grid-cols-2 items-start justify-items-center gap-1.5 sm:gap-8 lg:gap-16">
+            {phoneScreens.map((screen, index) => (
+              <PhonePreview
+                key={screen.src}
+                src={screen.src}
+                alt={screen.alt}
+                label={screen.label}
+                width={screen.width}
+                height={screen.height}
+                priority={index === 0}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
@@ -222,7 +210,7 @@ export default function ReviewsSection() {
           {marqueeImages.map((review, index) => (
             <div
               key={`${review.src}-${index}`}
-              className="relative flex h-[214px] w-auto shrink-0 overflow-hidden rounded-lg border border-[#d4b45f]/80 bg-[#fff8eb] shadow-[0_18px_42px_rgba(89,42,10,0.14)] sm:h-[246px] md:h-[282px]"
+              className="relative flex h-[214px] w-auto shrink-0 overflow-hidden rounded-lg border border-[#d8c8b5]/90 bg-[#fffaf2] shadow-[0_18px_42px_rgba(73,50,41,0.14)] sm:h-[246px] md:h-[282px]"
             >
               <Image
                 src={review.src}
