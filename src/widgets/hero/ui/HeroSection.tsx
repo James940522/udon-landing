@@ -9,23 +9,23 @@ import { useState, useEffect } from 'react';
 // ========================================
 const MENU_IMAGES = [
   {
-    src: '/asset/menu/오늘은_볶음우동/최신 메뉴모음컷/(최신)메뉴모음컷1.jpg',
+    src: '/asset/menu/today-bokkeum-udon/latest-menu-gallery/latest-menu-01.jpg',
     alt: '오늘은 볶음우동 메인 메뉴 1',
   },
   {
-    src: '/asset/menu/오늘은_볶음우동/최신 메뉴모음컷/(최신)메뉴모음컷2.jpg',
+    src: '/asset/menu/today-bokkeum-udon/latest-menu-gallery/latest-menu-02.jpg',
     alt: '오늘은 볶음우동 메인 메뉴 2',
   },
   {
-    src: '/asset/menu/오늘은_볶음우동/최신 메뉴모음컷/(최신)메뉴모음컷3.jpg',
+    src: '/asset/menu/today-bokkeum-udon/latest-menu-gallery/latest-menu-03.jpg',
     alt: '오늘은 볶음우동 메인 메뉴 3',
   },
   {
-    src: '/asset/menu/오늘은_볶음우동/최신 메뉴모음컷/(최신)메뉴모음컷4.jpg',
+    src: '/asset/menu/today-bokkeum-udon/latest-menu-gallery/latest-menu-04.jpg',
     alt: '오늘은 볶음우동 메인 메뉴 4',
   },
   {
-    src: '/asset/menu/오늘은_볶음우동/최신 메뉴모음컷/(최신)메뉴모음컷5.jpg',
+    src: '/asset/menu/today-bokkeum-udon/latest-menu-gallery/latest-menu-05.jpg',
     alt: '오늘은 볶음우동 메인 메뉴 5',
   },
 ];

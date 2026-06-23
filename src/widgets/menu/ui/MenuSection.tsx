@@ -4,7 +4,6 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { cn } from '@/shared/lib/utils';
 import Image from 'next/image';
-import { normalizeMenuImagePath } from './normalize-menu-image-path';
 
 interface MenuItem {
   name: string;
@@ -35,31 +34,32 @@ const brands: Brand[] = [
         items: [
           {
             name: '돈까스 볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/볶음우동/돈까스 볶음우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/bokkeum-udon/pork-cutlet-bokkeum-udon.jpg',
           },
           {
             name: '베이컨 볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/볶음우동/베이컨 볶음우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/bokkeum-udon/bacon-bokkeum-udon.jpg',
           },
           {
             name: '삼겹 볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/볶음우동/삼겹 볶음우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/bokkeum-udon/pork-belly-bokkeum-udon.jpg',
           },
           {
             name: '새우오징어 볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/볶음우동/새우오징어 볶음우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/bokkeum-udon/shrimp-squid-bokkeum-udon.jpg',
           },
           {
             name: '우삼겹 볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/볶음우동/우삼겹 볶음우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/bokkeum-udon/beef-belly-bokkeum-udon.jpg',
           },
           {
             name: '치킨치즈까스 볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/볶음우동/치킨치즈까스 볶음우동.jpg',
+            image:
+              '/asset/menu/today-bokkeum-udon/bokkeum-udon/chicken-cheese-cutlet-bokkeum-udon.jpg',
           },
           {
             name: '항정 볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/볶음우동/항정 볶음우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/bokkeum-udon/pork-jowl-bokkeum-udon.jpg',
           },
         ],
       },
@@ -69,35 +69,43 @@ const brands: Brand[] = [
         items: [
           {
             name: '돈까스 김치볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/김치볶음우동/돈까스 김치볶음우동.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/kimchi-bokkeum-udon/pork-cutlet-kimchi-bokkeum-udon.jpeg',
           },
           {
             name: '베이컨 김치볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/김치볶음우동/베이컨 김치볶음우동.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/kimchi-bokkeum-udon/bacon-kimchi-bokkeum-udon.jpeg',
           },
           {
             name: '삼겹 김치볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/김치볶음우동/삼겹 김치볶음우동.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/kimchi-bokkeum-udon/pork-belly-kimchi-bokkeum-udon.jpeg',
           },
           {
             name: '새우튀김 김치볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/김치볶음우동/새우튀김 김치볶음우동.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/kimchi-bokkeum-udon/fried-shrimp-kimchi-bokkeum-udon.jpeg',
           },
           {
             name: '소세지 김치볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/김치볶음우동/소세지 김치볶음우동.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/kimchi-bokkeum-udon/sausage-kimchi-bokkeum-udon.jpeg',
           },
           {
             name: '우삼겹 김치볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/김치볶음우동/우삼겹 김치볶음우동.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/kimchi-bokkeum-udon/beef-belly-kimchi-bokkeum-udon.jpeg',
           },
           {
             name: '치킨치즈까스 김치볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/김치볶음우동/치킨치즈까스 김치볶음우동.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/kimchi-bokkeum-udon/chicken-cheese-cutlet-kimchi-bokkeum-udon.jpeg',
           },
           {
             name: '항정 김치볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/김치볶음우동/항정 김치볶음우동.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/kimchi-bokkeum-udon/pork-jowl-kimchi-bokkeum-udon.jpeg',
           },
         ],
       },
@@ -107,31 +115,37 @@ const brands: Brand[] = [
         items: [
           {
             name: '돈까스 매콤볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤볶음우동/돈까스 매콤볶음우동.jpg',
+            image:
+              '/asset/menu/today-bokkeum-udon/spicy-bokkeum-udon/pork-cutlet-spicy-bokkeum-udon.jpg',
           },
           {
             name: '베이컨 매콤볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤볶음우동/베이컨 매콤볶음우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/spicy-bokkeum-udon/bacon-spicy-bokkeum-udon.jpg',
           },
           {
             name: '새우튀김 매콤 볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤볶음우동/새우튀김 매콤 볶음우동.jpg',
+            image:
+              '/asset/menu/today-bokkeum-udon/spicy-bokkeum-udon/fried-shrimp-spicy-bokkeum-udon.jpg',
           },
           {
             name: '우삼겹 매콤볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤볶음우동/우삼겹 매콤볶음우동.jpg',
+            image:
+              '/asset/menu/today-bokkeum-udon/spicy-bokkeum-udon/beef-belly-spicy-bokkeum-udon.jpg',
           },
           {
             name: '치킨치즈까스 매콤볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤볶음우동/치킨치즈까스 매콤볶음우동.jpg',
+            image:
+              '/asset/menu/today-bokkeum-udon/spicy-bokkeum-udon/chicken-cheese-cutlet-spicy-bokkeum-udon.jpg',
           },
           {
             name: '항정 매콤볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤볶음우동/항정 매콤볶음우동.jpg',
+            image:
+              '/asset/menu/today-bokkeum-udon/spicy-bokkeum-udon/pork-jowl-spicy-bokkeum-udon.jpg',
           },
           {
             name: '해물 매콤 볶음우동',
-            image: '/asset/menu/오늘은_볶음우동/매콤볶음우동/해물 매콤 볶음우동.jpg',
+            image:
+              '/asset/menu/today-bokkeum-udon/spicy-bokkeum-udon/seafood-spicy-bokkeum-udon.jpg',
           },
         ],
       },
@@ -141,31 +155,31 @@ const brands: Brand[] = [
         items: [
           {
             name: '베이컨 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/베이컨 크림우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/cream-udon/bacon-cream-udon.jpg',
           },
           {
             name: '베이컨 매콤 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/베이컨 매콤 크림우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/cream-udon/bacon-spicy-cream-udon.jpg',
           },
           {
             name: '쉬림프 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/쉬림프 크림 우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/cream-udon/shrimp-cream-udon.jpg',
           },
           {
             name: '쉬림프 매콤 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/쉬림프 매콤 크림우동.png',
+            image: '/asset/menu/today-bokkeum-udon/cream-udon/shrimp-spicy-cream-udon.png',
           },
           {
             name: '새우 베이컨 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/새우 베이컨 크림우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/cream-udon/shrimp-bacon-cream-udon.jpg',
           },
           {
             name: '새우 베이컨 매콤 크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/새우 베이컨 매콤 크림우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/cream-udon/shrimp-bacon-spicy-cream-udon.jpg',
           },
           {
             name: '해물 매콤크림우동',
-            image: '/asset/menu/오늘은_볶음우동/크림우동/해물 매콤크림우동.jpg',
+            image: '/asset/menu/today-bokkeum-udon/cream-udon/seafood-spicy-cream-udon.jpg',
           },
         ],
       },
@@ -175,31 +189,37 @@ const brands: Brand[] = [
         items: [
           {
             name: '돈까스 철판 볶음밥',
-            image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/돈까스 철판 볶음밥.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/teppan-fried-rice/pork-cutlet-teppan-fried-rice.jpeg',
           },
           {
             name: '베이컨 철판 볶음밥',
-            image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/베이컨 철판 볶음밥.jpeg',
+            image: '/asset/menu/today-bokkeum-udon/teppan-fried-rice/bacon-teppan-fried-rice.jpeg',
           },
           {
             name: '삼겹 철판 볶음밥',
-            image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/삼겹 철판 볶음밥.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/teppan-fried-rice/pork-belly-teppan-fried-rice.jpeg',
           },
           {
             name: '새우튀김 철판 볶음밥',
-            image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/새우튀김 철판 볶음밥.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/teppan-fried-rice/fried-shrimp-teppan-fried-rice.jpeg',
           },
           {
             name: '우삼겹 철판 볶음밥',
-            image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/우삼겹 철판 볶음밥.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/teppan-fried-rice/beef-belly-teppan-fried-rice.jpeg',
           },
           {
             name: '치킨치즈 철판 볶음밥',
-            image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/치킨치즈 철판 볶음밥.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/teppan-fried-rice/chicken-cheese-teppan-fried-rice.jpeg',
           },
           {
             name: '항정살 철판 볶음밥',
-            image: '/asset/menu/오늘은_볶음우동/철판 볶음밥/항정살 철판 볶음밥.jpeg',
+            image:
+              '/asset/menu/today-bokkeum-udon/teppan-fried-rice/pork-jowl-teppan-fried-rice.jpeg',
           },
         ],
       },
@@ -207,17 +227,41 @@ const brands: Brand[] = [
         id: 'side',
         name: '사이드',
         items: [
-          { name: '가라아게', image: '/asset/menu/오늘은_볶음우동/사이드/가라아게.jpeg' },
-          { name: '대게튀김', image: '/asset/menu/오늘은_볶음우동/사이드/대게튀김.jpeg' },
-          { name: '돈까스', image: '/asset/menu/오늘은_볶음우동/사이드/돈까스.jpeg' },
-          { name: '떡갈비', image: '/asset/menu/오늘은_볶음우동/사이드/떡갈비.jpeg' },
-          { name: '맛감자', image: '/asset/menu/오늘은_볶음우동/사이드/맛감자.jpeg' },
-          { name: '버팔로봉', image: '/asset/menu/오늘은_볶음우동/사이드/버팔로봉.jpeg' },
-          { name: '버팔로윙', image: '/asset/menu/오늘은_볶음우동/사이드/버팔로윙.jpeg' },
-          { name: '짜장만두', image: '/asset/menu/오늘은_볶음우동/사이드/짜장만두.jpeg' },
-          { name: '짬뽕만두', image: '/asset/menu/오늘은_볶음우동/사이드/짬뽕만두.jpeg' },
-          { name: '치킨치즈까스', image: '/asset/menu/오늘은_볶음우동/사이드/치킨치즈까스.jpeg' },
-          { name: '타코야끼', image: '/asset/menu/오늘은_볶음우동/사이드/타코야끼.jpeg' },
+          { name: '가라아게', image: '/asset/menu/today-bokkeum-udon/sides/karaage.jpeg' },
+          {
+            name: '대게튀김',
+            image: '/asset/menu/today-bokkeum-udon/sides/snow-crab-fritter.jpeg',
+          },
+          {
+            name: '돈까스',
+            image: '/asset/menu/today-bokkeum-udon/sides/pork-cutlet.jpeg',
+          },
+          { name: '떡갈비', image: '/asset/menu/today-bokkeum-udon/sides/tteokgalbi.jpeg' },
+          {
+            name: '맛감자',
+            image: '/asset/menu/today-bokkeum-udon/sides/potato-bites.jpeg',
+          },
+          {
+            name: '버팔로봉',
+            image: '/asset/menu/today-bokkeum-udon/sides/buffalo-drumette.jpeg',
+          },
+          {
+            name: '버팔로윙',
+            image: '/asset/menu/today-bokkeum-udon/sides/buffalo-wing.jpeg',
+          },
+          {
+            name: '짜장만두',
+            image: '/asset/menu/today-bokkeum-udon/sides/jjajang-dumpling.jpeg',
+          },
+          {
+            name: '짬뽕만두',
+            image: '/asset/menu/today-bokkeum-udon/sides/jjamppong-dumpling.jpeg',
+          },
+          {
+            name: '치킨치즈까스',
+            image: '/asset/menu/today-bokkeum-udon/sides/chicken-cheese-cutlet.jpeg',
+          },
+          { name: '타코야끼', image: '/asset/menu/today-bokkeum-udon/sides/takoyaki.jpeg' },
         ],
       },
     ],
@@ -287,8 +331,8 @@ export default function MenuSection() {
             </div>
             <div className="border-l border-[#d8c8b5] pl-5 md:pl-8">
               <p className="max-w-lg text-sm font-semibold leading-7 text-[#746054] sm:text-base sm:leading-8">
-                불향을 입힌 볶음우동부터 부드러운 크림우동, 든든한 철판 볶음밥까지.
-                취향에 맞는 오늘의 메뉴를 천천히 골라보세요.
+                불향을 입힌 볶음우동부터 부드러운 크림우동, 든든한 철판 볶음밥까지. 취향에 맞는
+                오늘의 메뉴를 천천히 골라보세요.
               </p>
             </div>
           </div>
@@ -337,9 +381,7 @@ export default function MenuSection() {
 
           <div className="mb-6 mt-9 flex items-end justify-between gap-4 md:mb-8 md:mt-12">
             <div>
-              <p className="text-[10px] font-black tracking-[0.24em] text-[#9b5b46]">
-                MENU ITEMS
-              </p>
+              <p className="text-[10px] font-black tracking-[0.24em] text-[#9b5b46]">MENU ITEMS</p>
               <h3 className="mt-2 font-heading text-2xl font-bold tracking-[-0.04em] text-[#2b1b16] md:text-3xl">
                 {currentCategory.name}
               </h3>
@@ -369,7 +411,7 @@ export default function MenuSection() {
                 >
                   <div className="relative aspect-square overflow-hidden bg-[#eee4d5]">
                     <Image
-                      src={normalizeMenuImagePath(item.image)}
+                      src={item.image}
                       alt={item.name}
                       fill
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"

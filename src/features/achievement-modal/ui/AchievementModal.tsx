@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { fetchStores, type Store } from '@/lib/stores';
-import { useStoreCount } from '@/lib/use-store-count';
 import { BaseModal } from '@/shared/ui';
 import StoreItem from './StoreItem';
 
@@ -23,7 +22,6 @@ export default function AchievementModal({ isOpen, onClose }: AchievementModalPr
   const [stores, setStores] = useState<Store[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentDate, setCurrentDate] = useState<{ year: number; month: number } | null>(null);
-  const storeCount = useStoreCount();
 
   useEffect(() => {
     const now = new Date();
@@ -54,7 +52,7 @@ export default function AchievementModal({ isOpen, onClose }: AchievementModalPr
       }),
     [stores]
   );
-  const displayStoreCount = storeCount ?? stores.length;
+  const displayStoreCount = stores.length;
 
   return (
     <BaseModal

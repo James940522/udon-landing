@@ -58,7 +58,7 @@ export default function BrandIntroSection() {
         {/* 이미지 컨테이너 - 원본 크기까지만 확대 */}
         <div className="relative w-full h-full max-w-[1920px] mx-auto">
           <Image
-            src="/asset/menu/오늘은_볶음우동/메뉴모음컷/메뉴모음컷 9.jpg"
+            src="/asset/menu/today-bokkeum-udon/menu-gallery/menu-gallery-09.jpg"
             alt=""
             fill
             className="object-cover brightness-[0.92] saturate-[0.82]"

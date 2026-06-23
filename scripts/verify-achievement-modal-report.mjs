@@ -26,6 +26,19 @@ for (const token of [
   assert.ok(modal.includes(token), `Missing opening report token: ${token}`);
 }
 
+assert.ok(
+  modal.includes('const displayStoreCount = stores.length;'),
+  'The report total must come from the same valid store list rendered in the modal'
+);
+assert.ok(
+  !modal.includes("import { useStoreCount } from '@/lib/use-store-count';"),
+  'The report must not import the independent store count hook'
+);
+assert.ok(
+  !modal.includes('const storeCount = useStoreCount();'),
+  'The report must not let an independently cached count override the store list'
+);
+
 for (const token of [
   'px-4 pb-4 pt-6 sm:px-9 sm:pb-7 sm:pt-9',
   'text-[1.75rem] font-black',

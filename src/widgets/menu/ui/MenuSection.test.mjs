@@ -17,6 +17,7 @@ test('renders the menu as a light premium menu book', async () => {
   assert.match(source, /currentCategory\.items\.length/);
   assert.match(source, /grid-cols-2 md:grid-cols-3 xl:grid-cols-4/);
   assert.match(source, /bg-\[#fffaf2\]/);
-  assert.match(source, /normalizeMenuImagePath\(item\.image\)/);
-  assert.match(source, /src=\{normalizeMenuImagePath\(item\.image\)\}[\s\S]*?unoptimized/);
+  assert.doesNotMatch(source, /normalizeMenuImagePath/);
+  assert.match(source, /src=\{item\.image\}[\s\S]*?unoptimized/);
+  assert.match(source, /\/asset\/menu\/today-bokkeum-udon\//);
 });

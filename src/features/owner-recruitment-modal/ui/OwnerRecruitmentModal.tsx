@@ -102,7 +102,7 @@ export default function OwnerRecruitmentModal({
         {/* 메뉴 이미지 */}
         {/* <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden mb-4 shadow-lg border-4 border-orange-300">
           <Image
-            src="/asset/menu/오늘은_오므라이스/메뉴모음컷/modal.jpg"
+            src="/asset/menu/today-bokkeum-udon/menu-gallery/menu-gallery-09.jpg"
             alt="오늘은 볶음우동 메뉴"
             fill
             className="object-cover"
