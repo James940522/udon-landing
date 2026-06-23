@@ -143,9 +143,83 @@ export default function SuccessionPlanningSectionV2() {
         backgroundSize: 'cover',
       }}
     >
+      <div
+        data-roadmap-gold-frame
+        className="pointer-events-none absolute inset-0 z-[1]"
+        aria-hidden="true"
+      >
+        <div className="absolute inset-3 border border-[#c7a061]/[0.28] md:inset-6" />
+        <div className="absolute inset-6 border border-[#c7a061]/[0.14] md:inset-10" />
+
+        <span className="absolute left-3 top-3 h-12 w-12 border-l-2 border-t-2 border-[#d29a52]/55 md:left-6 md:top-6 md:h-20 md:w-20" />
+        <span className="absolute right-3 top-3 h-12 w-12 border-r-2 border-t-2 border-[#d29a52]/55 md:right-6 md:top-6 md:h-20 md:w-20" />
+        <span className="absolute bottom-3 left-3 h-12 w-12 border-b-2 border-l-2 border-[#d29a52]/55 md:bottom-6 md:left-6 md:h-20 md:w-20" />
+        <span className="absolute bottom-3 right-3 h-12 w-12 border-b-2 border-r-2 border-[#d29a52]/55 md:bottom-6 md:right-6 md:h-20 md:w-20" />
+
+        <span className="absolute left-1/2 top-3 h-2 w-2 -translate-x-1/2 rotate-45 border border-[#d29a52]/70 bg-[#2a1d16] md:top-6 md:h-3 md:w-3" />
+        <span className="absolute bottom-3 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 border border-[#d29a52]/70 bg-[#21150f] md:bottom-6 md:h-3 md:w-3" />
+      </div>
+
+      <div
+        data-roadmap-corner-linework
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden text-[#c7a061]/[0.22]"
+        aria-hidden="true"
+      >
+        <svg
+          className="absolute -left-24 top-4 h-80 w-[34rem] opacity-70 md:-left-16 md:top-8 md:h-[28rem] md:w-[52rem] md:opacity-100"
+          viewBox="0 0 620 320"
+          fill="none"
+        >
+          <path
+            d="M-16 214C45 211 52 171 101 171C131 171 148 185 164 201C182 164 215 141 257 141C300 141 334 165 351 202C372 181 398 170 430 170C472 170 499 194 514 224C542 205 576 199 636 205"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+          <path
+            d="M-8 242C64 242 81 211 121 211C154 211 176 225 191 247C214 205 249 181 291 181C334 181 369 204 388 244C407 224 432 213 464 213C504 213 531 231 550 257C576 240 602 235 640 237"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          <path
+            d="M74 119C104 88 144 72 194 72C239 72 276 87 305 116M399 104C431 78 469 66 515 67"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          <circle cx="306" cy="116" r="4" fill="currentColor" />
+          <circle cx="398" cy="104" r="3" fill="currentColor" />
+        </svg>
+
+        <svg
+          className="absolute -bottom-20 -right-28 h-80 w-[38rem] opacity-65 md:-bottom-16 md:-right-20 md:h-[30rem] md:w-[58rem] md:opacity-100"
+          viewBox="0 0 720 360"
+          fill="none"
+        >
+          <path
+            d="M-20 260C37 209 92 209 149 260C206 311 261 311 318 260C375 209 430 209 487 260C544 311 599 311 656 260C682 237 708 224 740 224"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+          <path
+            d="M-20 294C37 243 92 243 149 294C206 345 261 345 318 294C375 243 430 243 487 294C544 345 599 345 656 294C682 271 708 258 740 258"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          <path
+            d="M33 184C77 145 121 145 165 184C209 223 253 223 297 184C341 145 385 145 429 184C473 223 517 223 561 184C605 145 649 145 693 184"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          <path
+            d="M117 104C151 75 185 75 219 104C253 133 287 133 321 104C355 75 389 75 423 104C457 133 491 133 525 104"
+            stroke="currentColor"
+            strokeWidth="0.8"
+          />
+        </svg>
+      </div>
+
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="mb-14 text-center md:mb-18 lg:mb-22"
+          className="relative mb-14 text-center md:mb-18 lg:mb-22"
           initial={{ opacity: 0, y: reduceMotion ? 0 : 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{
@@ -153,7 +227,37 @@ export default function SuccessionPlanningSectionV2() {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          <div className="mb-5 flex items-center justify-center gap-3">
+          <svg
+            data-roadmap-title-halo
+            className="pointer-events-none absolute left-1/2 top-[-4.25rem] -z-10 h-56 w-[26rem] -translate-x-1/2 text-[#d29a52]/[0.32] sm:w-[34rem] md:top-[-5.5rem] md:h-72 md:w-[48rem]"
+            viewBox="0 0 760 280"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path d="M120 224A260 260 0 0 1 640 224" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M174 224A206 206 0 0 1 586 224" stroke="currentColor" strokeWidth="1" />
+            <path d="M228 224A152 152 0 0 1 532 224" stroke="currentColor" strokeWidth="0.8" />
+            {[
+              [380, 18, 380, 58],
+              [290, 34, 307, 72],
+              [470, 34, 453, 72],
+              [210, 78, 242, 105],
+              [550, 78, 518, 105],
+              [151, 145, 193, 157],
+              [609, 145, 567, 157],
+            ].map(([x1, y1, x2, y2], index) => (
+              <path
+                key={`halo-ray-${index}`}
+                d={`M${x1} ${y1}L${x2} ${y2}`}
+                stroke="currentColor"
+                strokeWidth="1"
+              />
+            ))}
+            <circle cx="380" cy="224" r="5" fill="currentColor" />
+            <path d="M362 224H398M380 206V242" stroke="currentColor" strokeWidth="1" />
+          </svg>
+
+          <div className="relative z-10 mb-5 flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-[#b56e32]/55 sm:w-12" aria-hidden="true" />
             <p className="text-xs font-black uppercase tracking-[0.38em] text-[#b56e32]">
               Success roadmap
@@ -162,7 +266,7 @@ export default function SuccessionPlanningSectionV2() {
           </div>
 
           <motion.h2
-            className="mb-5 break-keep text-3xl font-black leading-tight tracking-[-0.04em] text-[#f0dfc0] md:text-4xl lg:text-6xl"
+            className="relative z-10 mb-5 break-keep text-3xl font-black leading-tight tracking-[-0.04em] text-[#f0dfc0] md:text-4xl lg:text-6xl"
             initial={{ opacity: 0, y: reduceMotion ? 0 : 18 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{
@@ -175,7 +279,7 @@ export default function SuccessionPlanningSectionV2() {
           </motion.h2>
 
           <motion.p
-            className="mx-auto max-w-2xl text-base font-bold leading-relaxed text-[#c8b69a] md:text-xl"
+            className="relative z-10 mx-auto max-w-2xl text-base font-bold leading-relaxed text-[#c8b69a] md:text-xl"
             initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{
@@ -196,6 +300,91 @@ export default function SuccessionPlanningSectionV2() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: reduceMotion ? 0.01 : 0.6, delay: reduceMotion ? 0 : 0.25 }}
         >
+          <div
+            data-roadmap-number-watermarks
+            className="pointer-events-none absolute -inset-x-16 -inset-y-14 z-0 hidden md:grid md:grid-cols-3 md:grid-rows-2"
+            aria-hidden="true"
+          >
+            {STRENGTHS.map((strength, index) => (
+              <div
+                key={`watermark-${strength.number}`}
+                className={`flex ${index < 3 ? 'items-start pt-2' : 'items-end pb-2'} ${
+                  index % 3 === 0
+                    ? 'justify-start'
+                    : index % 3 === 1
+                      ? 'justify-center'
+                      : 'justify-end'
+                }`}
+              >
+                <span className="font-heading text-[clamp(8rem,15vw,14rem)] font-black leading-none tracking-[-0.09em] text-[#f0dfc0]/[0.11]">
+                  {strength.number}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <svg
+            data-roadmap-antique-route
+            className="pointer-events-none absolute -inset-x-10 -inset-y-8 z-[1] hidden md:block h-[calc(100%+4rem)] w-[calc(100%+5rem)] text-[#d29a52]/[0.36]"
+            viewBox="0 0 1200 760"
+            fill="none"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M18 146C134 38 282 45 399 148C431 209 430 310 400 380C512 453 686 453 800 380C770 306 771 211 801 148C930 55 1086 80 1182 224C1104 316 1023 364 914 394C811 423 710 514 604 570C480 636 345 682 222 620C124 571 73 488 18 432"
+              stroke="currentColor"
+              strokeWidth="15"
+              strokeLinecap="round"
+              opacity="0.16"
+            />
+            <path
+              d="M18 146C134 38 282 45 399 148C431 209 430 310 400 380C512 453 686 453 800 380C770 306 771 211 801 148C930 55 1086 80 1182 224C1104 316 1023 364 914 394C811 423 710 514 604 570C480 636 345 682 222 620C124 571 73 488 18 432"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeDasharray="9 12"
+              strokeLinecap="round"
+            />
+            {[
+              [18, 146],
+              [400, 148],
+              [400, 380],
+              [800, 380],
+              [801, 148],
+              [1182, 224],
+            ].map(([cx, cy], index) => (
+              <g data-roadmap-route-medal key={`route-stop-${index}`}>
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r="25"
+                  fill="#2a1d16"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r="18"
+                  fill="#713e25"
+                  stroke="#f0dfc0"
+                  strokeOpacity="0.72"
+                />
+                <circle cx={cx} cy={cy} r="3.5" fill="#f0dfc0" />
+                <text
+                  x={cx}
+                  y={cy + 4}
+                  textAnchor="middle"
+                  fill="#f0dfc0"
+                  fontSize="10"
+                  fontWeight="900"
+                >
+                  0{index + 1}
+                </text>
+              </g>
+            ))}
+          </svg>
+
           <div
             data-roadmap-grid
             className="relative z-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:auto-rows-fr md:grid-cols-3 md:gap-7 lg:gap-8"

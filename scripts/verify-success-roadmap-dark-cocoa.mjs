@@ -38,6 +38,22 @@ for (const lightToken of [
   );
 }
 
+for (const token of [
+  'data-roadmap-gold-frame',
+  'data-roadmap-title-halo',
+  'data-roadmap-antique-route',
+  'data-roadmap-route-medal',
+  'data-roadmap-number-watermarks',
+  'data-roadmap-corner-linework',
+  'strokeDasharray="9 12"',
+  'text-[#f0dfc0]/[0.11]',
+  'text-[#d29a52]/[0.36]',
+  'hidden md:grid',
+  'hidden md:block',
+]) {
+  assert.ok(component.includes(token), `Missing antique roadmap decoration: ${token}`);
+}
+
 assert.ok(
   component.includes('/new-asset/background/startup-benefit-hanji.webp'),
   'Roadmap must retain the shared hanji texture'
