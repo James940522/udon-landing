@@ -74,49 +74,49 @@ function TimelineItem({ strength, index, active, reduceMotion }: TimelineItemPro
       }}
     >
       <motion.article
-        className="group relative flex h-full flex-col overflow-hidden rounded-[1.25rem] border border-[#d8c8b5]/90 bg-[#fffaf2]/92 shadow-[0_18px_45px_rgba(73,50,41,0.11)] backdrop-blur-[2px]"
+        className="group relative flex h-full flex-col overflow-hidden rounded-[1.25rem] border border-[#a9824c]/70 bg-[#d3b98e]/95 shadow-[0_22px_55px_rgba(18,10,6,0.38)] backdrop-blur-[2px]"
         whileHover={
           reduceMotion
             ? undefined
             : {
                 y: -6,
-                boxShadow: '0 26px 58px rgba(73,50,41,0.16)',
+                boxShadow: '0 30px 68px rgba(18, 10, 6, 0.48)',
               }
         }
         transition={{ duration: 0.28 }}
       >
-        <div className="absolute inset-x-0 top-0 z-20 h-1 bg-[#9b5b46]" />
+        <div className="absolute inset-x-0 top-0 z-20 h-1 bg-[#b56e32]" />
 
-        <div className="absolute left-4 top-4 z-20 flex h-12 w-12 items-center justify-center rounded-full border-4 border-[#fffaf2] bg-[#9b5b46] shadow-[0_7px_18px_rgba(73,50,41,0.18)] md:h-14 md:w-14">
-          <span className="text-sm font-black tracking-[-0.04em] text-[#fffaf2] md:text-base">
+        <div className="absolute left-4 top-4 z-20 flex h-12 w-12 items-center justify-center rounded-full border-4 border-[#e6cc9e] bg-[#713e25] shadow-[0_8px_20px_rgba(18,10,6,0.34)] md:h-14 md:w-14">
+          <span className="text-sm font-black tracking-[-0.04em] text-[#f0dfc0] md:text-base">
             {strength.number}
           </span>
         </div>
 
-        <div className="relative aspect-4/3 w-full overflow-hidden border-b border-[#d8c8b5]/70">
+        <div className="relative aspect-4/3 w-full overflow-hidden border-b border-[#a9824c]/55">
           <Image
             src={strength.image}
             alt={strength.title}
             fill
-            className="object-cover saturate-[0.9] transition duration-700 group-hover:scale-[1.035] group-hover:saturate-100"
+            className="object-cover brightness-[0.9] saturate-[0.82] contrast-[1.04] transition duration-700 group-hover:scale-[1.035] group-hover:brightness-100 group-hover:saturate-[0.92]"
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-[#493229]/16" />
+          <div className="absolute inset-0 bg-linear-to-b from-[#2a1d16]/5 via-transparent to-[#3b291e]/38" />
         </div>
 
         <div className="relative flex min-h-40 flex-1 flex-col p-5 md:min-h-44 md:p-6">
-          <p className="mb-3 text-[0.65rem] font-black uppercase tracking-[0.24em] text-[#9b5b46]/80">
+          <p className="mb-3 text-[0.65rem] font-black uppercase tracking-[0.24em] text-[#713e25]/85">
             Step {strength.number}
           </p>
-          <h4 className="mb-3 break-keep text-lg font-black leading-snug text-[#2b1b16] md:text-xl">
+          <h4 className="mb-3 break-keep text-lg font-black leading-snug text-[#291911] md:text-xl">
             {strength.title}
           </h4>
           <div className="mb-4 flex items-center gap-2" aria-hidden="true">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#9b5b46]" />
-            <span className="h-px w-12 bg-[#9b5b46]/55" />
-            <span className="h-px flex-1 bg-[#d8c8b5]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#b56e32]" />
+            <span className="h-px w-12 bg-[#b56e32]/70" />
+            <span className="h-px flex-1 bg-[#a9824c]/60" />
           </div>
-          <p className="break-keep text-sm font-semibold leading-6 text-[#746054] md:text-base md:leading-7">
+          <p className="break-keep text-sm font-semibold leading-6 text-[#594334] md:text-base md:leading-7">
             {strength.desc}
           </p>
         </div>
@@ -135,10 +135,10 @@ export default function SuccessionPlanningSectionV2() {
     <section
       id="succession-planning-v2"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#f0e9df] py-20 text-[#2b1b16] md:py-24 lg:py-32"
+      className="relative overflow-hidden bg-[#2a1d16] py-20 text-[#f0dfc0] md:py-24 lg:py-32"
       style={{
         backgroundImage:
-          "linear-gradient(180deg, rgba(255,250,242,0.84) 0%, rgba(240,233,223,0.96) 100%), url('/new-asset/background/startup-benefit-hanji.webp')",
+          "linear-gradient(180deg, rgba(42,29,22,0.94) 0%, rgba(59,41,30,0.96) 52%, rgba(33,21,15,0.98) 100%), url('/new-asset/background/startup-benefit-hanji.webp')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
       }}
@@ -154,15 +154,15 @@ export default function SuccessionPlanningSectionV2() {
           }}
         >
           <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-[#9b5b46]/35 sm:w-12" aria-hidden="true" />
-            <p className="text-xs font-black uppercase tracking-[0.38em] text-[#9b5b46]">
+            <span className="h-px w-8 bg-[#b56e32]/55 sm:w-12" aria-hidden="true" />
+            <p className="text-xs font-black uppercase tracking-[0.38em] text-[#b56e32]">
               Success roadmap
             </p>
-            <span className="h-px w-8 bg-[#9b5b46]/35 sm:w-12" aria-hidden="true" />
+            <span className="h-px w-8 bg-[#b56e32]/55 sm:w-12" aria-hidden="true" />
           </div>
 
           <motion.h2
-            className="mb-5 break-keep text-3xl font-black leading-tight tracking-[-0.04em] text-[#2b1b16] md:text-4xl lg:text-6xl"
+            className="mb-5 break-keep text-3xl font-black leading-tight tracking-[-0.04em] text-[#f0dfc0] md:text-4xl lg:text-6xl"
             initial={{ opacity: 0, y: reduceMotion ? 0 : 18 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{
@@ -175,7 +175,7 @@ export default function SuccessionPlanningSectionV2() {
           </motion.h2>
 
           <motion.p
-            className="mx-auto max-w-2xl text-base font-bold leading-relaxed text-[#746054] md:text-xl"
+            className="mx-auto max-w-2xl text-base font-bold leading-relaxed text-[#c8b69a] md:text-xl"
             initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{
@@ -222,10 +222,10 @@ export default function SuccessionPlanningSectionV2() {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl border border-[#d8c8b5] bg-[#fffaf2]/92 px-7 py-7 shadow-[0_18px_50px_rgba(73,50,41,0.1)] backdrop-blur-[2px] md:px-12 md:py-8">
-            <span className="absolute inset-x-0 top-0 h-1 bg-[#9b5b46]" aria-hidden="true" />
-            <p className="text-lg font-black text-[#2b1b16] md:text-xl">지금 바로 시작하세요</p>
-            <p className="mt-2 text-sm font-bold text-[#746054] md:text-base">
+          <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl border border-[#a9824c]/70 bg-[#21150f]/94 px-7 py-7 shadow-[0_24px_64px_rgba(18,10,6,0.42)] backdrop-blur-[3px] md:px-12 md:py-8">
+            <span className="absolute inset-x-0 top-0 h-1 bg-[#b56e32]" aria-hidden="true" />
+            <p className="text-lg font-black text-[#f0dfc0] md:text-xl">지금 바로 시작하세요</p>
+            <p className="mt-2 text-sm font-bold text-[#c8b69a] md:text-base">
               점주님의 성공을 위한 모든 준비가 되어있습니다
             </p>
           </div>

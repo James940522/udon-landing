@@ -50,7 +50,7 @@ export default function BlueOceanAdvantageSection() {
   return (
     <section
       id="blue-ocean"
-      className="relative overflow-hidden bg-[#ead9aa] py-20 text-[#2b1b16] md:py-32"
+      className="relative overflow-hidden py-20 md:py-32 bg-stone-900"
       ref={ref}
     >
       {/* 배경 이미지 */}
@@ -59,15 +59,15 @@ export default function BlueOceanAdvantageSection() {
           src="/asset/bg-1/sec3-bg.png"
           alt=""
           fill
-          className="object-cover brightness-[0.92] saturate-[0.72]"
+          className="object-cover"
           quality={90}
           aria-hidden="true"
         />
-        {/* 따뜻한 종이색 베일 */}
-        <div className="absolute inset-0 bg-[#f7eddb]/48" aria-hidden="true" />
-        {/* 앞뒤 섹션을 잇는 웜 그라데이션 */}
+        {/* 다크 오버레이 */}
+        <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
+        {/* 그라데이션 오버레이 */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-[#fff8eb]/68 via-[#e8d4b8]/56 to-[#c99676]/48"
+          className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60"
           aria-hidden="true"
         />
       </div>
@@ -81,18 +81,18 @@ export default function BlueOceanAdvantageSection() {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="mb-6 inline-block rounded-full border border-[#8f3528]/25 bg-[#9b5b46]/92 px-6 py-3 shadow-[0_12px_30px_rgba(73,50,41,0.16)] backdrop-blur-sm"
+            className="inline-block mb-6 px-6 py-3 bg-red-600/90 backdrop-blur-sm rounded-full border border-red-400/50"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <span className="text-sm font-bold tracking-wider text-[#fff8eb] md:text-base">
+            <span className="text-white font-bold text-sm md:text-base tracking-wider">
               과열 경쟁이 너무 심해진 현재 배달업계
             </span>
           </motion.div>
 
           <motion.h2
-            className="mb-6 text-3xl font-bold leading-tight text-[#2b1b16] sm:text-4xl md:text-5xl lg:text-6xl"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -100,13 +100,13 @@ export default function BlueOceanAdvantageSection() {
           >
             경쟁없이 살아남는 법
             <br />
-            <span className="text-[#a66732]">현시점 배달업계 최대의 블루오션</span>
+            <span className="text-amber-400">현시점 배달업계 최대의 블루오션</span>
             <br />
-            <span className="text-[#8f3528]">&apos;볶음우동&apos;</span>
+            <span className="text-amber-300">&apos;볶음우동&apos;</span>
           </motion.h2>
 
           <motion.p
-            className="text-lg font-semibold text-[#8f3528] md:text-xl"
+            className="text-lg md:text-xl text-red-400 font-semibold"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -122,40 +122,40 @@ export default function BlueOceanAdvantageSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <div className="rounded-3xl border border-[#8f3528]/20 bg-[#e5c8b5]/80 p-8 shadow-[0_24px_70px_rgba(73,50,41,0.16)] backdrop-blur-sm md:p-12">
+          <div className="bg-stone-800/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-red-500/30">
             <h3
-              className="mb-8 text-center text-2xl font-bold text-[#8f3528] md:text-3xl"
+              className="text-2xl md:text-3xl font-bold text-white text-center mb-8"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              현재 자영업자 사장님들의 최대 고민
+              <span className="text-red-400">현재 자영업자 사장님들의 최대 고민</span>
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               {painPoints.map((point, index) => (
                 <motion.div
                   key={index}
-                  className="rounded-xl border border-[#c9a24d]/35 bg-[#fff8eb]/82 p-6 shadow-[0_14px_34px_rgba(73,50,41,0.1)]"
+                  className="bg-stone-900/80 rounded-xl p-6 border border-stone-700"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
                 >
-                  <div className="mb-3 text-lg font-bold text-[#8f3528]">{point.problem}</div>
-                  <div className="mb-3 text-sm leading-relaxed text-[#725744]">
+                  <div className="text-red-400 font-bold text-lg mb-3">{point.problem}</div>
+                  <div className="text-gray-300 text-sm mb-3 leading-relaxed">
                     {point.impact}
                   </div>
-                  <div className="border-t border-[#c9a24d]/30 pt-3 text-sm font-semibold text-[#9b5b46]">
+                  <div className="text-red-300 text-sm font-semibold pt-3 border-t border-stone-700">
                     → {point.result}
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <p className="text-center text-base leading-relaxed text-[#493229] md:text-lg">
+            <p className="text-center text-white/90 text-base md:text-lg leading-relaxed">
               대부분의 배달 브랜드는 같은 배달 상권에서 치열하게 경쟁합니다.
               <br />
               가격 경쟁, 쿠폰 할인, 리뷰 전쟁에 에너지를 쏟다 보면
               <br className="hidden sm:block" />
-              <span className="font-semibold text-[#8f3528]">
+              <span className="text-red-400 font-semibold">
                 마진은 줄어들고 운영 스트레스만 쌓입니다.
               </span>
             </p>
@@ -170,12 +170,12 @@ export default function BlueOceanAdvantageSection() {
           transition={{ duration: 0.8, delay: 1.0 }}
         >
           <h3
-            className="mb-4 text-3xl font-bold text-[#2b1b16] md:text-4xl"
+            className="text-3xl md:text-4xl font-bold text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            <span className="text-[#a66732]">오늘은 볶음우동</span>이 해답입니다
+            <span className="text-amber-400">오늘은 볶음우동</span>이 해답입니다
           </h3>
-          <p className="text-lg text-[#725744]">
+          <p className="text-lg text-white/80">
             경쟁에 소모되는 대신, 운영과 매출에 집중할 수 있습니다
           </p>
         </motion.div>
@@ -190,42 +190,45 @@ export default function BlueOceanAdvantageSection() {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="group relative overflow-hidden rounded-[1.25rem] border border-[#d8c8b5]/90 bg-[#fffaf2]/94 p-8 pt-24 shadow-[0_22px_58px_rgba(73,50,41,0.18)] backdrop-blur-[2px] transition-all duration-300 hover:-translate-y-1"
+              className="group relative bg-gradient-to-r from-stone-900/95 to-stone-800/95 backdrop-blur-sm rounded-2xl p-8 border-2 border-transparent hover:border-amber-500/50 transition-all duration-300 shadow-2xl"
+              style={{
+                backgroundImage:
+                  'linear-gradient(135deg, rgba(28, 25, 23, 0.95) 0%, rgba(41, 37, 36, 0.95) 100%)',
+              }}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
               whileHover={{
-                boxShadow: '0 28px 64px rgba(155, 91, 70, 0.22)',
+                scale: 1.02,
+                boxShadow: '0 20px 40px rgba(245, 158, 11, 0.2)',
               }}
             >
-              <div
-                className="absolute inset-x-0 top-0 h-1 bg-[#9b5b46]"
-                aria-hidden="true"
-              />
+              {/* 불꽃 테두리 효과 */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-500/20 via-orange-500/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
 
-              {/* 번호 배지 */}
-              <div className="absolute left-6 top-5 z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#fffaf2] bg-[#9b5b46] shadow-[0_7px_18px_rgba(73,50,41,0.2)]">
-                <span className="text-sm font-black tracking-[-0.04em] text-[#fffaf2]">
+              {/* 번호 배지 - 미니멀 */}
+              <div className="absolute top-6 left-6 z-10">
+                <span className="text-5xl md:text-6xl font-light text-amber-500/20 group-hover:text-amber-500/30 transition-colors duration-300">
                   0{index + 1}
                 </span>
               </div>
 
               {/* 하이라이트 배지 */}
-              <div className="absolute right-6 top-7 z-10">
-                <span className="inline-block rounded-full border border-[#d8c8b5] bg-[#fffaf2]/96 px-3 py-1 text-xs font-bold text-[#8f3528] shadow-[0_6px_16px_rgba(73,50,41,0.1)]">
+              <div className="absolute top-6 right-6 z-10">
+                <span className="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full border border-amber-500/30">
                   {benefit.highlight}
                 </span>
               </div>
 
               {/* 카드 내용 */}
-              <div className="relative">
+              <div className="pt-6 relative">
                 <h3
-                  className="mb-4 text-xl font-bold text-[#2b1b16] transition-colors duration-300 group-hover:text-[#8f3528] md:text-2xl"
+                  className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors duration-300"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {benefit.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-[#725744] md:text-base">
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -240,30 +243,30 @@ export default function BlueOceanAdvantageSection() {
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 1.5 }}
         >
-          <div className="relative rounded-3xl border-4 border-[#c9a24d]/45 bg-[#2b1b16]/96 p-8 shadow-[0_28px_75px_rgba(43,27,22,0.28)] backdrop-blur-md md:p-12">
+          <div className="relative bg-stone-900/90 backdrop-blur-md rounded-3xl p-8 md:p-12 border-4 border-amber-500/40 shadow-2xl">
             {/* 좌측 인용 부호 */}
-            <div className="absolute -top-6 left-8 font-serif text-8xl leading-none text-[#c9a24d]/28">
+            <div className="absolute -top-6 left-8 text-8xl text-amber-400/30 font-serif leading-none">
               &quot;
             </div>
 
             <p
-              className="relative z-10 text-center text-2xl font-bold leading-relaxed text-[#fff8eb] md:text-3xl lg:text-4xl"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-white text-center leading-relaxed relative z-10"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               경쟁의 해답은
               <br className="sm:hidden" />
               <span className="sm:inline"> </span>&apos;더 잘하는 것&apos;이 아니라
               <br />
-              <span className="text-[#d9ad55]">&apos;겹치지 않는 것&apos;</span>
+              <span className="text-amber-400">&apos;겹치지 않는 것&apos;</span>
             </p>
 
             {/* 우측 인용 부호 */}
-            <div className="absolute -bottom-2 right-8 font-serif text-8xl leading-none text-[#c9a24d]/28">
+            <div className="absolute -bottom-2 right-8 text-8xl text-amber-400/30 font-serif leading-none">
               &quot;
             </div>
 
-            {/* 은은한 브랜드색 베일 */}
-            <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-r from-[#8f3528]/12 via-transparent to-[#c9a24d]/10" />
+            {/* 글로우 효과 */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-amber-500/5 via-orange-500/5 to-yellow-500/5 pointer-events-none" />
           </div>
         </motion.div>
 
@@ -274,18 +277,18 @@ export default function BlueOceanAdvantageSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.7 }}
         >
-          <div className="rounded-2xl border border-[#c9a24d]/45 bg-[#ead9aa]/72 p-8 shadow-[0_20px_50px_rgba(73,50,41,0.13)] backdrop-blur-sm md:p-10">
-            <p className="mb-4 text-center text-base leading-relaxed text-[#493229] md:text-lg lg:text-xl">
-              <span className="text-xl font-bold text-[#8f3528] md:text-2xl">
+          <div className="bg-gradient-to-r from-amber-600/20 via-orange-600/20 to-amber-600/20 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-amber-500/30">
+            <p className="text-center text-white/90 text-base md:text-lg lg:text-xl leading-relaxed mb-4">
+              <span className="text-amber-400 font-bold text-xl md:text-2xl">
                 오늘은 볶음우동
               </span>
               은 배달을 위해 설계된 브랜드입니다.
             </p>
-            <p className="text-center text-base leading-relaxed text-[#725744] md:text-lg">
+            <p className="text-center text-white/80 text-base md:text-lg leading-relaxed">
               할인 경쟁에 지친 사장님들께
               <br className="sm:hidden" />
               <span className="sm:inline"> </span>
-              <span className="font-semibold text-[#a66732]">
+              <span className="text-amber-300 font-semibold">
                 수익을 지키면서 성장할 수 있는 새로운 기회
               </span>
               를 제공합니다.

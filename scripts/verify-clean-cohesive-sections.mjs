@@ -11,14 +11,18 @@ const components = await Promise.all(
   componentPaths.map((path) => readFile(new URL(path, import.meta.url), 'utf8'))
 );
 
-for (const [index, component] of components.entries()) {
+const [territory, startupBenefit, roadmap] = components;
+
+for (const [index, component] of [territory, startupBenefit].entries()) {
   for (const token of ['#2b1b16', '#746054', '#9b5b46', '#d8c8b5', '#fffaf2']) {
     assert.ok(
       component.includes(token),
       `${componentPaths[index]} must use the shared clean-section color: ${token}`
     );
   }
+}
 
+for (const [index, component] of components.entries()) {
   for (const oldAccent of ['#C9A24D', '#A66732', '#c9a24d', '#a66732']) {
     assert.ok(
       !component.includes(oldAccent),
@@ -26,8 +30,6 @@ for (const [index, component] of components.entries()) {
     );
   }
 }
-
-const [territory, startupBenefit, roadmap] = components;
 
 assert.ok(
   territory.includes('linear-gradient(180deg, rgba(255,250,242,0.78)'),
