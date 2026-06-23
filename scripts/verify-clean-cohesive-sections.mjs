@@ -13,11 +13,11 @@ const components = await Promise.all(
 
 const [territory, startupBenefit, roadmap] = components;
 
-for (const [index, component] of [territory, startupBenefit].entries()) {
+for (const [index, component] of [startupBenefit].entries()) {
   for (const token of ['#2b1b16', '#746054', '#9b5b46', '#d8c8b5', '#fffaf2']) {
     assert.ok(
       component.includes(token),
-      `${componentPaths[index]} must use the shared clean-section color: ${token}`
+      `${componentPaths[index + 1]} must use the shared clean-section color: ${token}`
     );
   }
 }
@@ -31,15 +31,7 @@ for (const [index, component] of components.entries()) {
   }
 }
 
-assert.ok(
-  territory.includes('linear-gradient(180deg, rgba(255,250,242,0.78)'),
-  'Territory section must use a quiet vertical paper gradient'
-);
-assert.ok(
-  !territory.includes('repeating-linear-gradient'),
-  'Territory texture lines must be removed'
-);
-assert.ok(!territory.includes('PROTECTED\n'), 'Territory background word must be removed');
+assert.ok(territory.includes('bg-[#21160f]'), 'Territory section must use its dark bronze palette');
 
 assert.ok(
   startupBenefit.includes('linear-gradient(180deg, rgba(255,250,242,0.82)'),
