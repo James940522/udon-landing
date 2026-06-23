@@ -227,36 +227,6 @@ export default function SuccessionPlanningSectionV2() {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          <svg
-            data-roadmap-title-halo
-            className="pointer-events-none absolute left-1/2 top-[-4.25rem] -z-10 h-56 w-[26rem] -translate-x-1/2 text-[#d29a52]/[0.32] sm:w-[34rem] md:top-[-5.5rem] md:h-72 md:w-[48rem]"
-            viewBox="0 0 760 280"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path d="M120 224A260 260 0 0 1 640 224" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M174 224A206 206 0 0 1 586 224" stroke="currentColor" strokeWidth="1" />
-            <path d="M228 224A152 152 0 0 1 532 224" stroke="currentColor" strokeWidth="0.8" />
-            {[
-              [380, 18, 380, 58],
-              [290, 34, 307, 72],
-              [470, 34, 453, 72],
-              [210, 78, 242, 105],
-              [550, 78, 518, 105],
-              [151, 145, 193, 157],
-              [609, 145, 567, 157],
-            ].map(([x1, y1, x2, y2], index) => (
-              <path
-                key={`halo-ray-${index}`}
-                d={`M${x1} ${y1}L${x2} ${y2}`}
-                stroke="currentColor"
-                strokeWidth="1"
-              />
-            ))}
-            <circle cx="380" cy="224" r="5" fill="currentColor" />
-            <path d="M362 224H398M380 206V242" stroke="currentColor" strokeWidth="1" />
-          </svg>
-
           <div className="relative z-10 mb-5 flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-[#b56e32]/55 sm:w-12" aria-hidden="true" />
             <p className="text-xs font-black uppercase tracking-[0.38em] text-[#b56e32]">
@@ -345,44 +315,6 @@ export default function SuccessionPlanningSectionV2() {
               strokeDasharray="9 12"
               strokeLinecap="round"
             />
-            {[
-              [18, 146],
-              [400, 148],
-              [400, 380],
-              [800, 380],
-              [801, 148],
-              [1182, 224],
-            ].map(([cx, cy], index) => (
-              <g data-roadmap-route-medal key={`route-stop-${index}`}>
-                <circle
-                  cx={cx}
-                  cy={cy}
-                  r="25"
-                  fill="#2a1d16"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={cx}
-                  cy={cy}
-                  r="18"
-                  fill="#713e25"
-                  stroke="#f0dfc0"
-                  strokeOpacity="0.72"
-                />
-                <circle cx={cx} cy={cy} r="3.5" fill="#f0dfc0" />
-                <text
-                  x={cx}
-                  y={cy + 4}
-                  textAnchor="middle"
-                  fill="#f0dfc0"
-                  fontSize="10"
-                  fontWeight="900"
-                >
-                  0{index + 1}
-                </text>
-              </g>
-            ))}
           </svg>
 
           <div

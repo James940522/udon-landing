@@ -40,9 +40,7 @@ for (const lightToken of [
 
 for (const token of [
   'data-roadmap-gold-frame',
-  'data-roadmap-title-halo',
   'data-roadmap-antique-route',
-  'data-roadmap-route-medal',
   'data-roadmap-number-watermarks',
   'data-roadmap-corner-linework',
   'strokeDasharray="9 12"',
@@ -52,6 +50,20 @@ for (const token of [
   'hidden md:block',
 ]) {
   assert.ok(component.includes(token), `Missing antique roadmap decoration: ${token}`);
+}
+
+for (const removedCircleToken of [
+  'data-roadmap-title-halo',
+  'data-roadmap-route-medal',
+  'route-stop-',
+  'A260 260',
+  'A206 206',
+  'A152 152',
+]) {
+  assert.ok(
+    !component.includes(removedCircleToken),
+    `Brown circular halo must be removed: ${removedCircleToken}`
+  );
 }
 
 assert.ok(

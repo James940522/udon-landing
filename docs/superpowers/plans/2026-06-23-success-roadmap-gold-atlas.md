@@ -4,7 +4,7 @@
 
 **Goal:** Add a visible, ornate gold-atlas background system around the existing dark-cocoa six-step card grid.
 
-**Architecture:** Expand the background into five non-interactive layers: double inset frames, a title halo, large corner linework, edge-positioned number watermarks, and a brighter double-line route with medals in the card gutters. Keep cards and copy above these layers and preserve existing responsive and motion behavior.
+**Architecture:** Use four non-interactive layers: double inset frames, large corner linework, edge-positioned number watermarks, and a brighter double-line route through the card gutters. Keep cards and copy above these layers and preserve existing responsive and motion behavior. Do not use circular title halos or circular route medals.
 
 **Tech Stack:** Next.js 16, React 19, TypeScript, Tailwind CSS utilities, inline SVG, Node.js assertions
 
@@ -24,9 +24,7 @@ Require the component to contain:
 ```js
 for (const token of [
   'data-roadmap-gold-frame',
-  'data-roadmap-title-halo',
   'data-roadmap-antique-route',
-  'data-roadmap-route-medal',
   'data-roadmap-number-watermarks',
   'data-roadmap-corner-linework',
   'strokeDasharray="9 12"',
@@ -51,10 +49,10 @@ Expected: FAIL because `data-roadmap-antique-route` is missing.
 
 - Modify: `src/widgets/succession-planning-v2/ui/SuccessionPlanningSectionV2.tsx`
 
-- [ ] **Step 1: Add the double frame and title halo**
+- [ ] **Step 1: Add the double frame**
 
-Add two inset border layers with decorative corner brackets. Place a concentric semicircle and
-radial-line halo behind the title.
+Add two inset border layers with decorative corner brackets. Keep the title area free of circular
+halo decoration.
 
 - [ ] **Step 2: Strengthen corner linework**
 
@@ -66,10 +64,10 @@ visible 20–24% opacity, `aria-hidden`, and `pointer-events-none`.
 Render `01–06` along section edges and card gutters where portions remain visible. Use oversized
 ivory text at 11% opacity.
 
-- [ ] **Step 4: Strengthen the route and medals**
+- [ ] **Step 4: Strengthen the route**
 
 Place a desktop-only double SVG route around the card gutters using a glow line plus a brighter
-dashed copper line. Add double-ring gold medals at visible gutter coordinates.
+dashed copper line. Do not add circular number medals along the path.
 
 - [ ] **Step 5: Verify the contract passes**
 
@@ -96,6 +94,6 @@ Expected: successful Next.js production build.
 
 - [ ] **Step 3: Inspect desktop and mobile**
 
-Confirm desktop clearly shows the double frame, title halo, route medals, number watermarks, and
+Confirm desktop clearly shows the double frame, route, number watermarks, and
 corner linework without reducing card readability. Confirm mobile hides the route and number
-watermarks, retains the frame and halo, keeps one card column, and has no horizontal overflow.
+watermarks, retains the frame, keeps one card column, and has no horizontal overflow.
