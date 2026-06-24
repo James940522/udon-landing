@@ -154,9 +154,7 @@ export default function ReviewsSection() {
             </h2>
           </div>
           <div className="max-w-md lg:ml-auto lg:pt-8">
-            <p className="mb-3 text-sm font-black text-[#8f3528]">
-              한 그릇의 만족이 쌓인 후기
-            </p>
+            <p className="mb-3 text-sm font-black text-[#8f3528]">한 그릇의 만족이 쌓인 후기</p>
             <p className="text-base font-bold leading-7 text-[#746054]">
               묵직한 철판 향과 정갈한 우동 한 그릇. 실제 고객 리뷰로 오늘은 볶음우동의 만족감을
               확인해보세요.

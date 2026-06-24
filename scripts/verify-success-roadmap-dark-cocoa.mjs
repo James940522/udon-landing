@@ -40,14 +40,18 @@ for (const lightToken of [
 
 for (const token of [
   'data-roadmap-gold-frame',
-  'data-roadmap-antique-route',
-  'data-roadmap-number-watermarks',
+  'data-roadmap-command-deck',
+  'data-roadmap-briefing-panel',
+  'data-roadmap-gallery-grid',
+  'data-roadmap-mobile-two-cols',
+  'data-roadmap-step-tile',
+  'data-roadmap-coordinate-grid',
+  'data-roadmap-route-linework',
   'data-roadmap-corner-linework',
-  'strokeDasharray="9 12"',
-  'text-[#f0dfc0]/[0.11]',
-  'text-[#d29a52]/[0.36]',
-  'hidden md:grid',
-  'hidden md:block',
+  'grid-cols-2 md:grid-cols-3',
+  'lg:grid-cols-[0.72fr_1.28fr]',
+  'BOKKEUM UDON SUCCESS SYSTEM',
+  'Strategy deck',
 ]) {
   assert.ok(component.includes(token), `Missing antique roadmap decoration: ${token}`);
 }
@@ -55,14 +59,21 @@ for (const token of [
 for (const removedCircleToken of [
   'data-roadmap-title-halo',
   'data-roadmap-route-medal',
+  'data-roadmap-antique-route',
+  'data-roadmap-number-watermarks',
   'route-stop-',
   'A260 260',
   'A206 206',
   'A152 152',
+  'md:translate-y-6',
+  'md:translate-y-12',
+  'aspect-4/3',
+  '-mt-6',
+  'grid-cols-1',
 ]) {
   assert.ok(
     !component.includes(removedCircleToken),
-    `Brown circular halo must be removed: ${removedCircleToken}`
+    `Old roadmap card treatment must be removed: ${removedCircleToken}`
   );
 }
 
@@ -79,7 +90,7 @@ assert.ok(
   component.includes('data-roadmap-grid'),
   'Roadmap cards must retain the aligned grid container'
 );
-assert.ok(component.includes('md:auto-rows-fr'), 'Desktop roadmap rows must share equal height');
+assert.ok(component.includes('auto-rows-fr'), 'Roadmap rows must share equal height');
 assert.ok(
   !component.includes('isTimelineInView') && !component.includes('amount: 0.35'),
   'Roadmap must retain the mobile-safe reveal behavior'

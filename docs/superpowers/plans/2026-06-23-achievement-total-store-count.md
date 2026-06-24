@@ -13,6 +13,7 @@
 ### Task 1: Add a store-count regression contract
 
 **Files:**
+
 - Modify: `scripts/verify-achievement-modal-report.mjs`
 
 - [ ] **Step 1: Write the failing assertions**
@@ -28,6 +29,7 @@ Expected: FAIL because the modal still contains `useStoreCount`.
 ### Task 2: Use the store list as the single source of truth
 
 **Files:**
+
 - Modify: `src/features/achievement-modal/ui/AchievementModal.tsx`
 
 - [ ] **Step 1: Remove the independent count dependency**
@@ -51,6 +53,7 @@ Expected: `Achievement modal opening report contract passed.`
 ### Task 3: Verify the application
 
 **Files:**
+
 - Verify only
 
 - [ ] **Step 1: Run lint**
@@ -64,4 +67,3 @@ Expected: exit code 0.
 Run: `pnpm build`
 
 Expected: exit code 0 with `/api/stores` and the application compiled successfully.
-

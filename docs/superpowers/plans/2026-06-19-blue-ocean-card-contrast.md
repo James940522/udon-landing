@@ -66,7 +66,8 @@ Expected: FAIL with `Missing warm editorial token: border border-[#d8c8b5]/90 bg
 Use:
 
 ```tsx
-className="group relative overflow-hidden rounded-[1.25rem] border border-[#d8c8b5]/90 bg-[#fffaf2]/94 p-8 pt-24 shadow-[0_22px_58px_rgba(73,50,41,0.18)] backdrop-blur-[2px] transition-all duration-300 hover:-translate-y-1"
+className =
+  'group relative overflow-hidden rounded-[1.25rem] border border-[#d8c8b5]/90 bg-[#fffaf2]/94 p-8 pt-24 shadow-[0_22px_58px_rgba(73,50,41,0.18)] backdrop-blur-[2px] transition-all duration-300 hover:-translate-y-1';
 ```
 
 Keep the existing entrance animation and use this hover shadow:
@@ -91,9 +92,7 @@ Replace the former large-number wrapper with:
 
 ```tsx
 <div className="absolute left-6 top-5 z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#fffaf2] bg-[#9b5b46] shadow-[0_7px_18px_rgba(73,50,41,0.2)]">
-  <span className="text-sm font-black tracking-[-0.04em] text-[#fffaf2]">
-    0{index + 1}
-  </span>
+  <span className="text-sm font-black tracking-[-0.04em] text-[#fffaf2]">0{index + 1}</span>
 </div>
 ```
 

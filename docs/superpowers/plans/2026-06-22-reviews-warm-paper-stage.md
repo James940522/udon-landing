@@ -53,7 +53,10 @@ test('uses a warm paper surface with a dark phone stage', async () => {
     'bg-[#3b2115]',
     'border-[#d4b45f]/80',
   ]) {
-    assert.ok(!source.includes(legacyToken), `Legacy reviews token must be removed: ${legacyToken}`);
+    assert.ok(
+      !source.includes(legacyToken),
+      `Legacy reviews token must be removed: ${legacyToken}`
+    );
   }
 });
 ```
@@ -81,7 +84,8 @@ Expected: the existing mobile-order test passes and the new test fails at
 Replace the label class with:
 
 ```tsx
-className="inline-flex rounded-md border border-[#fffaf2]/25 bg-[#9b5b46] px-2.5 py-1.5 text-[0.68rem] font-extrabold leading-tight tracking-[-0.01em] text-[#fffaf2] shadow-[0_10px_24px_rgba(43,27,22,0.2)] sm:px-4 sm:py-2 sm:text-sm md:text-base"
+className =
+  'inline-flex rounded-md border border-[#fffaf2]/25 bg-[#9b5b46] px-2.5 py-1.5 text-[0.68rem] font-extrabold leading-tight tracking-[-0.01em] text-[#fffaf2] shadow-[0_10px_24px_rgba(43,27,22,0.2)] sm:px-4 sm:py-2 sm:text-sm md:text-base';
 ```
 
 - [x] **Step 2: Replace the section background**
@@ -89,7 +93,7 @@ className="inline-flex rounded-md border border-[#fffaf2]/25 bg-[#9b5b46] px-2.5
 Use:
 
 ```tsx
-className="relative overflow-hidden bg-[#f0e9df] text-[#2b1b16]"
+className = 'relative overflow-hidden bg-[#f0e9df] text-[#2b1b16]';
 ```
 
 Replace all existing background ornaments before the content wrapper with:
@@ -183,7 +187,8 @@ Keep the existing `PhonePreview` mapping arguments exactly as they are.
 Keep this wrapper unchanged:
 
 ```tsx
-className="relative z-20 -mt-12 overflow-hidden pt-20 sm:-mt-56 sm:pt-32 md:-mt-72 md:pt-40 lg:-mt-[26rem] lg:pt-44"
+className =
+  'relative z-20 -mt-12 overflow-hidden pt-20 sm:-mt-56 sm:pt-32 md:-mt-72 md:pt-40 lg:-mt-[26rem] lg:pt-44';
 ```
 
 Keep the existing paper fade and side fades.
@@ -193,7 +198,8 @@ Keep the existing paper fade and side fades.
 Use:
 
 ```tsx
-className="relative flex h-[214px] w-auto shrink-0 overflow-hidden rounded-lg border border-[#d8c8b5]/90 bg-[#fffaf2] shadow-[0_18px_42px_rgba(73,50,41,0.14)] sm:h-[246px] md:h-[282px]"
+className =
+  'relative flex h-[214px] w-auto shrink-0 overflow-hidden rounded-lg border border-[#d8c8b5]/90 bg-[#fffaf2] shadow-[0_18px_42px_rgba(73,50,41,0.14)] sm:h-[246px] md:h-[282px]';
 ```
 
 - [x] **Step 4: Run the focused test and verify GREEN**

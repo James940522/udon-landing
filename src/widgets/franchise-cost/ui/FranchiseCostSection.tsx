@@ -30,7 +30,11 @@ export default function FranchiseCostSection() {
   ];
 
   return (
-    <section id="franchise-cost" className="relative overflow-hidden py-20 md:py-32 bg-gradient-to-b from-stone-50 via-amber-50/30 to-stone-50" ref={ref}>
+    <section
+      id="franchise-cost"
+      className="relative overflow-hidden py-20 md:py-32 bg-gradient-to-b from-stone-50 via-amber-50/30 to-stone-50"
+      ref={ref}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 메인 타이틀 */}
         <motion.div
@@ -78,10 +82,16 @@ export default function FranchiseCostSection() {
               {/* 테이블 헤더 */}
               <thead className="bg-gradient-to-r from-stone-800 via-stone-700 to-stone-800">
                 <tr>
-                  <th className="py-5 px-6 text-left text-lg md:text-xl font-bold text-white" style={{ width: '25%' }}>
+                  <th
+                    className="py-5 px-6 text-left text-lg md:text-xl font-bold text-white"
+                    style={{ width: '25%' }}
+                  >
                     구분
                   </th>
-                  <th className="py-5 px-6 text-left text-lg md:text-xl font-bold text-white" style={{ width: '25%' }}>
+                  <th
+                    className="py-5 px-6 text-left text-lg md:text-xl font-bold text-white"
+                    style={{ width: '25%' }}
+                  >
                     항목
                   </th>
                   <th
@@ -111,7 +121,10 @@ export default function FranchiseCostSection() {
                         }`}
                         initial={{ opacity: 0, x: -20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.5, delay: 0.5 + categoryIndex * 0.1 + itemIndex * 0.05 }}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.5 + categoryIndex * 0.1 + itemIndex * 0.05,
+                        }}
                       >
                         {/* 구분 (첫 번째 항목에만 표시) */}
                         {itemIndex === 0 && (
@@ -124,7 +137,9 @@ export default function FranchiseCostSection() {
                         )}
 
                         {/* 항목 */}
-                        <td className="py-6 px-6 font-medium text-gray-700 text-base md:text-lg">{item.name}</td>
+                        <td className="py-6 px-6 font-medium text-gray-700 text-base md:text-lg">
+                          {item.name}
+                        </td>
 
                         {/* 금액 */}
                         <td className="py-6 px-6 text-center">
@@ -138,20 +153,26 @@ export default function FranchiseCostSection() {
                                 {/* 빨간 취소선 */}
                                 <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-red-600 transform -translate-y-1/2" />
                               </div>
-                              <span className="text-red-600 font-bold text-lg md:text-xl">면제</span>
+                              <span className="text-red-600 font-bold text-lg md:text-xl">
+                                면제
+                              </span>
                             </div>
                           ) : (
                             <span className="text-gray-900 text-lg md:text-xl font-bold">
                               {item.amount}
                               {item.unit && (
-                                <span className="text-base md:text-lg font-normal ml-1">({item.unit})</span>
+                                <span className="text-base md:text-lg font-normal ml-1">
+                                  ({item.unit})
+                                </span>
                               )}
                             </span>
                           )}
                         </td>
 
                         {/* 내용 */}
-                        <td className="py-6 px-6 text-gray-600 text-sm md:text-base">{item.note || '-'}</td>
+                        <td className="py-6 px-6 text-gray-600 text-sm md:text-base">
+                          {item.note || '-'}
+                        </td>
                       </motion.tr>
                     ))}
                   </Fragment>
@@ -161,7 +182,10 @@ export default function FranchiseCostSection() {
               {/* 합계 행 */}
               <tfoot className="bg-gradient-to-r from-stone-800 via-stone-700 to-stone-800">
                 <tr>
-                  <td colSpan={2} className="py-6 px-6 text-white text-xl md:text-2xl font-bold text-center">
+                  <td
+                    colSpan={2}
+                    className="py-6 px-6 text-white text-xl md:text-2xl font-bold text-center"
+                  >
                     합계
                   </td>
                   <td className="py-6 px-6 text-center">

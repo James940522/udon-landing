@@ -90,9 +90,7 @@ export default function StartupProcessSection() {
               FRANCHISE PROCESS
             </span>
           </div>
-          <h2 className="mb-6 text-4xl font-black text-[#2b1b16] md:text-6xl">
-            가맹절차
-          </h2>
+          <h2 className="mb-6 text-4xl font-black text-[#2b1b16] md:text-6xl">가맹절차</h2>
           <div className="inline-block rounded-lg border border-[#a66732]/25 bg-[#fff8eb]/72 px-8 py-4 shadow-[0_14px_34px_rgba(73,50,41,0.12)] backdrop-blur-[1px]">
             <p className="text-xl font-black leading-relaxed text-[#4a2412] md:text-2xl">
               상담부터 오픈까지, 체계적인 6단계 완벽 시스템
@@ -117,11 +115,7 @@ export default function StartupProcessSection() {
                 key={index}
                 className="relative"
                 initial={{ opacity: 0, y: 34, scale: 0.96, filter: 'blur(10px)' }}
-                animate={
-                  isProcessInView
-                    ? { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }
-                    : {}
-                }
+                animate={isProcessInView ? { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' } : {}}
                 transition={{
                   duration: 0.68,
                   delay: index * 0.11,

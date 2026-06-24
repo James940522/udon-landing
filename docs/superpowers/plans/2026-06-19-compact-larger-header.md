@@ -69,7 +69,7 @@ Use:
 and:
 
 ```tsx
-className="h-11 w-auto object-contain mix-blend-multiply md:h-14"
+className = 'h-11 w-auto object-contain mix-blend-multiply md:h-14';
 ```
 
 - [ ] **Step 2: Increase text and reduce button padding**

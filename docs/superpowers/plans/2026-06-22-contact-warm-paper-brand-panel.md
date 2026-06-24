@@ -105,7 +105,7 @@ Expected: FAIL with `Missing warm contact token: bg-[#f0e9df] py-16 text-[#2b1b1
 Use:
 
 ```tsx
-className="relative overflow-hidden bg-[#f0e9df] py-16 text-[#2b1b16] md:py-24"
+className = 'relative overflow-hidden bg-[#f0e9df] py-16 text-[#2b1b16] md:py-24';
 ```
 
 Replace all background ornament nodes before the content grid with:
@@ -135,7 +135,8 @@ Replace all background ornament nodes before the content grid with:
 Use:
 
 ```tsx
-className="relative mx-auto w-full max-w-lg overflow-hidden rounded-[1.5rem] border border-[#9b5b46]/45 bg-[#2b1b16]/96 p-6 shadow-[0_30px_80px_rgba(43,27,22,0.28)] backdrop-blur-sm md:p-8"
+className =
+  'relative mx-auto w-full max-w-lg overflow-hidden rounded-[1.5rem] border border-[#9b5b46]/45 bg-[#2b1b16]/96 p-6 shadow-[0_30px_80px_rgba(43,27,22,0.28)] backdrop-blur-sm md:p-8';
 ```
 
 Add `data-contact-brand-panel` to the panel and insert:
@@ -161,7 +162,8 @@ Use `text-[#d9ad55]` on both `오늘은` and `볶음우동`. Use `text-[#d8c8b5]
 Use:
 
 ```tsx
-className="mt-6 inline-flex items-center gap-3 rounded-md bg-[#fffaf2] px-5 py-3 text-3xl font-black text-[#8f3528] shadow-[0_18px_44px_rgba(0,0,0,0.28)] transition-transform hover:scale-[1.02] hover:bg-[#f0e9df]"
+className =
+  'mt-6 inline-flex items-center gap-3 rounded-md bg-[#fffaf2] px-5 py-3 text-3xl font-black text-[#8f3528] shadow-[0_18px_44px_rgba(0,0,0,0.28)] transition-transform hover:scale-[1.02] hover:bg-[#f0e9df]';
 ```
 
 ### Task 3: Restyle the Form Surface and Neutral Controls
@@ -176,7 +178,8 @@ className="mt-6 inline-flex items-center gap-3 rounded-md bg-[#fffaf2] px-5 py-3
 Add `data-contact-form-card` and use:
 
 ```tsx
-className="relative mx-auto w-full max-w-xl overflow-hidden rounded-[1.5rem] border border-[#d8c8b5]/90 bg-[#fffaf2]/96 p-5 shadow-[0_30px_80px_rgba(73,50,41,0.18)] backdrop-blur-[2px] md:p-6"
+className =
+  'relative mx-auto w-full max-w-xl overflow-hidden rounded-[1.5rem] border border-[#d8c8b5]/90 bg-[#fffaf2]/96 p-5 shadow-[0_30px_80px_rgba(73,50,41,0.18)] backdrop-blur-[2px] md:p-6';
 ```
 
 Insert this before the form:
@@ -206,7 +209,7 @@ Keep focus borders, focus rings, text colors, selected button styles, handlers, 
 Use:
 
 ```tsx
-className="rounded-md border border-[#d8c8b5]/90 bg-[#eadfce]/82 p-4"
+className = 'rounded-md border border-[#d8c8b5]/90 bg-[#eadfce]/82 p-4';
 ```
 
 - [x] **Step 4: Run the contract and verify GREEN**

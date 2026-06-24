@@ -18,6 +18,7 @@
 ### Task 1: Add the Failing Editorial Contract
 
 **Files:**
+
 - Modify: `src/widgets/startup-process/ui/StartupProcessSection.test.mjs`
 - Test: `src/widgets/startup-process/ui/StartupProcessSection.test.mjs`
 
@@ -50,6 +51,7 @@ Expected: the existing background test passes and the new editorial-decoration t
 ### Task 2: Implement the Editorial Details
 
 **Files:**
+
 - Modify: `src/widgets/startup-process/ui/StartupProcessSection.tsx`
 - Test: `src/widgets/startup-process/ui/StartupProcessSection.test.mjs`
 
@@ -125,6 +127,7 @@ Expected: 2 tests pass and 0 fail.
 ### Task 3: Verify and Commit
 
 **Files:**
+
 - Verify: `src/widgets/startup-process/ui/StartupProcessSection.tsx`
 - Verify: `src/widgets/startup-process/ui/StartupProcessSection.test.mjs`
 

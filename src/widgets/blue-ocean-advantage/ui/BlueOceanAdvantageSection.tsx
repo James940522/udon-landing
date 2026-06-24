@@ -140,9 +140,7 @@ export default function BlueOceanAdvantageSection() {
                   transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
                 >
                   <div className="text-red-400 font-bold text-lg mb-3">{point.problem}</div>
-                  <div className="text-gray-300 text-sm mb-3 leading-relaxed">
-                    {point.impact}
-                  </div>
+                  <div className="text-gray-300 text-sm mb-3 leading-relaxed">{point.impact}</div>
                   <div className="text-red-300 text-sm font-semibold pt-3 border-t border-stone-700">
                     → {point.result}
                   </div>
@@ -279,9 +277,7 @@ export default function BlueOceanAdvantageSection() {
         >
           <div className="bg-gradient-to-r from-amber-600/20 via-orange-600/20 to-amber-600/20 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-amber-500/30">
             <p className="text-center text-white/90 text-base md:text-lg lg:text-xl leading-relaxed mb-4">
-              <span className="text-amber-400 font-bold text-xl md:text-2xl">
-                오늘은 볶음우동
-              </span>
+              <span className="text-amber-400 font-bold text-xl md:text-2xl">오늘은 볶음우동</span>
               은 배달을 위해 설계된 브랜드입니다.
             </p>
             <p className="text-center text-white/80 text-base md:text-lg leading-relaxed">

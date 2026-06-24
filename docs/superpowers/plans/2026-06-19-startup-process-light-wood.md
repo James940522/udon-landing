@@ -19,6 +19,7 @@
 ### Task 1: Add the Failing Startup Process Visual Contract
 
 **Files:**
+
 - Create: `src/widgets/startup-process/ui/StartupProcessSection.test.mjs`
 - Test: `src/widgets/startup-process/ui/StartupProcessSection.test.mjs`
 
@@ -35,7 +36,7 @@ test('uses the light wood WebP and the light brand palette', async () => {
 
   assert.ok(
     source.includes('/new-asset/background/startup-process-light-wood.webp'),
-    'The section must use the supplied light wood WebP background',
+    'The section must use the supplied light wood WebP background'
   );
   assert.ok(source.includes("backgroundSize: 'cover'"));
   assert.ok(source.includes("backgroundRepeat: 'no-repeat'"));
@@ -45,10 +46,16 @@ test('uses the light wood WebP and the light brand palette', async () => {
   assert.ok(source.includes('bg-[#8f3528]'), 'Number badges must use lacquer red');
   assert.ok(source.includes('bg-[#fff8eb]/92'), 'Cards must use a translucent cream surface');
   assert.ok(!source.includes('bg-black/30'), 'The old dark overlay must be removed');
-  assert.ok(!source.includes('text-white drop-shadow'), 'The old white heading treatment must be removed');
+  assert.ok(
+    !source.includes('text-white drop-shadow'),
+    'The old white heading treatment must be removed'
+  );
 
   const asset = await readFile(
-    new URL('../../../../public/new-asset/background/startup-process-light-wood.webp', import.meta.url),
+    new URL(
+      '../../../../public/new-asset/background/startup-process-light-wood.webp',
+      import.meta.url
+    )
   );
   assert.equal(asset.subarray(0, 4).toString('ascii'), 'RIFF');
   assert.equal(asset.subarray(8, 12).toString('ascii'), 'WEBP');
@@ -68,6 +75,7 @@ Expected: FAIL at the new background-path assertion because the section still re
 ### Task 2: Convert the Background and Restyle the Section
 
 **Files:**
+
 - Create: `public/new-asset/background/startup-process-light-wood.webp`
 - Modify: `src/widgets/startup-process/ui/StartupProcessSection.tsx`
 - Test: `src/widgets/startup-process/ui/StartupProcessSection.test.mjs`
@@ -124,17 +132,20 @@ Update presentation classes without changing content or motion:
 Use these card and CTA classes:
 
 ```tsx
-className="group h-full overflow-hidden rounded-lg border border-[#a66732]/32 bg-[#fff8eb]/92 shadow-[0_18px_45px_rgba(73,50,41,0.14)] backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-[#8f3528]/45 hover:shadow-[0_24px_55px_rgba(73,50,41,0.2)]"
+className =
+  'group h-full overflow-hidden rounded-lg border border-[#a66732]/32 bg-[#fff8eb]/92 shadow-[0_18px_45px_rgba(73,50,41,0.14)] backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-[#8f3528]/45 hover:shadow-[0_24px_55px_rgba(73,50,41,0.2)]';
 
-className="flex h-9 w-9 items-center justify-center rounded-md bg-[#8f3528] text-sm font-black text-[#fff2d8] shadow-[0_10px_24px_rgba(143,53,40,0.28)] md:h-12 md:w-12 md:text-lg"
+className =
+  'flex h-9 w-9 items-center justify-center rounded-md bg-[#8f3528] text-sm font-black text-[#fff2d8] shadow-[0_10px_24px_rgba(143,53,40,0.28)] md:h-12 md:w-12 md:text-lg';
 
-className="mb-2 break-keep text-base font-black leading-snug text-[#2b1b16] md:text-xl"
+className = 'mb-2 break-keep text-base font-black leading-snug text-[#2b1b16] md:text-xl';
 
-className="text-xs font-bold leading-5 text-[#6e5745] md:text-sm md:leading-6"
+className = 'text-xs font-bold leading-5 text-[#6e5745] md:text-sm md:leading-6';
 
-className="mb-6 text-lg font-black text-[#4a2412] md:text-xl"
+className = 'mb-6 text-lg font-black text-[#4a2412] md:text-xl';
 
-className="inline-block rounded-full bg-[#26140e] px-8 py-4 text-lg font-black text-[#c9a24d] shadow-[0_16px_38px_rgba(38,20,14,0.24)] transition-all duration-300 hover:scale-105 hover:text-[#e2b957] hover:shadow-[0_22px_48px_rgba(38,20,14,0.3)]"
+className =
+  'inline-block rounded-full bg-[#26140e] px-8 py-4 text-lg font-black text-[#c9a24d] shadow-[0_16px_38px_rgba(38,20,14,0.24)] transition-all duration-300 hover:scale-105 hover:text-[#e2b957] hover:shadow-[0_22px_48px_rgba(38,20,14,0.3)]';
 ```
 
 - [x] **Step 4: Run the focused test and verify it passes**
@@ -161,6 +172,7 @@ Expected: only the planned startup-process source, test, and WebP asset are show
 ### Task 3: Verify the Production Result
 
 **Files:**
+
 - Verify: `src/widgets/startup-process/ui/StartupProcessSection.tsx`
 - Verify: `src/widgets/startup-process/ui/StartupProcessSection.test.mjs`
 - Verify: `public/new-asset/background/startup-process-light-wood.webp`

@@ -44,7 +44,10 @@ for (const legacyToken of [
   'handlePromotionModalClose',
   'hideModal_franchise-cost',
 ]) {
-  assert.ok(!homePage.includes(legacyToken), `Legacy modal queue token must be removed: ${legacyToken}`);
+  assert.ok(
+    !homePage.includes(legacyToken),
+    `Legacy modal queue token must be removed: ${legacyToken}`
+  );
 }
 
 for (const deletedFeatureFile of [
@@ -111,10 +114,7 @@ setShowAchievementModal(false);
 Remove the `FranchiseCostModal` render and update the achievement render to:
 
 ```tsx
-<AchievementModal
-  isOpen={showAchievementModal}
-  onClose={() => setShowAchievementModal(false)}
-/>
+<AchievementModal isOpen={showAchievementModal} onClose={() => setShowAchievementModal(false)} />
 ```
 
 - [ ] **Step 2: Delete the obsolete feature files**

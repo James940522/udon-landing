@@ -50,7 +50,8 @@ Expected: FAIL because the list does not yet include `overflow-y-auto`.
 Change the store `<ol>` class to:
 
 ```tsx
-className="grid max-h-[clamp(12rem,32vh,24rem)] grid-cols-1 gap-x-8 overflow-y-auto overscroll-contain border-t border-[#8f3528] pr-1 sm:grid-cols-2 sm:pr-2"
+className =
+  'grid max-h-[clamp(12rem,32vh,24rem)] grid-cols-1 gap-x-8 overflow-y-auto overscroll-contain border-t border-[#8f3528] pr-1 sm:grid-cols-2 sm:pr-2';
 ```
 
 Do not move `STORE INDEX`, `FRANCHISE INQUIRY`, loading UI, empty UI, or store sorting logic.

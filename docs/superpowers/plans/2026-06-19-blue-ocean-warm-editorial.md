@@ -126,13 +126,13 @@ git commit -m "test: define warm blue ocean palette"
 Change the section class to:
 
 ```tsx
-className="relative overflow-hidden bg-[#ead9aa] py-20 text-[#2b1b16] md:py-32"
+className = 'relative overflow-hidden bg-[#ead9aa] py-20 text-[#2b1b16] md:py-32';
 ```
 
 Change the image class to:
 
 ```tsx
-className="object-cover brightness-[0.92] saturate-[0.72]"
+className = 'object-cover brightness-[0.92] saturate-[0.72]';
 ```
 
 Replace the two dark overlays with:
@@ -150,15 +150,17 @@ Replace the two dark overlays with:
 Use these complete class replacements:
 
 ```tsx
-className="mb-6 inline-block rounded-full border border-[#8f3528]/25 bg-[#9b5b46]/92 px-6 py-3 shadow-[0_12px_30px_rgba(73,50,41,0.16)] backdrop-blur-sm"
+className =
+  'mb-6 inline-block rounded-full border border-[#8f3528]/25 bg-[#9b5b46]/92 px-6 py-3 shadow-[0_12px_30px_rgba(73,50,41,0.16)] backdrop-blur-sm';
 ```
 
 ```tsx
-className="text-sm font-bold tracking-wider text-[#fff8eb] md:text-base"
+className = 'text-sm font-bold tracking-wider text-[#fff8eb] md:text-base';
 ```
 
 ```tsx
-className="mb-6 text-3xl font-bold leading-tight text-[#2b1b16] sm:text-4xl md:text-5xl lg:text-6xl"
+className =
+  'mb-6 text-3xl font-bold leading-tight text-[#2b1b16] sm:text-4xl md:text-5xl lg:text-6xl';
 ```
 
 Change the two headline highlights to:
@@ -174,7 +176,7 @@ Change the two headline highlights to:
 Change the subtitle class to:
 
 ```tsx
-className="text-lg font-semibold text-[#8f3528] md:text-xl"
+className = 'text-lg font-semibold text-[#8f3528] md:text-xl';
 ```
 
 - [x] **Step 3: Run the contract and confirm it still fails later**
@@ -199,7 +201,8 @@ Expected: FAIL on a later missing token such as `bg-[#e5c8b5]/80`; it must no lo
 Replace its outer panel class with:
 
 ```tsx
-className="rounded-3xl border border-[#8f3528]/20 bg-[#e5c8b5]/80 p-8 shadow-[0_24px_70px_rgba(73,50,41,0.16)] backdrop-blur-sm md:p-12"
+className =
+  'rounded-3xl border border-[#8f3528]/20 bg-[#e5c8b5]/80 p-8 shadow-[0_24px_70px_rgba(73,50,41,0.16)] backdrop-blur-sm md:p-12';
 ```
 
 Use `text-[#8f3528]` for the panel heading.
@@ -207,7 +210,8 @@ Use `text-[#8f3528]` for the panel heading.
 Replace each problem card class with:
 
 ```tsx
-className="rounded-xl border border-[#c9a24d]/35 bg-[#fff8eb]/82 p-6 shadow-[0_14px_34px_rgba(73,50,41,0.1)]"
+className =
+  'rounded-xl border border-[#c9a24d]/35 bg-[#fff8eb]/82 p-6 shadow-[0_14px_34px_rgba(73,50,41,0.1)]';
 ```
 
 Use the following classes inside each card:
@@ -237,7 +241,7 @@ Keep its highlighted conclusion with:
 Use:
 
 ```tsx
-className="mb-4 text-3xl font-bold text-[#2b1b16] md:text-4xl"
+className = 'mb-4 text-3xl font-bold text-[#2b1b16] md:text-4xl';
 ```
 
 ```tsx
@@ -253,7 +257,8 @@ className="mb-4 text-3xl font-bold text-[#2b1b16] md:text-4xl"
 Use this card class:
 
 ```tsx
-className="group relative rounded-2xl border-2 border-[#c9a24d]/38 bg-[#fff8eb]/88 p-8 shadow-[0_22px_55px_rgba(73,50,41,0.14)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#8f3528]/35"
+className =
+  'group relative rounded-2xl border-2 border-[#c9a24d]/38 bg-[#fff8eb]/88 p-8 shadow-[0_22px_55px_rgba(73,50,41,0.14)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#8f3528]/35';
 ```
 
 Remove the inline `backgroundImage` style and remove the decorative flame-gradient child entirely.
@@ -277,7 +282,8 @@ Use these card content classes:
 ```
 
 ```tsx
-className="mb-4 text-xl font-bold text-[#2b1b16] transition-colors duration-300 group-hover:text-[#8f3528] md:text-2xl"
+className =
+  'mb-4 text-xl font-bold text-[#2b1b16] transition-colors duration-300 group-hover:text-[#8f3528] md:text-2xl';
 ```
 
 ```tsx
@@ -306,7 +312,8 @@ Expected: FAIL on `bg-[#2b1b16]/96` or `bg-[#ead9aa]/72`.
 Use:
 
 ```tsx
-className="relative rounded-3xl border-4 border-[#c9a24d]/45 bg-[#2b1b16]/96 p-8 shadow-[0_28px_75px_rgba(43,27,22,0.28)] backdrop-blur-md md:p-12"
+className =
+  'relative rounded-3xl border-4 border-[#c9a24d]/45 bg-[#2b1b16]/96 p-8 shadow-[0_28px_75px_rgba(43,27,22,0.28)] backdrop-blur-md md:p-12';
 ```
 
 Use `text-[#c9a24d]/28` for both quote marks.
@@ -314,7 +321,8 @@ Use `text-[#c9a24d]/28` for both quote marks.
 Use this class for the quotation:
 
 ```tsx
-className="relative z-10 text-center text-2xl font-bold leading-relaxed text-[#fff8eb] md:text-3xl lg:text-4xl"
+className =
+  'relative z-10 text-center text-2xl font-bold leading-relaxed text-[#fff8eb] md:text-3xl lg:text-4xl';
 ```
 
 Use:
@@ -334,7 +342,8 @@ Replace the old amber/orange glow with:
 Use:
 
 ```tsx
-className="rounded-2xl border border-[#c9a24d]/45 bg-[#ead9aa]/72 p-8 shadow-[0_20px_50px_rgba(73,50,41,0.13)] backdrop-blur-sm md:p-10"
+className =
+  'rounded-2xl border border-[#c9a24d]/45 bg-[#ead9aa]/72 p-8 shadow-[0_20px_50px_rgba(73,50,41,0.13)] backdrop-blur-sm md:p-10';
 ```
 
 Use these text classes:

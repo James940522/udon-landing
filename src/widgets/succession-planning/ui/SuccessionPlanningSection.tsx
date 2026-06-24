@@ -83,7 +83,11 @@ export default function SuccessionPlanningSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="succession-planning" className="relative overflow-hidden py-24 md:py-20 lg:py-24 bg-[#D4C4A8]" ref={ref}>
+    <section
+      id="succession-planning"
+      className="relative overflow-hidden py-24 md:py-20 lg:py-24 bg-[#D4C4A8]"
+      ref={ref}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 상단 타이틀 */}
         <motion.div

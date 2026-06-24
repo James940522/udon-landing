@@ -71,7 +71,8 @@ Expected: FAIL with the first missing bright ABOUT US token.
 Use:
 
 ```tsx
-className="relative flex min-h-[clamp(48rem,92vh,64rem)] items-center overflow-hidden bg-[#ead9aa] py-24 text-[#26140e] md:py-32 lg:py-40"
+className =
+  'relative flex min-h-[clamp(48rem,92vh,64rem)] items-center overflow-hidden bg-[#ead9aa] py-24 text-[#26140e] md:py-32 lg:py-40';
 ```
 
 - [ ] **Step 2: Replace the dark image treatment**

@@ -19,6 +19,7 @@
 ### Task 1: Add a failing color contract
 
 **Files:**
+
 - Create: `scripts/verify-darker-header-footer-colors.mjs`
 - Read: `src/widgets/header/ui/Header.tsx`
 - Read: `src/widgets/footer/ui/Footer.tsx`
@@ -54,8 +55,16 @@ assert.ok(
   'Footer must use the approved dark brown background'
 );
 
-for (const legacyToken of ['bg-[#f6efe3]/98', 'bg-[#f6efe3]/92', 'bg-[#f6efe3] p-0', 'bg-[#f6efe3]/94']) {
-  assert.ok(!header.includes(legacyToken), `Legacy header background must be removed: ${legacyToken}`);
+for (const legacyToken of [
+  'bg-[#f6efe3]/98',
+  'bg-[#f6efe3]/92',
+  'bg-[#f6efe3] p-0',
+  'bg-[#f6efe3]/94',
+]) {
+  assert.ok(
+    !header.includes(legacyToken),
+    `Legacy header background must be removed: ${legacyToken}`
+  );
 }
 
 assert.ok(!footer.includes('bg-stone-900'), 'Legacy footer background must be removed');
@@ -68,7 +77,10 @@ for (const protectedToken of [
   'py-1.5 text-base',
   'px-5 py-2 font-heading text-base',
 ]) {
-  assert.ok(header.includes(protectedToken), `Protected header sizing token changed: ${protectedToken}`);
+  assert.ok(
+    header.includes(protectedToken),
+    `Protected header sizing token changed: ${protectedToken}`
+  );
 }
 
 console.log('Darker header and footer color contract passed.');
@@ -87,6 +99,7 @@ Expected: FAIL with `Missing darker header token: bg-[#efe5d4]/98`.
 ### Task 2: Apply the approved background colors
 
 **Files:**
+
 - Modify: `src/widgets/header/ui/Header.tsx:46-50,131-133,174-175`
 - Modify: `src/widgets/footer/ui/Footer.tsx:4-6`
 - Test: `scripts/verify-darker-header-footer-colors.mjs`
@@ -98,11 +111,12 @@ In `src/widgets/header/ui/Header.tsx`, make these exact replacements:
 ```tsx
 isScrolled
   ? 'bg-[#efe5d4]/98 shadow-[0_12px_34px_rgba(38,20,14,0.14)] backdrop-blur-xl'
-  : 'bg-[#efe5d4]/92 shadow-[0_8px_24px_rgba(38,20,14,0.1)] backdrop-blur-md'
+  : 'bg-[#efe5d4]/92 shadow-[0_8px_24px_rgba(38,20,14,0.1)] backdrop-blur-md';
 ```
 
 ```tsx
-className="z-[120] w-[88vw] max-w-sm gap-0 overflow-hidden border-l border-[#cdbb9f] bg-[#efe5d4] p-0 text-[#26140e] [&_[data-slot=sheet-close]]:rounded-full [&_[data-slot=sheet-close]]:border [&_[data-slot=sheet-close]]:border-[#cdbb9f] [&_[data-slot=sheet-close]]:bg-[#fffaf1] [&_[data-slot=sheet-close]]:p-2 [&_[data-slot=sheet-close]]:text-[#8f3528]"
+className =
+  'z-[120] w-[88vw] max-w-sm gap-0 overflow-hidden border-l border-[#cdbb9f] bg-[#efe5d4] p-0 text-[#26140e] [&_[data-slot=sheet-close]]:rounded-full [&_[data-slot=sheet-close]]:border [&_[data-slot=sheet-close]]:border-[#cdbb9f] [&_[data-slot=sheet-close]]:bg-[#fffaf1] [&_[data-slot=sheet-close]]:p-2 [&_[data-slot=sheet-close]]:text-[#8f3528]';
 ```
 
 ```tsx
@@ -145,6 +159,7 @@ Expected: no whitespace errors; the functional diff contains only the new contra
 ### Task 3: Run project verification
 
 **Files:**
+
 - Verify: `scripts/verify-darker-header-footer-colors.mjs`
 - Verify: `src/widgets/header/ui/Header.tsx`
 - Verify: `src/widgets/footer/ui/Footer.tsx`

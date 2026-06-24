@@ -13,6 +13,7 @@
 ### Task 1: Define the legacy dark contract
 
 **Files:**
+
 - Create: `scripts/verify-blue-ocean-legacy-dark.mjs`
 - Test: `src/widgets/blue-ocean-advantage/ui/BlueOceanAdvantageSection.tsx`
 
@@ -48,6 +49,7 @@ Expected: FAIL because the current section does not contain `bg-stone-900`.
 ### Task 2: Restore the component
 
 **Files:**
+
 - Modify: `src/widgets/blue-ocean-advantage/ui/BlueOceanAdvantageSection.tsx`
 
 - [ ] **Step 1: Restore the source**
@@ -64,6 +66,7 @@ Expected: `Legacy dark Blue Ocean contract passed.`
 ### Task 3: Verify the change
 
 **Files:**
+
 - Verify: `src/widgets/blue-ocean-advantage/ui/BlueOceanAdvantageSection.tsx`
 - Verify: `scripts/verify-blue-ocean-legacy-dark.mjs`
 
