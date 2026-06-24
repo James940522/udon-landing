@@ -16,7 +16,8 @@ for (const token of [
   'bg-[#9b5b46] px-4 py-2',
   'text-[#fffaf2]',
   'text-[#d9ad55]',
-  'bg-[#fffaf2] px-5 py-3',
+  'bg-[#fffaf2] px-4 py-3',
+  'sm:px-5',
   'data-contact-form-card',
   'border-[#d8c8b5]/90 bg-[#fffaf2]/96',
   'border-[#d8c8b5] bg-[#fffaf2]',
@@ -27,18 +28,27 @@ for (const token of [
   'data-contact-vertical-label',
   'START YOUR STORE',
   'data-contact-panel-connector',
-  'data-contact-response-stamp',
-  '24H',
-  'RESPONSE',
+  'whitespace-nowrap',
+  'text-[1.55rem]',
+  'sm:text-3xl',
   'data-contact-form-label',
   'APPLICATION FORM',
   'hidden md:block',
   'lg:flex',
-  'sm:absolute sm:right-5 sm:top-5',
   'pointer-events-none',
   'aria-hidden="true"',
 ]) {
   assert.ok(source.includes(token), `Missing warm contact token: ${token}`);
+}
+
+for (const removedToken of [
+  'data-contact-response-stamp',
+  '24H',
+  'RESPONSE',
+  'sm:absolute sm:right-5 sm:top-5',
+  'sm:pr-24',
+]) {
+  assert.ok(!source.includes(removedToken), `Removed contact stamp token must stay gone: ${removedToken}`);
 }
 
 for (const legacyToken of [

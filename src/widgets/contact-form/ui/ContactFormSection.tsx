@@ -153,7 +153,7 @@ export default function ContactFormSection() {
             <span className="mb-4 inline-flex rounded-full bg-[#9b5b46] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#fffaf2]">
               Today Udon
             </span>
-            <h2 className="text-4xl font-black leading-[1.12] text-[#fffaf2] sm:pr-24 md:text-6xl">
+            <h2 className="text-4xl font-black leading-[1.12] text-[#fffaf2] md:text-6xl">
               성공 창업,
               <br />
               <span className="text-[#d9ad55]">오늘은</span>
@@ -164,20 +164,12 @@ export default function ContactFormSection() {
               작은 공간에서도 안정적으로 시작할 수 있도록 상담부터 오픈까지 함께합니다. 배달 중심
               운영, 소형 매장, 전환 창업까지 편하게 문의해주세요.
             </p>
-            <div
-              data-contact-response-stamp
-              className="pointer-events-none mt-5 flex h-20 w-20 rotate-[8deg] flex-col items-center justify-center rounded-full border-2 border-[#9b5b46]/70 text-center text-[#d9ad55] shadow-[0_0_0_3px_rgba(155,91,70,0.16)] sm:absolute sm:right-5 sm:top-5 sm:mt-0"
-              aria-hidden="true"
-            >
-              <span className="font-heading text-xl font-black leading-none">24H</span>
-              <span className="mt-1 text-[8px] font-black tracking-[0.18em]">RESPONSE</span>
-            </div>
 
             <a
               href="sms:010-9923-9502?body=홈페이지를%20통해%20오늘은%20볶음우동%20창업%20문의를%20드립니다."
-              className="mt-6 inline-flex items-center gap-3 rounded-md bg-[#fffaf2] px-5 py-3 text-3xl font-black text-[#8f3528] shadow-[0_18px_44px_rgba(0,0,0,0.28)] transition-transform hover:scale-[1.02] hover:bg-[#f0e9df]"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2.5 whitespace-nowrap rounded-md bg-[#fffaf2] px-4 py-3 text-[1.55rem] font-black text-[#8f3528] shadow-[0_18px_44px_rgba(0,0,0,0.28)] transition-transform hover:scale-[1.02] hover:bg-[#f0e9df] sm:w-fit sm:gap-3 sm:px-5 sm:text-3xl"
             >
-              <Phone className="h-7 w-7" aria-hidden="true" />
+              <Phone className="h-6 w-6 shrink-0 sm:h-7 sm:w-7" aria-hidden="true" />
               010-9923-9502
             </a>
           </motion.div>
