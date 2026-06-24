@@ -12,7 +12,7 @@ const inquiry = await readFile(
 
 for (const token of [
   'REPORT NAVIGATION',
-  'bg-[#f6efe3]',
+  'bg-[#efe5d4]',
   'bg-[#8f3528]',
   'radial-gradient(circle at 1px 1px',
   "String(index + 1).padStart(2, '0')",
@@ -23,7 +23,10 @@ for (const token of [
 
 for (const token of [
   'FRANCHISE DESK',
-  'bg-[#f6efe3]',
+  'bg-[#fffaf2]/98',
+  'bg-white/95',
+  'border-[#eadfce]',
+  'shadow-[0_-16px_42px_rgba(43,27,22,0.14)]',
   'bg-[#8f3528]',
   'radial-gradient(circle at 1px 1px',
   'handleMobileOpen',
@@ -37,6 +40,18 @@ for (const token of [
   'name="region"',
 ]) {
   assert.ok(inquiry.includes(token), `Missing report-tone inquiry token: ${token}`);
+}
+
+for (const legacyInquiryToken of [
+  'bg-[#f6efe3]/98',
+  'border-[#cdbb9f]',
+  'shadow-[0_-16px_42px_rgba(38,20,14,0.22)]',
+  'shadow-[0_-20px_52px_rgba(38,20,14,0.28)]',
+]) {
+  assert.ok(
+    !inquiry.includes(legacyInquiryToken),
+    `Legacy beige inquiry token must be removed: ${legacyInquiryToken}`
+  );
 }
 
 for (const legacyToken of ['bg-stone-900', 'bg-[#26140e]/98', 'bg-[#26140e]/96']) {

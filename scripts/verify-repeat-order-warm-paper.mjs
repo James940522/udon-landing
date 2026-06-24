@@ -8,18 +8,25 @@ const source = await readFile(
 
 for (const token of [
   'useReducedMotion',
-  '/new-asset/background/startup-benefit-hanji.webp',
-  'bg-[#f0e9df]',
-  'bg-[#fffaf2]',
-  'text-[#2b1b16]',
-  'text-[#9b5b46]',
-  'border-[#d8c8b5]',
-  'text-[#596348]',
+  'data-repeat-order-black-gold',
+  'bg-[#080504]',
+  'text-[#f0dfc0]',
+  'text-[#c9a24d]',
+  'border-[#a9824c]/35',
+  'bg-[#d3b98e]/95',
+  'bg-[#15100d]/92',
+  'text-[#7f8a63]',
   'REPEAT ORDERS',
   '다시 선택된 주문',
   '3 STORE SAMPLE',
   'lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,1.1fr)]',
+  'grid-cols-3',
   'md:grid-cols-3',
+  'data-repeat-order-mobile-compact',
+  'sm:hidden',
+  'hidden sm:block',
+  'hidden sm:grid',
+  'sizes="(max-width: 768px) 33vw, 33vw"',
   'DATA REPORT',
   '재주문 {card.repeatOrders}건',
 ]) {
@@ -35,9 +42,12 @@ for (const asset of [
 }
 
 for (const legacyToken of [
+  '/new-asset/background/startup-benefit-hanji.webp',
+  'bg-[#f0e9df]',
+  'text-[#2b1b16]',
+  'border-[#d8c8b5]',
   'bg-[#181311]',
   'bg-[#211917]',
-  'text-[#fff8eb]',
   'const backgroundWords',
   'clipPath',
   'bg-[#a66732] text-[#26140e]',
@@ -54,4 +64,4 @@ for (const legacyToken of [
   );
 }
 
-console.log('Repeat-order warm paper contract passed.');
+console.log('Repeat-order black gold contract passed.');

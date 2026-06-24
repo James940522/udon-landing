@@ -188,7 +188,7 @@ export default function FloatingInquiry() {
         <motion.button
           type="button"
           onClick={handleMobileOpen}
-          className="fixed inset-x-3 bottom-3 z-50 overflow-hidden rounded-[20px] border border-[#cdbb9f] bg-[#f6efe3]/98 text-left shadow-[0_16px_38px_rgba(38,20,14,0.24)] backdrop-blur-xl md:hidden"
+          className="fixed inset-x-3 bottom-3 z-50 overflow-hidden rounded-[20px] border border-[#eadfce] bg-[#fffaf2]/98 text-left shadow-[0_16px_38px_rgba(43,27,22,0.14)] backdrop-blur-xl md:hidden"
           initial={{ opacity: 0, y: 70 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 70 }}
@@ -200,7 +200,7 @@ export default function FloatingInquiry() {
             className="pointer-events-none absolute inset-0 opacity-[0.18]"
             style={{
               backgroundImage:
-                'radial-gradient(circle at 1px 1px, rgba(143,53,40,0.22) 1px, transparent 0)',
+                'radial-gradient(circle at 1px 1px, rgba(155,91,70,0.13) 1px, transparent 0)',
               backgroundSize: '18px 18px',
             }}
           />
@@ -225,7 +225,7 @@ export default function FloatingInquiry() {
 
       {shouldShow && isMobile && isMobileExpanded && (
         <motion.aside
-          className="fixed inset-x-0 bottom-0 z-50 overflow-hidden rounded-t-[28px] border-x border-t border-[#cdbb9f] bg-[#f6efe3]/98 shadow-[0_-20px_52px_rgba(38,20,14,0.28)] backdrop-blur-xl md:hidden"
+          className="fixed inset-x-0 bottom-0 z-50 overflow-hidden rounded-t-[28px] border-x border-t border-[#eadfce] bg-[#fffaf2]/98 shadow-[0_-20px_52px_rgba(43,27,22,0.16)] backdrop-blur-xl md:hidden"
           initial={{ opacity: 0, y: '100%' }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: '100%' }}
@@ -240,7 +240,7 @@ export default function FloatingInquiry() {
             className="pointer-events-none absolute inset-0 opacity-[0.18]"
             style={{
               backgroundImage:
-                'radial-gradient(circle at 1px 1px, rgba(143,53,40,0.22) 1px, transparent 0)',
+                'radial-gradient(circle at 1px 1px, rgba(155,91,70,0.13) 1px, transparent 0)',
               backgroundSize: '18px 18px',
             }}
           />
@@ -253,11 +253,11 @@ export default function FloatingInquiry() {
               onClick={handleMobileCollapse}
               className="mx-auto mb-0.5 flex flex-col items-center gap-1.5 px-5 py-1 text-[10px] font-black tracking-[0.12em] text-[#80624c]"
             >
-              <span className="h-1.5 w-14 rounded-full bg-[#cdbb9f]" />
+              <span className="h-1.5 w-14 rounded-full bg-[#eadfce]" />
               CLOSE DESK
             </button>
 
-            <div className="flex items-end justify-between gap-3 border-b border-[#ddcfbb] pb-3">
+            <div className="flex items-end justify-between gap-3 border-b border-[#eadfce] pb-3">
               <div className="min-w-0">
                 <p className="text-[9px] font-black tracking-[0.2em] text-[#8f3528]">
                   FRANCHISE DESK · QUICK FORM
@@ -284,7 +284,7 @@ export default function FloatingInquiry() {
               onChange={handleChange}
               maxLength={30}
               required
-              className="h-12 w-full rounded-[12px] border border-[#cdbb9f] bg-[#fffaf1] px-4 text-base font-bold text-[#26140e] outline-none placeholder:text-[#9a7d67] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/35"
+              className="h-12 w-full rounded-[12px] border border-[#eadfce] bg-white/95 px-4 text-base font-bold text-[#26140e] outline-none placeholder:text-[#a28670] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/30"
               placeholder="성함"
               autoComplete="name"
             />
@@ -297,7 +297,7 @@ export default function FloatingInquiry() {
               maxLength={13}
               pattern="[0-9-]*"
               required
-              className="h-12 w-full rounded-[12px] border border-[#cdbb9f] bg-[#fffaf1] px-4 text-base font-bold text-[#26140e] outline-none placeholder:text-[#9a7d67] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/35"
+              className="h-12 w-full rounded-[12px] border border-[#eadfce] bg-white/95 px-4 text-base font-bold text-[#26140e] outline-none placeholder:text-[#a28670] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/30"
               placeholder="연락처"
               autoComplete="tel"
             />
@@ -308,7 +308,7 @@ export default function FloatingInquiry() {
               onChange={handleChange}
               maxLength={40}
               required
-              className="h-12 w-full rounded-[12px] border border-[#cdbb9f] bg-[#fffaf1] px-4 text-base font-bold text-[#26140e] outline-none placeholder:text-[#9a7d67] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/35"
+              className="h-12 w-full rounded-[12px] border border-[#eadfce] bg-white/95 px-4 text-base font-bold text-[#26140e] outline-none placeholder:text-[#a28670] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/30"
               placeholder="희망지역"
             />
 
@@ -323,7 +323,7 @@ export default function FloatingInquiry() {
               aria-hidden="true"
             />
 
-            <label className="flex min-w-0 cursor-pointer items-center gap-2 rounded-[12px] border border-[#ddcfbb] bg-[#fffaf1] px-4 py-3 text-sm font-bold leading-tight text-[#725744]">
+            <label className="flex min-w-0 cursor-pointer items-center gap-2 rounded-[12px] border border-[#eadfce] bg-white/95 px-4 py-3 text-sm font-bold leading-tight text-[#725744]">
               <input
                 type="checkbox"
                 checked={privacyAgree}
@@ -349,7 +349,7 @@ export default function FloatingInquiry() {
 
       {shouldShow && !isMobile && (
         <motion.aside
-          className="fixed inset-x-0 bottom-0 z-50 hidden overflow-hidden border-t border-[#cdbb9f] bg-[#f6efe3]/98 shadow-[0_-16px_42px_rgba(38,20,14,0.22)] backdrop-blur-xl md:block"
+          className="fixed inset-x-0 bottom-0 z-50 hidden overflow-hidden border-t border-[#eadfce] bg-[#fffaf2]/98 shadow-[0_-16px_42px_rgba(43,27,22,0.14)] backdrop-blur-xl md:block"
           initial={{ opacity: 0, y: 90 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 90 }}
@@ -361,7 +361,7 @@ export default function FloatingInquiry() {
             className="pointer-events-none absolute inset-0 opacity-[0.16]"
             style={{
               backgroundImage:
-                'radial-gradient(circle at 1px 1px, rgba(143,53,40,0.2) 1px, transparent 0)',
+                'radial-gradient(circle at 1px 1px, rgba(155,91,70,0.12) 1px, transparent 0)',
               backgroundSize: '18px 18px',
             }}
           />
@@ -369,7 +369,7 @@ export default function FloatingInquiry() {
             onSubmit={handleSubmit}
             className="relative mx-auto grid w-full max-w-7xl grid-cols-12 items-center gap-2 px-4 py-3 lg:flex lg:max-w-[1500px] lg:justify-center lg:gap-3 lg:px-6"
           >
-            <div className="col-span-4 flex min-w-0 items-center justify-between gap-3 border-r border-[#cdbb9f] pr-3 lg:w-[clamp(310px,24vw,360px)] lg:shrink-0">
+            <div className="col-span-4 flex min-w-0 items-center justify-between gap-3 border-r border-[#eadfce] pr-3 lg:w-[clamp(310px,24vw,360px)] lg:shrink-0">
               <div className="min-w-0">
                 <p className="whitespace-nowrap text-[9px] font-black tracking-[0.18em] text-[#8f3528] lg:text-[10px]">
                   FRANCHISE DESK
@@ -393,7 +393,7 @@ export default function FloatingInquiry() {
               onChange={handleChange}
               maxLength={30}
               required
-              className="col-span-4 h-11 min-w-0 rounded-[10px] border border-[#cdbb9f] bg-[#fffaf1] px-3 text-sm font-bold text-[#26140e] outline-none placeholder:text-[#9a7d67] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/35 lg:h-12 lg:w-[clamp(118px,9.4vw,158px)] lg:shrink-0 xl:px-4"
+              className="col-span-4 h-11 min-w-0 rounded-[10px] border border-[#eadfce] bg-white/95 px-3 text-sm font-bold text-[#26140e] outline-none placeholder:text-[#a28670] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/30 lg:h-12 lg:w-[clamp(118px,9.4vw,158px)] lg:shrink-0 xl:px-4"
               placeholder="성함"
               autoComplete="name"
             />
@@ -406,7 +406,7 @@ export default function FloatingInquiry() {
               maxLength={13}
               pattern="[0-9-]*"
               required
-              className="col-span-4 h-11 min-w-0 rounded-[10px] border border-[#cdbb9f] bg-[#fffaf1] px-3 text-sm font-bold text-[#26140e] outline-none placeholder:text-[#9a7d67] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/35 lg:h-12 lg:w-[clamp(126px,10.2vw,174px)] lg:shrink-0 xl:px-4"
+              className="col-span-4 h-11 min-w-0 rounded-[10px] border border-[#eadfce] bg-white/95 px-3 text-sm font-bold text-[#26140e] outline-none placeholder:text-[#a28670] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/30 lg:h-12 lg:w-[clamp(126px,10.2vw,174px)] lg:shrink-0 xl:px-4"
               placeholder="연락처"
               autoComplete="tel"
             />
@@ -417,7 +417,7 @@ export default function FloatingInquiry() {
               onChange={handleChange}
               maxLength={40}
               required
-              className="col-span-4 h-11 min-w-0 rounded-[10px] border border-[#cdbb9f] bg-[#fffaf1] px-3 text-sm font-bold text-[#26140e] outline-none placeholder:text-[#9a7d67] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/35 lg:h-12 lg:w-[clamp(118px,9.8vw,166px)] lg:shrink-0 xl:px-4"
+              className="col-span-4 h-11 min-w-0 rounded-[10px] border border-[#eadfce] bg-white/95 px-3 text-sm font-bold text-[#26140e] outline-none placeholder:text-[#a28670] focus:border-[#8f3528] focus:ring-2 focus:ring-[#c9a24d]/30 lg:h-12 lg:w-[clamp(118px,9.8vw,166px)] lg:shrink-0 xl:px-4"
               placeholder="희망지역"
             />
 
@@ -432,7 +432,7 @@ export default function FloatingInquiry() {
               aria-hidden="true"
             />
 
-            <label className="col-span-4 flex min-w-0 cursor-pointer items-center justify-center gap-2 rounded-[10px] border border-[#ddcfbb] bg-[#fffaf1] px-3 py-3 text-xs font-bold leading-tight text-[#725744] lg:min-w-[clamp(112px,9vw,148px)] lg:shrink-0 lg:border-0 lg:bg-transparent lg:px-1">
+            <label className="col-span-4 flex min-w-0 cursor-pointer items-center justify-center gap-2 rounded-[10px] border border-[#eadfce] bg-white/95 px-3 py-3 text-xs font-bold leading-tight text-[#725744] lg:min-w-[clamp(112px,9vw,148px)] lg:shrink-0 lg:border-0 lg:bg-transparent lg:px-1">
               <input
                 type="checkbox"
                 checked={privacyAgree}
