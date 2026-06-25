@@ -307,7 +307,7 @@ export default function MenuSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <div className="flex items-center justify-between border-b border-[#d8c8b5] pb-4 text-[10px] font-black tracking-[0.22em] text-[#9b5b46] sm:text-xs">
+          <div className="flex items-center justify-between border-b border-[#d8c8b5] pb-4 text-xs font-black tracking-[0.22em] text-[#9b5b46] sm:text-sm">
             <span className="flex items-center gap-3">
               <span className="h-2 w-2 bg-[#9b5b46]" aria-hidden="true" />
               08 / SIGNATURE MENU
@@ -317,12 +317,12 @@ export default function MenuSection() {
 
           <div className="grid gap-8 pt-9 md:grid-cols-[minmax(0,1.25fr)_minmax(18rem,0.75fr)] md:items-end md:gap-14 md:pt-12">
             <div>
-              <p className="mb-4 text-xs font-black uppercase tracking-[0.28em] text-[#9b5b46]">
+              <p className="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[#9b5b46] sm:text-base">
                 {currentBrand.name}
               </p>
               <h2
                 aria-label="오늘의 한 그릇을 고르는 즐거움"
-                className="font-heading text-[2.7rem] font-bold leading-[1.08] tracking-[-0.055em] text-[#2b1b16] sm:text-5xl md:text-6xl lg:text-[4.5rem]"
+                className="font-heading text-[3rem] font-bold leading-[1.08] tracking-[-0.055em] text-[#2b1b16] sm:text-[3.4rem] md:text-[4.1rem] lg:text-[4.9rem]"
               >
                 오늘의 한 그릇을
                 <br />
@@ -330,7 +330,7 @@ export default function MenuSection() {
               </h2>
             </div>
             <div className="border-l border-[#d8c8b5] pl-5 md:pl-8">
-              <p className="max-w-lg text-sm font-semibold leading-7 text-[#746054] sm:text-base sm:leading-8">
+              <p className="max-w-lg text-base font-semibold leading-8 text-[#746054] sm:text-lg sm:leading-9">
                 불향을 입힌 볶음우동부터 부드러운 크림우동, 든든한 철판 볶음밥까지. 취향에 맞는
                 오늘의 메뉴를 천천히 골라보세요.
               </p>
@@ -357,10 +357,10 @@ export default function MenuSection() {
                     : 'text-[#8a7568] hover:text-[#2b1b16]'
                 )}
               >
-                <span className="block text-[9px] font-black tracking-[0.18em] text-[#9b5b46]/70">
+                <span className="block text-[10px] font-black tracking-[0.18em] text-[#9b5b46]/70 sm:text-xs">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <span className="mt-1 block whitespace-nowrap font-heading text-sm font-bold sm:text-base">
+                <span className="mt-1 block whitespace-nowrap font-heading text-base font-bold sm:text-lg">
                   {category.name}
                 </span>
                 <span
@@ -371,7 +371,7 @@ export default function MenuSection() {
                   aria-hidden="true"
                 />
                 {category.isNew && (
-                  <span className="absolute right-1 top-2 text-[8px] font-black tracking-[0.08em] text-[#8f3528]">
+                  <span className="absolute right-1 top-2 text-[9px] font-black tracking-[0.08em] text-[#8f3528] sm:text-[10px]">
                     NEW
                   </span>
                 )}
@@ -381,12 +381,12 @@ export default function MenuSection() {
 
           <div className="mb-6 mt-9 flex items-end justify-between gap-4 md:mb-8 md:mt-12">
             <div>
-              <p className="text-[10px] font-black tracking-[0.24em] text-[#9b5b46]">MENU ITEMS</p>
-              <h3 className="mt-2 font-heading text-2xl font-bold tracking-[-0.04em] text-[#2b1b16] md:text-3xl">
+              <p className="text-xs font-black tracking-[0.24em] text-[#9b5b46]">MENU ITEMS</p>
+              <h3 className="mt-2 font-heading text-3xl font-bold tracking-[-0.04em] text-[#2b1b16] md:text-4xl">
                 {currentCategory.name}
               </h3>
             </div>
-            <p className="border-b border-[#9b5b46]/45 pb-1 font-heading text-sm font-bold text-[#746054]">
+            <p className="border-b border-[#9b5b46]/45 pb-1 font-heading text-base font-bold text-[#746054]">
               {String(currentCategory.items.length).padStart(2, '0')} dishes
             </p>
           </div>
@@ -426,11 +426,11 @@ export default function MenuSection() {
                     />
                   </div>
 
-                  <div className="flex min-h-20 items-start gap-3 border-t border-[#e4d7c6] p-3 sm:min-h-24 sm:p-4 lg:p-5">
-                    <span className="mt-0.5 text-[9px] font-black tracking-[0.12em] text-[#9b5b46] sm:text-[10px]">
+                  <div className="flex min-h-24 items-start gap-3 border-t border-[#e4d7c6] p-3 sm:min-h-28 sm:p-4 lg:p-5">
+                    <span className="mt-0.5 text-[10px] font-black tracking-[0.12em] text-[#9b5b46] sm:text-xs">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <h4 className="break-keep font-heading text-sm font-bold leading-[1.45] tracking-[-0.025em] text-[#2b1b16] sm:text-base">
+                    <h4 className="break-keep font-heading text-base font-bold leading-[1.45] tracking-[-0.025em] text-[#2b1b16] sm:text-lg">
                       {item.name}
                     </h4>
                   </div>
@@ -440,7 +440,7 @@ export default function MenuSection() {
           </AnimatePresence>
         </motion.div>
 
-        <div className="mt-14 flex items-center gap-4 border-t border-[#d8c8b5] pt-5 text-[9px] font-black tracking-[0.2em] text-[#9b5b46]/70 md:mt-20">
+        <div className="mt-14 flex items-center gap-4 border-t border-[#d8c8b5] pt-5 text-[10px] font-black tracking-[0.2em] text-[#9b5b46]/70 sm:text-xs md:mt-20">
           <span>FRESHLY PREPARED</span>
           <span className="h-px flex-1 bg-[#d8c8b5]" aria-hidden="true" />
           <span>ENJOY YOUR MEAL</span>
