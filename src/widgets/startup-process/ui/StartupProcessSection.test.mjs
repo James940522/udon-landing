@@ -47,7 +47,7 @@ test('renders the process as a warmer dark franchise timeline', async () => {
   assert.ok(source.includes('data-startup-step-rail'));
   assert.ok(source.includes('data-process-step-card'));
   assert.ok(source.includes('data-process-step-marker'));
-  assert.ok(source.includes('grid-cols-1'));
+  assert.ok(source.includes('grid-cols-2'));
   assert.ok(source.includes('md:grid-cols-2'));
   assert.ok(source.includes('lg:grid-cols-3'));
   assert.ok(source.includes('hidden lg:block'), 'The timeline rail must stay out of compact layouts');
@@ -55,4 +55,21 @@ test('renders the process as a warmer dark franchise timeline', async () => {
   assert.ok(source.includes('pointer-events-none'));
   assert.ok(source.includes('검토 완료'));
   assert.ok(source.includes('운영 준비'));
+});
+
+test('keeps the handshake accent shorter on mobile while preserving desktop height', async () => {
+  const source = await readFile(new URL('./StartupProcessSection.tsx', import.meta.url), 'utf8');
+
+  assert.ok(
+    source.includes('min-h-[21rem]') && source.includes('md:min-h-[25rem]'),
+    'The handshake accent should use a shorter mobile min-height and restore the current height from tablet up',
+  );
+  assert.ok(
+    source.includes('mt-16 md:mt-28'),
+    'The highlight band should sit closer to the title on mobile and keep the larger desktop image reveal',
+  );
+  assert.ok(
+    source.includes('p-4 md:p-6'),
+    'The mobile panel padding should be tighter without changing desktop padding',
+  );
 });

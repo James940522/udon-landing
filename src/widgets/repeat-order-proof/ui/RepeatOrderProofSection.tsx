@@ -193,7 +193,7 @@ export default function RepeatOrderProofSection() {
 
           <div
             data-repeat-order-mobile-compact
-            className="grid grid-cols-3 items-stretch gap-2 md:grid-cols-3 md:gap-4 lg:gap-6"
+            className="grid grid-cols-1 items-stretch gap-2 md:grid-cols-3 md:gap-4 lg:gap-6"
           >
             {graphCards.map((card, index) => (
               <motion.article
@@ -218,7 +218,7 @@ export default function RepeatOrderProofSection() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <div className="flex min-h-[5.75rem] flex-col justify-between gap-2 border-b border-[#a9824c]/45 px-2.5 py-3 sm:min-h-0 sm:flex-row sm:items-center sm:gap-3 sm:px-5 sm:py-4">
+                <div className="flex min-h-[3.75rem] items-center justify-between gap-3 border-b border-[#a9824c]/45 px-3 py-2.5 sm:min-h-0 sm:px-5 sm:py-4">
                   <div className="flex items-center gap-1.5 sm:gap-3">
                     <span className="hidden h-8 w-8 items-center justify-center rounded-full border border-[#080504]/45 bg-[#080504] text-[10px] font-black text-[#c9a24d] sm:flex">
                       {card.badge}
@@ -232,7 +232,7 @@ export default function RepeatOrderProofSection() {
                       </p>
                     </div>
                   </div>
-                  <div className="text-left sm:text-right">
+                  <div className="text-right">
                     <p className="hidden sm:block text-[9px] font-black tracking-[0.12em] text-[#594334]">
                       REPEAT ORDERS
                     </p>
@@ -251,7 +251,7 @@ export default function RepeatOrderProofSection() {
                       width={card.width}
                       height={card.height}
                       className="h-full w-full object-contain"
-                      sizes="(max-width: 768px) 33vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       quality={96}
                     />
                   </div>

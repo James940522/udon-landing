@@ -136,7 +136,7 @@ export default function StartupProcessSection() {
 
           <motion.div
             data-startup-image-accent
-            className="relative min-h-[25rem] overflow-hidden rounded-lg border border-[#a9824c]/45 bg-[#2b211a]/90 p-5 shadow-[0_28px_70px_rgba(16,9,5,0.3)] backdrop-blur-sm md:p-6"
+            className="relative min-h-[21rem] md:min-h-[25rem] overflow-hidden rounded-lg border border-[#a9824c]/45 bg-[#2b211a]/90 p-4 md:p-6 shadow-[0_28px_70px_rgba(16,9,5,0.3)] backdrop-blur-sm"
             initial={{ opacity: 0, x: 28 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.68, delay: 0.12 }}
@@ -158,20 +158,22 @@ export default function StartupProcessSection() {
               aria-hidden="true"
             />
 
-            <div className="relative z-10 flex items-center justify-between border-b border-[#a9824c]/35 pb-4">
+            <div className="relative z-10 flex items-center justify-between border-b border-[#a9824c]/35 pb-3 md:pb-4">
               <div>
                 <p className="text-[0.68rem] font-black uppercase tracking-[0.28em] text-[#c18442]">
                   OPENING WITH TODAY
                 </p>
-                <p className="mt-2 text-xl font-black text-[#f0dfc0]">함께 준비하는 오픈</p>
+                <p className="mt-1.5 text-lg font-black text-[#f0dfc0] md:mt-2 md:text-xl">
+                  함께 준비하는 오픈
+                </p>
               </div>
               <CircleDot className="h-7 w-7 text-[#c18442]" strokeWidth={1.7} />
             </div>
 
-            <div className="relative z-10 mt-28 grid grid-cols-3 divide-x divide-[#a9824c]/35 border-y border-[#a9824c]/35 bg-[#21160f]/46 backdrop-blur-[1px]">
+            <div className="relative z-10 mt-16 md:mt-28 grid grid-cols-3 divide-x divide-[#a9824c]/35 border-y border-[#a9824c]/35 bg-[#21160f]/46 backdrop-blur-[1px]">
               {highlights.map((highlight) => (
-                <div key={highlight} className="px-2 py-4 text-center">
-                  <CheckCircle2 className="mx-auto mb-2 h-4 w-4 text-[#c18442]" />
+                <div key={highlight} className="px-2 py-3 text-center md:py-4">
+                  <CheckCircle2 className="mx-auto mb-1.5 h-4 w-4 text-[#c18442] md:mb-2" />
                   <p className="break-keep text-xs font-black text-[#f0dfc0] md:text-sm">
                     {highlight}
                   </p>
@@ -179,7 +181,7 @@ export default function StartupProcessSection() {
               ))}
             </div>
 
-            <p className="relative z-10 mt-5 break-keep text-sm font-semibold leading-6 text-[#c4ae91]">
+            <p className="relative z-10 mt-4 break-keep text-sm font-semibold leading-6 text-[#c4ae91] md:mt-5">
               각 단계는 본사 상담, 계약, 교육, 오픈 지원까지 이어지는 실제 진행 순서를 기준으로
               배치했습니다.
             </p>

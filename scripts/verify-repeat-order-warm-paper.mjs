@@ -20,17 +20,18 @@ for (const token of [
   '다시 선택된 주문',
   '3 STORE SAMPLE',
   'lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,1.1fr)]',
-  'grid-cols-3',
+  'grid-cols-1',
   'md:grid-cols-3',
   'items-stretch',
   'grid grid-rows-[auto_minmax(0,1fr)_auto]',
+  'flex min-h-[3.75rem] items-center justify-between gap-3 border-b border-[#a9824c]/45 px-3 py-2.5',
   'aspect-[553/292]',
   'object-contain',
   'data-repeat-order-mobile-compact',
   'sm:hidden',
   'hidden sm:block',
   'hidden sm:grid',
-  'sizes="(max-width: 768px) 33vw, 33vw"',
+  'sizes="(max-width: 768px) 100vw, 33vw"',
   'DATA REPORT',
   '재주문 {card.repeatOrders}건',
 ]) {
@@ -63,6 +64,7 @@ for (const legacyToken of [
   '{card.repeatRate}%',
   'md:-translate-y-5',
   'index === 1 ? -25 : -5',
+  'min-h-[5.75rem]',
 ]) {
   assert.ok(
     !source.includes(legacyToken),
