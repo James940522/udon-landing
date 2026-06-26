@@ -22,6 +22,10 @@ for (const token of [
   'lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,1.1fr)]',
   'grid-cols-3',
   'md:grid-cols-3',
+  'items-stretch',
+  'grid grid-rows-[auto_minmax(0,1fr)_auto]',
+  'aspect-[553/292]',
+  'object-contain',
   'data-repeat-order-mobile-compact',
   'sm:hidden',
   'hidden sm:block',
@@ -57,6 +61,8 @@ for (const legacyToken of [
   'repeatRate',
   '전체 주문 중 재주문 비율',
   '{card.repeatRate}%',
+  'md:-translate-y-5',
+  'index === 1 ? -25 : -5',
 ]) {
   assert.ok(
     !source.includes(legacyToken),

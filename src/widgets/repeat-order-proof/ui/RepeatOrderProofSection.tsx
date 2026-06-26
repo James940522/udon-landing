@@ -193,14 +193,12 @@ export default function RepeatOrderProofSection() {
 
           <div
             data-repeat-order-mobile-compact
-            className="grid grid-cols-3 gap-2 md:grid-cols-3 md:gap-4 lg:gap-6"
+            className="grid grid-cols-3 items-stretch gap-2 md:grid-cols-3 md:gap-4 lg:gap-6"
           >
             {graphCards.map((card, index) => (
               <motion.article
                 key={card.badge}
-                className={`group relative overflow-hidden rounded-xl border border-[#a9824c]/35 bg-[#d3b98e]/95 shadow-[0_14px_34px_rgba(0,0,0,0.28)] sm:rounded-[1.25rem] sm:shadow-[0_22px_60px_rgba(0,0,0,0.35)] ${
-                  index === 1 ? 'md:-translate-y-5' : ''
-                }`}
+                className="group relative grid grid-rows-[auto_minmax(0,1fr)_auto] h-full overflow-hidden rounded-xl border border-[#a9824c]/35 bg-[#d3b98e]/95 shadow-[0_14px_34px_rgba(0,0,0,0.28)] sm:rounded-[1.25rem] sm:shadow-[0_22px_60px_rgba(0,0,0,0.35)]"
                 initial={{
                   opacity: 0,
                   y: reduceMotion ? 0 : 26,
@@ -211,7 +209,6 @@ export default function RepeatOrderProofSection() {
                   reduceMotion
                     ? undefined
                     : {
-                        y: index === 1 ? -25 : -5,
                         borderColor: 'rgba(201,162,77,0.62)',
                       }
                 }
@@ -247,15 +244,17 @@ export default function RepeatOrderProofSection() {
                 </div>
 
                 <div className="bg-[#15100d]/92 p-1.5 sm:p-3">
-                  <Image
-                    src={card.image}
-                    alt={`${card.title} 최근 일주일 신규 주문과 재주문 그래프`}
-                    width={card.width}
-                    height={card.height}
-                    className="h-auto w-full"
-                    sizes="(max-width: 768px) 33vw, 33vw"
-                    quality={96}
-                  />
+                  <div className="relative aspect-[553/292] w-full">
+                    <Image
+                      src={card.image}
+                      alt={`${card.title} 최근 일주일 신규 주문과 재주문 그래프`}
+                      width={card.width}
+                      height={card.height}
+                      className="h-full w-full object-contain"
+                      sizes="(max-width: 768px) 33vw, 33vw"
+                      quality={96}
+                    />
+                  </div>
                 </div>
 
                 <div className="hidden sm:grid grid-cols-2 divide-x divide-[#a9824c]/45 border-t border-[#a9824c]/45">
