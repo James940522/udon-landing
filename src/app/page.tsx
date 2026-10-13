@@ -26,6 +26,7 @@ import { FloatingInquiry } from '@/features/inquiry';
 import { OwnerRecruitmentModal } from '@/features/owner-recruitment-modal';
 import { AchievementModal } from '@/features/achievement-modal';
 import { CustomCursorState } from '@/features/custom-cursor';
+import { IntroVideo } from '@/features/intro-video';
 
 // Shared Config
 import { SITE_ORIGIN, absoluteUrl } from '@/shared/config/site';
@@ -38,10 +39,13 @@ const marqueeSets = {
 };
 
 export default function Home() {
+  const [showIntro, setShowIntro] = useState(true);
   const [showRecruitmentModal, setShowRecruitmentModal] = useState(false);
   const [showAchievementModal, setShowAchievementModal] = useState(false);
 
   useEffect(() => {
+    if (showIntro) return;
+
     const achievementModalTimer = setTimeout(() => {
       const hideAchievementModal = localStorage.getItem('hideModal_achievement');
       const now = new Date().getTime();
@@ -50,7 +54,7 @@ export default function Home() {
     }, 1000);
 
     return () => clearTimeout(achievementModalTimer);
-  }, []);
+  }, [showIntro]);
 
   // 창업 문의 섹션으로 스크롤 이동 + 모든 모달 닫기
   const handleNavigateToContact = () => {
@@ -140,7 +144,13 @@ export default function Home() {
         }}
       />
 
-      <main className="min-h-screen font-sans">
+      {showIntro && <IntroVideo onComplete={() => setShowIntro(false)} />}
+
+      <main
+        className="min-h-screen font-sans"
+        inert={showIntro}
+        aria-hidden={showIntro || undefined}
+      >
         <CustomCursorState />
         <Header />
         <HeroSection />
